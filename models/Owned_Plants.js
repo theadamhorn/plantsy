@@ -29,7 +29,7 @@ Owned_Plants.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'Owned_Plants',
     }
 );
 
