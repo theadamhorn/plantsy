@@ -9,27 +9,19 @@ Owned_Plants.init({
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-<<<<<<< HEAD
     },
     user_id: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    plant_name: {
-=======
-      },
-    user_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      species:{
+    species: {
         type: DataTypes.STRING,
         allowNull: false
     },
     variety: {
         type: DataTypes.STRING
     },
-    common_name:{
+    common_name: {
         type: DataTypes.STRING,
     },
     watering: {
@@ -45,7 +37,6 @@ Owned_Plants.init({
         type: DataTypes.ENUM('Low', 'Medium', 'High')
     },
     description: {
->>>>>>> 02efff5d40ce2b3f701451e05ef78e118152b445
         type: DataTypes.STRING,
     },
     care: {
