@@ -11,10 +11,14 @@ Owned_Plants.init({
         autoIncrement: true,
     },
     user_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
-    },
-    species: {
+            references: {
+                model: 'Users',
+                key: 'id'
+            }
+      },
+      species:{
         type: DataTypes.STRING,
         allowNull: false
     },
