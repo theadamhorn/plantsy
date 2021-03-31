@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&display=swap');
+$orange: #FF9636;
+$teal: #4B8378;
+$scallop: #E4D7D0;
+$navy: #0A4158;
+$seafoam: #93E9BE;
+$font: #222;
+$Kiwi: "Kiwi Maru";
+
+body {
+ background-color: $scallop;
+ font-family: $Kiwi;
+ height: 100%;
+}
+.navbar {
+    background-color: $teal;
+    color: $navy;
+    font-size: 1.5em;
+    border-bottom: 2px $scallop solid;
+    .navbar-brand {
+        background-color: $seafoam;
+        color: $font;
+        padding: .5em;
+        font-size: 2em;
+        border-radius: 15px;
+        border: $font 2px solid;
+    }
+    .navbar-brand:hover {
+        font-weight: 900;
+        background-color: $navy;
+        color: $orange;
+    }
+    a {
+        font-weight: 600;
+        border-radius: 10px;
+        color: $font;
+    }
+    a:hover {
+        background-color: $orange;
+        border-radius: 10px;
+        color: $navy;
+    }
+    ul li {
+        padding-left: 1.5em;
+    }
+}
+.hero-image {
+    background-image: url("./images/pexels-vasanth-babu-797793.jpg");
+    background-color: $navy;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero-text {
+    text-align: center;
+    position: absolute;
+    background-color: $navy;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $scallop;
+    border-radius: 15px;
+    border: 2px solid;
+    padding: 2em
+}
+#hero-text-1 {
+    font-size: 3em;
+}
+#hero-text-2 {
+    font-size: 2em;
+}
+
+// .navbar-brand {
+//     background-color: $seafoam;
+//     color: $seafoam;
+//     padding: 2px;
+// }
