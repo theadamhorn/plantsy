@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/plants/:id', async (req, res) => { // <== not sure if '/plants' is the correct route yet
+router.get('/plants/:id', async (req, res) => {
   try {
     const plantData = await Plants.findByPk(req.params.id, {
       include: [
