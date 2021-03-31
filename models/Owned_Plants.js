@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Owned_Plants extends Model {}
+class Owned_Plants extends Model { }
 
 Owned_Plants.init({
     id: {
@@ -9,19 +9,19 @@ Owned_Plants.init({
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-      },
+    },
     user_id: {
         type: DataTypes.STRING,
         allowNull: false,
-      },
-      species:{
+    },
+    species: {
         type: DataTypes.STRING,
         allowNull: false
     },
     variety: {
         type: DataTypes.STRING
     },
-    common_name:{
+    common_name: {
         type: DataTypes.STRING,
     },
     watering: {
@@ -45,11 +45,11 @@ Owned_Plants.init({
     }
 },
     {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'Owned_Plants',
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'Owned_Plants',
     }
 );
 

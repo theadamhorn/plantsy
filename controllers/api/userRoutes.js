@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
 
         req.session.save(() => {
             req.session.user_id = userData.id;
-            req.session.logged_in = true; // <== where is 'logged_in' defined?
+            req.session.logged_in = true;
 
             res.status(200).json(userData);
         });
@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        const userData = await User.findOne({ where: { email: req.body.email } }); // < == is our login going to be with email or also allow username login?
+        const userData = await User.findOne({ where: { email: req.body.email } });
 
         if (!userData) {
             res
