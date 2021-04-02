@@ -1,16 +1,26 @@
-<div class="user_plants">
-    {{#each }}
-    <div class="accordion">
-        <h2 class="accordion-header" id="{{id}}">
+<div class="row">
+<section class="plantList col-sm-4">
+  <div class="user_plants col-sm-12">
+    <div class="accordion text-center">
+        <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                {{species}}{{variety}} - {{common_name}}
+                {{Genus}}{{Species}} --- {{Common}}
             </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-body text-center">
+                <div class="row justify-content-around">
+                    <div class="col-md-2 col-sm-5 water"><p><i class="fas fa-tint fa-2x"></i></p><p>Water</p><p>Medium</p></div>
+                    <div class="col-md-2 col-sm-5 temp"><p><i class="fas fa-thermometer-half fa-2x"></i></p><p>Temp</p><p>Medium</p></div>
+                    <div class="col-md-2 col-sm-5 humidity"><p><i class="fas fa-cloud fa-2x"></i></p><p>Humidity</p><p>Medium</p></div>
+                    <div class="col-md-2 col-sm-5 light"><p><i class="fas fa-sun fa-2x"></i></p><p>Light</p><p>Medium</p></div>
+                </div>
             </div>
         </div>
     </div>
-    {{/each}}
+</div>
+</section>
+<section class="trelis col-sm-8">
+    
+</section>
 </div>
