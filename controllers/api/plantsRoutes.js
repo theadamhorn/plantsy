@@ -16,12 +16,9 @@ router.get('/plants', async (req, res) => {
 
 // get one plant from global plant list
 router.get('/plants/:id', async (req, res) => {
-    // find a single product by its `id`
-    // be sure to include its associated Category and Tag data
+    // find a single plant by its `id`
     try {
-        const plantsData = await Plants.findByPk(req.params.id, {
-            include: [{ model: Category }, { model: Tag }]
-        });
+        const plantsData = await Plants.findByPk(req.params.id);
         if (!plantsData) {
             res.status(404).json({ message: 'No plant found.' });
             return;
