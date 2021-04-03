@@ -16,7 +16,7 @@ body {
 .navbar {
     background-color: $teal;
     color: $navy;
-    font-size: 1.5em;
+    font-size: 1.25em;
     border-bottom: 2px $scallop solid;
     .navbar-brand {
         background-color: $seafoam;
@@ -113,14 +113,47 @@ body {
     .light {
         color: yellow;
     }
+    .plant_button {
+        color: rgb(16, 166, 16);
+    }
 }
 .trelis {
     background-color: $seafoam;
     background-image: linear-gradient(rgba(184, 184, 184, 0.5), rgba(186, 186, 186, 0.5)), url("./images/pexels-gary-barnes-6231990.jpg");
-    height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 750px;
     float: right;
+}
+.potting {
+    background-color: $navy;
+    color: $scallop;
+    right: 5px;
+    a {
+        color: $scallop;
+        text-decoration: none;
+        padding: 5px;
+    }
+}
+.bench {
+    font-size: 1.75em;
+}
+.plant_profile {
+    position: relative;
+    left: 90px;
+    top: 195px;
+    width: 750px;
+    height: 750px;
+    line-height: 1em;
+
+} 
+.modal-header {
+    background-color: $scallop;
+    border-bottom: $navy 3px solid;
+}
+.plantPhoto {
+    width: 250px;
+    height: 250px;
+    border: $navy 2px solid;
 }
