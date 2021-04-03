@@ -1,10 +1,10 @@
 [
-    {   
-        "user_id": "4", 
+    {
+        "user_id": "4",
         "genus": "Fragaria",
         "species": "Fragaria × ananassa",
-        "variety":"",
-        "common_name":"Strawberry",
+        "variety": "",
+        "common_name": "Strawberry",
         "watering": "1",
         "temperature": "1",
         "humidity": "1",
@@ -13,11 +13,11 @@
         "care": "Mine sit in the dirt outside under my bedroom window. The rain waters them"
     },
     {
-        "user_id": "1", 
+        "user_id": "1",
         "genus": "Philodendron",
         "species": "Birkin",
-        "variety":"",
-        "common_name":"Birkin",
+        "variety": "",
+        "common_name": "Birkin",
         "watering": "1",
         "temperature": "2",
         "humidity": "1",
@@ -26,11 +26,11 @@
         "care": "My birkin brings all the boys to the yard and they're like 'I'll water that plant'"
     },
     {
-        "user_id": "2", 
+        "user_id": "2",
         "genus": "Orchis",
         "species": "italica",
-        "variety":"",
-        "common_name":"Italian orchid",
+        "variety": "",
+        "common_name": "Italian orchid",
         "watering": "1",
         "temperature": "1",
         "humidity": "1",
@@ -39,16 +39,16 @@
         "care": "My orchid drinks from the fountain of Zeus"
     },
     {
-        "user_id": "2", 
+        "user_id": "2",
         "genus": "Lilium",
         "species": "lancifolium",
-        "variety":"",
-        "common_name":"Tiger Lily",
+        "variety": "",
+        "common_name": "Tiger Lily",
         "watering": "1",
         "temperature": "1",
         "humidity": "1",
         "light": "1",
-        "description": "It is widely planted as an ornamental because of its showy orange-and-black flowers, and sporadically occurs as garden escape in North America, particularly the eastern United States including New England, and has made incursions into some southern states such as Georgia. The tiger lily means 'I dare you to love me'",
+        "description": "It is widely planted as an ornamental because of its showy orange-and-black flowers, and sporadically occurs as garden escape in North America, particularly the eastern United States including New England, and has made incursions into some southern states such as Georgia. The tiger lily means I dare you to love me",
         "care": "Mist with the hose in the early morn so that shunshafts may make the petal glisten in iridescent orange"
     }
 ]
