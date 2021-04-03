@@ -40,20 +40,24 @@ router.get('/plants/:id', async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/users', withAuth, async (req, res) => {
+  console.log(`hit users route!!!! ~~~~~~~ wooohooo!`)
+  console.log(req.session.user_id);
   try {
     // Find the logged in user based on the session ID
-    const userData = await Users.findByPk(req.session.id, {
+    const userData = await Users.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Owned_Plants }],
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user);
     res.render('user', {
-      ...user,
+      user,
       logged_in: true
     });
   } catch (err) {
+    console.log(`hit an error of doom!!!! ~~~~~~~ wooohooo!`);
+    console.log(err);
     res.status(500).json(err);
   }
 });
