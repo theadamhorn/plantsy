@@ -1,39 +1,41 @@
+
 <div class="row">
 <section class="plantList col-sm-4">
   <div class="user_plants col-sm-12">
+    {{#each user.Owned_Plants as |plant|}}
     <div class="accordion">
-        <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                {{genus}}{{species}}{{variety}} --- {{common_name}}
+        <h2 class="accordion-header" id="heading{{plant.id}}">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{plant.id}}" aria-expanded="true" aria-controls="collapse{{plant.id}}">
+                {{plant.genus}} {{plant.species}} {{plant.variety}} --- {{plant.common_name}}
             </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div id="collapse{{plant.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{plant.id}}" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row justify-content-around">
-                    <div class="col-md-2 col-sm-5 water"><p><i class="fas fa-tint fa-2x"></i></p><p>Water</p><p>{{watering}}</p></div>
-                    <div class="col-md-2 col-sm-5 temp"><p><i class="fas fa-thermometer-half fa-2x"></i></p><p>Temp</p><p>{{temperature}}</p></div>
-                    <div class="col-md-2 col-sm-5 humidity"><p><i class="fas fa-cloud fa-2x"></i></p><p>Humidity</p><p>{{humidity}}</p></div>
-                    <div class="col-md-2 col-sm-5 light"><p><i class="fas fa-sun fa-2x"></i></p><p>Light</p><p>{{light}}</p></div>
-                    <div class="col-md-2 col-sm-5 plant"><button type="button" class="plant_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><p><i class="fas fa-seedling fa-2x"></i></p><p>Plant</p><p>Profile</p></button></div>
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="col-md-2 col-sm-5 water"><p><i class="fas fa-tint fa-2x"></i></p><p>Water</p><p>{{plant.watering}}</p></div>
+                    <div class="col-md-2 col-sm-5 temp"><p><i class="fas fa-thermometer-half fa-2x"></i></p><p>Temp</p><p>{{plant.temperature}}</p></div>
+                    <div class="col-md-2 col-sm-5 humidity"><p><i class="fas fa-cloud fa-2x"></i></p><p>Humidity</p><p>{{plant.humidity}}</p></div>
+                    <div class="col-md-2 col-sm-5 light"><p><i class="fas fa-sun fa-2x"></i></p><p>Light</p><p>{{plant.light}}</p></div>
+                    <div class="col-md-2 col-sm-5 plant"><button type="button" class="plant_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{plant.id}}"><p><i class="fas fa-seedling fa-2x"></i></p><p>Plant</p><p>Profile</p></button></div>
+                    <div class="modal fade" id="staticBackdrop{{plant.id}}" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content plant_profile">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">{{genus}} {{species}} {{variety}} | {{common_name}} <i class="fas fa-pencil-alt fa-xs"></i></h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">{{plant.genus}} {{plant.species}} {{plant.variety}} | {{plant.common_name}} <i class="fas fa-pencil-alt fa-xs"></i></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
                             <div class="row">
                               <div class="col">
-                                <img class=" plantPhoto" src="../../public/css/images/pexels-vasanth-babu-797793.jpg"/>
+                                <img class=" plantPhoto" src="{{plant.photo}}"/>
                               </div>
                             </div>
                             <div class="row">
                               <div class="col-md-6 text-start">
-                                <h5>Description:</h5>{{description}}
+                                <h5>Description:</h5>{{plant.description}}
                               </div>
                               <div class="col-md-6 text-start">
-                               <h5>Care:</h5>{{care}}
+                               <h5>Care:</h5>{{plant.care}}
                               </div>
                             </div>
                           </div>
@@ -48,6 +50,7 @@
             </div>
         </div>
     </div>
+    {{/each}}
 </div>
 </section>
 <section class="trelis col-sm-8">
