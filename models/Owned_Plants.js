@@ -45,7 +45,7 @@ Owned_Plants.init({
         type: DataTypes.ENUM('Low', 'Medium', 'High')
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
     },
     care: {
         type: DataTypes.STRING,
