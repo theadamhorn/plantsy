@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Plants extends Model {}
+class Plants extends Model { }
 
 Plants.init({
     id: {
@@ -9,20 +9,20 @@ Plants.init({
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-      },
-    genus:{
+    },
+    genus: {
         type: DataTypes.STRING,
         allowNull: false,
 
     },
-    species:{
+    species: {
         type: DataTypes.STRING,
         allowNull: false
     },
     variety: {
         type: DataTypes.STRING
     },
-    common_name:{
+    common_name: {
         type: DataTypes.STRING,
     },
     watering: {
@@ -38,9 +38,9 @@ Plants.init({
         type: DataTypes.ENUM('Low', 'Medium', 'High')
     },
     description: {
-       type: DataTypes.STRING 
+        type: DataTypes.TEXT
     },
-    photo:{
+    photo: {
         type: DataTypes.STRING
     },
 

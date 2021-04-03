@@ -1,10 +1,10 @@
 [
-    {   
-        "user_id": "4", 
+    {
+        "user_id": "4",
         "genus": "Fragaria",
         "species": "Fragaria × ananassa",
-        "variety":"",
-        "common_name":"Strawberry",
+        "variety": "",
+        "common_name": "Strawberry",
         "watering": "1",
         "temperature": "1",
         "humidity": "1",
@@ -14,11 +14,11 @@
         "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRucjHQoWkNKBPfnd8BW7_sn4Jo8iwrhecQk__oLSyrNGvkJAbos_OwhDhXg&usqp=CAc"
     },
     {
-        "user_id": "1", 
+        "user_id": "1",
         "genus": "Philodendron",
         "species": "Birkin",
-        "variety":"",
-        "common_name":"Birkin",
+        "variety": "",
+        "common_name": "Birkin",
         "watering": "1",
         "temperature": "2",
         "humidity": "1",
@@ -28,11 +28,11 @@
         "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg3u9LS9HWzLu07rAL0P-C6SiuQTwiMVCJ5Q&usqp=CAU"
     },
     {
-        "user_id": "2", 
+        "user_id": "2",
         "genus": "Orchis",
         "species": "italica",
-        "variety":"",
-        "common_name":"Italian orchid",
+        "variety": "",
+        "common_name": "Italian orchid",
         "watering": "1",
         "temperature": "1",
         "humidity": "1",
@@ -42,11 +42,11 @@
         "photo": "https://www.west-crete.com/dailypics/photos/885large.jpg"
     },
     {
-        "user_id": "2", 
+        "user_id": "2",
         "genus": "Lilium",
         "species": "lancifolium",
-        "variety":"",
-        "common_name":"Tiger Lily",
+        "variety": "",
+        "common_name": "Tiger Lily",
         "watering": "1",
         "temperature": "1",
         "humidity": "1",

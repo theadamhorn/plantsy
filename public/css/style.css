@@ -8,7 +8,7 @@ body {
 .navbar {
   background-color: #4B8378;
   color: #0A4158;
-  font-size: 1.5em;
+  font-size: 1.25em;
   border-bottom: 2px #E4D7D0 solid;
 }
 
@@ -43,6 +43,15 @@ body {
   padding-left: 1.5em;
 }
 
+.form-group {
+  padding: 5px;
+}
+
+.left {
+  position: relative;
+  right: 18px;
+}
+
 .hero-image {
   background-image: url("./images/pexels-vasanth-babu-797793.jpg");
   background-color: #0A4158;
@@ -72,5 +81,100 @@ body {
 
 #hero-text-2 {
   font-size: 2em;
+}
+
+.plantList {
+  background-color: #E4D7D0;
+  height: 750px;
+}
+
+.accordion {
+  background-color: #0A4158;
+  color: #0A4158;
+  font-size: 1em;
+  line-height: 10px;
+  font-family: "Kiwi Maru";
+  text-align: center;
+  border-bottom: #E4D7D0 1px solid;
+}
+
+.accordion .accordion-button {
+  background-color: #4B8378;
+  color: #222;
+  font-size: .75em;
+  border: 1px solid white;
+}
+
+.accordion .accordion-button:hover {
+  background-color: #FF9636;
+  color: #0A4158;
+}
+
+.accordion .water {
+  color: #19d4e9;
+}
+
+.accordion .temp {
+  color: #d91616;
+}
+
+.accordion .humidity {
+  color: white;
+  opacity: .80;
+}
+
+.accordion .light {
+  color: yellow;
+}
+
+.accordion .plant_button {
+  color: #10a610;
+}
+
+.trelis {
+  background-color: #93E9BE;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(184, 184, 184, 0.5)), to(rgba(186, 186, 186, 0.5))), url("./images/pexels-gary-barnes-6231990.jpg");
+  background-image: linear-gradient(rgba(184, 184, 184, 0.5), rgba(186, 186, 186, 0.5)), url("./images/pexels-gary-barnes-6231990.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+  float: right;
+}
+
+.potting {
+  background-color: #0A4158;
+  color: #E4D7D0;
+  right: 5px;
+}
+
+.potting a {
+  color: #E4D7D0;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.bench {
+  font-size: 1.75em;
+}
+
+.plant_profile {
+  position: relative;
+  left: 90px;
+  top: 195px;
+  width: 750px;
+  height: 750px;
+  line-height: 1em;
+}
+
+.modal-header {
+  background-color: #E4D7D0;
+  border-bottom: #0A4158 3px solid;
+}
+
+.plantPhoto {
+  width: 250px;
+  height: 250px;
+  border: #0A4158 2px solid;
 }
 /*# sourceMappingURL=style.css.map */

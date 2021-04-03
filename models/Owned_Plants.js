@@ -18,7 +18,11 @@ Owned_Plants.init({
                 key: 'id'
             }
       },
-    species:{
+    genus: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    species: {
         type: DataTypes.STRING,
         allowNull: false
     },

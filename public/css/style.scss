@@ -7,6 +7,7 @@ $seafoam: #93E9BE;
 $font: #222;
 $Kiwi: "Kiwi Maru";
 
+
 body {
  background-color: $scallop;
  font-family: $Kiwi;
@@ -15,7 +16,7 @@ body {
 .navbar {
     background-color: $teal;
     color: $navy;
-    font-size: 1.5em;
+    font-size: 1.25em;
     border-bottom: 2px $scallop solid;
     .navbar-brand {
         background-color: $seafoam;
@@ -44,6 +45,13 @@ body {
         padding-left: 1.5em;
     }
 }
+.form-group {
+    padding: 5px;
+}
+.left {
+    position: relative;
+    right: 18px;
+}
 .hero-image {
     background-image: url("./images/pexels-vasanth-babu-797793.jpg");
     background-color: $navy;
@@ -70,9 +78,82 @@ body {
 #hero-text-2 {
     font-size: 2em;
 }
+.plantList {
+    background-color: $scallop;
+    height: 750px;
+}
+.accordion {
+    background-color: $navy;
+    color: $navy;
+    font-size: 1em;
+    line-height: 10px;
+    font-family: $Kiwi;
+    text-align: center;
+    border-bottom: $scallop 1px solid;
+    .accordion-button {
+        background-color: $teal;
+        color: $font;
+        font-size: .75em;
+        border: 1px solid white;
+    }
+    .accordion-button:hover {
+        background-color: $orange;
+        color: $navy;
+    }
+    .water {
+        color: rgb(25, 212, 233);
+    }
+    .temp {
+        color: rgb(217, 22, 22);
+    }
+    .humidity {
+        color: white;
+        opacity: .80;
+    }
+    .light {
+        color: yellow;
+    }
+    .plant_button {
+        color: rgb(16, 166, 16);
+    }
+}
+.trelis {
+    background-color: $seafoam;
+    background-image: linear-gradient(rgba(184, 184, 184, 0.5), rgba(186, 186, 186, 0.5)), url("./images/pexels-gary-barnes-6231990.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 750px;
+    float: right;
+}
+.potting {
+    background-color: $navy;
+    color: $scallop;
+    right: 5px;
+    a {
+        color: $scallop;
+        text-decoration: none;
+        padding: 5px;
+    }
+}
+.bench {
+    font-size: 1.75em;
+}
+.plant_profile {
+    position: relative;
+    left: 90px;
+    top: 195px;
+    width: 750px;
+    height: 750px;
+    line-height: 1em;
 
-// .navbar-brand {
-//     background-color: $seafoam;
-//     color: $seafoam;
-//     padding: 2px;
-// }
+} 
+.modal-header {
+    background-color: $scallop;
+    border-bottom: $navy 3px solid;
+}
+.plantPhoto {
+    width: 250px;
+    height: 250px;
+    border: $navy 2px solid;
+}
