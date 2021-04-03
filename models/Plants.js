@@ -39,7 +39,10 @@ Plants.init({
     },
     description: {
        type: DataTypes.STRING 
-    }
+    },
+    photo:{
+        type: DataTypes.STRING
+    },
 
 },
     {
