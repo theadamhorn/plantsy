@@ -4,22 +4,22 @@
     <div class="accordion">
         <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Birken-Birken --- Lovetree
+                {{genus}}{{species}}{{variety}} --- {{common_name}}
             </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="row justify-content-around">
-                    <div class="col-md-2 col-sm-5 water"><p><i class="fas fa-tint fa-2x"></i></p><p>Water</p><p>Medium</p></div>
-                    <div class="col-md-2 col-sm-5 temp"><p><i class="fas fa-thermometer-half fa-2x"></i></p><p>Temp</p><p>Medium</p></div>
-                    <div class="col-md-2 col-sm-5 humidity"><p><i class="fas fa-cloud fa-2x"></i></p><p>Humidity</p><p>Medium</p></div>
-                    <div class="col-md-2 col-sm-5 light"><p><i class="fas fa-sun fa-2x"></i></p><p>Light</p><p>Medium</p></div>
+                    <div class="col-md-2 col-sm-5 water"><p><i class="fas fa-tint fa-2x"></i></p><p>Water</p><p>{{watering}}</p></div>
+                    <div class="col-md-2 col-sm-5 temp"><p><i class="fas fa-thermometer-half fa-2x"></i></p><p>Temp</p><p>{{temperature}}</p></div>
+                    <div class="col-md-2 col-sm-5 humidity"><p><i class="fas fa-cloud fa-2x"></i></p><p>Humidity</p><p>{{humidity}}</p></div>
+                    <div class="col-md-2 col-sm-5 light"><p><i class="fas fa-sun fa-2x"></i></p><p>Light</p><p>{{light}}</p></div>
                     <div class="col-md-2 col-sm-5 plant"><button type="button" class="plant_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><p><i class="fas fa-seedling fa-2x"></i></p><p>Plant</p><p>Profile</p></button></div>
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content plant_profile">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Genus Species Variety | Common Name <i class="fas fa-pencil-alt fa-xs"></i></h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">{{genus}} {{species}} {{variety}} | {{common_name}} <i class="fas fa-pencil-alt fa-xs"></i></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
@@ -30,10 +30,10 @@
                             </div>
                             <div class="row">
                               <div class="col-md-6 text-start">
-                                <h5>Description:</h5>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                <h5>Description:</h5>{{description}}
                               </div>
                               <div class="col-md-6 text-start">
-                               <h5>Care:</h5>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                               <h5>Care:</h5>{{care}}
                               </div>
                             </div>
                           </div>
