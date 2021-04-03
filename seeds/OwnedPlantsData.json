@@ -10,7 +10,8 @@
         "humidity": "1",
         "light": "2",
         "description": "A small plant that produces bright red berries with seeds on the outside of the skin.",
-        "care": "Mine sit in the dirt outside under my bedroom window. The rain waters them"
+        "care": "Mine sit in the dirt outside under my bedroom window. The rain waters them",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRucjHQoWkNKBPfnd8BW7_sn4Jo8iwrhecQk__oLSyrNGvkJAbos_OwhDhXg&usqp=CAc"
     },
     {
         "user_id": "1", 
@@ -23,7 +24,8 @@
         "humidity": "1",
         "light": "1",
         "description": "A green waxy leafed plant with creamy white to yellow stripes 10/10 would touch.",
-        "care": "My birkin brings all the boys to the yard and they're like 'I'll water that plant'"
+        "care": "My birkin brings all the boys to the yard and they're like 'I'll water that plant'",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg3u9LS9HWzLu07rAL0P-C6SiuQTwiMVCJ5Q&usqp=CAU"
     },
     {
         "user_id": "2", 
@@ -36,7 +38,8 @@
         "humidity": "1",
         "light": "1",
         "description": " It gets its common name from the lobed lip (labellum) of each flower which mimics the general shape of a naked man. In Italy, it is believed that the consumption of the plant is conducive to virility. It prefers partial shade and low nutrient soil and flowers in April.",
-        "care": "My orchid drinks from the fountain of Zeus"
+        "care": "My orchid drinks from the fountain of Zeus",
+        "photo": "https://www.west-crete.com/dailypics/photos/885large.jpg"
     },
     {
         "user_id": "2", 
@@ -49,6 +52,7 @@
         "humidity": "1",
         "light": "1",
         "description": "It is widely planted as an ornamental because of its showy orange-and-black flowers, and sporadically occurs as garden escape in North America, particularly the eastern United States including New England, and has made incursions into some southern states such as Georgia. The tiger lily means 'I dare you to love me'",
-        "care": "Mist with the hose in the early morn so that shunshafts may make the petal glisten in iridescent orange"
+        "care": "Mist with the hose in the early morn so that shunshafts may make the petal glisten in iridescent orange",
+        "photo":"https://www.gardeningknowhow.com/wp-content/uploads/2017/08/tiger-lilies.jpg"
     }
 ]
