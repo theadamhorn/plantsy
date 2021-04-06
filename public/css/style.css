@@ -177,4 +177,8 @@ body {
   height: 250px;
   border: #0A4158 2px solid;
 }
+
+.modal {
+  position: absolute;
+}
 /*# sourceMappingURL=style.css.map */
