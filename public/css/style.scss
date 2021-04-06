@@ -82,7 +82,7 @@ body {
     background-color: $scallop;
     height: 750px;
 }
-.accordion {
+.accordion-item {
     background-color: $navy;
     color: $navy;
     font-size: 1em;
@@ -141,13 +141,20 @@ body {
     font-size: 1.75em;
 }
 .plant_profile {
-    position: relative;
+    position: absolute;
     left: 90px;
     top: 195px;
     width: 750px;
     height: 750px;
     line-height: 1em;
-
+}
+.edit_plant_profile {
+    position: absolute;
+    left: 90px;
+    top: 195px;
+    width: 750px;
+    height: 750px;
+    line-height: 2em;
 } 
 .modal-header {
     background-color: $scallop;
@@ -157,7 +164,4 @@ body {
     width: 250px;
     height: auto;
     border: $navy 2px solid;
-}
-.modal {
-    position: absolute;
 }
