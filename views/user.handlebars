@@ -11,7 +11,7 @@
         </h2>
         <div id="collapse{{plant.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{plant.id}}" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <div class="row justify-content-around">
+                <div class="row">
                     <div class="col-md-2 col-sm-5 water"><p><i class="fas fa-tint fa-2x"></i></p><p>Water</p><p>{{plant.watering}}</p></div>
                     <div class="col-md-2 col-sm-5 temp"><p><i class="fas fa-thermometer-half fa-2x"></i></p><p>Temp</p><p>{{plant.temperature}}</p></div>
                     <div class="col-md-2 col-sm-5 humidity"><p><i class="fas fa-cloud fa-2x"></i></p><p>Humidity</p><p>{{plant.humidity}}</p></div>
@@ -30,14 +30,30 @@
                                 <img class=" plantPhoto" src="{{plant.photo}}"/>
                               </div>
                             </div>
-                            <div class="row">
-                              <div class="col-md-6 text-start">
-                                <h5>Description:</h5>{{plant.description}}
+                            <br>
+                              <div class="row">
+                                <div class="col-md-3 text-start">
+                                  <h5>Water:</h5>{{plant.watering}}
+                                </div>
+                                <div class="col-md-3 text-start">
+                                  <h5>Temperature:</h5>{{plant.temperature}}
+                                </div>
+                                <div class="col-md-3 text-start">
+                                  <h5>Humidity:</h5>{{plant.humidity}}
+                                </div>
+                                <div class="col-md-3 text-start">
+                                  <h5>Light:</h5>{{plant.light}}
+                                </div>
                               </div>
-                              <div class="col-md-6 text-start">
-                               <h5>Care:</h5>{{plant.care}}
+                              <br>
+                              <div class="row">
+                                <div class="col-md-6 text-start">
+                                  <h5>Description:</h5>{{plant.description}}
+                                </div>
+                                <div class="col-md-6 text-start">
+                                <h5>Care:</h5>{{plant.care}}
+                                </div>
                               </div>
-                            </div>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

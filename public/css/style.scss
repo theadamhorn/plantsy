@@ -109,6 +109,7 @@ body {
     .humidity {
         color: white;
         opacity: .80;
+        width: fit-content;
     }
     .light {
         color: yellow;
@@ -154,7 +155,7 @@ body {
 }
 .plantPhoto {
     width: 250px;
-    height: 250px;
+    height: auto;
     border: $navy 2px solid;
 }
 .modal {

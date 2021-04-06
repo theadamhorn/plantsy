@@ -121,6 +121,9 @@ body {
 .accordion .humidity {
   color: white;
   opacity: .80;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .accordion .light {
@@ -174,7 +177,7 @@ body {
 
 .plantPhoto {
   width: 250px;
-  height: 250px;
+  height: auto;
   border: #0A4158 2px solid;
 }
 
