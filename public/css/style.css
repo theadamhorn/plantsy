@@ -88,7 +88,7 @@ body {
   height: 750px;
 }
 
-.accordion {
+.accordion-item {
   background-color: #0A4158;
   color: #0A4158;
   font-size: 1em;
@@ -98,36 +98,39 @@ body {
   border-bottom: #E4D7D0 1px solid;
 }
 
-.accordion .accordion-button {
+.accordion-item .accordion-button {
   background-color: #4B8378;
   color: #222;
   font-size: .75em;
   border: 1px solid white;
 }
 
-.accordion .accordion-button:hover {
+.accordion-item .accordion-button:hover {
   background-color: #FF9636;
   color: #0A4158;
 }
 
-.accordion .water {
+.accordion-item .water {
   color: #19d4e9;
 }
 
-.accordion .temp {
+.accordion-item .temp {
   color: #d91616;
 }
 
-.accordion .humidity {
+.accordion-item .humidity {
   color: white;
   opacity: .80;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-.accordion .light {
+.accordion-item .light {
   color: yellow;
 }
 
-.accordion .plant_button {
+.accordion-item .plant_button {
   color: #10a610;
 }
 
@@ -159,12 +162,21 @@ body {
 }
 
 .plant_profile {
-  position: relative;
+  position: absolute;
   left: 90px;
   top: 195px;
   width: 750px;
   height: 750px;
   line-height: 1em;
+}
+
+.edit_plant_profile {
+  position: absolute;
+  left: 90px;
+  top: 195px;
+  width: 750px;
+  height: 750px;
+  line-height: 2em;
 }
 
 .modal-header {
@@ -174,7 +186,7 @@ body {
 
 .plantPhoto {
   width: 250px;
-  height: 250px;
+  height: auto;
   border: #0A4158 2px solid;
 }
 /*# sourceMappingURL=style.css.map */
