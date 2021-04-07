@@ -162,7 +162,7 @@ body {
 }
 
 .plant_profile {
-  position: absolute;
+  position: relative;
   left: 90px;
   top: 195px;
   width: 750px;
@@ -171,7 +171,7 @@ body {
 }
 
 .edit_plant_profile {
-  position: absolute;
+  position: relative;
   left: 90px;
   top: 195px;
   width: 750px;
