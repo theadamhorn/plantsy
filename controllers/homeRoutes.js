@@ -14,9 +14,11 @@ router.get('/plants', async (req, res) => {
 
     const plants = plantData.map(plant => plant.get({ plain: true }));
 
-    res.render('plants', {
+    console.log(plants);
+    res.render('plantlist', {
       plants,
       logged_in: req.session.logged_in
+
     });
   } catch (err) {
     res.status(500).json(err);
@@ -58,6 +60,25 @@ router.get('/users', withAuth, async (req, res) => {
   } catch (err) {
     console.log(`hit an error of doom!!!! ~~~~~~~ wooohooo!`);
     console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/gardeners', withAuth, async (req, res) => {
+  try {
+    const gardenerData = await Users.findAll({
+      attributes: { exclude: ['password'] },
+      include: [{ model: Owned_Plants }]
+    });
+
+    const gardeners = gardenerData.map(plant => plant.get({ plain: true }));
+
+    console.log(gardeners);
+    res.render('gardeners', {
+      gardeners,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
     res.status(500).json(err);
   }
 });
