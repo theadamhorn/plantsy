@@ -14,9 +14,11 @@ router.get('/plants', async (req, res) => {
 
     const plants = plantData.map(plant => plant.get({ plain: true }));
 
-    res.render('plants', {
+    console.log(plants);
+    res.render('plantlist', {
       plants,
       logged_in: req.session.logged_in
+
     });
   } catch (err) {
     res.status(500).json(err);

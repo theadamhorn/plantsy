@@ -105,7 +105,7 @@ body {
   border: 1px solid white;
 }
 
-.accordion-item .accordion-button:hover {
+.accordion-item .accordion-button:hover  {
   background-color: #FF9636;
   color: #0A4158;
 }
@@ -162,7 +162,7 @@ body {
 }
 
 .plant_profile {
-  position: absolute;
+  position: relative;
   left: 90px;
   top: 195px;
   width: 750px;
@@ -171,7 +171,7 @@ body {
 }
 
 .edit_plant_profile {
-  position: absolute;
+  position: relative;
   left: 90px;
   top: 195px;
   width: 750px;
@@ -190,3 +190,12 @@ body {
   border: #0A4158 2px solid;
 }
 /*# sourceMappingURL=style.css.map */
+
+.add-plant-button {
+  background-color: #93E9BE;
+}
+
+.add-plant-button:hover {
+  background-color: #FF9636;
+  color: #0A4158;
+}

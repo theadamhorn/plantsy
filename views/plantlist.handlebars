@@ -1,0 +1,110 @@
+<div class="row">
+    <section class="plantList col-sm-4">
+        <div class="user_plants col-sm-12">
+            {{#each plants as |plant|}}
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading{{plant.id}}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse{{plant.id}}" aria-expanded="true"
+                            aria-controls="collapse{{plant.id}}">
+                            {{plant.genus}} {{plant.species}} {{plant.variety}} --- {{plant.common_name}}
+                        </button>
+                    </h2>
+                    <div id="collapse{{plant.id}}" class="accordion-collapse collapse"
+                        aria-labelledby="heading{{plant.id}}" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-5 water">
+                                    <p><i class="fas fa-tint fa-2x"></i></p>
+                                    <p>Water</p>
+                                    <p>{{plant.watering}}</p>
+                                </div>
+                                <div class="col-md-2 col-sm-5 temp">
+                                    <p><i class="fas fa-thermometer-half fa-2x"></i></p>
+                                    <p>Temp</p>
+                                    <p>{{plant.temperature}}</p>
+                                </div>
+                                <div class="col-md-2 col-sm-5 humidity">
+                                    <p><i class="fas fa-cloud fa-2x"></i></p>
+                                    <p>Humidity</p>
+                                    <p>{{plant.humidity}}</p>
+                                </div>
+                                <div class="col-md-2 col-sm-5 light">
+                                    <p><i class="fas fa-sun fa-2x"></i></p>
+                                    <p>Light</p>
+                                    <p>{{plant.light}}</p>
+                                </div>
+                                <div class="col-md-2 col-sm-5 plant"><button type="button" class="plant_button"
+                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop{{plant.id}}">
+                                        <p><i class="fas fa-seedling fa-2x"></i></p>
+                                        <p>Plant</p>
+                                        <p>Profile</p>
+                                    </button></div>
+                                <div class="modal fade" id="staticBackdrop{{plant.id}}" data-bs-backdrop="false"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content plant_profile">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">{{plant.genus}}
+                                                    {{plant.species}} {{plant.variety}} | {{plant.common_name}}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <img class=" plantPhoto" src="{{plant.photo}}" />
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-3 text-start">
+                                                        <h5>Water:</h5>{{plant.watering}}
+                                                    </div>
+                                                    <div class="col-md-3 text-start">
+                                                        <h5>Temperature:</h5>{{plant.temperature}}
+                                                    </div>
+                                                    <div class="col-md-3 text-start">
+                                                        <h5>Humidity:</h5>{{plant.humidity}}
+                                                    </div>
+                                                    <div class="col-md-3 text-start">
+                                                        <h5>Light:</h5>{{plant.light}}
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-6 text-start">
+                                                        <h5>Description:</h5>{{plant.description}}
+                                                    </div>
+                                                    <div class="col-md-6 text-start">
+                                                        <h5>Care:</h5>{{plant.care}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button class="btn add-plant-button" type="button">Add Plant</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    <section class="trelis col-sm-8">
+        <div class="navbar potting justify-content-around">
+            <span class="bench">The Nursery</span>
+            <a class="add" href="#">Add New Plant</a>
+            <a class="delete" href="#">Delete Plant</a>
+        </div>
+    </section>
+</div>
