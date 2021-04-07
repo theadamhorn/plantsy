@@ -71,19 +71,33 @@
                                       <div class="row">
                                         <div class="col">
                                           <label for="genusLabel">Genus:</label>
-                                          <input class="form-input" type="text" id="genus"/>
+                                          <input class="form-input" type="text" id="genus" placeholder="{{plant.genus}}"/>
                                         </div>
                                         <div class="col">
                                           <label for="speciesLabel">Species:</label>
-                                          <input class="form-input" type="text" id="species"/>
+                                          <input class="form-input" type="text" id="species" placeholder="{{plant.species}}"/>
                                         </div>
                                         <div class="col">
                                           <label for="varietyLabel">Variety:</label>
-                                          <input class="form-input" type="text" id="variety"/>
+                                          <input class="form-input" type="text" id="variety" placeholder="{{plant.variety}}"/>
                                         </div>
                                         <div class="col">
                                           <label for="commonNameLabel">Common Name:</label>
-                                          <input class="form-input" type="text" id="common_name"/>
+                                          <input class="form-input" type="text" id="common_name" placeholder="{{plant.common_name}}"/>
+                                        </div>
+                                        <div class="col"> Water Needed:
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">Low</label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">Medium</label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">High</label>
+                                          </div>
                                         </div>
                                       </div>
                                     </form>
