@@ -29,7 +29,7 @@ router.get('/owned-plants', async (req, res) => {
 });
 
 // get one plant from user's owned plants list
-router.get('/owned-plants/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const ownedPlantsData = await Owned_Plants.findByPk(req.params.id, {
             include: [{ model: Users }]
@@ -45,8 +45,10 @@ router.get('/owned-plants/:id', async (req, res) => {
 });
 
 // update given plant in user's owned plants list
-router.put('/owned-plants/:id', withAuth, (req, res) => {
-    Owned_Plants.update(
+router.put('/:id', withAuth, async (req, res) => {
+    console.log(`----~~~Here you are again~~~----`)
+try{
+    const ownedPlantData = await Owned_Plants.update(
         {
             genus: req.body.genus,
             species: req.body.species,
@@ -65,11 +67,14 @@ router.put('/owned-plants/:id', withAuth, (req, res) => {
             },
         }
     )
-        .then((updatedOwnedPlants) => {
-            res.json(updatedOwnedPlants);
-        })
-        .catch((err) => res.json(err));
-});
+    if (!ownedPlantData) {
+        res.status(404).json({ message: 'No plant found.' });
+        return;
+    }
+} catch (err) {
+    res.status(500).json(err);
+}
+});      
 
 // delete given plant from user's owned plants list
 router.delete('/owned-plants/:id', withAuth, async (req, res) => {
