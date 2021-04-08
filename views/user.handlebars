@@ -9,7 +9,7 @@
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{plant.id}}" aria-expanded="true" aria-controls="collapse{{plant.id}}">
       {{plant.genus}} {{plant.species}} {{plant.variety}} --- {{plant.common_name}}</button>
     </h2>
-      <div id="collapse{{plant.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{plant.id}}" data-bs-parent="#accordionExample">
+      <div id="collapse{{plant.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{plant.id}}" data-bs-parent="#heading{{plant.id}}">
         <div class="accordion-body">
       {{!-- This is where the quick view of plant needs is displayed --}}
                 <div class="row">

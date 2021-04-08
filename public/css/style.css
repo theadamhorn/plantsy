@@ -105,6 +105,11 @@ body {
   border: 1px solid white;
 }
 
+.accordion-item .deco {
+  line-height: 1.25em;
+  color: #E4D7D0;
+}
+
 .accordion-item .accordion-button:hover {
   background-color: #FF9636;
   color: #0A4158;
@@ -219,17 +224,7 @@ body {
   color: #0A4158;
 }
 
-.add-plant-button{
-  background-color: #93E9BE;
-}
-
-.add-plant-button:hover{
-  background-color: #FF9636;
-  color: #0A4158;
-}
-
 .deletePlant {
   color: #0A4158;
 }
-
 /*# sourceMappingURL=style.css.map */
