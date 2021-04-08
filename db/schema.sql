@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS plantsy_db;
-CREATE DATABASE plantsy_db;
+    DROP DATABASE IF EXISTS plantsy_db;
+    CREATE DATABASE plantsy_db;

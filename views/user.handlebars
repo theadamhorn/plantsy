@@ -2,50 +2,180 @@
 <div class="row">
 <section class="plantList col-sm-4">
   <div class="user_plants col-sm-12">
-    {{#each user.Owned_Plants as |plant|}}
-    <div class="accordion">
-        <h2 class="accordion-header" id="heading{{plant.id}}">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{plant.id}}" aria-expanded="true" aria-controls="collapse{{plant.id}}">
-                {{plant.genus}} {{plant.species}} {{plant.variety}} --- {{plant.common_name}}
-            </button>
-        </h2>
-        <div id="collapse{{plant.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{plant.id}}" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <div class="row justify-content-around">
+{{#each user.Owned_Plants as |plant|}}
+<div class="accordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading{{plant.id}}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{plant.id}}" aria-expanded="true" aria-controls="collapse{{plant.id}}">
+      {{plant.genus}} {{plant.species}} {{plant.variety}} --- {{plant.common_name}}</button>
+    </h2>
+      <div id="collapse{{plant.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{plant.id}}" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+      {{!-- This is where the quick view of plant needs is displayed --}}
+                <div class="row">
                     <div class="col-md-2 col-sm-5 water"><p><i class="fas fa-tint fa-2x"></i></p><p>Water</p><p>{{plant.watering}}</p></div>
                     <div class="col-md-2 col-sm-5 temp"><p><i class="fas fa-thermometer-half fa-2x"></i></p><p>Temp</p><p>{{plant.temperature}}</p></div>
                     <div class="col-md-2 col-sm-5 humidity"><p><i class="fas fa-cloud fa-2x"></i></p><p>Humidity</p><p>{{plant.humidity}}</p></div>
                     <div class="col-md-2 col-sm-5 light"><p><i class="fas fa-sun fa-2x"></i></p><p>Light</p><p>{{plant.light}}</p></div>
-                    <div class="col-md-2 col-sm-5 plant"><button type="button" class="plant_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{plant.id}}"><p><i class="fas fa-seedling fa-2x"></i></p><p>Plant</p><p>Profile</p></button></div>
-                    <div class="modal fade" id="staticBackdrop{{plant.id}}" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content plant_profile">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">{{plant.genus}} {{plant.species}} {{plant.variety}} | {{plant.common_name}} <i class="fas fa-pencil-alt fa-xs"></i></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <div class="row">
-                              <div class="col">
-                                <img class=" plantPhoto" src="{{plant.photo}}"/>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-6 text-start">
-                                <h5>Description:</h5>{{plant.description}}
-                              </div>
-                              <div class="col-md-6 text-start">
-                               <h5>Care:</h5>{{plant.care}}
-                              </div>
-                            </div>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger">Save</button>
-                          </div>
-                        </div>
-                      </div>
+                    {{!-- This is the button that triggers the first modal --}}
+                    <div class="col-md-2 col-sm-5 plant"><button type="button" class="plant_button" data-bs-toggle="modal" data-bs-target="#modal{{plant.id}}"><p><i class="fas fa-seedling fa-2x"></i></p><p>Plant</p><p>Profile</p></button></div>
+                </div>
+      {{!-- This is where the first modal with the plant profile is built --}}
+      <div class="modal fade" id="modal{{plant.id}}" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content plant_profile">
+            <div class="modal-header">
+              {{!-- This is the plant profile title on the modal --}}
+              <h5 class="modal-title" id="modalLabel">{{plant.genus}} {{plant.species}} {{plant.variety}} | {{plant.common_name}}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            {{!-- This the main content of the plant profile --}}
+              <div class="row">
+                <div class="col">
+                  <img class=" plantPhoto" src="{{plant.photo}}"/>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3 text-start">
+                  <h5>Water:</h5>{{plant.watering}}
+                </div>
+                <div class="col-md-3 text-start">
+                  <h5>Temperature:</h5>{{plant.temperature}}
+                </div>
+                <div class="col-md-3 text-start">
+                  <h5>Humidity:</h5>{{plant.humidity}}
+                </div>
+                <div class="col-md-3 text-start">
+                  <h5>Light:</h5>{{plant.light}}
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6 text-start">
+                  <h5>Description:</h5>{{plant.description}}
+                </div>
+                <div class="col-md-6 text-start">
+                  <h5>Care:</h5>{{plant.care}}
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              {{!-- This is the button to open the second modal for editing the plant being displayed --}}
+               <button class="btn btn-primary" data-bs-target="#modal2{{plant.id}}" data-bs-toggle="modal">Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{!-- This is the end of the plant profile and the beginning of the edit modal     --}}
+      <div class="modal fade" id="modal2{{plant.id}}" data-bs-backdrop="false" data-bs-keyboard="true" aria-hidden="true" aria-labelledby="model2{{plant.id}}Label" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content edit_plant_profile">
+            <div class="modal-header">
+              <h5 class="modal-title" id="model2{{plant.id}}Label">Editor <i class="fas fa-pencil-alt"></i>... {{plant.genus}} {{plant.species}} {{plant.variety}}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="row plant_edit_1">
+                  <div id="plantID">{{plant.id}}</div>
+                  <div class="col">
+                    <label for="genusLabel">Genus:</label>
+                    <input class="form-input" type="text" id="genus" value="{{plant.genus}}"/>
+                  </div>
+                  <div class="col">
+                    <label for="speciesLabel">Species:</label>
+                    <input class="form-input" type="text" id="species" value="{{plant.species}}"/>
+                  </div>
+                  <div class="col">
+                    <label for="varietyLabel">Variety:</label>
+                    <input class="form-input" type="text" id="variety" value="{{plant.variety}}"/>
+                  </div>
+                  <div class="col">
+                    <label for="commonNameLabel">Common Name:</label>
+                    <input class="form-input" type="text" id="common_name" value="{{plant.common_name}}"/>
+                  </div>
+                </div>
+                <div class="row plant_edit_2">
+                  <div class="col"> Water Needed:
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="waterNeeded" id="flexRadioDefault1" value="low">
+                      <label class="form-check-label" for="low">Low</label>
                     </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="waterNeeded" id="flexRadioDefault1" value="medium" checked>
+                      <label class="form-check-label" for="medium">Medium</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="waterNeeded" id="flexRadioDefault1" value="High">
+                      <label class="form-check-label" for="high">High</label>
+                    </div>
+                  </div>
+                  <div class="col"> Temperature Needed:
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="tempNeeded" id="flexRadioDefault2" value="low">
+                      <label class="form-check-label" for="flexRadioDefault2">Low</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="tempNeeded" id="flexRadioDefault2" value="medium" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">Medium</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="tempNeeded" id="flexRadioDefault2" value="high">
+                      <label class="form-check-label" for="flexRadioDefault2">High</label>
+                    </div>
+                  </div>
+                  <div class="col"> Humidity Needed:
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="humidNeeded" id="flexRadioDefault3" value="low">
+                      <label class="form-check-label" for="flexRadioDefault3">Low</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="humidNeeded" id="flexRadioDefault3" value="medium" checked>
+                      <label class="form-check-label" for="flexRadioDefault3">Medium</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="humidNeeded" id="flexRadioDefault3" value="high">
+                      <label class="form-check-label" for="flexRadioDefault3">High</label>
+                    </div>
+                  </div>
+                  <div class="col"> Light Needed:
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="lightNeeded" id="flexRadioDefault4" value="low">
+                      <label class="form-check-label" for="flexRadioDefault4">Low</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="lightNeeded" id="flexRadioDefault4" value="medium" checked>
+                      <label class="form-check-label" for="flexRadioDefault4">Medium</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="lightNeeded" id="flexRadioDefault4" value="high">
+                      <label class="form-check-label" for="flexRadioDefault4">High</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row plant_edit_3">
+                  <div class="col-12">
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="description" row="5" cols="40"/>{{plant.description}}</textarea>
+                  </div>
+                  <div class="col-12">
+                    <label for="care">Care:</label>
+                    <textarea name="care" id="care" row="5" cols="40"/>{{plant.care}}</textarea>
+                  </div>
+                </div>
+              
+              </div>
+              <div class="modal-footer">
+                <button type="submit" id="saveEdit" value="submit" class="btn btn-danger">Save</button>                      <!-- Toogle to first dialog, `data-bs-dismiss` attribute can be omitted - clicking on link will close dialog anyway -->
+              </form>
+              </div>                      
+          </div>
+        </div>
+      </div>
+        {{!-- This the end of the second modal --}}
                 </div>
             </div>
         </div>
@@ -55,10 +185,118 @@
 </section>
 <section class="trelis col-sm-8">
   <div class="navbar potting justify-content-around">
-        <span class="bench">The Potting Bench</span>
-        <a class="add" href="#">Add New Plant</a>
-        <a class="edit" href="#">Edit Plant</a>
+        <span class="bench">{{user.name}}'s Potting Bench</span>
+        {{!-- This is invisible -- its used to tie into forms for giving the where in posts and puts --}}
+        <div id="userID">{{user.id}}</div> 
+        <a class="add" data-bs-toggle="modal" href="#newPlant">Add New Plant</a>
+        {{!-- Adding a new plant modal starts here --}}
+          <div class="modal fade" id="newPlant" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newPlantLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content newPlant">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="newPlantLabel">New Plant <i class="fas fa-pencil-alt"></i></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                  <div class="row new_plant_1">
+                    <div class="col">
+                      <label for="genusLabel">Genus:</label>
+                      <input class="form-input" type="text" id="newgenus" placeholder="Genus"/>
+                    </div>
+                    <div class="col">
+                      <label for="speciesLabel">Species:</label>
+                      <input class="form-input" type="text" id="newspecies" placeholder="Species"/>
+                    </div>
+                    <div class="col">
+                      <label for="varietyLabel">Variety:</label>
+                      <input class="form-input" type="text" id="newvariety" placeholder="Variety"/>
+                    </div>
+                    <div class="col">
+                      <label for="commonNameLabel">Common Name:</label>
+                      <input class="form-input" type="text" id="newcommon_name" placeholder="Common Name"/>
+                    </div>
+                  </div>
+                  <div class="row plant_edit_2">
+                    <div class="col"> Water Needed:
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newwaterNeeded" id="flexRadioDefault1" value="low">
+                        <label class="form-check-label" for="low">Low</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newwaterNeeded" id="flexRadioDefault1" value="medium" checked>
+                        <label class="form-check-label" for="medium">Medium</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newwaterNeeded" id="flexRadioDefault1" value="High">
+                        <label class="form-check-label" for="high">High</label>
+                      </div>
+                    </div>
+                    <div class="col"> Temperature Needed:
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newtempNeeded" id="flexRadioDefault2" value="low">
+                        <label class="form-check-label" for="flexRadioDefault2">Low</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newtempNeeded" id="flexRadioDefault2" value="medium" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">Medium</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newtempNeeded" id="flexRadioDefault2" value="high">
+                        <label class="form-check-label" for="flexRadioDefault2">High</label>
+                      </div>
+                    </div>
+                    <div class="col"> Humidity Needed:
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newhumidNeeded" id="flexRadioDefault3" value="low">
+                        <label class="form-check-label" for="flexRadioDefault3">Low</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newhumidNeeded" id="flexRadioDefault3" value="medium" checked>
+                        <label class="form-check-label" for="flexRadioDefault3">Medium</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newhumidNeeded" id="flexRadioDefault3" value="high">
+                        <label class="form-check-label" for="flexRadioDefault3">High</label>
+                      </div>
+                    </div>
+                    <div class="col"> Light Needed:
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newlightNeeded" id="flexRadioDefault4" value="low">
+                        <label class="form-check-label" for="flexRadioDefault4">Low</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newlightNeeded" id="flexRadioDefault4" value="medium" checked>
+                        <label class="form-check-label" for="flexRadioDefault4">Medium</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="newlightNeeded" id="flexRadioDefault4" value="high">
+                        <label class="form-check-label" for="flexRadioDefault4">High</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row plant_edit_3">
+                    <div class="col-12">
+                      <label for="description">Description:</label>
+                      <textarea name="description" id="newdescription" row="5" cols="40"/>Describe the plant here</textarea>
+                    </div>
+                    <div class="col-12">
+                      <label for="care">Care:</label>
+                      <textarea name="care" id="newcare" row="5" cols="40"/>Place your notes on proper care here</textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="newPlantSave" class="btn btn-danger">Add to Collection</button>
+                  </form>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{!-- End of new plant modal --}}
         <a class="delete" href="#">Delete Plant</a>
   </div>  
 </section>
 </div>
+<script src="/js/profile.js"></script>
