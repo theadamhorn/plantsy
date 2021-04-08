@@ -145,7 +145,7 @@ const deletePlantHandler = async (event) => {
 }
 var deleteButtons = document.getElementsByClassName("deletePlantBtn");
 
-
-document.querySelector(".deletePlantBtn").addEventListener("click", deletePlantHandler)
 document.getElementById("saveEdit").addEventListener("click", editPlantHandler)
 document.getElementById("newPlantSave").addEventListener("click", newPlantHandler)
+document.querySelector(".deletePlantBtn").addEventListener("click", deletePlantHandler)
+
