@@ -46,7 +46,6 @@ router.get('/:id', async (req, res) => {
 
 // update given plant in user's owned plants list
 router.put('/:id', withAuth, async (req, res) => {
-    console.log(`----~~~Here you are again~~~----`)
 try{
     const ownedPlantData = await Owned_Plants.update(
         {
