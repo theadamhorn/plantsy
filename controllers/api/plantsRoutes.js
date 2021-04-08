@@ -15,7 +15,7 @@ router.get('/plants', async (req, res) => {
 });
 
 // get one plant from global plant list
-router.get('/plants/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     // find a single plant by its `id`
     try {
         const plantsData = await Plants.findByPk(req.params.id);
