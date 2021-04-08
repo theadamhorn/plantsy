@@ -1,0 +1,73 @@
+<div class="row">
+<section class="plantList col-sm-4">
+  <div class="user_plants col-sm-12">
+    {{#each gardeners as |garden|}}
+    <div class="accordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading{{garden.id}}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{garden.id}}" aria-expanded="true" aria-controls="collapse{{garden.id}}">
+                {{garden.name}}
+            </button>
+        </h2>
+        <div id="collapse{{garden.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{garden.id}}" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-md-2 col-sm-5 plant"><button type="button" class="plant_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{garden.id}}"><p><i class="fas fa-seedling fa-2x"></i></p><p>View</p><p>Garden</p></button></div>
+                    <div class="modal fade" id="staticBackdrop{{garden.id}}" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content plant_profile"> 
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">{{garden.name}}'s Garden </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            {{#each garden.Owned_Plants as |plant| }}
+                            <div class="accordion">
+                              <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading{{plant.id}}">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{plant.id}}" aria-expanded="true" aria-controls="collapse{{plant.id}}">
+                                  {{plant.genus}} {{plant.species}} {{plant.variety}} --- {{plant.common_name}}
+                                </button>
+                                </h2>
+                                <div id="collapse{{plant.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{plant.id}}" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                <div class="row">
+                                   <div class="col-md-2 col-sm-5 water"><p><i class="fas fa-tint fa-2x"></i></p><p>Water</p><p>{{plant.watering}}</p></div>
+                                   <div class="col-md-2 col-sm-5 temp"><p><i class="fas fa-thermometer-half fa-2x"></i></p><p>Temp</p><p>{{plant.temperature}}</p></div>
+                                   <div class="col-md-2 col-sm-5 humidity"><p><i class="fas fa-cloud fa-2x"></i></p><p>Humidity</p><p>{{plant.humidity}}</p></div>
+                                   <div class="col-md-2 col-sm-5 light"><p><i class="fas fa-sun fa-2x"></i></p><p>Light</p><p>{{plant.light}}</p></div>
+                                </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col text-start">
+                                      <h5 style="color: #E4D7D0;">Description:</h5>
+                                      <p style="color: #E4D7D0;">{{plant.description}}</p>
+                                    </div>
+                                  </div>
+                                
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                              {{/each}}
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+</section>
+<section class="trelis col-sm-8">
+  <div class="navbar potting justify-content-around">
+        <span class="bench">The Potting Bench</span>
+  </div>  
+</section>
+</div>
