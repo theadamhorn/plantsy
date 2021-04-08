@@ -23,6 +23,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/plants">Plants</a>
           </li>
+          {{#if logged_in}}
           <li class="nav-item">
             <a class="nav-link" href="/gardeners">Gardeners</a>
 
@@ -30,6 +31,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/users">My Plants</a>
           </li>
+          {{/if}}
         </ul>
         <ul class="navbar-nav">
 
