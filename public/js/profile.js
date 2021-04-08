@@ -1,4 +1,4 @@
-const editPlantHandler = async (event) => {
+const editPlantHandler = async () => {
     
   console.log(`Getting the sent info!!!~~~~~~~`)
     const genusInfo = document.querySelector('#genus').value.trim();
@@ -63,7 +63,7 @@ console.log(JSON.stringify({ "user_id": user_id, "id": id,"genus": genusInfo, "s
       }
     };
 
-const newPlantHandler = async (event) => {
+const newPlantHandler = async () => {
   console.log(`Getting the new info!!!~~~~~~~`)
     const genusInfo = document.querySelector('#newgenus').value.trim();
     const speciesInfo = document.querySelector('#newspecies').value.trim();
@@ -120,9 +120,32 @@ const waters = document.getElementsByName('newwaterNeeded');
     document.location.replace('/users');
   } else {
     alert('Failed to update plant profile');
-  }
+  }  
+}
+
+const deletePlantHandler = async (event) => {
+  const plantID = event.target.value;
+  console.log(plantID)
+  console.log(`sending delete!`)
+  const response = await fetch(`/api/owned-plants/`, {
+    method: 'DELETE',
+    body: JSON.stringify({"id": plantID }),
+    headers:  {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    document.location.replace('/users');
+    
+  } else {
+    alert('Failed to delete plant profile');
+  }  
   
-  
-}    
+}
+var deleteButtons = document.getElementsByClassName("deletePlantBtn");
+
+
+document.querySelector(".deletePlantBtn").addEventListener("click", deletePlantHandler)
 document.getElementById("saveEdit").addEventListener("click", editPlantHandler)
 document.getElementById("newPlantSave").addEventListener("click", newPlantHandler)
