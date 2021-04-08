@@ -64,4 +64,23 @@ router.get('/users', withAuth, async (req, res) => {
   }
 });
 
+router.get('/gardeners', withAuth, async (req, res) => {
+  try {
+    const gardenerData = await Users.findAll({
+      attributes: { exclude: ['password'] },
+      include: [{ model: Owned_Plants }]
+    });
+
+    const gardeners = gardenerData.map(plant => plant.get({ plain: true }));
+
+    console.log(gardeners);
+    res.render('gardeners', {
+      gardeners,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
