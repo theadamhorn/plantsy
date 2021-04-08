@@ -74,7 +74,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content edit_plant_profile">
             <div class="modal-header">
-              <h5 class="modal-title" id="model2{{plant.id}}Label">Editor <i class="fas fa-pencil-alt"></i>... {{plant.genus}} {{plant.species}} {{plant.variety}}</h5>
+              <h5 class="modal-title" id="modal2{{plant.id}}Label">Editor <i class="fas fa-pencil-alt"></i>... {{plant.genus}} {{plant.species}} {{plant.variety}}</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -295,7 +295,28 @@
             </div>
           </div>
         {{!-- End of new plant modal --}}
-        <a class="delete" href="#">Delete Plant</a>
+        <a class="delete" data-bs-toggle="modal" href="#deletePlant">Delete Plant</a>
+        {{!-- This is the beginning of the delete plant modal --}}
+        <div class="modal fade" id="deletePlant" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deletePlantLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content deletePlant">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deletePlantLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                {{#each user.Owned_Plants as |plant|}}
+                <div class="row">
+                 <h5>{{plant.common_name}}<button type="button" class="btn-close deletePlantBtn" id="deletePlantBtn" value="{{plant.id}}" aria-label="Close"></button></h5>
+                </div>
+                {{/each}}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
   </div>  
 </section>
 </div>
