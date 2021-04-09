@@ -9,7 +9,7 @@
                 {{garden.name}}
             </button>
         </h2>
-        <div id="collapse{{garden.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{garden.id}}" data-bs-parent="#accordionExample">
+        <div id="collapse{{garden.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{garden.id}}" data-bs-parent="#heading{{garden.id}}">
             <div class="accordion-body">
                 <div class="row">
                     <div class="col-md-2 col-sm-5 plant"><button type="button" class="plant_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{garden.id}}"><p><i class="fas fa-seedling fa-2x"></i></p><p>View</p><p>Garden</p></button></div>
@@ -24,12 +24,12 @@
                             {{#each garden.Owned_Plants as |plant| }}
                             <div class="accordion">
                               <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading{{plant.id}}">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{plant.id}}" aria-expanded="true" aria-controls="collapse{{plant.id}}">
+                                <h2 class="accordion-header" id="heading"+{{plant.id}}+100>
+                                <button class="accordion-button collapsed show" type="button" data-bs-toggle="collapse" data-bs-target="#collapse"+{{plant.id}}+100 aria-expanded="true" aria-controls="collapse"+{{plant.id}}+100>
                                   {{plant.genus}} {{plant.species}} {{plant.variety}} --- {{plant.common_name}}
                                 </button>
                                 </h2>
-                                <div id="collapse{{plant.id}}" class="accordion-collapse collapse" aria-labelledby="heading{{plant.id}}" data-bs-parent="#accordionExample">
+                                <div id="collapse"+{{plant.id}}+100 class="accordion-collapse collapse" aria-labelledby="heading"+{{plant.id}}+100 data-bs-parent="#heading"+{{plant.id}}+100>
                                 <div class="accordion-body">
                                 <div class="row">
                                    <div class="col-md-2 col-sm-5 water"><p><i class="fas fa-tint fa-2x"></i></p><p>Water</p><p>{{plant.watering}}</p></div>
@@ -39,9 +39,9 @@
                                 </div>
                                   <br>
                                   <div class="row">
-                                    <div class="col text-start">
-                                      <h5 style="color: #E4D7D0;">Description:</h5>
-                                      <p style="color: #E4D7D0;">{{plant.description}}</p>
+                                    <div class="col text-start deco">
+                                      <h5>Description:</h5>
+                                      <p>{{plant.description}}</p>
                                     </div>
                                   </div>
                                 
