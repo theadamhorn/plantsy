@@ -227,4 +227,14 @@ body {
 .deletePlant {
   color: #0A4158;
 }
+
+.add-plant-button{
+  background-color: #93E9BE;
+}
+
+.add-plant-button:hover{
+  background-color: #FF9636;
+  color: #0A4158;
+}
+
 /*# sourceMappingURL=style.css.map */
