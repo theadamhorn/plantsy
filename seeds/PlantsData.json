@@ -4,10 +4,10 @@
         "species": "Fragaria × Ananassa",
         "variety": "",
         "common_name": "Strawberry",
-        "watering": 1,
-        "temperature": 1,
-        "humidity": 1,
-        "light": 2,
+        "watering": 2,
+        "temperature": 2,
+        "humidity": 2,
+        "light": 3,
         "description": "A small plant that produces bright red berries with seeds on the outside of the skin.",
         "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRucjHQoWkNKBPfnd8BW7_sn4Jo8iwrhecQk__oLSyrNGvkJAbos_OwhDhXg&usqp=CAc"
     },
@@ -16,34 +16,75 @@
         "species": "Birkin",
         "variety": "",
         "common_name": "Birkin",
-        "watering": 1,
-        "temperature": 2,
-        "humidity": 1,
-        "light": 1,
+        "watering": 2,
+        "temperature": 3,
+        "humidity": 2,
+        "light": 2,
         "description": "A green waxy leafed plant with creamy white to yellow stripes 10/10 would touch.",
         "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg3u9LS9HWzLu07rAL0P-C6SiuQTwiMVCJ5Q&usqp=CAU"
     },
     {
         "genus": "Orchis",
-        "species": "italica",
+        "species": "Italica",
         "variety": "",
         "common_name": "Italian orchid",
-        "watering": 1,
-        "temperature": 1,
-        "humidity": 1,
-        "light": 1,
+        "watering": 2,
+        "temperature": 2,
+        "humidity": 2,
+        "light": 2,
         "description": " It gets its common name from the lobed lip (labellum) of each flower which mimics the general shape of a naked man. In Italy, it is believed that the consumption of the plant is conducive to virility. It prefers partial shade and low nutrient soil and flowers in April.",
         "photo": "https://www.west-crete.com/dailypics/photos/885large.jpg"
     },
     {
         "genus": "Lilium",
+<<<<<<< HEAD
         "species": "lancifolium",
+=======
+        "species": "Lancifolium",
+>>>>>>> 98f81953bd956cdcbcf37ce8323436ae069a6b08
         " variety": "",
         "common_name": "Tiger Lily",
+        "watering": 2,
+        "temperature": 2,
+        "humidity": 2,
+        "light": 2,
+        "description": "It is widely planted as an ornamental because of its showy orange-and-black flowers, and sporadically occurs as garden escape in North America, particularly the eastern United States including New England, and has made incursions into some southern states such as Georgia. The tiger lily means 'I dare you to love me'",
+        "photo": "https://www.gardeningknowhow.com/wp-content/uploads/2017/08/tiger-lilies.jpg"
+    },
+    {
+        "genus": "Lithops",
+        "species": "Aucampiae",
+        " variety": "",
+        "common_name": "Living stone",
         "watering": 1,
-        "temperature": 1,
+        "temperature": 2,
         "humidity": 1,
+        "light": 2,
+        "description": "A popular living rock from South Africa which must be watered infrequently and left almost totally dry during its Winter dormancy.",
+        "photo": "https://1.bp.blogspot.com/-6jxS7xPTzLE/XPHtr460edI/AAAAAAAAExI/q5IcVzcp9dsQaE-e02Mk4vPGFCI64JRbQCLcBGAs/s1600/14950080409_f891743636_b.jpg"
+    },
+    {
+        "genus": "Brassavola",
+        "species": "Nodosa",
+        " variety": "",
+        "common_name": "Lady of the Night",
+        "watering": 2,
+        "temperature": 2,
+        "humidity": 2,
+        "light": 2,
+        "description": "An elegant epiphytic orchid from Central America. Excelent mounted on bark. Allow to dry briefly between waterings",
+        "photo": "https://4.bp.blogspot.com/-FqUkwYreVXg/XIzbYmSktiI/AAAAAAAAOVU/VMEJJ1YcwuYLJS5XITGdwJeB9ig3yAJIACLcBGAs/s1600/1024px-Brassavola_nodosa_%25281%2529.jpg"
+    },
+    {
+        "genus": "Adiantum",
+        "species": "Raddianum",
+        " variety": "",
+        "common_name": "Maidenhair Fern",
+        "watering": 3,
+        "temperature": 2,
+        "humidity": 2,
         "light": 1,
+<<<<<<< HEAD
         "description": "It is widely planted as an ornamental because of its showy orange-and-black flowers, and sporadically occurs as garden escape in North America, particularly the eastern United States including New England, and has made incursions into some southern states such as Georgia. The tiger lily means 'I dare you to love me'",
         "photo": "https://www.gardeningknowhow.com/wp-content/uploads/2017/08/tiger-lilies.jpg"
     },
@@ -106,5 +147,33 @@
         "light": 1,
         "description": "Classic, clump-forming palm for indoor gardening",
         "photo": "https://images.app.goo.gl/K7qRtRuSfcopUk9d6"
+=======
+        "description": "Classic, temperate fern species",
+        "photo": "https://plantcaretoday.com/wp-content/uploads/maidenhair-fern-1200-630-FB-20190731-min.jpg"
+    },
+    {
+        "genus": "Rebutia",
+        "species": "Perplexa",
+        " variety": "",
+        "common_name": "",
+        "watering": 1,
+        "temperature": 2,
+        "humidity": 1,
+        "light": 3,
+        "description": "Beautiful, clump-forming cactus species from South America",
+        "photo": "http://www.consultaplantas.com/images/phocagallery/rebutia_perplexa/thumbs/phoca_thumb_l_rebutia_perplexa_1.jpg"
+    },
+    {
+        "genus": "Dypsis",
+        "species": "Lutescens",
+        " variety": "",
+        "common_name": "Areca Palm",
+        "watering": 2,
+        "temperature": 3,
+        "humidity": 2,
+        "light": 2,
+        "description": "Classic, clump-forming palm for indoor gardening",
+        "photo": "https://www.gardenloversclub.com/wp-content/uploads/2020/11/Areca-Palm-Closeup.jpg"
+>>>>>>> 98f81953bd956cdcbcf37ce8323436ae069a6b08
     }
 ]
