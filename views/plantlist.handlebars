@@ -12,7 +12,7 @@
                         </button>
                     </h2>
                     <div id="collapse{{plant.id}}" class="accordion-collapse collapse"
-                        aria-labelledby="heading{{plant.id}}" data-bs-parent="#accordionExample">
+                        aria-labelledby="heading{{plant.id}}" data-bs-parent="#heading{{plant.id}}">
                         <div class="accordion-body">
                             <div class="row">
                                 <div class="col-md-2 col-sm-5 water">
@@ -86,8 +86,9 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
+                                                    {{#if logged_in}}
                                                 <button class="btn add-plant-button" type="button" value="{{plant.id}}">Add Plant</button>
-
+                                                    {{/if}}
                                             </div>
                                         </div>
                                     </div>
