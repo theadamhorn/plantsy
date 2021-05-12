@@ -37,7 +37,11 @@
     },
     {
         "genus": "Lilium",
+<<<<<<< HEAD
+        "species": "lancifolium",
+=======
         "species": "Lancifolium",
+>>>>>>> 98f81953bd956cdcbcf37ce8323436ae069a6b08
         " variety": "",
         "common_name": "Tiger Lily",
         "watering": 2,
@@ -80,6 +84,70 @@
         "temperature": 2,
         "humidity": 2,
         "light": 1,
+<<<<<<< HEAD
+        "description": "It is widely planted as an ornamental because of its showy orange-and-black flowers, and sporadically occurs as garden escape in North America, particularly the eastern United States including New England, and has made incursions into some southern states such as Georgia. The tiger lily means 'I dare you to love me'",
+        "photo": "https://www.gardeningknowhow.com/wp-content/uploads/2017/08/tiger-lilies.jpg"
+    },
+    {
+        "genus": "Lithops",
+        "species": "aucampiae",
+        " variety": "",
+        "common_name": "Tiger Lily",
+        "watering": 0,
+        "temperature": 1,
+        "humidity": 0,
+        "light": 1,
+        "description": "A popular living rock from South Africa which must be watered infrequently and left almost totally dry during its Winter dormancy.",
+        "photo": "https://images.app.goo.gl/hS4tqY6HUGZdk3dj9"
+    },
+    {
+        "genus": "Brassavola",
+        "species": "nodosa",
+        " variety": "",
+        "common_name": "Tiger Lily",
+        "watering": 1,
+        "temperature": 1,
+        "humidity": 1,
+        "light": 1,
+        "description": "An elegant epiphytic orchid from Central America. Excelent mounted on bark. Allow to dry briefly between waterings",
+        "photo": "https://images.app.goo.gl/ZKjyMQYuyd7V7GeVA"
+    },
+    {
+        "genus": "Adiantum",
+        "species": "raddianum",
+        " variety": "",
+        "common_name": "Maidenhair Firm",
+        "watering": 2,
+        "temperature": 1,
+        "humidity": 1,
+        "light": 0,
+        "description": "Classic, temperate fern species",
+        "photo": "https://images.app.goo.gl/8HEzxp7shoZoaccW6"
+    },
+    {
+        "genus": "Rebutia",
+        "species": "perplexa",
+        " variety": "",
+        "common_name": "",
+        "watering": 0,
+        "temperature": 1,
+        "humidity": 0,
+        "light": 2,
+        "description": "Beautiful, clump-forming cactus species from South America",
+        "photo": "https://images.app.goo.gl/zgKwZTCNpVVVY6dx9"
+    },
+    {
+        "genus": "Dypsis",
+        "species": "lutescens",
+        " variety": "",
+        "common_name": "Areca Palm",
+        "watering": 1,
+        "temperature": 2,
+        "humidity": 1,
+        "light": 1,
+        "description": "Classic, clump-forming palm for indoor gardening",
+        "photo": "https://images.app.goo.gl/K7qRtRuSfcopUk9d6"
+=======
         "description": "Classic, temperate fern species",
         "photo": "https://plantcaretoday.com/wp-content/uploads/maidenhair-fern-1200-630-FB-20190731-min.jpg"
     },
@@ -106,5 +174,6 @@
         "light": 2,
         "description": "Classic, clump-forming palm for indoor gardening",
         "photo": "https://www.gardenloversclub.com/wp-content/uploads/2020/11/Areca-Palm-Closeup.jpg"
+>>>>>>> 98f81953bd956cdcbcf37ce8323436ae069a6b08
     }
 ]
