@@ -7,13 +7,13 @@ body {
 
 .navbar {
   background-color: #4B8378;
-  color: #0A4158;
+  color: rgb(10, 65, 88);
   font-size: 1.25em;
   border-bottom: 2px #E4D7D0 solid;
 }
 
 .navbar .navbar-brand {
-  background-color: #93E9BE;
+  background-color: rgb(147, 233, 190);
   color: #222;
   padding: .5em;
   font-size: 2em;
@@ -24,7 +24,7 @@ body {
 .navbar .navbar-brand:hover {
   font-weight: 900;
   background-color: #0A4158;
-  color: #FF9636;
+  color: rgb(255, 150, 54);
 }
 
 .navbar a {
@@ -90,7 +90,7 @@ body {
 
 .accordion-item {
   background-color: #0A4158;
-  color: #0A4158;
+  color: rgb(10, 65, 88);
   font-size: 1em;
   line-height: 10px;
   font-family: "Kiwi Maru";
@@ -99,7 +99,7 @@ body {
 }
 
 .accordion-item .accordion-button {
-  background-color: #4B8378;
+  background-color: rgb(75, 131, 120);
   color: #222;
   font-size: .65em;
   border: 1px solid white;
@@ -139,7 +139,7 @@ body {
 }
 
 .accordion-item .plant_button {
-  color: #10a610;
+  color: rgb(16, 166, 16);
 }
 
 .trelis {
