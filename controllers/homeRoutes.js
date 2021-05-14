@@ -42,8 +42,7 @@ router.get('/plants/:id', async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/users', withAuth, async (req, res) => {
-  console.log(`hit users route!!!! ~~~~~~~ wooohooo!`)
-  console.log(req.session.user_id);
+
   try {
     // Find the logged in user based on the session ID
     const userData = await Users.findByPk(req.session.user_id, {
@@ -60,6 +59,25 @@ router.get('/users', withAuth, async (req, res) => {
   } catch (err) {
     console.log(`hit an error of doom!!!! ~~~~~~~ wooohooo!`);
     console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/gardeners', withAuth, async (req, res) => {
+  try {
+    const gardenerData = await Users.findAll({
+      attributes: { exclude: ['password'] },
+      include: [{ model: Owned_Plants }]
+    });
+
+    const gardeners = gardenerData.map(plant => plant.get({ plain: true }));
+
+    console.log(gardeners);
+    res.render('gardeners', {
+      gardeners,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
     res.status(500).json(err);
   }
 });

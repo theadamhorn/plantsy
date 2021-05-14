@@ -93,8 +93,12 @@ body {
     .accordion-button {
         background-color: $teal;
         color: $font;
-        font-size: .75em;
+        font-size: .65em;
         border: 1px solid white;
+    }
+    .deco {
+        line-height: 1.25em;
+        color: #E4D7D0;
     }
     .accordion-button:hover {
         background-color: $orange;
@@ -102,9 +106,11 @@ body {
     }
     .water {
         color: rgb(25, 212, 233);
+        padding: 2px;
     }
     .temp {
         color: rgb(217, 22, 22);
+        padding: 2px;        
     }
     .humidity {
         color: white;
@@ -113,6 +119,7 @@ body {
     }
     .light {
         color: yellow;
+        padding: 1px;
     }
     .plant_button {
         color: rgb(16, 166, 16);
@@ -145,17 +152,24 @@ body {
     left: 90px;
     top: 195px;
     width: 750px;
-    height: 750px;
+    height: fit-content;
     line-height: 1em;
 }
 .edit_plant_profile {
     position: relative;
     left: 90px;
     top: 195px;
-    width: 750px;
-    height: 750px;
+    width: fit-content;
+    height: fit-content;
     line-height: 2em;
-} 
+    .plant_edit_1 .plant_edit_2 .plant_edit_3 {
+        font-size: 1.35em;
+    }
+    .plant_edit_3 {
+        text-align: start;
+    }
+}
+
 .modal-header {
     background-color: $scallop;
     border-bottom: $navy 3px solid;
@@ -164,4 +178,16 @@ body {
     width: 250px;
     height: auto;
     border: $navy 2px solid;
+}
+#plantID {
+    visibility: hidden;
+}
+#userID {
+    visibility: hidden;
+}
+.newPlant {
+    color: $navy;
+}
+.deletePlant {
+    color: $navy;
 }

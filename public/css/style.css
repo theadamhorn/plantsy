@@ -101,21 +101,28 @@ body {
 .accordion-item .accordion-button {
   background-color: rgb(75, 131, 120);
   color: #222;
-  font-size: .75em;
+  font-size: .65em;
   border: 1px solid white;
 }
 
-.accordion-item .accordion-button:hover  {
+.accordion-item .deco {
+  line-height: 1.25em;
+  color: #E4D7D0;
+}
+
+.accordion-item .accordion-button:hover {
   background-color: #FF9636;
   color: #0A4158;
 }
 
 .accordion-item .water {
   color: #19d4e9;
+  padding: 2px;
 }
 
 .accordion-item .temp {
   color: #d91616;
+  padding: 2px;
 }
 
 .accordion-item .humidity {
@@ -128,6 +135,7 @@ body {
 
 .accordion-item .light {
   color: yellow;
+  padding: 1px;
 }
 
 .accordion-item .plant_button {
@@ -166,7 +174,9 @@ body {
   left: 90px;
   top: 195px;
   width: 750px;
-  height: 750px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   line-height: 1em;
 }
 
@@ -174,9 +184,21 @@ body {
   position: relative;
   left: 90px;
   top: 195px;
-  width: 750px;
-  height: 750px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   line-height: 2em;
+}
+
+.edit_plant_profile .plant_edit_1 .plant_edit_2 .plant_edit_3 {
+  font-size: 1.35em;
+}
+
+.edit_plant_profile .plant_edit_3 {
+  text-align: start;
 }
 
 .modal-header {
@@ -189,13 +211,30 @@ body {
   height: auto;
   border: #0A4158 2px solid;
 }
-/*# sourceMappingURL=style.css.map */
 
-.add-plant-button {
+#plantID {
+  visibility: hidden;
+}
+
+#userID {
+  visibility: hidden;
+}
+
+.newPlant {
+  color: #0A4158;
+}
+
+.deletePlant {
+  color: #0A4158;
+}
+
+.add-plant-button{
   background-color: #93E9BE;
 }
 
-.add-plant-button:hover {
+.add-plant-button:hover{
   background-color: #FF9636;
   color: #0A4158;
 }
+
+/*# sourceMappingURL=style.css.map */
