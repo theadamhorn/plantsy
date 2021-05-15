@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-// import Modal from "./Modal";
+import Modal from "./Modal";
+import ModalButton from "./ModalButton";
 
 export default function Accordion(props) {
-    const [user, setUser] = useState(false);
-    const [plant, setPlant] = useState(false);
+    var [user, setUser] = useState(false);
+    var [plant, setPlant] = useState(false);
 
-    const plants = props.plants;
+    if(props.user){setUser(true)}
+    if(props.plant){setPlant(true)}
+
+    const plants = props.plant;
     const users = props.user;
     const plantHead = <> {plant.genus} {plant.species} {plant.variety} --- {plant.common_name} </>;
     const userHead = <> {user.name} </>;
@@ -38,7 +42,8 @@ export default function Accordion(props) {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="heading{plant.id}">
                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{plant.id}" aria-expanded="true" aria-controls="collapse{plant.id}">
-                        {plantHead}
+                        {user ? userHead : ``}
+                        {plant ? plantHead : ``}
                     </button>
                     </h2>
                  <div id="collapse{plant.id}" className="accordion-collapse collapse" aria-labelledby="heading{plant.id}" data-bs-parent="#heading{plant.id}">
