@@ -1,39 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import Modal from "./Modal";
 
 export default function Accordion(props) {
-    const plants = props
-    const plantHead = <> {plant.genus} {plant.species}{plant.variety} --- {plant.common_name} </>
-    
+    const [user, setUser] = useState(false);
+    const [plant, setPlant] = useState(false);
+
+    const plants = props.plants;
+    const users = props.user;
+    const plantHead = <> {plant.genus} {plant.species} {plant.variety} --- {plant.common_name} </>;
+    const userHead = <> {user.name} </>;
+    const plantBody = <>        
+    <ModalButton plantID={plant.id}/>   
+    <Modal 
+    genus={plant.genus}
+    species={plant.species}
+    variety={plant.variety}
+    commonName={plant.common_name}
+    photo={plant.photo}
+    watering={plant.watering}
+    temperature={plant.temperature}
+    humdity={plant.humdity}
+    light={plant.light}
+    description={plant.description}
+    care={plant.care}
+    />
+    </>;
+    const userBody = <>
+    <Modal />
+
+    </>
+
 
     return (
         <div>
             {plants.map(plant => {
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading{plant.id}">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{plant.id}" aria-expanded="true" aria-controls="collapse{plant.id}">
+            <div className="accordion">
+                <div className="accordion-item">
+                    <h2 className="accordion-header" id="heading{plant.id}">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{plant.id}" aria-expanded="true" aria-controls="collapse{plant.id}">
                         {plantHead}
                     </button>
                     </h2>
-                 <div id="collapse{plant.id}" class="accordion-collapse collapse" aria-labelledby="heading{plant.id}" data-bs-parent="#heading{plant.id}">
-                    <div class="accordion-body">
-                    {/* <ModalButton plantID={plant.id}/>   
-                    <Modal 
-                    genus={plant.genus}
-                    species={plant.species}
-                    variety={plant.variety}
-                    commonName={plant.common_name}
-                    photo={plant.photo}
-                    watering={plant.watering}
-                    temperature={plant.temperature}
-                    humdity={plant.humdity}
-                    light={plant.light}
-                    description={plant.description}
-                    care={plant.care}
-                    /> */}
-
-                </div>
+                 <div id="collapse{plant.id}" className="accordion-collapse collapse" aria-labelledby="heading{plant.id}" data-bs-parent="#heading{plant.id}">
+                    <div className="accordion-body">
+                    {user ? userBody : ``}
+                    {plant ? plantBody: ``}
+                    </div>
              </div>
         </div>
         </div>     
