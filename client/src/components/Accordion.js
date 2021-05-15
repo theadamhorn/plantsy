@@ -14,21 +14,21 @@ export default function Accordion(props) {
     const plantHead = <> {plant.genus} {plant.species} {plant.variety} --- {plant.common_name} </>;
     const userHead = <> {user.name} </>;
     const plantBody = <>        
-    <ModalButton plantID={plant.id}/>   
-    <Modal 
-    genus={plant.genus}
-    species={plant.species}
-    variety={plant.variety}
-    commonName={plant.common_name}
-    photo={plant.photo}
-    watering={plant.watering}
-    temperature={plant.temperature}
-    humdity={plant.humdity}
-    light={plant.light}
-    description={plant.description}
-    care={plant.care}
-    />
-    </>;
+            <ModalButton plantID={plant.id}/>   
+            <Modal 
+            genus={plant.genus}
+            species={plant.species}
+            variety={plant.variety}
+            commonName={plant.common_name}
+            photo={plant.photo}
+            watering={plant.watering}
+            temperature={plant.temperature}
+            humdity={plant.humdity}
+            light={plant.light}
+            description={plant.description}
+            care={plant.care}
+            />
+            </>;
     const userBody = <>
     <Modal />
 
