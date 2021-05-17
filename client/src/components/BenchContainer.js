@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import API from '../utils/API';
+import API from '../utils/API';
 // import Accordion from './Accordion';
 // import Model from './Modal';
 import { Navbar, Container, Row, Col } from "react-bootstrap";
