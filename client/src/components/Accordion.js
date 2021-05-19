@@ -15,7 +15,7 @@ export default function Accordion(props) {
     const userHead = <> {user.name} </>;
     const plantBody = <>        
             <ModalButton plantID={plant.id}/>   
-            <Modal 
+            <PlantModal 
             genus={plant.genus}
             species={plant.species}
             variety={plant.variety}
