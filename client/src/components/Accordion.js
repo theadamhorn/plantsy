@@ -37,23 +37,24 @@ export default function Accordion(props) {
 
     return (
         <div>
-            {plants.map(plant => {
             <div className="accordion">
-                <div className="accordion-item">
-                    <h2 className="accordion-header" id="heading{plant.id}">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{plant.id}" aria-expanded="true" aria-controls="collapse{plant.id}">
+            {plants.map(plant => {
+                return (
+                <div className="accordion-item" key={plant.id}>
+                    <h2 className="accordion-header" id={"heading" + plant.id}>
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + plant.id} aria-expanded="true" aria-controls={"collapse" + plant.id}>
                         {user ? userHead : ``}
                         {plant ? plantHead : ``}
                     </button>
                     </h2>
-                 <div id="collapse{plant.id}" className="accordion-collapse collapse" aria-labelledby="heading{plant.id}" data-bs-parent="#heading{plant.id}">
-                    <div className="accordion-body">
-                    {user ? userBody : ``}
-                    {plant ? plantBody: ``}
+                    <div id={"collapse" + plant.id} className="accordion-collapse collapse" aria-labelledby={"heading" + plant.id} data-bs-parent={"#heading" + plant.id}>
+                        <div className="accordion-body">
+                        {user ? userBody : ``}
+                        {plant ? plantBody: ``}
+                        </div>
                     </div>
-             </div>
-        </div>
-        </div>     
-    })}
-   </div>)
+                </div>
+            )})}
+            </div> 
+        </div>)
 }

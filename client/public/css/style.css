@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&display=swap");
 body {
-  background-color: #E4D7D0;
+  background-color: #e4d7d0;
   font-family: "Kiwi Maru";
   height: 100%;
 }
 
 .navbar {
-  background-color: #4B8378;
-  color: rgb(10, 65, 88);
+  background-color: #4b8378;
+  color: #0a4158;
   font-size: 1.25em;
-  border-bottom: 2px #E4D7D0 solid;
+  border-bottom: 2px #e4d7d0 solid;
 }
 
 .navbar .navbar-brand {
-  background-color: rgb(147, 233, 190);
+  background-color: #93e9be;
   color: #222;
-  padding: .5em;
+  padding: 0.5em;
   font-size: 2em;
   border-radius: 15px;
   border: #222 2px solid;
@@ -23,8 +23,8 @@ body {
 
 .navbar .navbar-brand:hover {
   font-weight: 900;
-  background-color: #0A4158;
-  color: rgb(255, 150, 54);
+  background-color: #0a4158;
+  color: #ff9636;
 }
 
 .navbar a {
@@ -34,9 +34,9 @@ body {
 }
 
 .navbar a:hover {
-  background-color: #FF9636;
+  background-color: #ff9636;
   border-radius: 10px;
-  color: #0A4158;
+  color: #0a4158;
 }
 
 .navbar ul li {
@@ -54,7 +54,7 @@ body {
 
 .hero-image {
   background-image: url("./images/pexels-vasanth-babu-797793.jpg");
-  background-color: #0A4158;
+  background-color: #0a4158;
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
@@ -64,12 +64,12 @@ body {
 .hero-text {
   text-align: center;
   position: absolute;
-  background-color: #0A4158;
+  background-color: #0a4158;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: #E4D7D0;
+  color: #e4d7d0;
   border-radius: 15px;
   border: 2px solid;
   padding: 2em;
@@ -84,35 +84,42 @@ body {
 }
 
 .plantList {
-  background-color: #E4D7D0;
+  background-color: #e4d7d0;
   height: 750px;
 }
 
 .accordion-item {
-  background-color: #0A4158;
-  color: rgb(10, 65, 88);
+  background-color: #0a4158;
+  color: #0a4158;
   font-size: 1em;
   line-height: 10px;
   font-family: "Kiwi Maru";
   text-align: center;
-  border-bottom: #E4D7D0 1px solid;
+  border-bottom: #e4d7d0 1px solid;
 }
 
 .accordion-item .accordion-button {
-  background-color: rgb(75, 131, 120);
+  background-color: #4b8378;
   color: #222;
-  font-size: .65em;
+  font-size: 0.65em;
   border: 1px solid white;
+}
+
+.accordion-item .accordion-collapse {
+  background-color: #0a4158;
+  color: #e4d7d0;
+  font-family: "Kiwi Maru";
+  border-bottom: #e4d7d0 1px solid;
 }
 
 .accordion-item .deco {
   line-height: 1.25em;
-  color: #E4D7D0;
+  color: #e4d7d0;
 }
 
 .accordion-item .accordion-button:hover {
-  background-color: #FF9636;
-  color: #0A4158;
+  background-color: #ff9636;
+  color: #0a4158;
 }
 
 .accordion-item .water {
@@ -127,7 +134,7 @@ body {
 
 .accordion-item .humidity {
   color: white;
-  opacity: .80;
+  opacity: 0.8;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -139,11 +146,11 @@ body {
 }
 
 .accordion-item .plant_button {
-  color: rgb(16, 166, 16);
+  color: #10a610;
 }
 
 .trelis {
-  background-color: #93E9BE;
+  background-color: #93e9be;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(184, 184, 184, 0.5)), to(rgba(186, 186, 186, 0.5))), url("./images/pexels-gary-barnes-6231990.jpg");
   background-image: linear-gradient(rgba(184, 184, 184, 0.5), rgba(186, 186, 186, 0.5)), url("./images/pexels-gary-barnes-6231990.jpg");
   background-position: center;
@@ -154,13 +161,13 @@ body {
 }
 
 .potting {
-  background-color: #0A4158;
-  color: #E4D7D0;
+  background-color: #0a4158;
+  color: #e4d7d0;
   right: 5px;
 }
 
 .potting a {
-  color: #E4D7D0;
+  color: #e4d7d0;
   text-decoration: none;
   padding: 5px;
 }
@@ -202,14 +209,14 @@ body {
 }
 
 .modal-header {
-  background-color: #E4D7D0;
-  border-bottom: #0A4158 3px solid;
+  background-color: #e4d7d0;
+  border-bottom: #0a4158 3px solid;
 }
 
 .plantPhoto {
   width: 250px;
   height: auto;
-  border: #0A4158 2px solid;
+  border: #0a4158 2px solid;
 }
 
 #plantID {
@@ -221,20 +228,10 @@ body {
 }
 
 .newPlant {
-  color: #0A4158;
+  color: #0a4158;
 }
 
 .deletePlant {
-  color: #0A4158;
+  color: #0a4158;
 }
-
-.add-plant-button{
-  background-color: #93E9BE;
-}
-
-.add-plant-button:hover{
-  background-color: #FF9636;
-  color: #0A4158;
-}
-
 /*# sourceMappingURL=style.css.map */
