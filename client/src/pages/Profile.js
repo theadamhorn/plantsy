@@ -3,10 +3,15 @@ import BenchContainer from "../components/BenchContainer";
 import NavBar from "../components/NavBar";
 
 function Profile() {
+    const prop = {
+        name: "Bobby",
+        id: 7777
+    }
     return(
     <>
         <NavBar />
-        <BenchContainer />
+        <BenchContainer 
+        user={prop}/>
     </>    
     )
 }

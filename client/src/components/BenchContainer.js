@@ -53,7 +53,7 @@ var passedProp =[{
                 <div className="potting navbar justify-content-around">
                     <span className="bench">{plants ? `The Nursery` : ``}
                         {gardeners ? `The Potting Bench` : ``}
-                        {profile ? `${props.user.id}'s Potting Bench` : ``}
+                        {profile ? `${props.user.name}'s Potting Bench` : ``}
                         {trellis ? `The Trellis` : ``}</span>
                 </div>
                 <Row>
