@@ -9,7 +9,7 @@ function BenchContainer(props) {
     const [gardeners, setGardeners] = useState(false)
     const [profile, setProfile] = useState(false)
     const [trellis, setTrellis] = useState(false)
-    // var plant = props.plant;
+    var accordion = '';
 
 
     useEffect(() => {
@@ -18,16 +18,25 @@ function BenchContainer(props) {
         if (location === '/plants') {
             setPlants(true)
 
+            accordion = <>
+                <Accordion
+                    plant= 
+                    />
+
+            </>
             // API call depending on the page, set results into hook, then pass hook into {Accordion}
         }
         if (location === '/gardeners') {
             setGardeners(true)
+
         }
         if (location === '/profile') {
             setProfile(true)
+
         }
         if (location === '/trellis') {
             setTrellis(true)
+
         }
 
     }, [])
@@ -44,10 +53,9 @@ function BenchContainer(props) {
                         {trellis ? `The Trellis` : ``}</span>
                 </Navbar>
                 <Row>
-                    {/* <Col xs={12} md={4}>{Accordion}</Col> */}
+                    <Col xs={12} md={4}></Col>
                     <Col xs={12} md={8}></Col>
                 </Row>
-
 
             </Container>
 
