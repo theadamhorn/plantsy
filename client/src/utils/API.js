@@ -1,6 +1,7 @@
 import axios from "axios";
-
+const id = "";
 export default {
+
 
     // Axios functions for Plants
     getPlants: function () {

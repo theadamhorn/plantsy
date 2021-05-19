@@ -3,7 +3,7 @@ import React from 'react'
 function PlantModal (props) { 
     
         return(
-            <div class="modal fade" id="staticBackdrop{props.id}" data-bs-backdrop="false"
+            <div class="modal fade" id={"plantModal" + props.id} data-bs-backdrop="false"
             data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
             aria-hidden="true">
             <div class="modal-dialog">
@@ -17,7 +17,7 @@ function PlantModal (props) {
                     <div class="modal-body">
                         <div class="row">
                             <div class="col">
-                                <img class=" plantPhoto" src="{props.photo}" />
+                                <img class="plantPhoto" src={props.photo} />
                             </div>
                         </div>
                         \n
@@ -48,8 +48,8 @@ function PlantModal (props) {
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
                             data-bs-dismiss="modal">Close</button>
-                        <button class="btn add-plant-button" type="button" value="{props.id}">Add Plant</button>
-                            <ModalButton/>
+                        <button class="btn add-plant-button" type="button" value={props.id}>Add Plant</button>
+                            {/* <ModalButton/> */}
                         </div>
                     </div>
                 </div>
