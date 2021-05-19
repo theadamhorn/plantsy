@@ -49,7 +49,7 @@ function PlantModal (props) {
                         <button type="button" class="btn btn-secondary"
                             data-bs-dismiss="modal">Close</button>
                         <button class="btn add-plant-button" type="button" value={props.id}>Add Plant</button>
-                            <ModalButton/>
+                            {/* <ModalButton/> */}
                         </div>
                     </div>
                 </div>

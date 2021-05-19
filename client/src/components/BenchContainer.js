@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import API from '../utils/API';
-// import Accordion from './Accordion';
+import Accordion from './Accordion';
 // import Model from './Modal';
-import { Navbar, Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 function BenchContainer(props) {
     const [plants, setPlants] = useState(false)
@@ -32,24 +32,43 @@ function BenchContainer(props) {
 
     }, [])
 
-
+// This var is only for demo purposes in place of an API Call
+var passedProp =[{
+    plant: "Spider",
+    genus: "Thug",
+    species: "Monster",
+    id: 12345,
+    commonName: "Lovey Dovey"
+},{
+    plant: "Burkin",
+    genus: "Pretty",
+    species: "Princess",
+    id: 12346,
+    commonName: "superDuper"
+}]
 
     return (
         <>
-            <Container className="row">
-                <Navbar className="potting justify-content-around">
+            <main className="container-fluid">
+                <div className="potting navbar justify-content-around">
                     <span className="bench">{plants ? `The Nursery` : ``}
                         {gardeners ? `The Potting Bench` : ``}
                         {profile ? `${props.user.id}'s Potting Bench` : ``}
                         {trellis ? `The Trellis` : ``}</span>
-                </Navbar>
+                </div>
                 <Row>
-                    {/* <Col xs={12} md={4}>{Accordion}</Col> */}
-                    <Col xs={12} md={8}></Col>
+                    <Col xs={12} md={4}>
+                        <Accordion 
+                     plants={passedProp}
+                    />
+                    </Col>
+                    <Col xs={12} md={8} className="trelis">
+
+                    </Col>
                 </Row>
 
 
-            </Container>
+            </main>
 
         </>
     )
