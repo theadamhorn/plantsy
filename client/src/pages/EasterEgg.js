@@ -1,5 +1,14 @@
+import React from "react";
+import BenchContainer from "../components/BenchContainer";
+import NavBar from "../components/NavBar";
+
 function EasterEgg() {
-    return <h1></h1>
+    return(
+    <>
+        <NavBar />
+        <BenchContainer />
+    </>    
+    )
 }
 
-export default Gardeners;
+export default EasterEgg;
