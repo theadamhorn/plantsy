@@ -95,6 +95,10 @@ body {
     font-size: 0.65em;
     border: 1px solid white;
   }
+  .accordion-button:not(.collapse) {
+    background-color: $teal;
+    color: $font;
+  }
   .accordion-collapse {
     background-color: $navy;
     color: $scallop;

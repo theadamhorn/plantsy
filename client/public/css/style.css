@@ -105,6 +105,11 @@ body {
   border: 1px solid white;
 }
 
+.accordion-item .accordion-button:not(.collapse) {
+  background-color: #4b8378;
+  color: #222;
+}
+
 .accordion-item .accordion-collapse {
   background-color: #0a4158;
   color: #e4d7d0;
