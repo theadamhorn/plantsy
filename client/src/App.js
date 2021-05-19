@@ -13,7 +13,6 @@ function App() {
   return (
     <>
       {/* <NavBar />, */}
-      <BenchContainer />
 
       <Router>
         <Switch>

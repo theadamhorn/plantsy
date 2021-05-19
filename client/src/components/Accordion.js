@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
-import Modal from "./Modal";
+import React, { useEffect, useState } from 'react';
+import PlantModal from "./PlantModal";
 import ModalButton from "./ModalButton";
 
 export default function Accordion(props) {
     var [user, setUser] = useState(false);
     var [plant, setPlant] = useState(false);
 
-    if(props.user){setUser(true)}
+useEffect(() =>{
+    // These may need to be updated, I wrote this based on some assumptions on the passed props.
+    if(props.user){setUser(true)}  
     if(props.plant){setPlant(true)}
+})
+
 
     const plants = props.plant;
     const users = props.user;
