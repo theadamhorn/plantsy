@@ -4,6 +4,7 @@ const id = ""; // << Make sure to delete this once defined in functions
 
 export default {
 
+
     // Axios functions for Plants
     getPlants: function () {
         return axios.get('/api/plants');

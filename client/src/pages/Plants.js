@@ -1,5 +1,14 @@
+import React from "react";
+import BenchContainer from "../components/BenchContainer";
+import NavBar from "../components/NavBar";
+
 function Plants() {
-    return <h1>Plants Page</h1>
+    return(
+    <>
+        <NavBar />
+        <BenchContainer />
+    </>    
+    )
 }
 
 export default Plants;

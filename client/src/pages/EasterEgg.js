@@ -2,7 +2,7 @@ import React from "react";
 import BenchContainer from "../components/BenchContainer";
 import NavBar from "../components/NavBar";
 
-function Trellis() {
+function EasterEgg() {
     return(
     <>
         <NavBar />
@@ -11,4 +11,4 @@ function Trellis() {
     )
 }
 
-export default Trellis;
+export default EasterEgg;
