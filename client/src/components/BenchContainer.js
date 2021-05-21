@@ -9,7 +9,10 @@ function BenchContainer(props) {
     const [gardeners, setGardeners] = useState(false)
     const [profile, setProfile] = useState(false)
     const [trellis, setTrellis] = useState(false)
-    // var plant = props.plant;
+    const [plantData, setPlantData] = useState([])
+    const [userData, setUserData] = useState([])
+
+    var accordion = '';
 
 
     useEffect(() => {
@@ -18,38 +21,40 @@ function BenchContainer(props) {
         if (location === '/plants') {
             setPlants(true)
 
+            API.getPlants()
+                .then(res => {
+                    setPlantData(res.data)
+                    setUserData([])
+                })
+                .catch(err => console.log(err));
+
             // API call depending on the page, set results into hook, then pass hook into {Accordion}
         }
         if (location === '/gardeners') {
             setGardeners(true)
+
+            API.getUsers()
+                .then(res => {
+                    setPlantData([])
+                    setUserData(res.data)
+                })
+                .catch(err => console.log(err));
         }
         if (location === '/profile') {
             setProfile(true)
+
+
         }
         if (location === '/trellis') {
             setTrellis(true)
+
         }
 
     }, [])
 
-// This var is only for demo purposes in place of an API Call
-var passedProp =[{
-    plant: "Spider",
-    genus: "Thug",
-    species: "Monster",
-    id: 12345,
-    commonName: "Lovey Dovey"
-},{
-    plant: "Burkin",
-    genus: "Pretty",
-    species: "Princess",
-    id: 12346,
-    commonName: "superDuper"
-}]
-
     return (
         <>
-            <main className="container-fluid">
+            <main className="container-fluid p-0">
                 <div className="potting navbar justify-content-around">
                     <span className="bench">{plants ? `The Nursery` : ``}
                         {gardeners ? `The Potting Bench` : ``}
@@ -58,9 +63,10 @@ var passedProp =[{
                 </div>
                 <Row>
                     <Col xs={12} md={4}>
-                        <Accordion 
-                     plants={passedProp}
-                    />
+                        <Accordion
+                            plants={plantData}
+                            user={userData}
+                        />
                     </Col>
                     <Col xs={12} md={8} className="trelis">
 
@@ -69,7 +75,6 @@ var passedProp =[{
 
 
             </main>
-
         </>
     )
 }

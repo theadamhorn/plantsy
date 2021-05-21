@@ -1,5 +1,7 @@
 import axios from "axios";
-const id = "";
+
+const id = ""; // << Make sure to delete this once defined in functions
+
 export default {
 
 
@@ -31,7 +33,7 @@ export default {
     createOwnedPlants: function () {
         return axios.post('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
     },
-    udpateOwnedPlants: function () {
+    updateOwnedPlants: function () {
         return axios.put('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
     },
     deleteOwnedPlants: function () {

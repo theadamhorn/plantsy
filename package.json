@@ -2,9 +2,15 @@
   "name": "project2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "seed": "node ./seeds/seeds.js"
   },
   "repository": {
@@ -19,30 +25,14 @@
   },
   "homepage": "https://github.com/mradamhorn/project2#readme",
   "dependencies": {
-<<<<<<< HEAD
-=======
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.1",
->>>>>>> 93b232ba47935bf845be20d641c2f2a569db50af
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
+    "concurrently": "^6.1.0",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-<<<<<<< HEAD
-=======
-    "react": "^17.0.2",
-    "react-bootstrap": "^1.6.0",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3",
->>>>>>> 93b232ba47935bf845be20d641c2f2a569db50af
     "sequelize": "^6.6.2"
   }
 }

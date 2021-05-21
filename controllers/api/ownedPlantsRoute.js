@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Get all plants from user's owned plants list
-router.get('/owned-plants', async (req, res) => {
+router.get('/', async (req, res) => {
     // find all plants
     try {
         const ownedPlantsData = await Owned_Plants.findAll();
@@ -46,34 +46,34 @@ router.get('/:id', async (req, res) => {
 
 // update given plant in user's owned plants list
 router.put('/:id', withAuth, async (req, res) => {
-try{
-    const ownedPlantData = await Owned_Plants.update(
-        {
-            genus: req.body.genus,
-            species: req.body.species,
-            variety: req.body.variety,
-            common_name: req.body.common_name,
-            watering: req.body.watering,
-            temperature: req.body.temperature,
-            humidity: req.body.humidity,
-            light: req.body.light,
-            description: req.body.description,
-            care: req.body.care,
-        },
-        {
-            where: {
-                id: req.params.id,
+    try {
+        const ownedPlantData = await Owned_Plants.update(
+            {
+                genus: req.body.genus,
+                species: req.body.species,
+                variety: req.body.variety,
+                common_name: req.body.common_name,
+                watering: req.body.watering,
+                temperature: req.body.temperature,
+                humidity: req.body.humidity,
+                light: req.body.light,
+                description: req.body.description,
+                care: req.body.care,
             },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        )
+        if (!ownedPlantData) {
+            res.status(404).json({ message: 'No plant found.' });
+            return;
         }
-    )
-    if (!ownedPlantData) {
-        res.status(404).json({ message: 'No plant found.' });
-        return;
+    } catch (err) {
+        res.status(500).json(err);
     }
-} catch (err) {
-    res.status(500).json(err);
-}
-});      
+});
 
 // delete given plant from user's owned plants list
 router.delete('/', withAuth, async (req, res) => {
