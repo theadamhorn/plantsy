@@ -12,6 +12,13 @@ body {
   border-bottom: 2px #e4d7d0 solid;
 }
 
+.footer {
+  background-color: #4b83788e;
+  color: #0a4158;
+  font-size: 1em;
+  border-bottom: 2px #e4d7d0 solid;
+}
+
 .navbar .navbar-brand {
   background-color: #93e9be;
   color: #222;

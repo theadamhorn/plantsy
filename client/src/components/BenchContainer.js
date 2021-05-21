@@ -12,7 +12,6 @@ function BenchContainer(props) {
     const [plantData, setPlantData] = useState([])
     const [userData, setUserData] = useState([])
     const [ownedPlantData, setOwnedPlantData] = useState([])
-    var accordion = '';
 
 
     useEffect(() => {
@@ -38,6 +37,7 @@ function BenchContainer(props) {
                 .then(res => {
                     setPlantData([])
                     setUserData(res.data)
+                    setOwnedPlantData([])
                 })
                 .catch(err => console.log(err));
         }
