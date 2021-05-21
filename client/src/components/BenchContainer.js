@@ -12,7 +12,8 @@ function BenchContainer(props) {
     const [plantData, setPlantData] = useState([])
     const [userData, setUserData] = useState([])
     const [ownedPlantData, setOwnedPlantData] = useState([])
-    var accordion = '';
+
+
 
 
     useEffect(() => {
@@ -46,6 +47,7 @@ function BenchContainer(props) {
 
             API.getOwnedPlants()
                 .then(res => {
+
                     setOwnedPlantData(res.data)
                     setUserData([])
                     setPlantData([])
@@ -59,7 +61,7 @@ function BenchContainer(props) {
         }
 
     }, [])
-
+console.log(gardenerData)
     return (
         <>
             <main className="container-fluid p-0">
@@ -73,7 +75,8 @@ function BenchContainer(props) {
                     <Col xs={12} md={4}>
                         <Accordion
                             plants={plantData}
-                            user={userData}
+                            users={userData}
+                            gardeners={ownedPlantData}
                         />
                     </Col>
                     <Col xs={12} md={8} className="trelis">
