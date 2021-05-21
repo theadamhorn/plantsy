@@ -11,7 +11,7 @@ function BenchContainer(props) {
     const [trellis, setTrellis] = useState(false)
     const [plantData, setPlantData] = useState([])
     const [userData, setUserData] = useState([])
-
+    const [ownedPlantData, setOwnedPlantData] = useState([])
     var accordion = '';
 
 
@@ -25,6 +25,7 @@ function BenchContainer(props) {
                 .then(res => {
                     setPlantData(res.data)
                     setUserData([])
+                    setOwnedPlantData([])
                 })
                 .catch(err => console.log(err));
 
@@ -43,6 +44,13 @@ function BenchContainer(props) {
         if (location === '/profile') {
             setProfile(true)
 
+            API.getOwnedPlants()
+                .then(res => {
+                    setOwnedPlantData(res.data)
+                    setUserData([])
+                    setPlantData([])
+                })
+                .catch(err => console.log(err));
 
         }
         if (location === '/trellis') {
