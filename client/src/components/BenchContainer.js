@@ -11,9 +11,7 @@ function BenchContainer(props) {
     const [trellis, setTrellis] = useState(false)
     const [plantData, setPlantData] = useState([])
     const [userData, setUserData] = useState([])
-
-    var accordion = '';
-
+    const [gardenerData, setGardenerData] = useState([])
 
     useEffect(() => {
         var location = document.location.pathname;
@@ -43,7 +41,13 @@ function BenchContainer(props) {
         if (location === '/profile') {
             setProfile(true)
 
-
+            API.getOwnedPlants()
+                .then(res => {
+                    setPlantData([])
+                    setUserData([])
+                    setGardenerData(res.data)
+                })
+                .catch(err => console.log(err));
         }
         if (location === '/trellis') {
             setTrellis(true)
@@ -51,7 +55,7 @@ function BenchContainer(props) {
         }
 
     }, [])
-
+console.log(gardenerData)
     return (
         <>
             <main className="container-fluid p-0">
@@ -65,7 +69,8 @@ function BenchContainer(props) {
                     <Col xs={12} md={4}>
                         <Accordion
                             plants={plantData}
-                            user={userData}
+                            users={userData}
+                            gardeners={gardenerData}
                         />
                     </Col>
                     <Col xs={12} md={8} className="trelis">
