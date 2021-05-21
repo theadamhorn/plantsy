@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import API from '../utils/API';
 import Accordion from './Accordion';
 // import Model from './Modal';
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 function BenchContainer(props) {
     const [plants, setPlants] = useState(false)
     const [gardeners, setGardeners] = useState(false)
     const [profile, setProfile] = useState(false)
     const [trellis, setTrellis] = useState(false)
+    const [plantData, setPlantData] = useState([])
+    const [userData, setUserData] = useState([])
+
     var accordion = '';
 
 
@@ -18,20 +21,28 @@ function BenchContainer(props) {
         if (location === '/plants') {
             setPlants(true)
 
-            // accordion = <>
-            //     <Accordion
-            //     // plant= 
-            //     />
+            API.getPlants()
+                .then(res => {
+                    setPlantData(res.data)
+                    setUserData([])
+                })
+                .catch(err => console.log(err));
 
-            // </>
             // API call depending on the page, set results into hook, then pass hook into {Accordion}
         }
         if (location === '/gardeners') {
             setGardeners(true)
 
+            API.getUsers()
+                .then(res => {
+                    setPlantData([])
+                    setUserData(res.data)
+                })
+                .catch(err => console.log(err));
         }
         if (location === '/profile') {
             setProfile(true)
+
 
         }
         if (location === '/trellis') {
@@ -41,24 +52,9 @@ function BenchContainer(props) {
 
     }, [])
 
-    // This var is only for demo purposes in place of an API Call
-    var passedProp = [{
-        plant: "Spider",
-        genus: "Thug",
-        species: "Monster",
-        id: 12345,
-        commonName: "Lovey Dovey"
-    }, {
-        plant: "Burkin",
-        genus: "Pretty",
-        species: "Princess",
-        id: 12346,
-        commonName: "superDuper"
-    }];
-
     return (
         <>
-            <Container className="container">
+            <main className="container-fluid p-0">
                 <div className="potting navbar justify-content-around">
                     <span className="bench">{plants ? `The Nursery` : ``}
                         {gardeners ? `The Potting Bench` : ``}
@@ -68,7 +64,8 @@ function BenchContainer(props) {
                 <Row>
                     <Col xs={12} md={4}>
                         <Accordion
-                        // plants={passedProp}
+                            plants={plantData}
+                            user={userData}
                         />
                     </Col>
                     <Col xs={12} md={8} className="trelis">
@@ -77,7 +74,7 @@ function BenchContainer(props) {
                 </Row>
 
 
-            </Container>
+            </main>
         </>
     )
 }

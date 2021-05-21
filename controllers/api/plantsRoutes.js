@@ -3,7 +3,7 @@ const { Plants } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Get all plants from global list
-router.get('/plants', async (req, res) => {
+router.get('/', async (req, res) => {
     // find all plants
     try {
         const plantsData = await Plants.findAll();
@@ -58,7 +58,7 @@ router.put('/plants/:id', withAuth, (req, res) => {
 
 
 // Create a plant to the global list
-router.post('/plants', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newPlants = await Plants.create({
             ...req.body,
@@ -72,7 +72,7 @@ router.post('/plants', withAuth, async (req, res) => {
 });
 
 // Delete a plant from the global list
-router.delete('/plants/:id', withAuth, async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const plantsData = await Plants.destroy({
             where: {
