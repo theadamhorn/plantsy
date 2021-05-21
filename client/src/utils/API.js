@@ -1,5 +1,9 @@
 import axios from "axios";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7efca839e8d9196e84c2007ce3880e418223a6ca
 export default {
 
 
