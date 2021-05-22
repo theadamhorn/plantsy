@@ -61,6 +61,9 @@ function BenchContainer(props) {
         }
 
     }, [])
+
+console.log(ownedPlantData)
+
     return (
         <>
             <main className="container-fluid p-0">

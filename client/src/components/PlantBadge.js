@@ -19,16 +19,16 @@ export default function PlantBadge(props) {
     return (
         <>
         <div className="row">
-            <div class="col-md-2 col-sm-5 water">
+            <div className="col-md-2 col-sm-5 water">
                  <p>{water}</p><p>Water</p><p>{level}</p>
             </div>
-            <div class="col-md-2 col-sm-5 temp">
+            <div className="col-md-2 col-sm-5 temp">
                 <p>{thermometer}</p><p>Temp</p><p>{level}</p>
             </div>
-            <div class="col-md-2 col-sm-5 humidity">
+            <div className="col-md-2 col-sm-5 humidity">
                 <p>{humidity}</p><p>Humidity</p><p>{level}</p>
             </div>
-            <div class="col-md-2 col-sm-5 light">
+            <div className="col-md-2 col-sm-5 light">
                 <p>{light}</p><p>Light</p><p>{level}</p>
             </div>
         </div>

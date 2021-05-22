@@ -3,7 +3,6 @@ import BenchContainer from "../components/BenchContainer";
 import NavBar from "../components/NavBar";
 
 function Plants() {
-    
     return(
     <>
         <NavBar />
