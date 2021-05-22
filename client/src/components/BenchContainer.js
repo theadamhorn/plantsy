@@ -12,11 +12,6 @@ function BenchContainer(props) {
     const [plantData, setPlantData] = useState([])
     const [userData, setUserData] = useState([])
     const [ownedPlantData, setOwnedPlantData] = useState([])
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 7efca839e8d9196e84c2007ce3880e418223a6ca
 
 
     useEffect(() => {
@@ -65,7 +60,7 @@ function BenchContainer(props) {
         }
 
     }, [])
-console.log(gardenerData)
+
     return (
         <>
             <main className="container-fluid p-0">
