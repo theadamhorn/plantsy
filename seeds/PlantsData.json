@@ -4,10 +4,10 @@
         "species": "Fragaria × Ananassa",
         "variety": "",
         "common_name": "Strawberry",
-        "watering": 2,
-        "temperature": 2,
-        "humidity": 2,
-        "light": 3,
+        "watering": 1,
+        "temperature": 1,
+        "humidity": 1,
+        "light": 1,
         "description": "A small plant that produces bright red berries with seeds on the outside of the skin.",
         "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRucjHQoWkNKBPfnd8BW7_sn4Jo8iwrhecQk__oLSyrNGvkJAbos_OwhDhXg&usqp=CAc"
     },
@@ -16,10 +16,10 @@
         "species": "Birkin",
         "variety": "",
         "common_name": "Birkin",
-        "watering": 2,
-        "temperature": 3,
-        "humidity": 2,
-        "light": 2,
+        "watering": 1,
+        "temperature": 2,
+        "humidity": 1,
+        "light": 1,
         "description": "A green waxy leafed plant with creamy white to yellow stripes 10/10 would touch.",
         "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg3u9LS9HWzLu07rAL0P-C6SiuQTwiMVCJ5Q&usqp=CAU"
     },
@@ -28,20 +28,16 @@
         "species": "Italica",
         "variety": "",
         "common_name": "Italian orchid",
-        "watering": 2,
-        "temperature": 2,
-        "humidity": 2,
-        "light": 2,
+        "watering": 1,
+        "temperature": 1,
+        "humidity": 1,
+        "light": 1,
         "description": " It gets its common name from the lobed lip (labellum) of each flower which mimics the general shape of a naked man. In Italy, it is believed that the consumption of the plant is conducive to virility. It prefers partial shade and low nutrient soil and flowers in April.",
         "photo": "https://www.west-crete.com/dailypics/photos/885large.jpg"
     },
     {
         "genus": "Lilium",
-<<<<<<< HEAD
-        "species": "lancifolium",
-=======
         "species": "Lancifolium",
->>>>>>> 98f81953bd956cdcbcf37ce8323436ae069a6b08
         " variety": "",
         "common_name": "Tiger Lily",
         "watering": 2,
@@ -80,11 +76,10 @@
         "species": "Raddianum",
         " variety": "",
         "common_name": "Maidenhair Fern",
-        "watering": 3,
+        "watering": 2,
         "temperature": 2,
         "humidity": 2,
         "light": 1,
-<<<<<<< HEAD
         "description": "It is widely planted as an ornamental because of its showy orange-and-black flowers, and sporadically occurs as garden escape in North America, particularly the eastern United States including New England, and has made incursions into some southern states such as Georgia. The tiger lily means 'I dare you to love me'",
         "photo": "https://www.gardeningknowhow.com/wp-content/uploads/2017/08/tiger-lilies.jpg"
     },
@@ -93,9 +88,9 @@
         "species": "aucampiae",
         " variety": "",
         "common_name": "Tiger Lily",
-        "watering": 0,
+        "watering": 1,
         "temperature": 1,
-        "humidity": 0,
+        "humidity": 1,
         "light": 1,
         "description": "A popular living rock from South Africa which must be watered infrequently and left almost totally dry during its Winter dormancy.",
         "photo": "https://images.app.goo.gl/hS4tqY6HUGZdk3dj9"
@@ -120,7 +115,7 @@
         "watering": 2,
         "temperature": 1,
         "humidity": 1,
-        "light": 0,
+        "light": 1,
         "description": "Classic, temperate fern species",
         "photo": "https://images.app.goo.gl/8HEzxp7shoZoaccW6"
     },
@@ -129,9 +124,9 @@
         "species": "perplexa",
         " variety": "",
         "common_name": "",
-        "watering": 0,
+        "watering": 1,
         "temperature": 1,
-        "humidity": 0,
+        "humidity": 1,
         "light": 2,
         "description": "Beautiful, clump-forming cactus species from South America",
         "photo": "https://images.app.goo.gl/zgKwZTCNpVVVY6dx9"
@@ -147,33 +142,5 @@
         "light": 1,
         "description": "Classic, clump-forming palm for indoor gardening",
         "photo": "https://images.app.goo.gl/K7qRtRuSfcopUk9d6"
-=======
-        "description": "Classic, temperate fern species",
-        "photo": "https://plantcaretoday.com/wp-content/uploads/maidenhair-fern-1200-630-FB-20190731-min.jpg"
-    },
-    {
-        "genus": "Rebutia",
-        "species": "Perplexa",
-        " variety": "",
-        "common_name": "",
-        "watering": 1,
-        "temperature": 2,
-        "humidity": 1,
-        "light": 3,
-        "description": "Beautiful, clump-forming cactus species from South America",
-        "photo": "http://www.consultaplantas.com/images/phocagallery/rebutia_perplexa/thumbs/phoca_thumb_l_rebutia_perplexa_1.jpg"
-    },
-    {
-        "genus": "Dypsis",
-        "species": "Lutescens",
-        " variety": "",
-        "common_name": "Areca Palm",
-        "watering": 2,
-        "temperature": 3,
-        "humidity": 2,
-        "light": 2,
-        "description": "Classic, clump-forming palm for indoor gardening",
-        "photo": "https://www.gardenloversclub.com/wp-content/uploads/2020/11/Areca-Palm-Closeup.jpg"
->>>>>>> 98f81953bd956cdcbcf37ce8323436ae069a6b08
     }
 ]

@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Get all plants from user's owned plants list
-router.get('/owned-plants', async (req, res) => {
+router.get('/', async (req, res) => {
     // find all plants
     try {
         const ownedPlantsData = await Owned_Plants.findAll();

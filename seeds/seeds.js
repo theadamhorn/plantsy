@@ -22,7 +22,7 @@ const seedAll = async () => {
 
 
     } catch (error) {
-
+        console.log(error);
     }
     process.exit(0);
 }
