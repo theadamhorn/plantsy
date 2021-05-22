@@ -7,13 +7,14 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
+      //use axios
         // Send the e-mail and password to the server
         const response = await fetch('/api/users/', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-
+//response.data  -> store
         if (response.ok) {
             document.location.replace('/users');
         } else {

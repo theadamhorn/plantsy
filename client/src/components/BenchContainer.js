@@ -67,9 +67,10 @@ console.log(gardenerData)
             <main className="container-fluid p-0">
                 <div className="potting navbar justify-content-around">
                     <span className="bench">{plants ? `The Nursery` : ``}
-                        {gardeners ? `The Potting Bench` : ``}
+                        {/* {gardeners ? `The Potting Bench` : ``}
                         {profile ? `${props.user.name}'s Potting Bench` : ``}
-                        {trellis ? `The Trellis` : ``}</span>
+                        {trellis ? `The Trellis` : ``}*/}
+                    </span> 
                 </div>
                 <Row>
                     <Col xs={12} md={4}>
