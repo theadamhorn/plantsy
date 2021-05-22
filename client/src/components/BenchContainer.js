@@ -61,11 +61,9 @@ function BenchContainer(props) {
         }
 
     }, [])
-<<<<<<< HEAD
 
-=======
-    console.log(gardenerData)
->>>>>>> 7dec253b91e3876f7e837b7399da372ea7b87aab
+console.log(ownedPlantData)
+
     return (
         <>
             <main className="container-fluid p-0">

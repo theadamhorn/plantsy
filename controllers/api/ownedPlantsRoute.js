@@ -20,6 +20,7 @@ router.post('/', withAuth, async (req, res) => {
 router.get('/', async (req, res) => {
     // find all plants
     try {
+        console.log(`Hi there... I am trying to help....`)
         const ownedPlantsData = await Owned_Plants.findAll();
         res.status(200).json(ownedPlantsData);
     } catch (err) {
