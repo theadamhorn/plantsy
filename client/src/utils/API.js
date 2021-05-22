@@ -1,6 +1,8 @@
 import axios from "axios";
 
+
 export default {
+
 
     // Axios functions for Plants
     getPlants: function () {
@@ -30,7 +32,7 @@ export default {
     createOwnedPlants: function (id) {
         return axios.post('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
     },
-    udpateOwnedPlants: function (id) {
+    updateOwnedPlants: function (id) {
         return axios.put('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
     },
     deleteOwnedPlants: function (id) {

@@ -1,5 +1,15 @@
+import React from "react";
+import BenchContainer from "../components/BenchContainer";
+import NavBar from "../components/NavBar";
+
 function Gardeners() {
-    return <h1>Gardeners Page</h1>
+    
+    return(
+    <>
+        <NavBar />
+        <BenchContainer />
+    </>    
+    )
 }
 
 export default Gardeners;

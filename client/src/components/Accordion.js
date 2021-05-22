@@ -1,59 +1,119 @@
-import React, { useState } from 'react';
-import Modal from "./Modal";
-import ModalButton from "./ModalButton";
+import React, { useEffect, useState } from 'react';
+// import ModalPlant from "./ModalPlant";
+// import ModalButton from "./ModalButton";
+import PlantBadge from "./PlantBadge";
 
 export default function Accordion(props) {
-    var [user, setUser] = useState(false);
-    var [plant, setPlant] = useState(false);
+    var [Gardener, setGardener] = useState(false);
+    var [Plant, setPlant] = useState(false);
 
-    if(props.user){setUser(true)}
-    if(props.plant){setPlant(true)}
+useEffect(() =>{
+    var location = document.location.pathname;
 
-    const plants = props.plant;
-    const users = props.user;
-    const plantHead = <> {plant.genus} {plant.species} {plant.variety} --- {plant.common_name} </>;
-    const userHead = <> {user.name} </>;
-    const plantBody = <>        
-            <ModalButton plantID={plant.id}/>   
-            <PlantModal 
-            genus={plant.genus}
-            species={plant.species}
-            variety={plant.variety}
-            commonName={plant.common_name}
-            photo={plant.photo}
-            watering={plant.watering}
-            temperature={plant.temperature}
-            humdity={plant.humdity}
-            light={plant.light}
-            description={plant.description}
-            care={plant.care}
-            />
-            </>;
-    const userBody = <>
-    <Modal />
-
-    </>
+    if (location === '/plants') {
+        setPlant(true);            
+        // API call depending on the page, set results into hook, then pass hook into {Accordion}
+    }
+    if (location === '/gardeners') {
+        setGardener(true)
+    }
+    
+}, [props])
 
 
+    var plants = props.plants;
+    var users = props.users;
+
+if(Plant === true && plants === undefined){
+    plants =[ {
+        plant: "Spider",
+        genus: "Thug",
+        species: "Monster",
+        id: 12345,
+        commonName: "Lovey Dovey"
+    },{
+        plant: "Burkin",
+        genus: "Pretty",
+        species: "Princess",
+        id: 12346,
+        commonName: "superDuper"
+    }]
+}
+if(Gardener === true && users === undefined){
+    users = [{
+        name: "Bobby",
+        id: 7775
+    },{
+        name: "Mark",
+        id: 7777
+    }]
+}
+
+
+console.log(props);
+if(Plant === true){
     return (
         <div>
-            {plants.map(plant => {
             <div className="accordion">
-                <div className="accordion-item">
-                    <h2 className="accordion-header" id="heading{plant.id}">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{plant.id}" aria-expanded="true" aria-controls="collapse{plant.id}">
-                        {user ? userHead : ``}
-                        {plant ? plantHead : ``}
+            {plants.map(plant => {
+                return (
+                <div className="accordion-item" key={plant._id}>
+                    <h2 className="accordion-header" id={"heading" + plant._id}>
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + plant._id} aria-expanded="true" aria-controls={"collapse" + plant._id}>
+                        {plant.genus} {plant.species} --- {plant.common_name}
+                        
                     </button>
                     </h2>
-                 <div id="collapse{plant.id}" className="accordion-collapse collapse" aria-labelledby="heading{plant.id}" data-bs-parent="#heading{plant.id}">
-                    <div className="accordion-body">
-                    {user ? userBody : ``}
-                    {plant ? plantBody: ``}
+                    <div id={"collapse" + plant._id} className="accordion-collapse collapse" aria-labelledby={"heading" + plant._id} data-bs-parent={"#heading" + plant._id}>
+                        <div className="accordion-body">
+                           {/* <ModalPlant
+                           id={props._id}
+                           genus={props.genus}
+                           species={props.species}
+                           variety={props.variety}
+                           common_name={props.common_name}
+                           photo={props.photo}
+                           watering={props.watering}
+                           temperature={props.temperature}
+                           humidity={props.humidity}
+                           light={props.light}
+                           description={props.description}
+                           /> */}
+                            <PlantBadge
+                            watering={plant.watering}
+                            />
+                        </div>
                     </div>
-             </div>
-        </div>
-        </div>     
-    })}
-   </div>)
+                </div>
+            )})}
+            </div> 
+        </div>)}
+        
+        else if(Gardener === true){
+            return(
+            <div>
+            <div className="accordion">
+            {users.map(user => {
+                return (
+                <div className="accordion-item" key={user._id}>
+                    <h2 className="accordion-header" id={"heading" + user._id}>
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + user._id} aria-expanded="true" aria-controls={"collapse" + user._id}>
+                        {user.name}
+                        
+                    </button>
+                    </h2>
+                    <div id={"collapse" + user._id} className="accordion-collapse collapse" aria-labelledby={"heading" + user._id} data-bs-parent={"#heading" + user._id}>
+                        <div className="accordion-body">
+                            A users garden button will go here.
+                        </div>
+                    </div>
+                </div>
+            )})}
+            </div> 
+        </div>)}
+        else return(<h1>No information to display</h1>)
+        
+
 }
+
+
