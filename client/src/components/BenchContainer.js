@@ -61,7 +61,7 @@ function BenchContainer(props) {
         }
 
     }, [])
-console.log(gardenerData)
+
     return (
         <>
             <main className="container-fluid p-0">
@@ -72,7 +72,7 @@ console.log(gardenerData)
                         {trellis ? `The Trellis` : ``}</span>
                 </div>
                 <Row>
-                    <Col xs={12} md={4}>
+                    <Col xs={12} md={4} className="p-0">
                         <Accordion
                             plants={plantData}
                             users={userData}
