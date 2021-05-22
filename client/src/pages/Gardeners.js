@@ -7,7 +7,9 @@ function Gardeners() {
     return(
     <>
         <NavBar />
-        <BenchContainer />
+        <BenchContainer 
+        
+        />
     </>    
     )
 }
