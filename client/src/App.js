@@ -22,8 +22,8 @@ function App() {
   return (
     <>
       <Router>
-        <NavBar />
         <AuthContext.Provider value={{ authData: authState, setAuth: setAuthState }}>
+          <NavBar />
           <Switch>
             <Route exact path='/' component={Landing} />
             <Route exact path='/plants' component={Plants} />

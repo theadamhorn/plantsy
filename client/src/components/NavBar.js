@@ -4,8 +4,10 @@ import AuthContext from "../utils/AuthContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling } from '@fortawesome/free-solid-svg-icons'
 import LoginModal from './ModalLogin';
+import API from '../utils/API';
 
 export default function NavBar() {
+    const [loginShow, setLoginShow] = useState(false)
 
     const { authData, setAuth } = useContext(AuthContext);
     var response = '';
@@ -109,8 +111,8 @@ export default function NavBar() {
     } else {
         links =
             <div>
-                <a class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#modal" role="button">Login</a>
-                <LoginModal />
+                <a onClick={() => setLoginShow(true)} class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#modal" role="button">Login</a>
+                <LoginModal loginShow={loginShow} setLoginShow={setLoginShow} />
             </div>
     }
 
