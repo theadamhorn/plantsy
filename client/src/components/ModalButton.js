@@ -3,7 +3,7 @@ import React from 'react'
 function ModalButton(props) {
     return (
         <div>
-            <button type="button" className="plant_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{garden.id}}">
+            <button type="button" className="plant_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{garden.id}">
                 <p>
                     <i className="fas fa-seedling fa-2x"></i>
                 </p>

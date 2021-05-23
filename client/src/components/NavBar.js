@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import API from "../utils/API";
 import AuthContext from "../utils/AuthContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling } from '@fortawesome/free-solid-svg-icons'
+import LoginModal from './ModalLogin';
 
 export default function NavBar() {
 
@@ -73,6 +73,25 @@ export default function NavBar() {
 
     var links
     var login
+
+    const logout = async () => {
+        // Make a POST request to destroy the session on the back end
+        const response = await fetch('/api/users/logout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+        }).then(res => {
+            setAuth({
+                isAuthenticated: false,
+                loading: false,
+                user: res.data,
+            })
+        })
+            .then(document.location.replace('/'))
+            .catch(err => { console.error(err) })
+    };
+
+    var links;
+    var logoutLink;
     if (authData.isAuthenticated) {
         links =
             <div>
@@ -86,11 +105,13 @@ export default function NavBar() {
                     <Link to="/trellis" className="nav-link">Trellis</Link>
                 </li>
             </div>
-        login = "Logout (this is not real)"
-        // button = <LogoutButton onClick={this.handleLogoutClick} />;
+        logoutLink = <div><a class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#modal" role="button" onClick={logout}>Logout</a></div>
     } else {
-        login = "Login (this is not real)"
-        // button = <LoginButton onClick={this.handleLoginClick} />;
+        links =
+            <div>
+                <a class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#modal" role="button">Login</a>
+                <LoginModal />
+            </div>
     }
 
     return (
@@ -112,7 +133,7 @@ export default function NavBar() {
                     </ul>
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            {login}
+                            {logoutLink}
                         </li>
                     </ul>
                 </div>
