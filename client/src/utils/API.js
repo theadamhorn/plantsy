@@ -14,8 +14,8 @@ export default {
     },
 
     // Axios functions for single user
-    createUser: function (id) {
-        return axios.post('/api/users/' + id);
+    logInUser: function ( body, header) {
+        return axios.post('/api/users/', body, header);
     },
     updateUser: function (id) {
         return axios.put('/api/users/' + id);

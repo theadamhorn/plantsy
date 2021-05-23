@@ -13,6 +13,8 @@ function BenchContainer(props) {
     const [userData, setUserData] = useState([])
     const [ownedPlantData, setOwnedPlantData] = useState([])
 
+    var gardenerData = "";
+
 
     useEffect(() => {
         var location = document.location.pathname;
@@ -61,6 +63,11 @@ function BenchContainer(props) {
 
     }, [])
 
+<<<<<<< HEAD
+=======
+console.log(ownedPlantData)
+
+>>>>>>> ea3cc47ddddf59ee9b35845c80ab1604e009218f
     return (
         <>
             <main className="container-fluid p-0">
@@ -71,7 +78,7 @@ function BenchContainer(props) {
                         {trellis ? `The Trellis` : ``}</span>
                 </div>
                 <Row>
-                    <Col xs={12} md={4}>
+                    <Col xs={12} md={4} className="p-0">
                         <Accordion
                             plants={plantData}
                             users={userData}

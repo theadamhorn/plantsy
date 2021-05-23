@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 function Profile() {
+    
     const prop = {
         name: "Bobby",
         id: 7777
