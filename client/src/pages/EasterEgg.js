@@ -1,14 +1,14 @@
 import React from "react";
 import BenchContainer from "../components/BenchContainer";
-import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 function EasterEgg() {
-    
-    return(
-    <>
-        <NavBar />
-        <BenchContainer />
-    </>    
+
+    return (
+        <>
+            <BenchContainer />
+            <Footer />
+        </>
     )
 }
 
