@@ -1,32 +1,32 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import BenchContainer from "../components/BenchContainer";
-import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import API from "../utils/API";
 
 
 function Plants() {
     const [plantData, setPlantData] = useState([]);
-    
+
     useEffect(() => {
         if (!plantData) {
-          return;
+            return;
         }
-        else{
-    API.getPlants()
-        .then(res => {
-            setPlantData(res.data)
-            })
-            .catch(err => console.log(err));
+        else {
+            API.getPlants()
+                .then(res => {
+                    setPlantData(res.data)
+                })
+                .catch(err => console.log(err));
         }
-        },[]);
+    }, []);
 
-    return(
-    <>
-        <NavBar />
-        <BenchContainer
-        plants = {plantData}
-        title ={"The Nursery"}/>
-    </>    
+    return (
+        <>
+            <BenchContainer
+                plants={plantData}
+                title={"The Nursery"} />
+            <Footer />
+        </>
     )
 }
 
