@@ -29,7 +29,7 @@ body {
 }
 
 .navbar .navbar-brand:hover {
-  font-weight: 900;
+  /* font-weight: 900; */
   background-color: #0a4158;
   color: #ff9636;
 }

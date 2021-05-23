@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import API from "../utils/API";
 import AuthContext from "../utils/AuthContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSeedling } from '@fortawesome/free-solid-svg-icons'
 
 export default function NavBar() {
 
@@ -10,20 +12,20 @@ export default function NavBar() {
     const loginFormHandler = async (event) => {
         // Stop the browser from submitting the form so we can do so with JavaScript
         event.preventDefault();
-    
+
 
         // Gather the data from the form elements on the page
         const email = "sal@hotmail.com";
         // document.querySelector('#email-login').value.trim();
         const password = "password12345";
         // document.querySelector('#password-login').value.trim();
-    
+
         if (email && password) {
             // Send the e-mail and password to the server
-                const body = { email, password };
-                const header = { 'Content-Type': 'application/json' }
-                API.logInUser(body, header)
-                .then(res =>{
+            const body = { email, password };
+            const header = { 'Content-Type': 'application/json' }
+            API.logInUser(body, header)
+                .then(res => {
                     setAuth({
                         isAuthenticated: true,
                         loading: false,
@@ -31,19 +33,19 @@ export default function NavBar() {
                     })
                 })
                 .then(document.location.replace('/profile'))
-                .catch(err => {console.error(err)})
-            };
+                .catch(err => { console.error(err) })
+        };
 
-        }
-    
-    
+    }
+
+
     // const signupFormHandler = async (event) => {
     //     event.preventDefault();
-      
+
     //     const name = document.querySelector('#name-signup').value.trim();
     //     const email = document.querySelector('#email-signup').value.trim();
     //     const password = document.querySelector('#password-signup').value.trim();
-      
+
     //     if (name && email && password) {
     //       const response = await fetch('/api/users/signup', {
     //         method: 'POST',
@@ -58,15 +60,15 @@ export default function NavBar() {
     //       }
     //     }
     //   };
-    
+
     // document
     //     .querySelector('.login-form') // <== Check this selector on Plantsy app
     //     .addEventListener('submit', loginFormHandler);
-    
+
     // document
     //     .querySelector('.signup-form')
     //     .addEventListener('submit', signupFormHandler);
-    
+
 
     var links
     var login
@@ -83,7 +85,7 @@ export default function NavBar() {
                     <Link to="/trellis" className="nav-link">Trellis</Link>
                 </li>
             </div>
-        login = "Logout (this is not real)" 
+        login = "Logout (this is not real)"
         // button = <LogoutButton onClick={this.handleLogoutClick} />;
     } else {
         login = "Login (this is not real)"
@@ -95,7 +97,7 @@ export default function NavBar() {
         // Nav code from main.handlebars modified with conditionals extracted as variables
         < nav className="navbar navbar-expand-lg" >
             <div className="container-fluid">
-                <Link to="/" className="navbar-brand"><i className="fas fa-seedling fa-lg"></i> Plantsy</Link>
+                <Link to="/" className="navbar-brand"><FontAwesomeIcon icon={faSeedling} className="fa-lg" /> Plantsy</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -109,7 +111,7 @@ export default function NavBar() {
                     </ul>
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            {login} 
+                            {login}
                         </li>
                     </ul>
                 </div>
