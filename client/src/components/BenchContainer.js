@@ -5,15 +5,18 @@ import Accordion from './Accordion';
 import { Row, Col } from "react-bootstrap";
 
 function BenchContainer(props) {
+    // Set state specific to the page route
     const [plants, setPlants] = useState(false)
     const [gardeners, setGardeners] = useState(false)
     const [profile, setProfile] = useState(false)
     const [trellis, setTrellis] = useState(false)
+
+    // Set state specific to the data needed for the accordion
     const [plantData, setPlantData] = useState([])
-    const [userData, setUserData] = useState([])
+    const [gardenerData, setGardenerData] = useState([])
     const [ownedPlantData, setOwnedPlantData] = useState([])
 
-    var gardenerData = "";
+    // var gardenerData = ""; << why do we need this??
 
 
     useEffect(() => {
@@ -22,15 +25,15 @@ function BenchContainer(props) {
         if (location === '/plants') {
             setPlants(true)
 
+            // API call depending on the page, set results into hook, then pass hook into {Accordion}
             API.getPlants()
                 .then(res => {
                     setPlantData(res.data)
-                    setUserData([])
+                    setGardenerData([])
                     setOwnedPlantData([])
                 })
                 .catch(err => console.log(err));
 
-            // API call depending on the page, set results into hook, then pass hook into {Accordion}
         }
         if (location === '/gardeners') {
             setGardeners(true)
@@ -38,7 +41,7 @@ function BenchContainer(props) {
             API.getUsers()
                 .then(res => {
                     setPlantData([])
-                    setUserData(res.data)
+                    setGardenerData(res.data)
                     setOwnedPlantData([])
                 })
                 .catch(err => console.log(err));
@@ -50,7 +53,7 @@ function BenchContainer(props) {
                 .then(res => {
 
                     setOwnedPlantData(res.data)
-                    setUserData([])
+                    setGardenerData([])
                     setPlantData([])
                 })
                 .catch(err => console.log(err));
@@ -78,11 +81,11 @@ function BenchContainer(props) {
                     <Col xs={12} md={4} className="p-0">
                         <Accordion
                             plants={plantData}
-                            users={userData}
-                            gardeners={ownedPlantData}
+                            gardeners={gardenerData}
+                            myPlants={ownedPlantData}
                         />
                     </Col>
-                    <Col xs={12} md={8} className="trelis">
+                    <Col xs={12} md={8} className="trellis">
 
                     </Col>
                 </Row>

@@ -24,6 +24,7 @@ export default function NavBar() {
             // Send the e-mail and password to the server
             const body = { email, password };
             const header = { 'Content-Type': 'application/json' }
+
             API.logInUser(body, header)
                 .then(res => {
                     setAuth({

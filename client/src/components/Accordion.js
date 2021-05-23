@@ -25,7 +25,7 @@ export default function Accordion(props) {
     var plants = props.plants;
     var users = props.users;
 
-    if (Plant === true && plants === undefined) {
+    if (Plant === true) {
         plants = [{
             plant: "Spider",
             genus: "Thug",
@@ -61,7 +61,7 @@ export default function Accordion(props) {
                             <div className="accordion-item" key={plant._id}>
                                 <h2 className="accordion-header" id={"heading" + plant._id}>
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + plant._id} aria-expanded="true" aria-controls={"collapse" + plant._id}>
-                                        {plant.genus} {plant.species} --- {plant.common_name}
+                                        {plant.genus} {plant.species} --- {plant.commonName}
 
                                     </button>
                                 </h2>
