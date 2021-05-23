@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from "../utils/AuthContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSeedling } from '@fortawesome/free-solid-svg-icons'
+import { faSeedling, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 import LoginModal from './ModalLogin';
 import API from '../utils/API';
 
@@ -96,22 +96,22 @@ export default function NavBar() {
     var logoutLink;
     if (authData.isAuthenticated) {
         links =
-            <div>
-                <li className="nav-item">
+            <div className="row nav-row">
+                <li className="nav-item col">
                     <Link to="/gardeners" className="nav-link">Gardeners</Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item col">
                     <Link to="/users" className="nav-link">My Plants</Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item col">
                     <Link to="/trellis" className="nav-link">Trellis</Link>
                 </li>
             </div>
-        logoutLink = <div><a class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#modal" role="button" onClick={logout}>Logout</a></div>
+        logoutLink = <div><a class="nav-link active position-absolute top-50 end-0 translate-middle" aria-current="page" data-bs-toggle="modal" href="#modal" role="button" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></a></div>
     } else {
         links =
             <div>
-                <a onClick={() => setLoginShow(true)} class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#modal" role="button">Login</a>
+                <Link onClick={() => setLoginShow(true)} class="nav-link active position-absolute top-50 end-0 translate-middle" aria-current="page" data-bs-toggle="modal" href="#modal" role="button"><FontAwesomeIcon icon={faSignInAlt} className="fa-lg" /></Link>
                 <LoginModal loginShow={loginShow} setLoginShow={setLoginShow} />
             </div>
     }
@@ -134,7 +134,7 @@ export default function NavBar() {
                         {links}
                     </ul>
                     <ul className="navbar-nav">
-                        <li className="nav-item">
+                        <li className="nav-item position-absolute end-0 translate-middle">
                             {logoutLink}
                         </li>
                     </ul>
