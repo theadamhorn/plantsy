@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 
 
 // update given plant in global plant list
-router.put('/plants/:id', withAuth, (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Plants.update(
         {
             genus: req.body.genus,
