@@ -29,12 +29,18 @@ export default function NavBar() {
     var links;
     var log_in_out_Link;
     if (authData.isAuthenticated) {
-        links =
-            <div className="row nav-row">
-                <Link to="/gardeners" className="nav-link col">Gardeners</Link>
-                <Link to="/users" className="nav-link col mx-1">My Plants</Link>
-                <Link to="/trellis" className="nav-link col">Trellis</Link>
-            </div>
+        links =<>
+            <li className="nav-item">
+                <Link to="/gardeners" className="nav-link">Gardeners</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/users" className="nav-link">My Plants</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/trellis" className="nav-link">Trellis</Link>
+            </li>
+            </>;
+
         log_in_out_Link = <div><a class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#modal" role="button" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></a></div>
     } else {
        links =''
@@ -56,8 +62,12 @@ export default function NavBar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <Link to="/plants" className="nav-link active mx-4" aria-current="page">Plants</Link>
-                    {links}
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link to="/plants" className="nav-link" aria-current="page">Plants</Link>
+                        </li>
+                        {links}
+                    </ul>
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             {log_in_out_Link}
