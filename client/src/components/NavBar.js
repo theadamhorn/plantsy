@@ -56,13 +56,14 @@ export default function NavBar() {
         // Nav code from main.handlebars modified with conditionals extracted as variables
         < nav className="navbar navbar-expand-lg" >
             <div className="container-fluid">
-                <Link to="/" className="navbar-brand"><FontAwesomeIcon icon={faSeedling} className="fa-lg" /> Plantsy</Link>
+                
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul className="navbar-nav">
+                <div className="collapse navbar-collapse" id="navbarNav">
+                <Link to="/" className="navbar-brand"><FontAwesomeIcon icon={faSeedling} className="fa-lg" /> Plantsy</Link>
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <Link to="/plants" className="nav-link" aria-current="page">Plants</Link>
                         </li>
