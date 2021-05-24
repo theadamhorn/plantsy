@@ -43,7 +43,7 @@ function LoginModal({ loginShow, setLoginShow }) {
   const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    if (name != '' && email != '' && password != '') {
+    if (name !== '' && email !== '' && password !== '') {
 
       const body = { name, email, password };
       const header = { 'Content-Type': 'application/json' };
@@ -63,7 +63,7 @@ function LoginModal({ loginShow, setLoginShow }) {
 
   return (
     <div>
-      <Modal show={loginShow} className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
+      <div show={loginShow} className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="col-md-12 text-center">
@@ -88,7 +88,7 @@ function LoginModal({ loginShow, setLoginShow }) {
             </div>
           </div>
         </div>
-      </Modal>
+      </div>
       {/* <!-- Second modal dialog --> */}
       <div className="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
