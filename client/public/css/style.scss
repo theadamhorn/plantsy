@@ -26,7 +26,6 @@ body {
     border: $font 2px solid;
   }
   .navbar-brand:hover {
-    // font-weight: 900;
     background-color: $navy;
     color: $orange;
   }
@@ -40,8 +39,7 @@ body {
     border: $orange 2px solid;
   }
   .navbar-toggler-icon {
-    background-color: $seafoam;
-    background-image: url(./images/icon.png);
+    background-image: url(./images/icons8-spa-flower-100.png);
   }
   a {
     font-weight: 600;
