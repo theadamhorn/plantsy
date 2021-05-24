@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import API from "../utils/API";
 import AuthContext from "../utils/AuthContext";
 import { Redirect } from 'react-router-dom';
-import { Modal } from 'react-bootstrap';
+
 
 function LoginModal({ loginShow, setLoginShow }) {
   const [email, setEmail] = useState([]);
@@ -28,12 +28,13 @@ function LoginModal({ loginShow, setLoginShow }) {
           setAuth({
             ...authData,
             isAuthenticated: true,
-            loading: false,
+            loading: true,
             user: res.data.user,
-          })
-          setLoginShow(false)
+          }) 
         })
-        .then(<Redirect to='/profile' />)
+        .then(setLoginShow(true))
+        .then(document.location.replace('/profile'))
+        // .then(<Redirect to='/profile' />)
         .catch(err => { console.error(err) })
     };
 
@@ -52,18 +53,20 @@ function LoginModal({ loginShow, setLoginShow }) {
         .then(res => {
           setAuth({
             isAuthenticated: true,
-            loading: false,
+            // loading: true,
             user: res.data,
           })
+          
         })
-        .then(document.location.replace('/users'))
+        .then(setLoginShow(true))
+        .then(document.location.replace('/profile'))
         .catch(err => { console.error(err) })
     }
   };
 
   return (
     <div>
-      <div show={loginShow} className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
+      <div  className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="col-md-12 text-center">
