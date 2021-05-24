@@ -42,7 +42,7 @@ body {
 
 .nav-row {
   display: flex;
-  width: 80%;
+  width: 40%;
 }
 
 .navbar a:hover {

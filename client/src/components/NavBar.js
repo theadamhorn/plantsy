@@ -97,15 +97,9 @@ export default function NavBar() {
     if (authData.isAuthenticated) {
         links =
             <div className="row nav-row">
-                <li className="nav-item col">
-                    <Link to="/gardeners" className="nav-link">Gardeners</Link>
-                </li>
-                <li className="nav-item col">
-                    <Link to="/users" className="nav-link">My Plants</Link>
-                </li>
-                <li className="nav-item col">
-                    <Link to="/trellis" className="nav-link">Trellis</Link>
-                </li>
+                <Link to="/gardeners" className="nav-link col">Gardeners</Link>
+                <Link to="/users" className="nav-link col mx-1">My Plants</Link>
+                <Link to="/trellis" className="nav-link col">Trellis</Link>
             </div>
         logoutLink = <div><a class="nav-link active position-absolute top-50 end-0 translate-middle" aria-current="page" data-bs-toggle="modal" href="#modal" role="button" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></a></div>
     } else {
@@ -126,13 +120,9 @@ export default function NavBar() {
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse justify-content-around" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link to="/plants" className="nav-link active" aria-current="page">Plants</Link>
-                        </li>
-                        {links}
-                    </ul>
+                <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <Link to="/plants" className="nav-link active mx-4" aria-current="page">Plants</Link>
+                    {links}
                     <ul className="navbar-nav">
                         <li className="nav-item position-absolute end-0 translate-middle">
                             {logoutLink}
