@@ -41,14 +41,14 @@ export default function NavBar() {
             </li>
             </>;
 
-        log_in_out_Link = <div><a class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#modal" role="button" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></a></div>
+        log_in_out_Link = <><Link className="nav-link active" aria-current="page" data-bs-toggle="modal" to="#modal" role="button" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></Link></>
     } else {
        links =''
         
-        log_in_out_Link =<div>
-        <a className="nav-link active" aria-current="page" data-bs-toggle="modal" href="#modal" role="button">Login</a>
+        log_in_out_Link =<>
+        <Link className="nav-link active" aria-current="page" data-bs-toggle="modal" to="#modal" role="button">Login</Link>
         <LoginModal/>
-        </div>
+        </>
     }
 
     return (
