@@ -10,6 +10,7 @@ body {
   color: #0a4158;
   font-size: 1.25em;
   border-bottom: 2px #e4d7d0 solid;
+  margin: auto;
 }
 
 .footer {
@@ -98,6 +99,10 @@ body {
 .plantList {
   background-color: #e4d7d0;
   height: 750px;
+}
+
+.accordion {
+  margin-left: 3%;
 }
 
 .accordion-item {
@@ -249,4 +254,9 @@ body {
 .deletePlant {
   color: #0a4158;
 }
-/*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width: 767px) {
+  .accordion {
+    margin: auto;
+  }
+}

@@ -46,7 +46,7 @@ function BenchContainer(props) {
                 })
                 .catch(err => console.log(err));
         }
-        if (location === '/profile') {
+        if (location === '/users') {
             setProfile(true)
 
             API.getOwnedPlants()
@@ -70,7 +70,7 @@ function BenchContainer(props) {
 
     return (
         <>
-            <main className="container-fluid p-0">
+            <main className="container-fluid px-0">
                 <div className="potting navbar justify-content-around">
                     <span className="bench">
                         {props.title}

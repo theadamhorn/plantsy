@@ -28,7 +28,7 @@ function App() {
             <Route exact path='/' component={Landing} />
             <Route exact path='/plants' component={Plants} />
             <Private exact path='/gardeners' component={Gardeners} />
-            <Private exact path='/profile' component={Profile} />
+            <Private exact path='/users' component={Profile} />
             <Private exact path='/trellis' component={Trellis} />
           </Switch>
         </AuthContext.Provider>

@@ -14,10 +14,10 @@ export default {
     },
 
     // Axios functions for single user
-    logInUser: function ( body, header) {
+    logInUser: function (body, header) {
         return axios.post('/api/users/', body, header);
     },
-    signupUser: function ( body, header) {
+    signupUser: function (body, header) {
         return axios.fetch('/api/users/signup', body, header);
     },
     updateUser: function (id) {

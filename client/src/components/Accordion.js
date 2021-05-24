@@ -6,17 +6,20 @@ import PlantBadge from "./PlantBadge";
 export default function Accordion(props) {
     var [Gardener, setGardener] = useState(false);
     var [Plant, setPlant] = useState(false);
+    var [OwnedPlant, setOwnedPlant] = useState(false);
+    // var [Trellis, setTrellis] = useState(false);
 
     useEffect(() => {
         var location = document.location.pathname;
 
         if (location === '/plants') {
             setPlant(true);
-
-            // API call depending on the page, set results into hook, then pass hook into {Accordion}
         }
         if (location === '/gardeners') {
             setGardener(true)
+        }
+        if (location === '/profile') {
+            setOwnedPlant(true)
         }
 
     }, [props])
@@ -108,7 +111,7 @@ export default function Accordion(props) {
                                 <div id={"collapse" + user._id} className="accordion-collapse collapse" aria-labelledby={"heading" + user._id} data-bs-parent={"#heading" + user._id}>
                                     <div className="accordion-body">
                                         A users garden button will go here.
-                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )
@@ -116,7 +119,7 @@ export default function Accordion(props) {
                 </div>
             </div>)
     }
-    else return (<h1>No information to display</h1>)
+    else return (<h1 className="mx-3">No information to display</h1>)
 
 
 }

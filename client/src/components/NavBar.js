@@ -101,7 +101,7 @@ export default function NavBar() {
                 <Link to="/users" className="nav-link col mx-1">My Plants</Link>
                 <Link to="/trellis" className="nav-link col">Trellis</Link>
             </div>
-        logoutLink = <div><a class="nav-link active position-absolute top-50 end-0 translate-middle" aria-current="page" data-bs-toggle="modal" href="#modal" role="button" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></a></div>
+        logoutLink = <div><Link class="nav-link active position-absolute top-50 end-0 translate-middle" aria-current="page" data-bs-toggle="modal" href="#modal" role="button" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></Link></div>
     } else {
         links =
             <div>
@@ -124,7 +124,7 @@ export default function NavBar() {
                     <Link to="/plants" className="nav-link active mx-4" aria-current="page">Plants</Link>
                     {links}
                     <ul className="navbar-nav">
-                        <li className="nav-item position-absolute end-0 translate-middle">
+                        <li className="nav-item">
                             {logoutLink}
                         </li>
                     </ul>
