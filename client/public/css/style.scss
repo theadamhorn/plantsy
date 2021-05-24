@@ -26,7 +26,7 @@ body {
     border: $font 2px solid;
   }
   .navbar-brand:hover {
-    font-weight: 900;
+    // font-weight: 900;
     background-color: $navy;
     color: $orange;
   }
@@ -51,6 +51,9 @@ body {
   a:hover {
     background-color: $orange;
     border-radius: 10px;
+    color: $navy;
+  }
+  a:visited {
     color: $navy;
   }
   ul li {
