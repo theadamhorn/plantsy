@@ -7,8 +7,8 @@ function Landing() {
 
     return (
         <>
-            <div class="hero-image">
-                <div class="hero-text">
+            <div className="hero-image">
+                <div className="hero-text">
                     <p id="hero-text-1"><FontAwesomeIcon icon={faSeedling} className="fa-lg" /> Plantsy</p>
                     <p id="hero-text-2">Helping you take care of life.</p>
                 </div>
