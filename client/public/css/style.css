@@ -13,37 +13,29 @@ body {
   margin: auto;
 }
 
-.footer {
-  background-color: #4b83788e;
-  color: #0a4158;
-  font-size: .7em;
-  border-bottom: 2px #e4d7d0 solid;
-}
-
 .navbar .navbar-brand {
   background-color: #93e9be;
   color: #222;
-  padding: 0.4em;
-  font-size: 1.75em;
+  padding: 0.5em;
+  font-size: 2em;
   border-radius: 15px;
   border: #222 2px solid;
 }
 
 .navbar .navbar-brand:hover {
-  /* font-weight: 900; */
+  font-weight: 900;
   background-color: #0a4158;
   color: #ff9636;
 }
 
-.navbar a {
-  font-weight: 450;
-  border-radius: 10px;
-  color: #222;
+.navbar .navbar-toggler {
+  border: #e4d7d0 2px solid;
 }
 
-.nav-row {
-  display: flex;
-  width: 40%;
+.navbar a {
+  font-weight: 600;
+  border-radius: 10px;
+  color: #222;
 }
 
 .navbar a:hover {
@@ -108,6 +100,7 @@ body {
 .accordion-item {
   background-color: #0a4158;
   color: #0a4158;
+  font-size: 1em;
   line-height: 10px;
   font-family: "Kiwi Maru";
   text-align: center;
@@ -117,7 +110,7 @@ body {
 .accordion-item .accordion-button {
   background-color: #4b8378;
   color: #222;
-  font-size: 0.5em;
+  font-size: 0.65em;
   border: 1px solid white;
 }
 
@@ -170,7 +163,7 @@ body {
   color: #10a610;
 }
 
-.trellis {
+.trelis {
   background-color: #93e9be;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(184, 184, 184, 0.5)), to(rgba(186, 186, 186, 0.5))), url("./images/pexels-gary-barnes-6231990.jpg");
   background-image: linear-gradient(rgba(184, 184, 184, 0.5), rgba(186, 186, 186, 0.5)), url("./images/pexels-gary-barnes-6231990.jpg");

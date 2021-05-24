@@ -30,6 +30,10 @@ body {
     background-color: $navy;
     color: $orange;
   }
+  .navbar-toggler {
+    border: $scallop 2px solid;
+  }
+
   a {
     font-weight: 600;
     border-radius: 10px;
