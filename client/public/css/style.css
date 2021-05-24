@@ -31,6 +31,19 @@ body {
   border: #e4d7d0 2px solid;
 }
 
+.navbar .navbar-toggler:active {
+  border: #0a4158 2px solid;
+}
+
+.navbar .navbar-toggler:hover {
+  border: #ff9636 2px solid;
+}
+
+.navbar .navbar-toggler-icon {
+  background-color: #93e9be;
+  background-image: url(./images/icon.png);
+}
+
 .navbar a {
   font-weight: 600;
   border-radius: 10px;

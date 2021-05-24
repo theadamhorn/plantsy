@@ -33,7 +33,16 @@ body {
   .navbar-toggler {
     border: $scallop 2px solid;
   }
-
+  .navbar-toggler:active {
+    border: $navy 2px solid;
+  }
+  .navbar-toggler:hover {
+    border: $orange 2px solid;
+  }
+  .navbar-toggler-icon {
+    background-color: $seafoam;
+    background-image: url(./images/icon.png);
+  }
   a {
     font-weight: 600;
     border-radius: 10px;
