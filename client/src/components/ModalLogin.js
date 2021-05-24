@@ -63,59 +63,59 @@ function LoginModal({ loginShow, setLoginShow }) {
 
   return (
     <div>
-      <Modal show={loginShow} class="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="col-md-12 text-center">
+      <Modal show={loginShow} className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="col-md-12 text-center">
               <h2>Login</h2>
-              <form class="form login-form">
-                <div class="form-group">
+              <form className="form login-form">
+                <div className="form-group">
                   <label for="email-login">Email:</label>
-                  <input class="form-input" type="text" id="email-login" onChange={event => setEmail(event.target.value.trim())} />
+                  <input className="form-input" type="text" id="email-login" onChange={event => setEmail(event.target.value.trim())} />
                 </div>
-                <div class="form-group left">
+                <div className="form-group left">
                   <label for="password-login">Password:</label>
-                  <input class="form-input" type="password" id="password-login" onChange={event => setpassword(event.target.value.trim())} />
+                  <input className="form-input" type="password" id="password-login" onChange={event => setpassword(event.target.value.trim())} />
                 </div>
-                <div class="form-group">
-                  <button class="btn btn-primary" type="submit" onClick={loginFormHandler}>Login</button>
+                <div className="form-group">
+                  <button className="btn btn-primary" type="submit" onClick={loginFormHandler}>Login</button>
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               {/* <!-- Toogle to second dialog --> */}
-              <button class="btn btn-primary" data-bs-target="#modal2" data-bs-toggle="modal" data-bs-dismiss="modal">Sign Up</button>
+              <button className="btn btn-primary" data-bs-target="#modal2" data-bs-toggle="modal" data-bs-dismiss="modal">Sign Up</button>
             </div>
           </div>
         </div>
       </Modal>
       {/* <!-- Second modal dialog --> */}
-      <div class="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="col-md-12 text-center">
+      <div className="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="col-md-12 text-center">
               <h2>Signup</h2>
-              <form class="form signup-form">
-                <div class="form-group">
+              <form className="form signup-form">
+                <div className="form-group">
                   <label for="name-signup">Name:</label>
-                  <input class="form-input" type="text" id="name-signup" onChange={event => setname(event.target.value.trim())} />
+                  <input className="form-input" type="text" id="name-signup" onChange={event => setname(event.target.value.trim())} />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label for="email-signup">Email:</label>
-                  <input class="form-input" type="text" id="email-signup" onChange={event => setEmail(event.target.value.trim())} />
+                  <input className="form-input" type="text" id="email-signup" onChange={event => setEmail(event.target.value.trim())} />
                 </div>
-                <div class="form-group left">
+                <div className="form-group left">
                   <label for="password-signup">Password:</label>
-                  <input class="form-input" type="password" id="password-signup" onChange={event => setpassword(event.target.value.trim())} />
+                  <input className="form-input" type="password" id="password-signup" onChange={event => setpassword(event.target.value.trim())} />
                 </div>
-                <div class="form-group">
-                  <button class="btn btn-primary" type="submit" onClick={signupFormHandler}>Signup</button>
+                <div className="form-group">
+                  <button className="btn btn-primary" type="submit" onClick={signupFormHandler}>Signup</button>
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               {/* <!-- Toogle to first dialog, `data-bs-dismiss` attribute can be omitted - clicking on link will close dialog anyway --> */}
-              <a class="btn btn-primary" href="#modal" data-bs-dismiss="modal" data-bs-toggle="modal" role="button">Back</a>
+              <a className="btn btn-primary" href="#modal" data-bs-dismiss="modal" data-bs-toggle="modal" role="button">Back</a>
             </div>
           </div>
         </div>
