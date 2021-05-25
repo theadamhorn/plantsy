@@ -28,7 +28,7 @@ export default function Accordion(props) {
     var plants = props.plants;
     var users = props.users;
 
-    if (Plant === false) {
+    if (Plant === true && plants === undefined) {
         plants = [{
             plant: "Spider",
             genus: "Thug",
