@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import API from "../utils/API";
 import AuthContext from "../utils/AuthContext";
 import { Redirect } from 'react-router-dom';
+import { Modal } from 'react-bootstrap';
 
 
 function LoginModal({ loginShow, setLoginShow }) {
@@ -28,12 +29,13 @@ function LoginModal({ loginShow, setLoginShow }) {
           setAuth({
             ...authData,
             isAuthenticated: true,
-            loading: true,
+            loading: false,
             user: res.data.user,
-          }) 
-        })
-        .then(setLoginShow(true))
-        .then(document.location.replace('/profile'))
+          })
+          setLoginShow(false)
+        }).then(<Redirect to='/profile' />)
+        // .then(setLoginShow(true))
+        // .then(document.location.replace('/profile'))
         // .then(<Redirect to='/profile' />)
         .catch(err => { console.error(err) })
     };
@@ -53,20 +55,20 @@ function LoginModal({ loginShow, setLoginShow }) {
         .then(res => {
           setAuth({
             isAuthenticated: true,
-            // loading: true,
+            loading: false,
             user: res.data,
           })
-          
+
         })
-        .then(setLoginShow(true))
-        .then(document.location.replace('/profile'))
+        // .then(setLoginShow(true))
+        .then(document.location.replace('/users'))
         .catch(err => { console.error(err) })
     }
   };
 
   return (
     <div>
-      <div  className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
+      <Modal show={loginShow} className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="col-md-12 text-center">
@@ -91,7 +93,7 @@ function LoginModal({ loginShow, setLoginShow }) {
             </div>
           </div>
         </div>
-      </div>
+      </Modal>
       {/* <!-- Second modal dialog --> */}
       <div className="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
