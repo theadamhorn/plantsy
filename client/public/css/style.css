@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&display=swap");
-body {
-  background-color: #e4d7d0;
-  font-family: "Kiwi Maru";
+body,
+html {
   height: 100%;
+}
+
+#root {
+  font-family: "Kiwi Maru";
 }
 
 .navbar {
@@ -173,7 +176,7 @@ body {
   color: #10a610;
 }
 
-.trelis {
+.trellis {
   background-color: #93e9be;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(184, 184, 184, 0.5)), to(rgba(186, 186, 186, 0.5))), url("./images/pexels-gary-barnes-6231990.jpg");
   background-image: linear-gradient(rgba(184, 184, 184, 0.5), rgba(186, 186, 186, 0.5)), url("./images/pexels-gary-barnes-6231990.jpg");
@@ -203,11 +206,27 @@ body {
   position: relative;
   left: 90px;
   top: 195px;
-  width: 750px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  line-height: 1em;
+  line-height: 1.25em;
+}
+
+.plant_profile .modal-title {
+  background-color: #0a4158;
+}
+
+.plant_profile .modal-header {
+  background-color: #0a4158;
+}
+
+.plant_profile .modal-body {
+  color: #0a4158;
+  background-color: #e4d7d0;
+  border-bottom: #0a4158 1px solid;
 }
 
 .edit_plant_profile {
@@ -231,11 +250,6 @@ body {
   text-align: start;
 }
 
-.modal-header {
-  background-color: #e4d7d0;
-  border-bottom: #0a4158 3px solid;
-}
-
 .plantPhoto {
   width: 250px;
   height: auto;
@@ -256,5 +270,13 @@ body {
 
 .deletePlant {
   color: #0a4158;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

@@ -7,10 +7,12 @@ $seafoam: #93e9be;
 $font: #222;
 $Kiwi: "Kiwi Maru";
 
-body {
-  background-color: $scallop;
-  font-family: $Kiwi;
+body,
+html {
   height: 100%;
+}
+#root {
+  font-family: $Kiwi;
 }
 .navbar {
   background-color: $teal;
@@ -148,7 +150,7 @@ body {
     color: rgb(16, 166, 16);
   }
 }
-.trelis {
+.trellis {
   background-color: $seafoam;
   background-image: linear-gradient(
       rgba(184, 184, 184, 0.5),
@@ -177,9 +179,20 @@ body {
   position: relative;
   left: 90px;
   top: 195px;
-  width: 750px;
+  width: fit-content;
   height: fit-content;
-  line-height: 1em;
+  line-height: 1.25em;
+  .modal-title {
+    background-color: $navy;
+  }
+  .modal-header {
+    background-color: $navy;
+  }
+  .modal-body {
+    color: $navy;
+    background-color: $scallop;
+    border-bottom: $navy 1px solid;
+  }
 }
 .edit_plant_profile {
   position: relative;
@@ -196,10 +209,6 @@ body {
   }
 }
 
-.modal-header {
-  background-color: $scallop;
-  border-bottom: $navy 3px solid;
-}
 .plantPhoto {
   width: 250px;
   height: auto;
@@ -216,4 +225,11 @@ body {
 }
 .deletePlant {
   color: $navy;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
