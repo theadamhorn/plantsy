@@ -20,7 +20,7 @@ html {
   background-color: #93e9be;
   color: #222;
   padding: 0.5em;
-  font-size: 2em;
+  font-size: 1.75em;
   border-radius: 15px;
   border: #222 2px solid;
 }
@@ -277,19 +277,17 @@ html {
   color: #0a4158;
 }
 
-<<<<<<< HEAD
+.footer {
+  background-color: #4b83789d;
+  color: #0a4158;
+  font-size: small;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 3px;
+}
+
 @media screen and (max-width: 767px) {
   .accordion {
     margin: auto;
   }
 }
-=======
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-/*# sourceMappingURL=style.css.map */
->>>>>>> 3ae4e0fd2cdfb18267d7e4ac3ac3f1de3116dcb9
