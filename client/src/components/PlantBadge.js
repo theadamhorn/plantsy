@@ -16,22 +16,23 @@ export default function PlantBadge(props) {
     if(props.watering === "3" || props.light === "3" || props.temperature === "3" || props.humidity === "3"){ level = "High"}
 
     console.log(props)
+    console.log(level)
     return (
         <>
-        <div className="row">
+        
             <div className="col-md-2 col-sm-5 water">
-                 <p>{water}</p><p>Water</p><p>{level}</p>
+                 <p>{water}</p><p>Water</p><p>{props.watering}</p>
             </div>
             <div className="col-md-2 col-sm-5 temp">
-                <p>{thermometer}</p><p>Temp</p><p>{level}</p>
+                <p>{thermometer}</p><p>Temp</p><p>{props.temperature}</p>
             </div>
             <div className="col-md-2 col-sm-5 humidity">
-                <p>{humidity}</p><p>Humidity</p><p>{level}</p>
+                <p>{humidity}</p><p>Humidity</p><p>{props.humidity}</p>
             </div>
             <div className="col-md-2 col-sm-5 light">
-                <p>{light}</p><p>Light</p><p>{level}</p>
+                <p>{light}</p><p>Light</p><p>{props.light}</p>
             </div>
-        </div>
+        
         </>
     )
 }

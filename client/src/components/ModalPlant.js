@@ -4,13 +4,13 @@ function PlantModal(props) {
 
     return (
         <div className="modal fade" id={"plantModal" + props.id} data-bs-backdrop="false"
-            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+            data-bs-keyboard="false" tabIndex="-1" aria-labelledby="modalLabel"
             aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content plant_profile">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="staticBackdropLabel">{props.genus}
-                            {props.species} {props.variety} | {props.common_name}</h5>
+                        <h5 className="modal-title" id="modalLabel">
+                            {props.genus} {props.species} {props.variety} | {props.common_name}</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
@@ -20,22 +20,22 @@ function PlantModal(props) {
                                 <img className="plantPhoto" src={props.photo} />
                             </div>
                         </div>
-                        \n
+                       <br/>
                         <div className="row">
-                            <div className="col-md-3 text-start">
+                            <div className="col-auto text-start">
                                 <h5>Water:</h5>{props.watering}
                             </div>
-                            <div className="col-md-3 text-start">
+                            <div className="col-auto text-start">
                                 <h5>Temperature:</h5>{props.temperature}
                             </div>
-                            <div className="col-md-3 text-start">
+                            <div className="col-auto text-start">
                                 <h5>Humidity:</h5>{props.humidity}
                             </div>
-                            <div className="col-md-3 text-start">
+                            <div className="col-auto text-start">
                                 <h5>Light:</h5>{props.light}
                             </div>
                         </div>
-                        \n
+                        <br/>
                         <div className="row">
                             <div className="col-md-6 text-start">
                                 <h5>Description:</h5>{props.description}
@@ -48,7 +48,7 @@ function PlantModal(props) {
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary"
                             data-bs-dismiss="modal">Close</button>
-                        <button className="btn add-plant-button" type="button" value={props.id}>Add Plant</button>
+                       {document.location.pathname === "/plants" ? "" : <button className="btn add-plant-button" type="button" value={props.id}>Add Plant</button>} 
                         {/* <ModalButton/> */}
                     </div>
                 </div>

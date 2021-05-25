@@ -7,6 +7,8 @@ import LoginModal from './ModalLogin';
 import API from '../utils/API';
 
 export default function NavBar() {
+    const [loginShow, setLoginShow] = useState(false);
+
     const { authData, setAuth } = useContext(AuthContext);
 
 
@@ -46,8 +48,10 @@ export default function NavBar() {
         links = ''
 
         log_in_out_Link = <>
-            <Link className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button">Login</Link>
-            <LoginModal />
+            <Link onClick={() => setLoginShow(true)} className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button">Login</Link>
+            <LoginModal
+                loginShow={loginShow} setLoginShow={setLoginShow}
+            />
         </>
     }
 

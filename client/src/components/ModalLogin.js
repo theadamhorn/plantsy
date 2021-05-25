@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import API from "../utils/API";
 import AuthContext from "../utils/AuthContext";
 import { Redirect } from 'react-router-dom';
-import { Modal } from 'react-bootstrap';
+
 
 function LoginModal({ loginShow, setLoginShow }) {
   const [email, setEmail] = useState([]);
@@ -28,12 +28,13 @@ function LoginModal({ loginShow, setLoginShow }) {
           setAuth({
             ...authData,
             isAuthenticated: true,
-            loading: false,
+            loading: true,
             user: res.data.user,
-          })
-          setLoginShow(false)
+          }) 
         })
-        .then(<Redirect to='/profile' />)
+        .then(setLoginShow(true))
+        .then(document.location.replace('/profile'))
+        // .then(<Redirect to='/profile' />)
         .catch(err => { console.error(err) })
     };
 
@@ -43,7 +44,7 @@ function LoginModal({ loginShow, setLoginShow }) {
   const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    if (name != '' && email != '' && password != '') {
+    if (name !== '' && email !== '' && password !== '') {
 
       const body = { name, email, password };
       const header = { 'Content-Type': 'application/json' };
@@ -52,29 +53,31 @@ function LoginModal({ loginShow, setLoginShow }) {
         .then(res => {
           setAuth({
             isAuthenticated: true,
-            loading: false,
+            // loading: true,
             user: res.data,
           })
+          
         })
-        .then(document.location.replace('/users'))
+        .then(setLoginShow(true))
+        .then(document.location.replace('/profile'))
         .catch(err => { console.error(err) })
     }
   };
 
   return (
     <div>
-      <Modal show={loginShow} className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+      <div  className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="col-md-12 text-center">
               <h2>Login</h2>
               <form className="form login-form">
                 <div className="form-group">
-                  <label for="email-login">Email:</label>
+                  <label htmlFor="email-login">Email:</label>
                   <input className="form-input" type="text" id="email-login" onChange={event => setEmail(event.target.value.trim())} />
                 </div>
                 <div className="form-group left">
-                  <label for="password-login">Password:</label>
+                  <label htmlFor="password-login">Password:</label>
                   <input className="form-input" type="password" id="password-login" onChange={event => setpassword(event.target.value.trim())} />
                 </div>
                 <div className="form-group">
@@ -88,24 +91,24 @@ function LoginModal({ loginShow, setLoginShow }) {
             </div>
           </div>
         </div>
-      </Modal>
+      </div>
       {/* <!-- Second modal dialog --> */}
-      <div className="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+      <div className="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="col-md-12 text-center">
               <h2>Signup</h2>
               <form className="form signup-form">
                 <div className="form-group">
-                  <label for="name-signup">Name:</label>
+                  <label htmlFor="name-signup">Name:</label>
                   <input className="form-input" type="text" id="name-signup" onChange={event => setname(event.target.value.trim())} />
                 </div>
                 <div className="form-group">
-                  <label for="email-signup">Email:</label>
+                  <label htmlFor="email-signup">Email:</label>
                   <input className="form-input" type="text" id="email-signup" onChange={event => setEmail(event.target.value.trim())} />
                 </div>
                 <div className="form-group left">
-                  <label for="password-signup">Password:</label>
+                  <label htmlFor="password-signup">Password:</label>
                   <input className="form-input" type="password" id="password-signup" onChange={event => setpassword(event.target.value.trim())} />
                 </div>
                 <div className="form-group">
