@@ -28,8 +28,8 @@ export default {
     },
 
     // Axios functions for users' plants
-    getOwnedPlants: function (body, header) {
-        return axios.get('/api/owned-plants', body, header);
+    getOwnedPlants: function (id) {
+        return axios.get('/api/owned-plants/' + id);
     },
     createOwnedPlants: function (id) {
         return axios.post('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
