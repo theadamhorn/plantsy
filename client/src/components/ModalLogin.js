@@ -31,7 +31,7 @@ function LoginModal(props) {
       API.logInUser (body, header)
         .then(res => {
           login({
-              id: null,
+              id: res.data.user.id,
               name: res.data.user.name,
               email: res.data.user.email,
               isAuthenticated: true
@@ -49,9 +49,9 @@ function LoginModal(props) {
 
   return (
     <>
-    <Button variant="primary" onClick={()=>setModal(true)}>Login</Button>
+    <Button style={{transition: "none"}} variant="login" size="lg" onClick={()=>setModal(true)}>Login</Button>
      
-      <Modal  aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>
+      <Modal aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>
             <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
               Login
@@ -59,23 +59,32 @@ function LoginModal(props) {
             </Modal.Header>
             <Modal.Body>
               <form className="form login-form">
-                <div className="form-group">
+                <div className="form-group email-login">
                   <label htmlFor="email-login">Email:</label>
                   <input className="form-input" type="text" id="email-login" onChange={event => setEmail(event.target.value.trim())} />
                 </div>
-                <div className="form-group left">
+                <div className="form-group">
                   <label htmlFor="password-login">Password:</label>
                   <input className="form-input" type="password" id="password-login" onChange={event => setpassword(event.target.value.trim())} />
                 </div>
                 <div className="form-group">
-                  <button className="btn btn-primary" type="submit" onClick={loginFormHandler}>Login</button>
+                  <button className="btn-login-form" type="submit" onClick={loginFormHandler}>Login</button>
                 </div>
               </form>
               </Modal.Body>
             <Modal.Footer>
               {/* <!-- Toogle to second dialog --> */}
               <ModalSignUp/>
-              <Button onClick={()=>setModal(false)}>Close</Button>
+              <Button style={{ 
+                 color: "#e4d7d0",
+                  fontFamily: "Kiwi Maru",
+                  fontWeight: 700,
+                  backgroundColor: "#0a4158",
+                  paddingLeft: "1em",
+                  paddingRight: "1em",
+                  paddingTop: "0.5em",
+                  paddingBottom: "0.5em",
+                  borderRadius: "10px"}} onClick={()=>setModal(false)}>Close</Button>
             </Modal.Footer>
       </Modal>
     </>

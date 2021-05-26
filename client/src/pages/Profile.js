@@ -22,9 +22,10 @@ function Profile() {
             return;
         }
         else {
-            API.getOwnedPlants(user.id).then(res => {
-                setOwnedPlants(res.data)
-            })
+            API.getOwnedPlants(user.id)
+
+                .then(res => {setOwnedPlants(res.data)})
+            
                 .catch(err => console.log(err));
         }
     }, []);
