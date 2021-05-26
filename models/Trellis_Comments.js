@@ -18,7 +18,7 @@ Trellis_Comments.init({
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Posts',
+            model: 'Trellis_Posts',
             key: 'id'
         }
     },
@@ -26,7 +26,7 @@ Trellis_Comments.init({
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'users',
+            model: 'Users',
             key: 'id'
         }
     },

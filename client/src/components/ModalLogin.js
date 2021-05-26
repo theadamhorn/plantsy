@@ -33,10 +33,8 @@ function LoginModal({ loginShow, setLoginShow }) {
             user: res.data.user,
           })
           setLoginShow(false)
-        }).then(<Redirect to='/users' />)
-        // .then(setLoginShow(true))
-        // .then(document.location.replace('/profile'))
-        // .then(<Redirect to='/profile' />)
+        })
+        .then(<Redirect to='/users' />)
         .catch(err => { console.error(err) })
     };
 
