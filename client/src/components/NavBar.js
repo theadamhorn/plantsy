@@ -1,16 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import AuthContext from "../utils/AuthContext";
+import UserContext from "../utils/UserContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 import LoginModal from './ModalLogin';
 import API from '../utils/API';
 
 export default function NavBar() {
-    const [loginShow, setLoginShow] = useState(false);
 
-    const { authData, setAuth } = useContext(AuthContext);
+   const {user, loginout} = useContext(UserContext)
 
+console.log(user)
 
     const logout = async () => {
         // Make a POST request to destroy the session on the back end
@@ -18,11 +18,7 @@ export default function NavBar() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
         }).then(res => {
-            setAuth({
-                isAuthenticated: false,
-                loading: false,
-                user: res.data,
-            })
+            logout(false, '')
         })
             .then(document.location.replace('/'))
             .catch(err => { console.error(err) })
@@ -30,7 +26,7 @@ export default function NavBar() {
 
     var links;
     var log_in_out_Link;
-    if (authData.isAuthenticated) {
+    if (user.isAuthenticated) {
         links =<>
             <li className="nav-item">
                 <Link to="/gardeners" className="nav-link">Gardeners</Link>
@@ -48,10 +44,8 @@ export default function NavBar() {
        links = ''
         
         log_in_out_Link =<>
-        <Link onClick={() => setLoginShow(true)} className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button">Login</Link>
-        <LoginModal
-        loginShow={loginShow} setLoginShow={setLoginShow}
-        />
+        <Link  className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button">Login</Link>
+        <LoginModal/>
         </>
     }
 
