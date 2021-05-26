@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import BenchContainer from "../components/BenchContainer";
 import Footer from "../components/Footer";
+import UserContext from "../utils/UserContext";
 import API from "../utils/API";
 
 
 function Plants() {
     const [plantData, setPlantData] = useState([]);
+    const { user } = useContext(UserContext);
 
-    useEffect(() => {
-        if (!plantData) {
-            return;
-        }
-        else {
-            API.getPlants()
-                .then(res => {
-                    setPlantData(res.data)
-                })
-                .catch(err => console.log(err));
-        }
-    }, []);
+    if(!user.isAuthenticated){
+        document.location.replace('/')
+      }
+    
 
     return (
         <>

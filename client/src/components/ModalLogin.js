@@ -21,7 +21,7 @@ function LoginModal({ loginShow, setLoginShow }) {
       // Send the e-mail and password to the server
       const body = { email, password };
       const header = { 'Content-Type': 'application/json' };
-      API.logInUser(body, header)
+      API.logInUser (body, header)
         .then(res => {
           login({
 
@@ -35,7 +35,7 @@ function LoginModal({ loginShow, setLoginShow }) {
     
         .then(console.log(user))
         // .then(document.location.replace('/profile'))
-        .then(<Redirect from='/' to='/profile'/>)
+        .then(<Redirect to='/profile'/>)
         .catch(err => { console.error(err) })
     };
 
