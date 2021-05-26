@@ -7,22 +7,33 @@ import Profile from "./pages/Profile";
 import Trellis from "./pages/Trellis";
 import Private from "./components/Private";
 import './App.css';
-import AuthContext from './utils/AuthContext';
+import  UserContext from './utils/UserContext';
 import NavBar from './components/NavBar';
 
 function App() {
-  const [authState, setAuthState] = useState({
-    isAuthenticated: false,
-    loading: false,
-    user: null,
-  });
+  const [user, setUser] = useState({
+    id: null,
+    name: null,
+    email: null,
+    isAuthenticated: false
+  })
+  function login( user ) {
+    setUser(user)
+  }
 
-
+  function logout() {
+    setUser({
+      id: null,
+      name: null,
+      email: null,
+      isAuthenticated: false
+    })
+  }
 
   return (
     <>
       <Router>
-        <AuthContext.Provider value={{ authData: authState, setAuth: setAuthState }}>
+      <UserContext.Provider value={{user, login, logout}}>
           <NavBar />
           <Switch>
             <Route exact path='/' component={Landing} />
@@ -31,7 +42,7 @@ function App() {
             <Private exact path='/profile' component={Profile} />
             <Private exact path='/trellis' component={Trellis} />
           </Switch>
-        </AuthContext.Provider>
+          </UserContext.Provider>
       </Router>
     </>
   );
