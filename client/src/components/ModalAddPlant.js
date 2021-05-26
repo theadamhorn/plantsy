@@ -1,7 +1,12 @@
 import React from 'react'
+import API from "../utils/API";
 
 function AddPlantModal(props) {
+  const addPlant = async (event)=> {
+   const body = {
 
+    }
+  }
   return (
     <div className="modal fade" id="newPlant" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newPlantLabel" aria-hidden="true">
       <div className="modal-dialog">

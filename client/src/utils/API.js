@@ -31,8 +31,8 @@ export default {
     getOwnedPlants: function (id) {
         return axios.get('/api/owned-plants/'+ id);
     },
-    createOwnedPlants: function (id) {
-        return axios.post('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
+    createOwnedPlants: function (id , body) {
+        return axios.post('/api/owned-plants/' + id , body); // Not sure if 'id' is correct name for this
     },
     updateOwnedPlants: function (id) {
         return axios.put('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
