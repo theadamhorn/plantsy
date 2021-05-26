@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from "../utils/UserContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -58,7 +58,6 @@ const toggleModal = () => {
     }
 
     return (
-
         // Nav code from main.handlebars modified with conditionals extracted as variables
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">

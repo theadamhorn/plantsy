@@ -17,11 +17,15 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Get all plants from user's owned plants list
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res , ) => {
     // find all plants
     try {
         console.log(`Hi there... I am trying to help....`)
-        const ownedPlantsData = await Owned_Plants.findAll();
+        const ownedPlantsData = await Owned_Plants.findAll({
+            where:{
+            user_id: req.params.id
+            }
+        });
         res.status(200).json(ownedPlantsData);
     } catch (err) {
         res.status(500).json(err);
@@ -30,6 +34,7 @@ router.get('/', async (req, res) => {
 });
 
 // get one plant from user's owned plants list
+/*
 router.get('/:id', async (req, res) => {
     try {
         const ownedPlantsData = await Owned_Plants.findByPk(req.params.id, {
@@ -44,6 +49,7 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+*/
 
 // update given plant in user's owned plants list
 router.put('/:id', withAuth, async (req, res) => {

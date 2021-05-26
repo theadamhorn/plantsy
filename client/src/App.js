@@ -32,6 +32,7 @@ function App() {
 
   return (
     <>
+    <AuthContext.Provider value={{ authData: authState, setAuth: setAuthState }}>
       <Router>
       <UserContext.Provider value={{user, login, logout}}>
           <NavBar />
@@ -44,6 +45,7 @@ function App() {
           </Switch>
           </UserContext.Provider>
       </Router>
+      </AuthContext.Provider>
     </>
   );
 }
