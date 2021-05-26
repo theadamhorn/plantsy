@@ -5,7 +5,13 @@ import Footer from "../components/Footer";
 import UserContext from "../utils/UserContext";
 
 function Trellis() {
-    const { authState } = useContext(UserContext);
+    const { user } = useContext(UserContext);
+
+    if(!user.isAuthenticated){
+        document.location.replace('/')
+      }
+    
+
     return (
         <>
             <BenchContainer

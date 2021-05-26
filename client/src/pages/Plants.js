@@ -6,7 +6,7 @@ import API from "../utils/API";
 
 function Plants() {
     const [plantData, setPlantData] = useState([]);
-
+    
     useEffect(() => {
         if (!plantData) {
             return;

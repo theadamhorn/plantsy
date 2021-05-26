@@ -7,14 +7,17 @@ import UserContext from "../utils/UserContext";
 function Profile() {
     const [OwnedPlants, setOwnedPlants] = useState([])
     
-    const {user, loginout} = useContext(UserContext)
+    const {user} = useContext(UserContext)
 
+  console.log(user)
+    
     /*   const prop = {
            name: "Bobby",
            id: 7777
        } */
 
     useEffect(() => {
+       
         if (!OwnedPlants) {
             return;
         }

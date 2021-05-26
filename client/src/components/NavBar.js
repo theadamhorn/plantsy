@@ -4,13 +4,19 @@ import UserContext from "../utils/UserContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 import LoginModal from './ModalLogin';
+
 import API from '../utils/API';
 
 export default function NavBar() {
+    const [modal, setModal] = useState(false);
 
-   const {user, loginout} = useContext(UserContext)
+   const {user, loginout} = useContext(UserContext);
 
 console.log(user)
+
+const toggleModal = () => {
+    setModal(!modal)
+}
 
     const logout = async () => {
         // Make a POST request to destroy the session on the back end
@@ -44,8 +50,10 @@ console.log(user)
        links = ''
         
         log_in_out_Link =<>
-        <Link  className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button">Login</Link>
-        <LoginModal/>
+        <Link onChange={(()=>{setModal(true)})} className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button">Login</Link>
+        <LoginModal
+            modalState={{modal, toggleModal}}
+        />
         </>
     }
 
