@@ -8,27 +8,31 @@ function LoginModal() {
     const [name, setname] = useState([]);
 
     const { authData, setAuth } = useContext(AuthContext);
-
-    const loginFormHandler = async (event) => {
+      console.log("authData : \n" + JSON.stringify(authData));
+    
+    
+      const loginFormHandler = async (event) => {
         // Stop the browser from submitting the form so we can do so with JavaScript
         event.preventDefault();
-    
-
-        // Gather the data from the form elements on the page
+        
         if (email && password) {
             // Send the e-mail and password to the server
                 const body = { email, password };
                 const header = { 'Content-Type': 'application/json' };
-                API.logInUser(body, header)
-                .then(res =>{
-                    setAuth({
-                        isAuthenticated: true,
-                        loading: false,
-                        user: res.data,
-                    })
-                })
-                .then(document.location.replace('/profile'))
-                .catch(err => {console.error(err)})
+                // API.logInUser(body, header)
+                API.logInUser(body , header).then(res =>{
+                  setAuth({
+                    isAuthenticated: true,
+                    loading: false,
+                    user: res,
+                });
+                console.log("*****authData***** \n" + res);
+                document.location.replace('/profile')
+                 })                 
+                   .catch(err =>{
+                    console.error(err);
+                   })
+              
             };
 
         }
@@ -37,7 +41,7 @@ function LoginModal() {
     const signupFormHandler = async (event) => {
         event.preventDefault();
       
-        if (name != '' && email !='' && password !='') {
+        if (name !== '' && email !=='' && password !=='') {
 
             const body= { name, email, password };
             const header ={ 'Content-Type': 'application/json' };
@@ -57,59 +61,59 @@ function LoginModal() {
 
     return (
 <div>
-<div class="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="col-md-12 text-center">
+<div className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+  <div className="modal-dialog modal-dialog-centered">
+    <div className="modal-content">
+      <div className="col-md-12 text-center">
         <h2>Login</h2>
-        <form class="form login-form">
-          <div class="form-group">
+        <form className="form login-form">
+          <div className="form-group">
             <label for="email-login">Email:</label>
-            <input class="form-input" type="text" id="email-login" onChange= {event => setEmail(event.target.value.trim())}/>
+            <input className="form-input" type="text" id="email-login" onChange= {event => setEmail(event.target.value.trim())}/>
           </div>
-          <div class="form-group left">
+          <div className="form-group left">
             <label for="password-login">Password:</label>
-            <input class="form-input" type="password" id="password-login" onChange={event => setpassword(event.target.value.trim())} />
+            <input className="form-input" type="password" id="password-login" onChange={event => setpassword(event.target.value.trim())} />
           </div>
-          <div class="form-group">
-            <button class="btn btn-primary" type="submit" onClick={loginFormHandler}>Login</button>
+          <div className="form-group">
+            <button className="btn btn-primary" type="submit" onClick={loginFormHandler}>Login</button>
           </div>
         </form>
       </div>
-      <div class="modal-footer">
+      <div className="modal-footer">
         {/* <!-- Toogle to second dialog --> */}
-        <button class="btn btn-primary" data-bs-target="#modal2" data-bs-toggle="modal" data-bs-dismiss="modal">Sign Up</button>
+        <button className="btn btn-primary" data-bs-target="#modal2" data-bs-toggle="modal" data-bs-dismiss="modal">Sign Up</button>
       </div>
     </div>
   </div>
 </div>
 {/* <!-- Second modal dialog --> */}
-<div class="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="col-md-12 text-center">
+<div className="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+  <div className="modal-dialog modal-dialog-centered">
+    <div className="modal-content">
+      <div className="col-md-12 text-center">
         <h2>Signup</h2>
-        <form class="form signup-form">
-          <div class="form-group">
+        <form className="form signup-form">
+          <div className="form-group">
             <label for="name-signup">Name:</label>
-            <input class="form-input" type="text" id="name-signup" onChange={event => setname(event.target.value.trim())} />
+            <input className="form-input" type="text" id="name-signup" onChange={event => setname(event.target.value.trim())} />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="email-signup">Email:</label>
-            <input class="form-input" type="text" id="email-signup" onChange= {event => setEmail(event.target.value.trim())} />
+            <input className="form-input" type="text" id="email-signup" onChange= {event => setEmail(event.target.value.trim())} />
           </div>
-          <div class="form-group left">
+          <div className="form-group left">
             <label for="password-signup">Password:</label>
-            <input class="form-input" type="password" id="password-signup" onChange={event => setpassword(event.target.value.trim())}/>
+            <input className="form-input" type="password" id="password-signup" onChange={event => setpassword(event.target.value.trim())}/>
           </div>
-          <div class="form-group">
-            <button class="btn btn-primary" type="submit" onClick={signupFormHandler}>Signup</button>
+          <div className="form-group">
+            <button className="btn btn-primary" type="submit" onClick={signupFormHandler}>Signup</button>
           </div>
         </form>
       </div>
-      <div class="modal-footer">
+      <div className="modal-footer">
         {/* <!-- Toogle to first dialog, `data-bs-dismiss` attribute can be omitted - clicking on link will close dialog anyway --> */}
-        <a class="btn btn-primary" href="#modal" data-bs-dismiss="modal" data-bs-toggle="modal" role="button">Back</a>
+        <a className="btn btn-primary" href="#modal" data-bs-dismiss="modal" data-bs-toggle="modal" role="button">Back</a>
       </div>
     </div>
   </div>

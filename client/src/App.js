@@ -21,9 +21,8 @@ const [authState, setAuthState] = useState({
   return (
     <>
       {/* <NavBar />, */}
-      
+      <AuthContext.Provider value={{authData: authState, setAuth: setAuthState}}>
       <Router>
-        <AuthContext.Provider value={{authData: authState, setAuth: setAuthState}}>
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route exact path='/plants' component={Plants} />
@@ -31,8 +30,8 @@ const [authState, setAuthState] = useState({
           <Private exact path='/profile' component={Profile} />
           <Private exact path='/trellis' component={Trellis} />
         </Switch>
-        </AuthContext.Provider>
       </Router>
+      </AuthContext.Provider>
     </>
   );
 }

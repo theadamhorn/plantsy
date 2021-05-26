@@ -19,7 +19,10 @@ export default {
         return axios.post('/api/users/', body, header);
     },
     signupUser: function ( body, header) {
-        return axios.fetch('/api/users/signup', body, header);
+         axios.fetch('/api/users/signup', body, header);
+    },
+    logoutUser: function (body , header) {
+         axios.post('/api/users/logout');
     },
     updateUser: function (id) {
         return axios.put('/api/users/' + id);

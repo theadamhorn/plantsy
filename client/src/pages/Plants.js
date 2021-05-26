@@ -18,7 +18,7 @@ function Plants() {
             })
             .catch(err => console.log(err));
         }
-        },[]);
+        });
 
     return(
     <>

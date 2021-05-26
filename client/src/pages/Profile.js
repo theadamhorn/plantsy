@@ -5,7 +5,7 @@ import API from "../utils/API";
 import AuthContext from "../utils/AuthContext";
 
 function Profile() {
-    const [OwnedPlants, setOwnedPlants] = useState([])
+    const [OwnedPlants, setOwnedPlants] = useState()
     const { authData, setAuth } = useContext(AuthContext);
  /*   const prop = {
         name: "Bobby",
