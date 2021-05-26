@@ -2,11 +2,9 @@ import React, { useState, useContext, useEffect } from 'react';
 import BenchContainer from "../components/BenchContainer";
 import Footer from "../components/Footer";
 import API from "../utils/API";
-import AuthContext from "../utils/AuthContext";
-
-
+import UserContext from "../utils/UserContext";
 function Gardeners() {
-    const { authData, setAuth } = useContext(AuthContext);
+    const { authState } = useContext(UserContext);
     const [gardeners, setGardeners] = useState([]);
 
     useEffect(() => {
@@ -26,7 +24,7 @@ function Gardeners() {
         <>
             <BenchContainer
                 gardeners={gardeners}
-                user={authData}
+                user={authState}
                 title={"The Potting Bench"}
             />
             <Footer />

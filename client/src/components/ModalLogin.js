@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import API from "../utils/API";
-import AuthContext from "../utils/AuthContext";
+import UserContext from "../utils/UserContext";
 import { Redirect } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 
@@ -10,11 +10,10 @@ function LoginModal({ loginShow, setLoginShow }) {
   const [password, setpassword] = useState([]);
   const [name, setname] = useState([]);
 
-
-  const { authData, setAuth } = useContext(AuthContext);
+  const { user, login } = useContext(UserContext)
 
   const loginFormHandler = async (event) => {
-    // Stop the browser from submitting the form so we can do so with JavaScript
+    //   // Stop the browser from submitting the form so we can do so with JavaScript
     event.preventDefault();
 
 
@@ -25,16 +24,19 @@ function LoginModal({ loginShow, setLoginShow }) {
       const header = { 'Content-Type': 'application/json' };
       API.logInUser(body, header)
         .then(res => {
-          console.log(res.data)
-          setAuth({
-            ...authData,
-            isAuthenticated: true,
-            loading: false,
-            user: res.data.user,
+          login({
+
+            id: res.data.user.id,
+            name: res.data.user.name,
+            email: res.data.user.email,
+            isAuthenticated: true
+
           })
-          setLoginShow(false)
         })
-        .then(<Redirect to='/users' />)
+
+        .then(console.log(user))
+        // .then(document.location.replace('/profile'))
+        .then(<Redirect from='/' to='/profile' />)
         .catch(err => { console.error(err) })
     };
 
@@ -50,16 +52,11 @@ function LoginModal({ loginShow, setLoginShow }) {
       const header = { 'Content-Type': 'application/json' };
 
       API.signupUser(body, header)
-        .then(res => {
-          setAuth({
-            isAuthenticated: true,
-            loading: false,
-            user: res.data,
-          })
+        // .then(res => {
+        //   settingUserInfo(true, res.data.user )
+        // })
 
-        })
-        // .then(setLoginShow(true))
-        .then(document.location.replace('/users'))
+        .then(document.location.replace('/profile'))
         .catch(err => { console.error(err) })
     }
   };
