@@ -5,11 +5,11 @@ import API from "../utils/API";
 import UserContext from "../utils/UserContext";
 
 function Profile() {
-    const [OwnedPlants, setOwnedPlants] = useState([])
+    const [OwnedPlants, setOwnedPlants] = useState([]);
     
-    const {user} = useContext(UserContext)
+    const {user} = useContext(UserContext);
 
-  console.log(user)
+  console.log(user);
     
     /*   const prop = {
            name: "Bobby",
