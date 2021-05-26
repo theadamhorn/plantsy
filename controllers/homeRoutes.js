@@ -71,12 +71,8 @@ router.get('/gardeners', withAuth, async (req, res) => {
     });
 
     const gardeners = gardenerData.map(plant => plant.get({ plain: true }));
-
+    res.status(200).json(gardeners);
     console.log(gardeners);
-    res.render('gardeners', {
-      gardeners,
-      logged_in: req.session.logged_in
-    });
   } catch (err) {
     res.status(500).json(err);
   }
