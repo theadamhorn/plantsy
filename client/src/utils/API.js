@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export default {
 
 
@@ -19,10 +18,7 @@ export default {
         return axios.post('/api/users/', body, header);
     },
     signupUser: function ( body, header) {
-         axios.fetch('/api/users/signup', body, header);
-    },
-    logoutUser: function (body , header) {
-         axios.post('/api/users/logout');
+        return axios.post('/api/users/signup', body, header);
     },
     updateUser: function (id) {
         return axios.put('/api/users/' + id);
@@ -33,7 +29,7 @@ export default {
 
     // Axios functions for users' plants
     getOwnedPlants: function (id) {
-        return axios.get('/api/owned-plants' + id);
+        return axios.get('/api/owned-plants/'+ id);
     },
     createOwnedPlants: function (id) {
         return axios.post('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this

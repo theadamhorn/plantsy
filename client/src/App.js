@@ -8,28 +8,29 @@ import Trellis from "./pages/Trellis";
 import Private from "./components/Private";
 import './App.css';
 import AuthContext from './utils/AuthContext';
+import NavBar from './components/NavBar';
 
 function App() {
-const [authState, setAuthState] = useState({
-  isAuthenticated: false,
-  loading: false,
-  user: null,
-});
+  const [authState, setAuthState] = useState({
+    isAuthenticated: false,
+    loading: false,
+    user: null,
+  });
 
 
 
   return (
     <>
-      {/* <NavBar />, */}
-      <AuthContext.Provider value={{authData: authState, setAuth: setAuthState}}>
+    <AuthContext.Provider value={{ authData: authState, setAuth: setAuthState }}>
       <Router>
-        <Switch>
-          <Route exact path='/' component={Landing} />
-          <Route exact path='/plants' component={Plants} />
-          <Private exact path='/gardeners' component={Gardeners} />
-          <Private exact path='/profile' component={Profile} />
-          <Private exact path='/trellis' component={Trellis} />
-        </Switch>
+          <NavBar />
+          <Switch>
+            <Route exact path='/' component={Landing} />
+            <Route exact path='/plants' component={Plants} />
+            <Private exact path='/gardeners' component={Gardeners} />
+            <Private exact path='/profile' component={Profile} />
+            <Private exact path='/trellis' component={Trellis} />
+          </Switch>
       </Router>
       </AuthContext.Provider>
     </>

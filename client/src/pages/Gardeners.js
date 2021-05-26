@@ -1,6 +1,6 @@
-import React, { useState, useContext , useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import BenchContainer from "../components/BenchContainer";
-import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import API from "../utils/API";
 import AuthContext from "../utils/AuthContext";
 function Gardeners() {
@@ -9,25 +9,26 @@ function Gardeners() {
 
     useEffect(() => {
         if (!gardeners) {
-          return;
+            return;
         }
-        else{
-    API.getUsers()
+        else {
+            API.getUsers()
                 .then(res => {
                     setGardeners(res);
-                    
+
                 })
                 .catch(err => console.log(err));
-            }},[]);
-    return(
-    <>
-        <NavBar />
-        <BenchContainer 
-        gardeners= {gardeners}
-        user ={authData}
-        title= {"The Potting Bench"}
-        />
-    </>    
+        }
+    }, []);
+    return (
+        <>
+            <BenchContainer
+                gardeners={gardeners}
+                user={authData}
+                title={"The Potting Bench"}
+            />
+            <Footer />
+        </>
     )
 }
 
