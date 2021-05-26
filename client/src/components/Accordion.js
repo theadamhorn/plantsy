@@ -115,14 +115,14 @@ export default function Accordion(props) {
                 <div className="accordion">
                     {users.map(user => {
                         return (
-                            <div className="accordion-item" key={user._id}>
-                                <h2 className="accordion-header" id={"heading" + user._id}>
-                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + user._id} aria-expanded="true" aria-controls={"collapse" + user._id}>
+                            <div className="accordion-item" key={user.id}>
+                                <h2 className="accordion-header" id={"heading" + user.id}>
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + user.id} aria-expanded="true" aria-controls={"collapse" + user.id}>
                                         {user.name}
 
                                     </button>
                                 </h2>
-                                <div id={"collapse" + user._id} className="accordion-collapse collapse" aria-labelledby={"heading" + user._id} data-bs-parent={"#heading" + user._id}>
+                                <div id={"collapse" + user.id} className="accordion-collapse collapse" aria-labelledby={"heading" + user.id} data-bs-parent={"#heading" + user.id}>
                                     <div className="accordion-body">
                                         A users garden button will go here.
                         </div>
