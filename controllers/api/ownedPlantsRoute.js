@@ -3,11 +3,11 @@ const { Owned_Plants, Users } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // create plant in user's owned plants list
-router.post('/', withAuth, async (req, res) => {
+router.post('/:id', withAuth, async (req, res) => {
     try {
         const newOwnedPlants = await Owned_Plants.create({
             ...req.body,
-            user_id: req.session.user_id,
+            user_id: req.params.id,
         });
 
         res.status(200).json(newOwnedPlants);
