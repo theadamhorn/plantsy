@@ -10,7 +10,7 @@ export default {
 
     // Axios functions for users
     getUsers: function () {
-        return axios.get('/api/users');
+        return axios.get('/gardeners');
     },
 
     // Axios functions for single user
