@@ -41,15 +41,24 @@ import Button from 'react-bootstrap/Button';
           };
 
         return (<>
-         <Button variant="primary" onClick={()=>setModal(true)}>Sign Up</Button>
+         <Button style={{ 
+                 color: "#e4d7d0",
+                  fontFamily: "Kiwi Maru",
+                  fontWeight: 700,
+                  backgroundColor: "#0a4158",
+                  paddingLeft: "1em",
+                  paddingRight: "1em",
+                  paddingTop: "0.5em",
+                  paddingBottom: "0.5em",
+                  borderRadius: "10px"}} onClick={()=>setModal(true)}>Sign Up</Button>
 
         <Modal  aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>
             <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
+                <Modal.Title  id="contained-modal-title-vcenter">
               Signup
                 </Modal.Title>
             </Modal.Header>
-            <Modal.Body className="col-md-12 text-center">
+            <Modal.Body className="col-md-12">
               <form className="form signup-form">
                 <div className="form-group">
                   <label htmlFor="name-signup">Name:</label>
@@ -64,12 +73,21 @@ import Button from 'react-bootstrap/Button';
                   <input className="form-input" type="password" id="password-signup" onChange={event => setpassword(event.target.value.trim())} />
                 </div>
                 <div className="form-group">
-                  <button className="btn btn-primary" type="submit" onClick={signupFormHandler}>Signup</button>
+                  <button className="btn-login-form" type="submit" onClick={signupFormHandler}>Signup</button>
                 </div>
               </form>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={()=>setModal(false)}>Back</Button>
+              <Button style={{ 
+                 color: "#e4d7d0",
+                  fontFamily: "Kiwi Maru",
+                  fontWeight: 700,
+                  backgroundColor: "#0a4158",
+                  paddingLeft: "1em",
+                  paddingRight: "1em",
+                  paddingTop: "0.5em",
+                  paddingBottom: "0.5em",
+                  borderRadius: "10px"}} onClick={()=>setModal(false)}>Back</Button>
             </Modal.Footer>   
       </Modal>
       </>

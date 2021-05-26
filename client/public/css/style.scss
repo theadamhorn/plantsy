@@ -60,12 +60,44 @@ html {
     padding-left: 1.5em;
   }
 }
+.btn-focus {
+  box-sizing: null;
+}
+.btn {
+  transition: none !important;
+}
+.btn-login {
+  color: $font;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.btn-login:hover {
+  background-color: $orange;
+  border-radius: 10px;
+  color: $navy;
+}
+.btn-login-form {
+  color: $scallop;
+  font-family: $Kiwi;
+  font-weight: 700;
+  background-color: $navy;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-radius: 10px;
+}
+
 .form-group {
+  text-align: center;
   padding: 5px;
+}
+.email-login {
+  padding-left: 35px;
 }
 .left {
   position: relative;
-  right: 18px;
+  left: -15px;
 }
 .hero-image {
   background-image: url("./images/pexels-vasanth-babu-797793.jpg");
