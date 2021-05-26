@@ -2,10 +2,10 @@ import React/*, { useState, useContext }*/ from 'react';
 import BenchContainer from "../components/BenchContainer";
 import Footer from "../components/Footer";
 //import API from "../utils/API";
-//import AuthContext from "../utils/AuthContext";
+import UserContext from "../utils/UserContext";
 
 function Trellis() {
-    const { authData, setAuth } = useContext(AuthContext);
+    const { authState } = useContext(UserContext);
     return (
         <>
             <BenchContainer
