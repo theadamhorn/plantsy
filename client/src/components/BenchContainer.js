@@ -1,9 +1,10 @@
 import React from 'react';
 import Accordion from './Accordion';
-// import Model from './Modal';
+
 import { Row, Col } from "react-bootstrap";
 
 function BenchContainer(props) {
+    
     // Set state specific to the page route
     const [plants, setPlants] = useState(false)
     const [gardeners, setGardeners] = useState(false)
@@ -15,7 +16,6 @@ function BenchContainer(props) {
     const [gardenerData, setGardenerData] = useState([])
     const [ownedPlantData, setOwnedPlantData] = useState([])
 
-    // var gardenerData = ""; << why do we need this??
 
 
     useEffect(() => {
