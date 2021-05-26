@@ -1,26 +1,36 @@
 import React, { useState, useContext, useEffect } from 'react';
 import API from "../utils/API";
 import UserContext from "../utils/UserContext";
-import { Redirect } from 'react-router-dom';
+import { Redirect, useLocation, useHistory } from 'react-router-dom';
+// import {  } from 'react-router';
 
 
-function LoginModal({ loginShow, setLoginShow }) {
+function LoginModal(props) {
   const [email, setEmail] = useState([]);
   const [password, setpassword] = useState([]);
   const [name, setname] = useState([]);
 
   const {user, login} = useContext(UserContext)
+  const history = useHistory();
 
+  useEffect(() =>{
+    if(user.isAuthenticated === true){
+    history.push("/profile")
+    }
+  },[user.isAuthenticated] )
+console.log(props.modalState.toggleModal)
   const loginFormHandler = async (event) => {
   //   // Stop the browser from submitting the form so we can do so with JavaScript
     event.preventDefault();
-
+    
 
     // Gather the data from the form elements on the page
     if (email && password) {
       // Send the e-mail and password to the server
+
       const body = { email, password };
       const header = { 'Content-Type': 'application/json' };
+      // props.modalState.toggleModal()
       API.logInUser (body, header)
         .then(res => {
           login({
@@ -32,10 +42,11 @@ function LoginModal({ loginShow, setLoginShow }) {
             
           }) 
         })
-    
         .then(console.log(user))
+        .then(console.log(props.modalState.toggleModal))
+      
         // .then(document.location.replace('/profile'))
-        .then(<Redirect to='/profile'/>)
+        // .then(history.push("/profile"))
         .catch(err => { console.error(err) })
     };
 
@@ -62,9 +73,13 @@ function LoginModal({ loginShow, setLoginShow }) {
 
   return (
     <div>
-      <div  className="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabIndex="-1">
+      <div  className="modal" id="modal" aria-hidden="false" data-show={props.modalState.modal} data-backdrop="false" aria-labelledby="..." tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
+            <div className="modal-header">
+            <button onChange={(()=>{props.modalState.setModal(false)})}type="button" className="btn-close"  data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+            </div>
             <div className="col-md-12 text-center">
               <h2>Login</h2>
               <form className="form login-form">
