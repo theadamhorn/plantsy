@@ -18,7 +18,8 @@ export default function Accordion(props) {
             setPlant(true);
         }
         if (location === '/gardeners') {
-            setGardener(true)
+            setGardener(true);
+            //  gardeners = props.gardeners.data;
         }
         if (location === '/profile') {
             setOwnedPlant(true)
@@ -26,9 +27,7 @@ export default function Accordion(props) {
 
     }, [props])
 
-    var ownedPlants = props.OwnedPlants
-    var plants = props.plants;
-    var users = props.users;
+
 
     if (Plant === true && plants === undefined) {
         plants = [{
@@ -45,19 +44,30 @@ export default function Accordion(props) {
             commonName: "superDuper"
         }]
     }
-    if (Gardener === true && users === undefined) {
-        users = [{
-            name: "Bobby",
-            id: 77750
-        }, {
-            name: "Mark",
-            id: 77770
-        }]
-    }
+    // if (Gardener === true && gardeners === undefined) {
+    //     gardeners = [{
+    //         plant: "Spider",
+    //         genus: "Thug",
+    //         species: "Monster",
+    //         id: 12345,
+    //         commonName: "Lovey Dovey"
+    //     }, {
+    //         plant: "Burkin",
+    //         genus: "Pretty",
+    //         species: "Princess",
+    //         id: 12346,
+    //         commonName: "superDuper"
+    //     }]
+    // }
 
+    
+    
+  
+    
 
     console.log(props);
     if (Plant === true) {
+        var plants = props.plants;
         return (
             <div>
                 <div className="accordion">
@@ -109,32 +119,8 @@ export default function Accordion(props) {
             </div>)
     }
 
-    else if (Gardener === true) {
-        return (
-            <div>
-                <div className="accordion">
-                    {users.map(user => {
-                        return (
-                            <div className="accordion-item" key={user.id}>
-                                <h2 className="accordion-header" id={"heading" + user.id}>
-                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + user.id} aria-expanded="true" aria-controls={"collapse" + user.id}>
-                                        {user.name}
-
-                                    </button>
-                                </h2>
-                                <div id={"collapse" + user.id} className="accordion-collapse collapse" aria-labelledby={"heading" + user.id} data-bs-parent={"#heading" + user.id}>
-                                    <div className="accordion-body">
-                                        A users garden button will go here.
-                        </div>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>)
-    }
-
     else if (OwnedPlant === true) {
+        var ownedPlants = props.OwnedPlants;
         return (
             <div>
                 <div className="accordion">
@@ -185,9 +171,47 @@ export default function Accordion(props) {
                 </div>
             </div>)
     }
+
+
+    else if (Gardener === true) {
+        var gardeners = props.gardeners;
+        return (
+            <div>
+                <div className="accordion">
+                    {gardeners.data.map(gardener => {
+                        return (
+                            <div className="accordion-item" key={gardener.id}>
+                                <h2 className="accordion-header" id={"heading" + gardener.id}>
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + gardener.id} aria-expanded="true" aria-controls={"collapse" + gardener.id}>
+                                        {gardener.name}
+                                     
+                                    </button>
+                                </h2>
+                                <div id={"collapse" + gardener.id} className="accordion-collapse collapse" aria-labelledby={"heading" + gardener.id} data-bs-parent={"#heading" + gardener.id}>
+                                    <div className="accordion-body deco">
+                                        A users garden button will go here. The list is just filler to show rendering of the {gardener.name}'s Plants.
+                                        <ul>
+                                        {gardener.Owned_Plants.map(plant => {
+                                            return(
+                                            <>
+                                            <br/>
+                                            <li key={plant.id + plant.user_id}>
+                                                <h4>{plant.common_name}</h4>
+                                                {plant.genus} {plant.species}
+                                            </li>
+                                            
+                                            </>)
+                                        })}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>)
+    }
     else return (<h1>No information to display</h1>)
 
 
 }
-
-
