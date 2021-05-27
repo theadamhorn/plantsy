@@ -5,9 +5,13 @@ import API from "../utils/API";
 import UserContext from "../utils/UserContext";
 
 function Gardeners() {
-    const { authState } = useContext(UserContext);
     const [gardeners, setGardeners] = useState([]);
 
+    const { user } = useContext(UserContext);
+
+    if(!user.isAuthenticated){
+        document.location.replace('/')
+      }
     useEffect(() => {
         if (!gardeners) {
             return;
@@ -26,7 +30,6 @@ function Gardeners() {
         <>
             <BenchContainer
                 gardeners={gardeners}
-                user={authState}
                 title={"The Potting Bench"}
             />
             <Footer />

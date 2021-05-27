@@ -5,10 +5,10 @@ import Landing from "./pages/Landing";
 import Plants from "./pages/Plants";
 import Profile from "./pages/Profile";
 import Trellis from "./pages/Trellis";
-import Private from "./components/Private";
 import './App.css';
 import  UserContext from './utils/UserContext';
 import NavBar from './components/NavBar';
+import Private from "./components/Private"
 
 function App() {
   const [user, setUser] = useState({
@@ -32,6 +32,7 @@ function App() {
 
   return (
     <>
+
       <Router>
       <UserContext.Provider value={{user, login, logout}}>
           <NavBar />
@@ -44,6 +45,7 @@ function App() {
           </Switch>
           </UserContext.Provider>
       </Router>
+
     </>
   );
 }

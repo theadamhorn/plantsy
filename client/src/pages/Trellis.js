@@ -5,7 +5,7 @@ import API from "../utils/API";
 import UserContext from "../utils/UserContext";
 
 function Trellis() {
-    const { authState } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const [trellisPosts, setTrellisPosts] = useState([]);
     const [trellisComments, setTrellisComments] = useState([]);
 
@@ -24,12 +24,16 @@ function Trellis() {
         }
     }, []);
 
+
+
+
+
     return (
         <>
             <BenchContainer
                 posts={trellisPosts}
                 comments={trellisComments}
-                user={authState}
+                user={user}
                 title={"The Trellis"} />
             <Footer />
         </>

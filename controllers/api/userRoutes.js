@@ -14,7 +14,8 @@ router.post('/signup', async (req, res) => {
         });
     } catch (err) {
         res.status(400).json(err);
-    }
+    }; 
+ 
 });
 
 router.post('/', async (req, res) => {
@@ -28,6 +29,7 @@ router.post('/', async (req, res) => {
             res
                 .status(400)
                 .json({ message: 'Incorrect login information, please try again' });
+            console.log("Wrong Information");
             return;
         }
 
@@ -37,6 +39,7 @@ router.post('/', async (req, res) => {
             res
                 .status(400)
                 .json({ message: 'Incorrect login information, please try again' });
+                console.log("Wrong Information");
             return;
         }
 

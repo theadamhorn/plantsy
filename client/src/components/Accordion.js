@@ -11,7 +11,10 @@ export default function Accordion(props) {
     var [Gardener, setGardener] = useState(false);
     var [Plant, setPlant] = useState(false);
     var [OwnedPlant, setOwnedPlant] = useState(false);
+<<<<<<< HEAD
     var [Trellis, setTrellis] = useState(false);
+=======
+>>>>>>> 406fb9d232e100a41180e913e34e666d439180cd
 
     useEffect(() => {
         var location = document.location.pathname;
@@ -25,13 +28,16 @@ export default function Accordion(props) {
         if (location === '/profile') {
             setOwnedPlant(true)
         }
+<<<<<<< HEAD
         if (location === '/trellis') {
             setTrellis(true)
         }
+=======
+>>>>>>> 406fb9d232e100a41180e913e34e666d439180cd
 
     }, [props])
 
-
+    var ownedPlants = props.OwnedPlants
     var plants = props.plants;
     var users = props.users;
     var posts = props.trellis_posts;
@@ -55,10 +61,10 @@ export default function Accordion(props) {
     if (Gardener === true && users === undefined) {
         users = [{
             name: "Bobby",
-            id: 7775
+            id: 77750
         }, {
             name: "Mark",
-            id: 7777
+            id: 77770
         }]
     }
 
@@ -122,14 +128,14 @@ export default function Accordion(props) {
                 <div className="accordion">
                     {users.map(user => {
                         return (
-                            <div className="accordion-item" key={user._id}>
-                                <h2 className="accordion-header" id={"heading" + user._id}>
-                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + user._id} aria-expanded="true" aria-controls={"collapse" + user._id}>
+                            <div className="accordion-item" key={user.id}>
+                                <h2 className="accordion-header" id={"heading" + user.id}>
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + user.id} aria-expanded="true" aria-controls={"collapse" + user.id}>
                                         {user.name}
 
                                     </button>
                                 </h2>
-                                <div id={"collapse" + user._id} className="accordion-collapse collapse" aria-labelledby={"heading" + user._id} data-bs-parent={"#heading" + user._id}>
+                                <div id={"collapse" + user.id} className="accordion-collapse collapse" aria-labelledby={"heading" + user.id} data-bs-parent={"#heading" + user.id}>
                                     <div className="accordion-body">
                                         A users garden button will go here.
                                     </div>
@@ -178,7 +184,62 @@ export default function Accordion(props) {
             </div>)
     }
 
+<<<<<<< HEAD
     else return (<h1 className="mx-3">No information to display</h1>)
+=======
+    else if (OwnedPlant === true) {
+        return (
+            <div>
+                <div className="accordion">
+                    {ownedPlants.map(plant => {
+                        return (
+                            <div className="accordion-item" key={plant.id}>
+                                <h2 className="accordion-header" id={"heading" + plant.id}>
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + plant.id} aria-expanded="true" aria-controls={"collapse" + plant.id}>
+                                        {plant.genus} {plant.species} --- {plant.common_name}
+
+                                    </button>
+                                </h2>
+                                <div id={"collapse" + plant.id} className="accordion-collapse collapse" aria-labelledby={"heading" + plant.id} data-bs-parent={"#heading" + plant.id}>
+                                    <div className="accordion-body">
+                                        <div className="row justify-content-evenly">
+                                            <PlantModal
+                                                id={plant.id}
+                                                genus={plant.genus}
+                                                species={plant.species}
+                                                variety={plant.variety}
+                                                common_name={plant.common_name}
+                                                photo={plant.photo}
+                                                watering={plant.watering}
+                                                temperature={plant.temperature}
+                                                humidity={plant.humidity}
+                                                light={plant.light}
+                                                description={plant.description}
+                                                />
+                                            <PlantBadge
+                                                watering={plant.watering}
+                                                temperature={plant.temperature}
+                                                humidity={plant.humidity}
+                                                light={plant.light}
+                                            />
+                                            <div className="col-auto plant">
+                                                <button type="button" className="plant_button" data-bs-toggle="modal" data-bs-target={"#plantModal" + plant.id}>
+                                                <p><FontAwesomeIcon icon={faSeedling} className="fa-2x" /></p>
+                                                    <p>Plant</p>
+                                                    <p>Profile</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>)
+    }
+    else return (<h1>No information to display</h1>)
+>>>>>>> 406fb9d232e100a41180e913e34e666d439180cd
 
 
 }

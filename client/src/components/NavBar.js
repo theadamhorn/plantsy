@@ -1,14 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from "../utils/UserContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 import LoginModal from './ModalLogin';
-import API from '../utils/API';
 
 export default function NavBar() {
 
-    const { user, loginout } = useContext(UserContext)
+    const { user, loginout } = useContext(UserContext);
 
     console.log(user)
 
@@ -32,7 +31,7 @@ export default function NavBar() {
                 <Link to="/gardeners" className="nav-link">Gardeners</Link>
             </li>
             <li className="nav-item">
-                <Link to="/users" className="nav-link">My Plants</Link>
+                <Link to="/profile" className="nav-link">My Plants</Link>
             </li>
             <li className="nav-item">
                 <Link to="/trellis" className="nav-link">Trellis</Link>
@@ -44,13 +43,11 @@ export default function NavBar() {
         links = ''
 
         log_in_out_Link = <>
-            <Link className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button">Login</Link>
             <LoginModal />
         </>
     }
 
     return (
-
         // Nav code from main.handlebars modified with conditionals extracted as variables
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">

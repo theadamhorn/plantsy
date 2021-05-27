@@ -9,7 +9,7 @@ export default {
 
     // Axios functions for users
     getUsers: function () {
-        return axios.get('/api/users');
+        return axios.get('/gardeners');
     },
 
     // Axios functions for single user
@@ -30,8 +30,8 @@ export default {
     getOwnedPlants: function (id) {
         return axios.get('/api/owned-plants/' + id);
     },
-    createOwnedPlants: function (id) {
-        return axios.post('/api/owned-plants/' + id);
+    createOwnedPlants: function (id, body) {
+        return axios.post('/api/owned-plants/' + id, body);
     },
     updateOwnedPlants: function (id) {
         return axios.put('/api/owned-plants/' + id);

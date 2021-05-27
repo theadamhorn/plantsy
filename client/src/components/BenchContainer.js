@@ -1,84 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import API from '../utils/API';
+import React from 'react';
 import Accordion from './Accordion';
-// import Model from './Modal';
+
 import { Row, Col } from "react-bootstrap";
 
 function BenchContainer(props) {
-    // Set state specific to the page route
-    const [plants, setPlants] = useState(false)
-    const [gardeners, setGardeners] = useState(false)
-    const [profile, setProfile] = useState(false)
-    const [trellis, setTrellis] = useState(false)
-
-    // Set state specific to the data needed for the accordion
-    const [plantData, setPlantData] = useState([])
-    const [gardenerData, setGardenerData] = useState([])
-    const [ownedPlantData, setOwnedPlantData] = useState([])
-    const [trellisPostsData, setTrellisPostsData] = useState([])
-
-    // var gardenerData = ""; << why do we need this??
-
-
-    useEffect(() => {
-        var location = document.location.pathname;
-
-        if (location === '/plants') {
-            setPlants(true)
-
-            // API call depending on the page, set results into hook, then pass hook into {Accordion}
-            API.getPlants()
-                .then(res => {
-                    setPlantData(res.data)
-                    setGardenerData([])
-                    setOwnedPlantData([])
-                    setTrellisPostsData([])
-                })
-                .catch(err => console.log(err));
-
-        }
-        if (location === '/gardeners') {
-            setGardeners(true)
-
-            API.getUsers()
-                .then(res => {
-                    setPlantData([])
-                    setGardenerData(res.data)
-                    setOwnedPlantData([])
-                    setTrellisPostsData([])
-                })
-                .catch(err => console.log(err));
-        }
-        if (location === '/users') {
-            setProfile(true)
-
-            API.getOwnedPlants()
-                .then(res => {
-                    setOwnedPlantData(res.data)
-                    setGardenerData([])
-                    setPlantData([])
-                    setTrellisPostsData([])
-                })
-                .catch(err => console.log(err));
-
-        }
-        if (location === '/trellis') {
-            setTrellis(true)
-
-            API.getOwnedPlants()
-                .then(res => {
-                    setOwnedPlantData([])
-                    setGardenerData([])
-                    setPlantData([])
-                    setTrellisPostsData(res.data)
-                })
-                .catch(err => console.log(err));
-
-        }
-
-    }, [])
-
-    console.log(plants)
 
     return (
         <>
