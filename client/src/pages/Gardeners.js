@@ -3,6 +3,7 @@ import BenchContainer from "../components/BenchContainer";
 import Footer from "../components/Footer";
 import API from "../utils/API";
 import UserContext from "../utils/UserContext";
+
 function Gardeners() {
     const { authState } = useContext(UserContext);
     const [gardeners, setGardeners] = useState([]);
@@ -20,6 +21,7 @@ function Gardeners() {
                 .catch(err => console.log(err));
         }
     }, []);
+
     return (
         <>
             <BenchContainer

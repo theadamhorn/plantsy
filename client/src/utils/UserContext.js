@@ -1,18 +1,16 @@
-import React, {createContext, useState, useContext } from "react";
-
-
+import React, { createContext, useState, useContext } from "react";
 
 const UserContext = createContext({
-  user:{
+  user: {
     id: null,
     name: null,
     email: null,
     isAuthenticated: false
   },
 
-login:()=> {},
-logout:()=> {}
-    
+  login: () => { },
+  logout: () => { }
+
 
 });
 

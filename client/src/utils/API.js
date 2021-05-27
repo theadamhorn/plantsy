@@ -2,7 +2,6 @@ import axios from "axios";
 
 export default {
 
-
     // Axios functions for Plants
     getPlants: function () {
         return axios.get('/api/plants');
@@ -32,13 +31,41 @@ export default {
         return axios.get('/api/owned-plants/' + id);
     },
     createOwnedPlants: function (id) {
-        return axios.post('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
+        return axios.post('/api/owned-plants/' + id);
     },
     updateOwnedPlants: function (id) {
-        return axios.put('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
+        return axios.put('/api/owned-plants/' + id);
     },
     deleteOwnedPlants: function (id) {
-        return axios.delete('/api/owned-plants/' + id); // Not sure if 'id' is correct name for this
+        return axios.delete('/api/owned-plants/' + id);
+    },
+
+    // Axios functions for trellis posts
+    getTrellisPosts: function () {
+        return axios.get('/api/trellis/');
+    },
+    createTrellisPost: function (id) {
+        return axios.post('/api/trellis/' + id);
+    },
+    updateTrellisPost: function (id) {
+        return axios.put('/api/trellis/' + id);
+    },
+    deleteTrellisPost: function (id) {
+        return axios.delete('/api/trellis/' + id);
+    },
+
+    // Axios functions for trellis comments
+    getTrellisComments: function () {
+        return axios.get('/api/trellis/comments/');
+    },
+    createTrellisComment: function (id) {
+        return axios.post('/api/trellis/comments/' + id);
+    },
+    updateTrellisComment: function (id) {
+        return axios.put('/api/trellis/comments/' + id);
+    },
+    deleteTrellisComment: function (id) {
+        return axios.delete('/api/trellis/comments/' + id);
     }
 
 }

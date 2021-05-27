@@ -1,0 +1,1 @@
+var comments = props.trellis_comments;

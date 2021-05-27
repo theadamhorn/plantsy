@@ -15,6 +15,7 @@ function BenchContainer(props) {
     const [plantData, setPlantData] = useState([])
     const [gardenerData, setGardenerData] = useState([])
     const [ownedPlantData, setOwnedPlantData] = useState([])
+    const [trellisPostsData, setTrellisPostsData] = useState([])
 
     // var gardenerData = ""; << why do we need this??
 
@@ -31,6 +32,7 @@ function BenchContainer(props) {
                     setPlantData(res.data)
                     setGardenerData([])
                     setOwnedPlantData([])
+                    setTrellisPostsData([])
                 })
                 .catch(err => console.log(err));
 
@@ -43,6 +45,7 @@ function BenchContainer(props) {
                     setPlantData([])
                     setGardenerData(res.data)
                     setOwnedPlantData([])
+                    setTrellisPostsData([])
                 })
                 .catch(err => console.log(err));
         }
@@ -51,16 +54,25 @@ function BenchContainer(props) {
 
             API.getOwnedPlants()
                 .then(res => {
-
                     setOwnedPlantData(res.data)
                     setGardenerData([])
                     setPlantData([])
+                    setTrellisPostsData([])
                 })
                 .catch(err => console.log(err));
 
         }
         if (location === '/trellis') {
             setTrellis(true)
+
+            API.getOwnedPlants()
+                .then(res => {
+                    setOwnedPlantData([])
+                    setGardenerData([])
+                    setPlantData([])
+                    setTrellisPostsData(res.data)
+                })
+                .catch(err => console.log(err));
 
         }
 
