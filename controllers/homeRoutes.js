@@ -69,10 +69,8 @@ router.get('/gardeners', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Owned_Plants }]
     });
-
     const gardeners = gardenerData.map(plant => plant.get({ plain: true }));
     res.status(200).json(gardeners);
-    console.log(gardeners);
   } catch (err) {
     res.status(500).json(err);
   }

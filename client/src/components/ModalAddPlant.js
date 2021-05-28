@@ -1,13 +1,35 @@
-import React from 'react'
+import React, { useState, useContext/*, useEffect*/ } from 'react';
 import API from "../utils/API";
+import UserContext from "../utils/UserContext";
+import { useHistory } from 'react-router-dom'; // , useLocation,
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import ModalSignUp from "./ModalSignUp";
 
 function AddPlantModal(props) {
+  const [modal, setModal] = useState(false);
+
+  const {user, login} = useContext(UserContext);
+  const history = useHistory();
+  
+
   const addPlant = async (event)=> {
+    // Stop the browser from submitting the form so we can do so with JavaScript
+    event.preventDefault();
+
    const body = {
 
     }
+    API.createOwnedPlants(user.id , body)
+    .then(res =>{
+      history.push("/profile");
+    })
+    .catch(err => { console.error(err) })
   }
   return (
+    <>
+    <Button style={{transition: "none"}} variant="login" size="lg" onClick={()=>setModal(true)}>Login</Button>
+
     <div className="modal fade" id="newPlant" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newPlantLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content newPlant">
@@ -112,6 +134,7 @@ function AddPlantModal(props) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
