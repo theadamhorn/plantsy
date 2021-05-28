@@ -37,19 +37,25 @@ function PlantModal(props) {
                         </div>
                         <br/>
                         <div className="row">
+                            {props.care ?
                             <div className="col-md-6 text-start">
                                 <h5>Description:</h5>{props.description}
                             </div>
-                            <div className="col-md-6 text-start">
-                                <h5>Care:</h5>{props.care}
+                            :
+                            <div className="text-start">
+                                <h5>Description:</h5>{props.description}
                             </div>
+                            }
+                            {props.care ? <div className="col-md-6 text-start">
+                                <h5>Care:</h5>{props.care}
+                            </div> : ""
+                            }
                         </div>
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary"
                             data-bs-dismiss="modal">Close</button>
-                       {document.location.pathname === "/plants" ? "" : <button className="btn add-plant-button" type="button" value={props.id}>Add Plant</button>} 
-                        {/* <ModalButton/> */}
+                       { document.location.pathname === "/plants" ? <button className="btn add-plant-button" type="button" value={props.id}>Add Plant</button>  : ""}                         
                     </div>
                 </div>
             </div>

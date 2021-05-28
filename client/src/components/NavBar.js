@@ -6,12 +6,11 @@ import { faSeedling, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-s
 import LoginModal from './ModalLogin';
 
 export default function NavBar() {
-    
 
-   const {user, loginout} = useContext(UserContext);
-
-console.log(user)
-
+    const { user, loginout } = useContext(UserContext);
+  
+    console.log(user)
+  
     const logout = async () => {
         // Make a POST request to destroy the session on the back end
         await fetch('/api/users/logout', {
@@ -27,7 +26,7 @@ console.log(user)
     var links;
     var log_in_out_Link;
     if (user.isAuthenticated) {
-        links =<>
+        links = <>
             <li className="nav-item">
                 <Link to="/gardeners" className="nav-link">Gardeners</Link>
             </li>
@@ -37,15 +36,14 @@ console.log(user)
             <li className="nav-item">
                 <Link to="/trellis" className="nav-link">Trellis</Link>
             </li>
-            </>;
+        </>;
 
         log_in_out_Link = <><Link className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></Link></>
     } else {
-       links = ''
-        
-        log_in_out_Link =<>
-        <LoginModal
-        />
+        links = ''
+
+        log_in_out_Link = <>
+            <LoginModal />
         </>
     }
 
@@ -53,8 +51,8 @@ console.log(user)
         // Nav code from main.handlebars modified with conditionals extracted as variables
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                
-            <Link to="/" className="navbar-brand"><FontAwesomeIcon icon={faSeedling} className="fa-lg" /> Plantsy</Link>
+
+                <Link to="/" className="navbar-brand"><FontAwesomeIcon icon={faSeedling} className="fa-lg" /> Plantsy</Link>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

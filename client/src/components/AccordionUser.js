@@ -6,10 +6,11 @@ import { faSeedling } from '@fortawesome/free-solid-svg-icons'
 
 function AccordionUser(props) {
     var ownedPlants = props.ownedPlants;
+    console.log("Hi I'm ownedPlants from user Accordion\n" + ownedPlants +"\n ownedPlants from uder Accordion over and out!");
     return (
         <div>
         <div className="accordion">
-            {ownedPlants.map(plant => {
+            {ownedPlants && ownedPlants.map(plant => {
                 return (
                     <div className="accordion-item" key={plant.id}>
                         <h2 className="accordion-header" id={"heading" + plant.id}>
@@ -33,7 +34,11 @@ function AccordionUser(props) {
                                         humidity={plant.humidity}
                                         light={plant.light}
                                         description={plant.description}
+<<<<<<< HEAD
                                         care={plant.care}
+=======
+                                        care = {plant.care}
+>>>>>>> 096daf83b0d26fd8852fe940e57822383b207afc
                                         />
                                     <PlantBadge
                                         watering={plant.watering}
