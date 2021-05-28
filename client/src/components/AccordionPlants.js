@@ -56,7 +56,7 @@ function AccordionPlants(props) {
                         )
                     })}
                 </div>
-                end of AccordionPlants
+                
             </div>)
 
 } 
