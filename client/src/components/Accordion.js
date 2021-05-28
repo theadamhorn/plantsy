@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import PlantModal from "./ModalPlant";
 import AccordionPlants from "./AccordionPlants";
 import AccordionUser from "./AccordionUser";
 import AccordionGardeners from "./AccordionGardeners";
-import PlantBadge from "./PlantBadge";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSeedling } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Accordion(props) {
@@ -29,7 +25,6 @@ export default function Accordion(props) {
 
     }, [props])
 
-    console.log(props);
     if (Plant === true) {
         var plants = props.plants;
         return (
