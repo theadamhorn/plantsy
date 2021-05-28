@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import { faSeedling } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function GardenersModal(props) {
-    console.log("Props from the Gardeners modal\n"+JSON.stringify(props) + "End of Props <3");
 
     const [modal, setModal] = useState(false);
     return (

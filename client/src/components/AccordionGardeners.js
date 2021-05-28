@@ -24,7 +24,6 @@ function AccordionGardeners(props) {
                                 </h2>
                                 <div id={"collapse" + gardener.id} className="accordion-collapse collapse" aria-labelledby={"heading" + gardener.id} data-bs-parent={"#heading" + gardener.id}>
                                     <div className="accordion-body deco">
-                                        A users garden button will go here. The list is just filler to show rendering of the {gardener.name}'s Plants.
                                         { gardener.Owned_Plants.length >= 1? <GardenersModal OwnedPlants={gardener.Owned_Plants} name= {gardener.name}/> : ""}
 
                                     </div>
