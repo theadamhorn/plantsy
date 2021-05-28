@@ -18,7 +18,6 @@ export default function Accordion(props) {
 
     useEffect(() => {
         var location = document.location.pathname;
-
         if (location === '/plants') {
             setPlant(true);
         }
@@ -67,12 +66,12 @@ export default function Accordion(props) {
 
     else if (Trellis === true) {
         var posts = props.posts;
-        var comments = props.comments;
+        //var comments = props.comments;
         return (
             <>
                 <TrellisPosts
                     posts={posts}
-                    comments={comments}
+                    //comments={comments}
                 />
 
             </>)

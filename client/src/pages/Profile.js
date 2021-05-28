@@ -11,8 +11,6 @@ function Profile() {
 
     const { user } = useContext(UserContext);
 
-    console.log(user);
-
 
     useEffect(() => {
 

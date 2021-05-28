@@ -3,11 +3,8 @@ import PlantModal from "./ModalPlant";
 import PlantBadge from "./PlantBadge";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling } from '@fortawesome/free-solid-svg-icons'
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 
 function AccordionPlants(props) {
-    console.log(props)
     var plants = props.plants;
     return (
         <div>

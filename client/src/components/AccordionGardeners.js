@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import PlantModal from "./ModalPlant";
-import AccordionPlants from "./AccordionPlants";
-import AccordionUser from "./AccordionUser";
-import PlantBadge from "./PlantBadge";
 import GardenersModal from './ModalGardeners';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faSeedling } from '@fortawesome/free-solid-svg-icons'
+
 
 function AccordionGardeners(props) {
     var gardeners = props.gardeners;
@@ -13,7 +8,6 @@ function AccordionGardeners(props) {
         <div>
             <div className="accordion">
                     {gardeners.data && gardeners.data.map(gardener => {
-                        {{console.log(gardener)}}
                         return (
                             <div className="accordion-item" key={gardener.id + gardener.email}>
                                 <h2 className="accordion-header" id={"heading" + gardener.id}>
