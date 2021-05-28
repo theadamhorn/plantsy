@@ -70,6 +70,7 @@ router.get('/gardeners', withAuth, async (req, res) => {
       include: [{ model: Owned_Plants }]
     });
     const gardeners = gardenerData.map(plant => plant.get({ plain: true }));
+
     res.status(200).json(gardeners);
   } catch (err) {
     res.status(500).json(err);

@@ -13,13 +13,14 @@ html {
   color: #0a4158;
   font-size: 1.25em;
   border-bottom: 2px #e4d7d0 solid;
+  margin: auto;
 }
 
 .navbar .navbar-brand {
   background-color: #93e9be;
   color: #222;
   padding: 0.5em;
-  font-size: 2em;
+  font-size: 1.75em;
   border-radius: 15px;
   border: #222 2px solid;
 }
@@ -147,6 +148,10 @@ html {
 .plantList {
   background-color: #e4d7d0;
   height: 750px;
+}
+
+.accordion {
+  margin-left: 3%;
 }
 
 .accordion-item {
@@ -312,9 +317,19 @@ html {
 }
 
 .footer {
+  background-color: #4b83789d;
+  color: #0a4158;
+  font-size: small;
   left: 0;
   bottom: 0;
+
   width: 100%;
   text-align: center;
+  padding-bottom: 3px;
 }
-/*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width: 767px) {
+  .accordion {
+    margin: auto;
+  }
+}
