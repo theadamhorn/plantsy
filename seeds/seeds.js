@@ -1,11 +1,11 @@
 const sequelize = require('../config/connection');
-const { Owned_Plants } = require('../models');
-const { Plants } = require('../models');
-const { Users } = require('../models');
+const { Owned_Plants, Plants, Users, Trellis_Posts, Trellis_Comments } = require('../models');
 
 const PlantsData = require('./PlantsData.json');
 const UsersData = require('./UsersData.json');
 const OwnedPlantsData = require('./OwnedPlantsData');
+const TrellisPostsData = require('./TrellisPostsData');
+const TrellisCommentsData = require('./TrellisCommentsData');
 
 const seedAll = async () => {
     try {
@@ -19,6 +19,10 @@ const seedAll = async () => {
         });
 
         await Owned_Plants.bulkCreate(OwnedPlantsData);
+
+        await Trellis_Posts.bulkCreate(TrellisPostsData);
+
+        // await Trellis_Comments.bulkCreate(TrellisCommentsData);
 
 
     } catch (error) {
