@@ -10,7 +10,6 @@ function Profile() {
     
     const {user} = useContext(UserContext);
 
-  console.log(user);
     
     /*   const prop = {
            name: "Bobby",

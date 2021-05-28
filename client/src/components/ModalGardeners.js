@@ -1,21 +1,32 @@
-import React from 'react'
+import React, { useState} from 'react';
+import AccordionUser from './AccordionUser';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import { faSeedling } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+function GardenersModal(props) {
+    console.log("Props from the Gardeners modal\n"+JSON.stringify(props) + "End of Props <3");
 
-function DeletePlantModal(props) {
+    const [modal, setModal] = useState(false);
     return (
-        <div className="modal fade" id="staticBackdrop{garden.id}" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content plant_profile">
-                    <div className="modal-header">
-                        <h5 className="modal-title" id="staticBackdropLabel">{props.name}'s Garden </h5>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                        <Accordion />
-                    </div>
-                </div>
-            </div>
-        </div>
+        <>
+        <Button variant="primary" onClick={()=>setModal(true)}
+                  >
+            <p><FontAwesomeIcon icon={faSeedling} className="fa-2x" /></p>
+            <p>Plant</p>
+            <p>Profile</p>
+        </Button>
+        <Modal aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>
+            <Modal.Header closeButton>
+                <h5 className="modal-title">{props.name}'s Garden </h5>
+            </Modal.Header>
+            <Modal.Body>
+                <AccordionUser
+                ownedPlants={props.OwnedPlants}/>
+            </Modal.Body>
+        </Modal>
+        </>
     );
 }
 
-export default DeletePlantModal;
+export default GardenersModal;

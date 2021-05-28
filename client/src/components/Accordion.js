@@ -25,7 +25,6 @@ export default function Accordion(props) {
 
     }, [props])
 
-    console.log(props);
     if (Plant === true) {
         var plants = props.plants;
         return (

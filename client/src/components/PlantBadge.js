@@ -15,8 +15,7 @@ export default function PlantBadge(props) {
     if(props.watering === "2" || props.light === "2" || props.temperature === "2" || props.humidity === "2"){ level = "Medium"}
     if(props.watering === "3" || props.light === "3" || props.temperature === "3" || props.humidity === "3"){ level = "High"}
 
-    console.log(props)
-    console.log(level)
+
     return (
         <>
         
