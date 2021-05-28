@@ -7,9 +7,9 @@ router.get('/', withAuth, async (req, res) => {
     // find all posts
     try {
         const postsData = await Trellis_Posts.findAll({
-            attributes: { exclude: ['password'] },
             include: [{ model: Trellis_Comments }]
         });
+        console.log(postsData)
         res.status(200).json(postsData);
     } catch (err) {
         res.status(500).json(err);

@@ -6,26 +6,21 @@ import UserContext from "../utils/UserContext";
 
 function Profile() {
     const [OwnedPlants, setOwnedPlants] = useState([]);
-    
-    const {user} = useContext(UserContext);
 
-  console.log(user);
-    
-    /*   const prop = {
-           name: "Bobby",
-           id: 7777
-       } */
+    const { user } = useContext(UserContext);
+
+    console.log(user);
 
     useEffect(() => {
-       
+
         if (!OwnedPlants) {
             return;
         }
         else {
             API.getOwnedPlants(user.id)
 
-                .then(res => {setOwnedPlants(res.data)})
-            
+                .then(res => { setOwnedPlants(res.data) })
+
                 .catch(err => console.log(err));
         }
     }, []);
@@ -37,7 +32,6 @@ function Profile() {
             <BenchContainer
                 OwnedPlants={OwnedPlants}
                 title={user.name + "'s Potting Bench"}
-            // user = userData     ex: userData[id: ## , name: "Billy Bob"]
             />
             <Footer />
         </>

@@ -1,6 +1,5 @@
 import React from 'react';
 import Accordion from './Accordion';
-import TrellisPost from './TrellisPosts';
 import { Row, Col } from "react-bootstrap";
 
 function BenchContainer(props) {
@@ -19,15 +18,14 @@ function BenchContainer(props) {
                             plants={props.plants}
                             gardeners={props.gardeners}
                             OwnedPlants={props.OwnedPlants}
+                            posts={props.posts}
+                            comments={props.comments}
                         />
-                        <TrellisPosts />
                     </Col>
                     <Col xs={12} md={8} className="trellis">
 
                     </Col>
                 </Row>
-
-
             </main>
         </>
     )

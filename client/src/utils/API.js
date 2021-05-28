@@ -56,16 +56,16 @@ export default {
 
     // Axios functions for trellis comments
     getTrellisComments: function () {
-        return axios.get('/api/trellis/comments/');
+        return axios.get('/api/comments/');
     },
     createTrellisComment: function (id) {
-        return axios.post('/api/trellis/comments/' + id);
+        return axios.post('/api/comments/' + id);
     },
     updateTrellisComment: function (id) {
-        return axios.put('/api/trellis/comments/' + id);
+        return axios.put('/api/comments/' + id);
     },
     deleteTrellisComment: function (id) {
-        return axios.delete('/api/trellis/comments/' + id);
+        return axios.delete('/api/comments/' + id);
     }
 
 }

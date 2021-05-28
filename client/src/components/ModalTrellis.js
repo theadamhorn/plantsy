@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default TrellisModal = (props) => {
+export default function TrellisModal(props) {
 
-    // var comments = props.trellis_comments;
+    var comments = props.comments;
 
     return (
-        <div className="modal fade" id={"trellisModal" + props.id} data-bs-backdrop="false"
+        <div className="modal" id={"trellisModal" + props.id} data-bs-backdrop="false"
             data-bs-keyboard="false" tabIndex="-1" aria-labelledby="modalLabel"
             aria-hidden="true">
             <div className="modal-dialog">
@@ -36,7 +36,7 @@ export default TrellisModal = (props) => {
                             </form>
                         </div>
                         <div className="row">
-                            {comments.map(comment => {
+                            {props.comments.map(comment => {
                                 return (
                                     <div className="col-auto comment-column text-start">
                                         {comment.User.username}: {comment.comment}

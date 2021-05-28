@@ -24,10 +24,6 @@ function Trellis() {
         }
     }, []);
 
-
-
-
-
     return (
         <>
             <BenchContainer
