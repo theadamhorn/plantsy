@@ -71,6 +71,7 @@ router.get('/gardeners', withAuth, async (req, res) => {
     });
 
     const gardeners = gardenerData.map(plant => plant.get({ plain: true }));
+
     res.status(200).json(gardeners);
     console.log(gardeners);
   } catch (err) {
