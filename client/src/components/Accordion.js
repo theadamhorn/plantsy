@@ -9,6 +9,7 @@ import TrellisPosts from "./TrellisPosts";
 // import { faSeedling } from '@fortawesome/free-solid-svg-icons'
 
 
+
 export default function Accordion(props) {
     var [Gardener, setGardener] = useState(false);
     var [Plant, setPlant] = useState(false);
@@ -34,7 +35,6 @@ export default function Accordion(props) {
 
     }, [props])
 
-    console.log(props);
     if (Plant === true) {
         var plants = props.plants;
         return (

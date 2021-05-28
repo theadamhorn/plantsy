@@ -8,9 +8,11 @@ function BenchContainer(props) {
         <>
             <main className="container-fluid px-0">
                 <div className="potting navbar justify-content-around">
-                    <span className="bench">
+                    <span> </span>
+                    <span className="bench ">
                         {props.title}
                     </span>
+                    <span>{props.addPlant}</span>
                 </div>
                 <Row>
                     <Col xs={12} md={4} className="p-0">

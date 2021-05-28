@@ -320,6 +320,9 @@ html {
   background-color: #4b83789d;
   color: #0a4158;
   font-size: small;
+  left: 0;
+  bottom: 0;
+
   width: 100%;
   text-align: center;
   padding-bottom: 3px;
