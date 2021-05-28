@@ -9,10 +9,10 @@ router.get('/', withAuth, async (req, res) => {
         const postsData = await Trellis_Posts.findAll({
             include: [{ model: Trellis_Comments }]
         });
-        console.log(postsData)
-        res.status(200).json(postsData);
+        return res.status(200).json(postsData);
     } catch (err) {
-        res.status(500).json(err);
+        console.log(err)
+        return res.status(500).json(err);
     }
 
 });

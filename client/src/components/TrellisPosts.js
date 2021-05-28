@@ -5,7 +5,7 @@ export default function TrellisPosts(props) {
     console.log(props)
 
     var posts = props.posts;
-    var comments = props.comments;
+    // var comments = props.comments;
 
     return (
         <div>
@@ -21,7 +21,7 @@ export default function TrellisPosts(props) {
                                         name={post.name}
                                         title={post.title}
                                         body={post.body}
-                                        comments={comments}
+                                        comments={post.Trellis_Comments}
                                     />
                                 </button>
                             </h2>

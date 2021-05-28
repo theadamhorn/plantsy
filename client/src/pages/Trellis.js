@@ -7,7 +7,7 @@ import UserContext from "../utils/UserContext";
 function Trellis() {
     const { user } = useContext(UserContext);
     const [trellisPosts, setTrellisPosts] = useState([]);
-    const [trellisComments, setTrellisComments] = useState([]);
+    // const [trellisComments, setTrellisComments] = useState([]);
 
     useEffect(() => {
         if (!trellisPosts) {
@@ -15,10 +15,11 @@ function Trellis() {
         }
         else {
             API.getTrellisPosts()
-            API.getTrellisComments()
+                // API.getTrellisComments()
                 .then(res => {
+                    console.log(res)
                     setTrellisPosts(res.data)
-                    setTrellisComments(res.data)
+                    // setTrellisComments(res.data)
                 })
                 .catch(err => console.log(err));
         }
@@ -28,7 +29,7 @@ function Trellis() {
         <>
             <BenchContainer
                 posts={trellisPosts}
-                comments={trellisComments}
+                // comments={trellisComments}
                 user={user}
                 title={"The Trellis"} />
             <Footer />
