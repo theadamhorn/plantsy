@@ -20,7 +20,7 @@ router.post('/:id', withAuth, async (req, res) => {
 router.get('/:id', async (req, res , ) => {
     // find all plants
     try {
-        console.log(`Hi there... I am trying to help....`)
+        //console.log(`Hi there... I am trying to help....`)
         const ownedPlantsData = await Owned_Plants.findAll({
             where:{
             user_id: req.params.id
