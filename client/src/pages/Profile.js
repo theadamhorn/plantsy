@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import BenchContainer from "../components/BenchContainer";
+import ModalAddPlant from "../components/ModalAddPlant";
 import Footer from "../components/Footer";
 import API from "../utils/API";
 import UserContext from "../utils/UserContext";
@@ -37,7 +38,7 @@ function Profile() {
             <BenchContainer
                 OwnedPlants={OwnedPlants}
                 title={user.name + "'s Potting Bench"}
-            // user = userData     ex: userData[id: ## , name: "Billy Bob"]
+                addPlant = {<ModalAddPlant/>}
             />
             <Footer />
         </>

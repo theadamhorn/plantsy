@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PlantModal from "./ModalPlant";
-// import ModalButton from "./ModalButton";
 import PlantBadge from "./PlantBadge";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling } from '@fortawesome/free-solid-svg-icons'
@@ -162,6 +161,7 @@ export default function Accordion(props) {
                                                 humidity={plant.humidity}
                                                 light={plant.light}
                                                 description={plant.description}
+                                                care = {plant.care}
                                                 />
                                             <PlantBadge
                                                 watering={plant.watering}
