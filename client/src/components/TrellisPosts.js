@@ -31,6 +31,7 @@ export default function TrellisPosts(props) {
                                 name={post.name}
                                 title={post.title}
                                 body={post.body}
+                                createdAt={post.createdAt}
                                 comments={post.Trellis_Comments}
                             />
                         </button>
