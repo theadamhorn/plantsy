@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import API from "./utils/API";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Gardeners from "./pages/Gardeners";
 import Landing from "./pages/Landing";
@@ -6,7 +7,7 @@ import Plants from "./pages/Plants";
 import Profile from "./pages/Profile";
 import Trellis from "./pages/Trellis";
 import './App.css';
-import  UserContext from './utils/UserContext';
+import UserContext from './utils/UserContext';
 import NavBar from './components/NavBar';
 import Private from "./components/Private"
 
@@ -17,7 +18,8 @@ function App() {
     email: null,
     isAuthenticated: false
   })
-  function login( user ) {
+
+  function login(user) {
     setUser(user)
   }
 
@@ -30,11 +32,27 @@ function App() {
     })
   }
 
+  useEffect(() => {
+    const getUser = async () => {
+      const currentUser = await API.getUser()
+      console.log(currentUser.data)
+      if (currentUser.data.id) {
+        setUser({
+          id: currentUser.data.id,
+          name: currentUser.data.name,
+          email: currentUser.data.email,
+          isAuthenticated: true
+        })
+      }
+    }
+    getUser()
+  }, [])
+
   return (
     <>
 
       <Router>
-      <UserContext.Provider value={{user, login, logout}}>
+        <UserContext.Provider value={{ user, login, logout }}>
           <NavBar />
           <Switch>
             <Route exact path='/' component={Landing} />
@@ -43,7 +61,7 @@ function App() {
             <Private exact path='/profile' component={Profile} />
             <Private exact path='/trellis' component={Trellis} />
           </Switch>
-          </UserContext.Provider>
+        </UserContext.Provider>
       </Router>
 
     </>
