@@ -8,8 +8,8 @@ export default function TrellisModal(props) {
         <div className="modal" id={"trellisModal" + props.id} data-bs-backdrop="false"
             data-bs-keyboard="false" tabIndex="-1" aria-labelledby="modalLabel"
             aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content trellis_post">
+            <div className="modal-dialog modal-lg">
+                <div className="modal-content trellis-post">
                     <div className="modal-header">
                         <h5 className="modal-title" id="modalLabel">
                             {props.title}</h5>
@@ -20,18 +20,18 @@ export default function TrellisModal(props) {
                         <div className="row">
                             <div className="col-auto text-start">
                                 {props.name}<br />
-                                {props.body}
+                                <p className="fs-6">{props.body} </p>
                             </div>
                         </div>
                         <br />
-                        <div class="row mt-4">
-                            <form class="form comment-form">
-                                <div class="form-group justify-content-around">
-                                    <label for="comment-field">Leave a comment:</label><br />
-                                    <textarea class="body-input m-1 rounded" rows="2" id="comment-field"></textarea>
+                        <div className="row mt-4">
+                            <form className="form comment-form">
+                                <div className="form-group justify-content-around">
+                                    <label for="comment-field" className="fs-6">Leave a comment:</label><br />
+                                    <textarea className="body-input m-1 rounded" rows="2" id="comment-field"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <button class="btn btn-primary m-1" type="submit">Comment</button>
+                                <div className="form-group">
+                                    <button className="btn btn-primary m-1" type="submit">Comment</button>
                                 </div>
                             </form>
                         </div>
