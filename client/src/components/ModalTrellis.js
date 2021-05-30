@@ -31,12 +31,12 @@ export default function TrellisModal(props) {
                                     <textarea className="body-input m-1 rounded" rows="2" id="comment-field"></textarea>
                                 </div>
                                 <div className="form-group">
-                                    <button className="btn btn-primary m-1" type="submit">Comment</button>
+                                    <button className="btn btn-secondary m-1" type="submit">Comment</button>
                                 </div>
                             </form>
                         </div>
                         <div className="row">
-                            {props.comments.map(comment => {
+                            {comments.map(comment => {
                                 return (
                                     <div className="col-auto comment-column text-start">
                                         {comment.User.username}: {comment.comment}
@@ -45,17 +45,6 @@ export default function TrellisModal(props) {
 
                                 )
                             })}
-
-                            {/* <div className="col-md-6 text-start">
-                                    <h5>Care:</h5>{props.care}
-                                </div>
-                            </div> */}
-
-                            {/* <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary"
-                                    data-bs-dismiss="modal">Close</button>
-                                {document.location.pathname === "/plants" ? "" : <button className="btn add-plant-button" type="button" value={props.id}>Add Plant</button>}
-                            </div> */}
                         </div>
                     </div>
                 </div>

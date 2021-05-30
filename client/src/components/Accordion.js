@@ -4,6 +4,7 @@ import AccordionPlants from "./AccordionPlants";
 import AccordionUser from "./AccordionUser";
 import AccordionGardeners from "./AccordionGardeners";
 import TrellisPosts from "./TrellisPosts";
+import API from '../utils/API';
 // import PlantBadge from "./PlantBadge";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faSeedling } from '@fortawesome/free-solid-svg-icons'
@@ -15,6 +16,7 @@ export default function Accordion(props) {
     var [Plant, setPlant] = useState(false);
     var [OwnedPlant, setOwnedPlant] = useState(false);
     var [Trellis, setTrellisPosts] = useState(false);
+    var [PostInfo, setPostInfo] = useState();
 
     useEffect(() => {
         var location = document.location.pathname;
@@ -33,6 +35,18 @@ export default function Accordion(props) {
         }
 
     }, [props])
+
+    const creatingPost = async (e) => {
+        e.preventDefault();
+
+        if (PostInfo.title && PostInfo.body) {
+            const newPost = await API.createTrellisPost({
+                title: PostInfo.title,
+                body: PostInfo.body
+            })
+        }
+
+    }
 
     if (Plant === true) {
         var plants = props.plants;
@@ -71,7 +85,9 @@ export default function Accordion(props) {
             <>
                 <TrellisPosts
                     posts={posts}
-                    //comments={comments}
+                    PostInfo={PostInfo}
+                    setPostInfo={setPostInfo}
+                    creatingPost={creatingPost}
                 />
 
             </>)
