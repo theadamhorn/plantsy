@@ -1,5 +1,5 @@
 import React from 'react'
-
+import EditPlantModal from '../components/ModalEditPlant';
 function PlantModal(props) {
 
     return (
@@ -53,9 +53,10 @@ function PlantModal(props) {
                         </div>
                     </div>
                     <div className="modal-footer">
+                    { document.location.pathname === "/plants" ? <button className="btn add-plant-button" type="button" value={props.id}>Add Plant</button>  : ""}
+                       { document.location.pathname === "/profile" ? <EditPlantModal/>  : ""}
                         <button type="button" className="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>
-                       { document.location.pathname === "/plants" ? <button className="btn add-plant-button" type="button" value={props.id}>Add Plant</button>  : ""}                         
+                            data-bs-dismiss="modal">Close</button>                         
                     </div>
                 </div>
             </div>
