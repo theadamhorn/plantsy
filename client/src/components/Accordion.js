@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
-// import PlantModal from "./ModalPlant";
 import AccordionPlants from "./AccordionPlants";
 import AccordionUser from "./AccordionUser";
 import AccordionGardeners from "./AccordionGardeners";
 import TrellisPosts from "./TrellisPosts";
-// import PlantBadge from "./PlantBadge";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faSeedling } from '@fortawesome/free-solid-svg-icons'
-
+import API from '../utils/API';
 
 
 export default function Accordion(props) {
@@ -16,14 +12,15 @@ export default function Accordion(props) {
     var [OwnedPlant, setOwnedPlant] = useState(false);
     var [Trellis, setTrellisPosts] = useState(false);
 
+
     useEffect(() => {
         var location = document.location.pathname;
+
         if (location === '/plants') {
             setPlant(true);
         }
         if (location === '/gardeners') {
             setGardener(true);
-            //  gardeners = props.gardeners.data;
         }
         if (location === '/profile') {
             setOwnedPlant(true)
@@ -33,6 +30,8 @@ export default function Accordion(props) {
         }
 
     }, [props])
+
+
 
     if (Plant === true) {
         var plants = props.plants;
@@ -65,14 +64,10 @@ export default function Accordion(props) {
     }
 
     else if (Trellis === true) {
-        var posts = props.posts;
         //var comments = props.comments;
         return (
             <>
-                <TrellisPosts
-                    posts={posts}
-                    //comments={comments}
-                />
+                <TrellisPosts />
 
             </>)
     }

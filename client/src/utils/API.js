@@ -51,8 +51,8 @@ export default {
     getTrellisPosts: function () {
         return axios.get('/api/trellis/');
     },
-    createTrellisPost: function (id) {
-        return axios.post('/api/trellis/' + id);
+    createTrellisPost: function (data) {
+        return axios.post('/api/trellis/', data);
     },
     updateTrellisPost: function (id) {
         return axios.put('/api/trellis/' + id);

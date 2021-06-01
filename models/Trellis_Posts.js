@@ -27,10 +27,7 @@ Trellis_Posts.init({
             key: 'id'
         }
     },
-    // created_at: {
-    //     type: DataTypes.DATE,
-    //     default: Date.now()
-    // }
+
 },
     {
         sequelize,

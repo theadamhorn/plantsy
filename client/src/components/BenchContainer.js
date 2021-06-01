@@ -20,8 +20,8 @@ function BenchContainer(props) {
                             plants={props.plants}
                             gardeners={props.gardeners}
                             OwnedPlants={props.OwnedPlants}
-                            posts={props.posts}
-                        
+
+
                         />
                     </Col>
                     <Col xs={12} md={8} className="trellis">
