@@ -12,7 +12,7 @@ function BenchContainer(props) {
                     <span className="bench ">
                         {props.title}
                     </span>
-                    <span>{props.addPlant}</span>
+                    { document.location.pathname === "/profile" ?<span>{props.addPlant}</span> :''}
                 </div>
                 <Row>
                     <Col xs={12} md={4} className="p-0">

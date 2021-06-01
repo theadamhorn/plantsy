@@ -26,6 +26,7 @@ function AddPlantModal(props) {
 const changeChecked = (event) =>{
   
 }
+// needs useEffect to re-render page
 // try event.current target
 //also try separate form
   const addPlant = async (event)=> {
