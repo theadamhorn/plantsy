@@ -40,11 +40,11 @@ export default {
     createOwnedPlants: function (id, body) {
         return axios.post('/api/owned-plants/' + id, body);
     },
-    updateOwnedPlants: function (id) {
-        return axios.put('/api/owned-plants/' + id);
+    updateOwnedPlants: function (id , body) {
+        return axios.put('/api/owned-plants/' + id , body);
     },
-    deleteOwnedPlants: function (id) {
-        return axios.delete('/api/owned-plants/' + id);
+    deleteOwnedPlants: function (plantID) {
+        return axios.delete('/api/owned-plants/' + plantID);
     },
 
     // Axios functions for trellis posts

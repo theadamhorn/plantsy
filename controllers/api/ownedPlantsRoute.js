@@ -83,12 +83,12 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 // delete given plant from user's owned plants list
-router.delete('/', withAuth, async (req, res) => {
-    console.log(`------~~~~You are killing a plant!!!!~~~-------`)
+router.delete('/:plantID', withAuth, async (req, res) => {
+    console.log(`------~~~~You are killing a plant!!!!~~~-------`);
     try {
         const ownedPlantsData = await Owned_Plants.destroy({
             where: {
-                id: req.body.id,
+                id: req.params.plantID,
                 user_id: req.session.user_id,
             },
         });
