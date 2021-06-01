@@ -10,9 +10,9 @@ router.post('/:id', withAuth, async (req, res) => {
             user_id: req.params.id,
         });
 
-        res.status(200).json(newOwnedPlants);
+      return  res.status(200).json(newOwnedPlants);
     } catch (err) {
-        res.status(400).json(err);
+      return res.status(400).json(err);
     }
 });
 

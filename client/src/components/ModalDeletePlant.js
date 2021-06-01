@@ -1,9 +1,13 @@
 import React from 'react'
 import API from "../utils/API";
-
+import UserContext from "../utils/UserContext";
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+//delayed until add set-up
 function DeletePlantModal(props) {
 
   return (
+    <>
     <div className="modal fade" id="deletePlant" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deletePlantLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content deletePlant">
@@ -24,6 +28,7 @@ function DeletePlantModal(props) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

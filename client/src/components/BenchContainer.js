@@ -12,7 +12,7 @@ function BenchContainer(props) {
                     <span className="bench ">
                         {props.title}
                     </span>
-                    <span>{props.addPlant}</span>
+                    { document.location.pathname === "/profile" ?<span>{props.addPlant}</span> :''}
                 </div>
                 <Row>
                     <Col xs={12} md={4} className="p-0">
@@ -20,8 +20,8 @@ function BenchContainer(props) {
                             plants={props.plants}
                             gardeners={props.gardeners}
                             OwnedPlants={props.OwnedPlants}
-                            posts={props.posts}
-      
+
+
                         />
                     </Col>
                     <Col xs={12} md={8} className="trellis">

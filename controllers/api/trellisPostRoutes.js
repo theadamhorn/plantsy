@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trellis_Posts, Trellis_Comments } = require('../../models');
+const { Trellis_Posts, Trellis_Comments, Users } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Get all posts from global list
@@ -7,8 +7,22 @@ router.get('/', withAuth, async (req, res) => {
     // find all posts
     try {
         const postsData = await Trellis_Posts.findAll({
-            include: [{ model: Trellis_Comments }]
+
+            include: [
+                {
+                    model: Trellis_Comments
+                },
+                {
+                    model: Users,
+                    attributes: { exclude: ['password'] },
+                }],
+            order: [
+                [
+                    'created_at', 'DESC'
+                ]
+            ]
         });
+        console.log(postsData);
         return res.status(200).json(postsData);
     } catch (err) {
         console.log(err)

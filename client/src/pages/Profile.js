@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import BenchContainer from "../components/BenchContainer";
 import ModalAddPlant from "../components/ModalAddPlant";
+import ModalEditPlant from "../components/ModalEditPlant";
 import Footer from "../components/Footer";
 import API from "../utils/API";
 import UserContext from "../utils/UserContext";
@@ -10,8 +11,6 @@ function Profile() {
 
 
     const { user } = useContext(UserContext);
-
-    console.log(user);
 
 
     useEffect(() => {
@@ -36,7 +35,6 @@ function Profile() {
                 OwnedPlants={OwnedPlants}
                 title={user.name + "'s Potting Bench"}
                 addPlant = {<ModalAddPlant/>}
-
             />
             <Footer />
         </>

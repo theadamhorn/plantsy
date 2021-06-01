@@ -1,27 +1,35 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import UserContext from "../utils/UserContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSeedling, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSeedling, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import LoginModal from './ModalLogin';
+import API from '../utils/API';
+
 
 export default function NavBar() {
 
-    const { user, loginout } = useContext(UserContext);
-  
+    const { user, logout } = useContext(UserContext);
+    const history = useHistory();
     console.log(user)
-  
-    const logout = async () => {
-        // Make a POST request to destroy the session on the back end
-        await fetch('/api/users/logout', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-        }).then(res => {
-            logout(false, '')
-        })
-            .then(document.location.replace('/'))
-            .catch(err => { console.error(err) })
-    };
+
+    // const logout = async () => {
+    //     // Make a POST request to destroy the session on the back end
+    //     await fetch('/api/users/logout', {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/json' },
+    //     }).then(res => {
+    //         logout(false, '')
+    //     })
+    //         .then(document.location.replace('/'))
+    //         .catch(err => { console.error(err) })
+    // };
+
+    const logoutUser = async () => {
+        await API.logoutUser()
+        logout()
+        history.push("/")
+    }
 
     var links;
     var log_in_out_Link;
@@ -38,7 +46,7 @@ export default function NavBar() {
             </li>
         </>;
 
-        log_in_out_Link = <><Link className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></Link></>
+        log_in_out_Link = <><Link className="nav-link" aria-current="page" data-bs-toggle="modal" to="#modal" role="button" onClick={logoutUser}><FontAwesomeIcon icon={faSignOutAlt} className="fa-lg" /></Link></>
     } else {
         links = ''
 

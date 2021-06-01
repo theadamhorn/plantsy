@@ -27,11 +27,11 @@ Trellis_Posts.init({
             key: 'id'
         }
     },
-    // insert timestamp
+
 },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'Trellis_Posts',

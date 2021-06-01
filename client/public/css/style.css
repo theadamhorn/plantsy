@@ -151,7 +151,7 @@ html {
 }
 
 .accordion {
-  margin-left: 3%;
+  margin-left: 2%;
 }
 
 .accordion-item {
@@ -231,6 +231,44 @@ html {
   float: right;
 }
 
+.trellis-posts {
+  margin-left: 2%;
+}
+
+.trellis-button {
+  background-color: #4b8378;
+  text-align: left;
+  width: 100%;
+  color: #222;
+  padding: 10px;
+  font-size: .75em;
+  border: 1px solid white;
+}
+
+.open-post, .read {
+  color: #60aa9b;
+}
+
+.trellis-button:hover {
+  background-color: #93e9be;
+}
+
+.create-post-btn:hover {
+  background-color: #ff9636;
+}
+
+.create-post-btn {
+  background-color: #60aa9b;
+  color: #0a4158;
+  border: 1px solid white;
+}
+
+#comment-field, .title-input, .body-input {
+  width: 80%;
+}
+
+
+
 .potting {
   background-color: #0a4158;
   color: #e4d7d0;
@@ -259,15 +297,16 @@ html {
   line-height: 1.25em;
 }
 
-.plant_profile .modal-title {
+.modal-title {
+  background-color: #0a4158;
+  color: #e4d7d0;
+}
+
+.modal-header {
   background-color: #0a4158;
 }
 
-.plant_profile .modal-header {
-  background-color: #0a4158;
-}
-
-.plant_profile .modal-body {
+.modal-body {
   color: #0a4158;
   background-color: #e4d7d0;
   border-bottom: #0a4158 1px solid;
