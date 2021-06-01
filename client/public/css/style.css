@@ -263,9 +263,11 @@ html {
   border: 1px solid white;
 }
 
-#comment-field {
+#comment-field, .title-input, .body-input {
   width: 80%;
 }
+
+
 
 .potting {
   background-color: #0a4158;
