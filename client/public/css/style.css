@@ -151,7 +151,7 @@ html {
 }
 
 .accordion {
-  margin-left: 3%;
+  margin-left: 2%;
 }
 
 .accordion-item {
@@ -229,6 +229,34 @@ html {
   background-size: cover;
   height: 750px;
   float: right;
+}
+
+.trellis-posts {
+  margin-left: 2%;
+}
+
+.trellis-button {
+  background-color: #4b8378;
+  text-align: left;
+  width: 100%;
+  color: #222;
+  padding: 10px;
+  font-size: .75em;
+  border: 1px solid white;
+}
+
+.open-post, .read {
+  color: #60aa9b;
+}
+
+.create-post-btn {
+  background-color: #60aa9b;
+  color: #0a4158;
+  border: 1px solid white;
+}
+
+#comment-field {
+  width: 80%;
 }
 
 .potting {

@@ -13,11 +13,17 @@ export default {
     },
 
     // Axios functions for single user
+    logoutUser: function () {
+        return axios.post('/api/users/logout');
+    },
     logInUser: function (body, header) {
         return axios.post('/api/users/', body, header);
     },
     signupUser: function (body, header) {
         return axios.post('/api/users/signup', body, header);
+    },
+    getUser: function () {
+        return axios.get('/api/users');
     },
     updateUser: function (id) {
         return axios.put('/api/users/' + id);
@@ -25,6 +31,7 @@ export default {
     deleteUser: function (id) {
         return axios.delete('/api/users/' + id);
     },
+
 
     // Axios functions for users' plants
     getOwnedPlants: function (id) {
