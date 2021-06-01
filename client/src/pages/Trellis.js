@@ -1,7 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import BenchContainer from "../components/BenchContainer";
 import Footer from "../components/Footer";
-import API from "../utils/API";
 import UserContext from "../utils/UserContext";
 
 export default function Trellis() {
