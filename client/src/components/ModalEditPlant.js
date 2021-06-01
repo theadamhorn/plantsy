@@ -1,6 +1,46 @@
 import React from "react";
+import API from "../utils/API";
+import UserContext from "../utils/UserContext";
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 function EditPlantModal(props) {
+    const [modal, setModal] = useState(false);
+
+    const [genus, setGenus] = useState();
+    const [species, setSpecies] = useState();
+    const [variety, setVariety] = useState();
+    const [commonName, setCommonName] = useState();
+    const [water, setWater] = useState();
+    const [waterChecked , setWaterChecked]= useState();
+    const [temperature, setTemperature] = useState();
+    const [humidity, setHumidity] = useState();
+    const [light, setLight] = useState();
+    const [description, setDescription] = useState();
+    const [care, setCare] = useState();
+
+    const addPlant = async (event)=> {
+        event.preventDefault();
+
+   const body = {
+    genus: genus ,
+    species: species , 
+    variety: variety , 
+    common_name: commonName , 
+    watering: water , 
+    temperature: temperature , 
+    humidity: humidity , 
+    light: light , 
+    description: description ,
+    care: care
+    }
+    API.createOwnedPlants(user.id , body)
+    .then(res =>{
+      history.push("/profile");
+    })
+    .catch(err => { console.error(err) })
+  }
+    
     return (
         <main className="modal fade" id="modal2{props.id}" data-bs-backdrop="false" data-bs-keyboard="true" aria-hidden="true" aria-labelledby="model2{props.id}Label" tabindex="-1">
             <div className="modal-dialog modal-dialog-centered">
