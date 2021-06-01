@@ -3,7 +3,7 @@ import AccordionPlants from "./AccordionPlants";
 import AccordionUser from "./AccordionUser";
 import AccordionGardeners from "./AccordionGardeners";
 import TrellisPosts from "./TrellisPosts";
-import API from '../utils/API';
+// import API from '../utils/API';
 
 
 export default function Accordion(props) {

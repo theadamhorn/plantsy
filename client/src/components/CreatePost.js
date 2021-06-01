@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import API from '../utils/API';
+import React from 'react';
+
 
 
 export default function CreatePost(props) {
@@ -16,13 +16,6 @@ export default function CreatePost(props) {
                             aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        {/* <div className="row">
-                            <div className="col-auto text-start">
-                                {props.name}<br />
-                                <p className="fs-6">{props.body} </p>
-                            </div>
-                        </div>
-                        <br /> */}
                         <div className="row mt-4">
                             <form className="form comment-form" >
                                 <div className="form-group justify-content-around">
@@ -37,7 +30,7 @@ export default function CreatePost(props) {
                                     <button className="btn btn-secondary m-1" type="submit" data-bs-dismiss="modal" onClick={(e) => {
                                         props.creatingPost(e)
                                         props.setShowCreate(false)
-                                    }}>Comment</button>
+                                    }}>Submit</button>
                                 </div>
                             </form>
                         </div>

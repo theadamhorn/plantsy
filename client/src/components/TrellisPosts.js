@@ -11,8 +11,10 @@ export default function TrellisPosts() {
 
     const [showCreate, setShowCreate] = useState(false);
     const [posts, setPosts] = useState([]);
-    var [PostInfo, setPostInfo] = useState();
+    const [PostInfo, setPostInfo] = useState();
     // const [trellisComments, setTrellisComments] = useState([]);
+
+    console.log(posts);
 
     useEffect(() => {
         if (!posts) {
@@ -75,23 +77,25 @@ export default function TrellisPosts() {
                     return (
                         // <div className="trellis-item" key={post.id}>
                         // <h2 className="trellis-header" id={"heading" + post.id}>
-                        <button className="trellis-button rounded" type="button" data-bs-toggle="modal" data-bs-target={"#trellisModal" + post.id}>
-                            <ul className="nav justify-content-start">
-                                <li className="nav-item fs-5">{post.title}</li>
-                            </ul>
-                            <ul className="nav justify-content-end">
-                                <li className="nav-item read fs-5">Read <FontAwesomeIcon icon={faAngleDoubleRight} className="fa-lg open-post" /></li>
-                            </ul>
+                        <>
+                            <button className="trellis-button rounded" type="button" data-bs-toggle="modal" data-bs-target={"#trellisModal" + post.id}>
+                                <ul className="nav justify-content-start">
+                                    <li className="nav-item fs-5">{post.title}</li>
+                                </ul>
+                                <ul className="nav justify-content-end">
+                                    <li className="nav-item read fs-5">Read <FontAwesomeIcon icon={faAngleDoubleRight} className="fa-lg open-post" /></li>
+                                </ul>
+                            </button>
                             <TrellisModal
                                 id={post.id}
-                                name={post.name}
+                                name={post.User.name}
                                 title={post.title}
                                 body={post.body}
                                 createdAt={post.createdAt}
                                 comments={post.Trellis_Comments}
                             />
-                        </button>
-                        // </h2>
+
+                        </>
                         // </div>
                     )
                 })}
