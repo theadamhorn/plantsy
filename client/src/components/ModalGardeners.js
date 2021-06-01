@@ -9,8 +9,19 @@ function GardenersModal(props) {
     const [modal, setModal] = useState(false);
     return (
         <>
-        <Button variant="primary" onClick={()=>setModal(true)}
-                  >
+        <Button variant="primary" onClick={()=>setModal(true)} style={{
+            color: "#e4d7d0",
+            fontFamily: "Kiwi Maru",
+            fontWeight: 700,
+            backgroundColor: "#93e9be",
+            color: "#0a4158",
+            lineHeight: "0.5em",
+            paddingLeft: "1em",
+            paddingRight: "1em",
+            paddingTop: "0.5em",
+            paddingBottom: "0.5em",
+            borderRadius: "10px"
+          }}>
             <p><FontAwesomeIcon icon={faSeedling} className="fa-2x" /></p>
             <p>Plant</p>
             <p>Profile</p>

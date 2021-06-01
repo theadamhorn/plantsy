@@ -68,7 +68,7 @@ html {
 
 .btn-focus {
   -webkit-box-sizing: null;
-          box-sizing: null;
+  box-sizing: null;
 }
 
 .btn {
@@ -130,7 +130,7 @@ html {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   color: #e4d7d0;
   border-radius: 15px;
   border: 2px solid;
@@ -241,11 +241,12 @@ html {
   width: 100%;
   color: #222;
   padding: 10px;
-  font-size: .75em;
+  font-size: 0.75em;
   border: 1px solid white;
 }
 
-.open-post, .read {
+.open-post,
+.read {
   color: #60aa9b;
 }
 
@@ -263,11 +264,11 @@ html {
   border: 1px solid white;
 }
 
-#comment-field, .title-input, .body-input {
+#comment-field,
+.title-input,
+.body-input {
   width: 80%;
 }
-
-
 
 .potting {
   background-color: #0a4158;
@@ -361,10 +362,55 @@ html {
   font-size: small;
   left: 0;
   bottom: 0;
-
   width: 100%;
   text-align: center;
   padding-bottom: 3px;
+}
+
+.thanksBody {
+  background: black;
+  height: 1000px;
+  color: white;
+}
+
+.placeholder {
+  height: 100px;
+}
+
+.Alex {
+  height: auto;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: #e4d7d0 1px solid;
+}
+
+.Ryan {
+  height: auto;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: #e4d7d0 1px solid;
+}
+
+.Zac {
+  height: auto;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: #e4d7d0 1px solid;
+}
+
+.offering {
+  background-image: url("./images/fire.gif");
+  height: 150px;
+  width: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (max-width: 767px) {
@@ -372,3 +418,4 @@ html {
     margin: auto;
   }
 }
+/*# sourceMappingURL=style.css.map */
