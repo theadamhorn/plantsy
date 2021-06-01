@@ -1,7 +1,44 @@
-import React from 'react'
+import React, { useState, useContext} from 'react'
 import EditPlantModal from '../components/ModalEditPlant';
+import UserContext from "../utils/UserContext";
+import API from "../utils/API";
 function PlantModal(props) {
+    const {user, login} = useContext(UserContext);
+    
+    const [genus, setGenus] = useState(props.genus);
+    const [species, setSpecies] = useState(props.species);
+    const [variety, setVariety] = useState(props.variety);
+    const [commonName, setCommonName] = useState(props.common_name);
+    const [photo , setPhoto]= useState(props.photo);
+    const [water, setWater] = useState(props.water);   
+    const [temperature, setTemperature] = useState(props.temperature);
+    const [humidity, setHumidity] = useState(props.humidity);
+    const [light, setLight] = useState(props.light);
+    const [description, setDescription] = useState(props.description);
+    const [care, setCare] = useState(props.care);
+    const addPlantToGarden = async (event)=> {
 
+        event.preventDefault();
+    
+
+       const body = {
+        genus: genus ,
+        species: species , 
+        variety: variety , 
+        common_name: commonName , 
+        watering: water , 
+        temperature: temperature , 
+        humidity: humidity , 
+        light: light , 
+        description: description ,
+        care: care ,
+        photo: photo
+        }
+        API.createOwnedPlants(user.id , body).then( res=>{
+            alert('Plant Added!');
+        })
+        .catch(err => { console.error(err) })
+      }
     return (
         <div className="modal fade" id={"plantModal" + props.id} data-bs-backdrop="false"
             data-bs-keyboard="false" tabIndex="-1" aria-labelledby="modalLabel"
@@ -53,7 +90,7 @@ function PlantModal(props) {
                         </div>
                     </div>
                     <div className="modal-footer">
-                    { document.location.pathname === "/plants" ? <button className="btn add-plant-button" type="button" value={props.id}>Add Plant</button>  : ""}
+                    { document.location.pathname === "/plants" ? <button className="btn add-plant-button" type="button" value={props.id} onClick={event => addPlantToGarden(event)}>Add Plant</button>  : ""}
                        { document.location.pathname === "/profile" ? <EditPlantModal/>  : ""}
                         <button type="button" className="btn btn-secondary"
                             data-bs-dismiss="modal">Close</button>                         
