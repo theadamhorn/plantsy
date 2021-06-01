@@ -7,8 +7,15 @@ router.get('/', withAuth, async (req, res) => {
     // find all posts
     try {
         const postsData = await Trellis_Posts.findAll({
-            attributes: { exclude: ['password'] },
-            include: [{ model: Trellis_Comments }, { model: Users }],
+
+            include: [
+                {
+                    model: Trellis_Comments
+                },
+                {
+                    model: Users,
+                    attributes: { exclude: ['password'] },
+                }],
             order: [
                 [
                     'created_at', 'DESC'
