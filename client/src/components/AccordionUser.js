@@ -6,7 +6,6 @@ import { faSeedling } from '@fortawesome/free-solid-svg-icons'
 
 function AccordionUser(props) {
     var ownedPlants = props.ownedPlants;
-    console.log("Hi I'm ownedPlants from user Accordion\n" + JSON.stringify(ownedPlants) +"\n ownedPlants from user Accordion over and out!");
     return (
         <div>
         <div className="accordion">
