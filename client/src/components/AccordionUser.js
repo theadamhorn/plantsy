@@ -34,11 +34,7 @@ function AccordionUser(props) {
                                         humidity={plant.humidity}
                                         light={plant.light}
                                         description={plant.description}
-<<<<<<< HEAD
                                         care={plant.care}
-=======
-                                        care = {plant.care}
->>>>>>> 096daf83b0d26fd8852fe940e57822383b207afc
                                         />
                                     <PlantBadge
                                         watering={plant.watering}

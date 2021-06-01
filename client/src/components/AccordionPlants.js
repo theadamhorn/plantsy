@@ -53,20 +53,12 @@ function AccordionPlants(props) {
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-                        )
-                    })}
-                </div>
-                
-            </div>)
-=======
                         </div>
                     )
                 })}
             </div>
             {/* end of AccordionPlants */}
         </div>)
->>>>>>> 096daf83b0d26fd8852fe940e57822383b207afc
 
 }
 

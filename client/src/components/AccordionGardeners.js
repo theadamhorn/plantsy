@@ -3,15 +3,9 @@ import PlantModal from "./ModalPlant";
 import AccordionPlants from "./AccordionPlants";
 import AccordionUser from "./AccordionUser";
 import PlantBadge from "./PlantBadge";
-<<<<<<< HEAD
-import { Accordion, Card } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSeedling } from '@fortawesome/free-solid-svg-icons'
-=======
 import GardenersModal from './ModalGardeners';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faSeedling } from '@fortawesome/free-solid-svg-icons'
->>>>>>> 096daf83b0d26fd8852fe940e57822383b207afc
 
 function AccordionGardeners(props) {
     var gardeners = props.gardeners;
@@ -30,13 +24,9 @@ function AccordionGardeners(props) {
                                 </h2>
                                 <div id={"collapse" + gardener.id} className="accordion-collapse collapse" aria-labelledby={"heading" + gardener.id} data-bs-parent={"#heading" + gardener.id}>
                                     <div className="accordion-body deco">
-<<<<<<< HEAD
-                                      There will be a magical button that will go here that will open a modal, inside of which will be another accordion which will display the plants of the users.
-=======
                                         A users garden button will go here. The list is just filler to show rendering of the {gardener.name}'s Plants.
                                         { gardener.Owned_Plants.length >= 1? <GardenersModal OwnedPlants={gardener.Owned_Plants} name= {gardener.name}/> : ""}
 
->>>>>>> 096daf83b0d26fd8852fe940e57822383b207afc
                                     </div>
                                 </div>
                             </div>
