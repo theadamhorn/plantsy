@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import UserContext from "../utils/UserContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSeedling, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSeedling, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import LoginModal from './ModalLogin';
 import API from '../utils/API';
 

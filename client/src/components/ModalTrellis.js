@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import API from '../utils/API';
 
 export default function TrellisModal(props) {
-
+    console.log(props);
     var comments = props.comments;
+
+    const [trellisComments, setTrellisComments] = useState([]);
+
+    useEffect(() => {
+        // if (!comments) {
+        //     return;
+        // }
+        // else {
+
+        API.createTrellisComment()
+            .then(res => {
+                console.log(res)
+                setTrellisComments(res.data)
+            })
+            .catch(err => console.log(err));
+
+    }, []);
 
     return (
         <div className="modal" id={"trellisModal" + props.id} data-bs-backdrop="false"
@@ -19,16 +37,16 @@ export default function TrellisModal(props) {
                     <div className="modal-body">
                         <div className="row">
                             <div className="col-auto text-start">
-                                {props.name}<br />
-                                <p className="fs-6">{props.body} </p>
+                                <p className="fs-6">Post by: <i>{props.name}</i></p>
+                                <p className="fs-5">{props.body} </p>
                             </div>
                         </div>
                         <br />
                         <div className="row mt-4">
                             <form className="form comment-form">
                                 <div className="form-group justify-content-around">
-                                    <label for="comment-field" className="fs-6">Leave a comment:</label><br />
-                                    <textarea className="body-input m-1 rounded" rows="2" id="comment-field"></textarea>
+                                    <label htmlFor="comment-field" className="fs-5">Leave a comment:</label><br />
+                                    <textarea className="body-input m-1 rounded fs-5" rows="1" id="comment-field"></textarea>
                                 </div>
                                 <div className="form-group">
                                     <button className="btn btn-secondary m-1" type="submit">Comment</button>
