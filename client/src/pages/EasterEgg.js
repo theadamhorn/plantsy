@@ -1,16 +1,13 @@
 import React from "react";
 import BenchContainer from "../components/BenchContainer";
+import Body from "../components/EasterEgg/Body";
 import Footer from "../components/Footer";
-import UserContext from "../utils/UserContext"
-function EasterEgg() {
-    const { user } = useContext(UserContext);
 
-    if(!user.isAuthenticated){
-        document.location.replace('/')
-      }
+function EasterEgg() {
+
     return (
         <>
-            <BenchContainer />
+            <Body/>
             <Footer />
         </>
     )

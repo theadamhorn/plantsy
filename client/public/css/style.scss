@@ -12,75 +12,94 @@ html {
   height: 100%;
 }
 #root {
-  font-family: $Kiwi;
+  font-family: "Kiwi Maru";
 }
+
 .navbar {
-  background-color: $teal;
-  color: $navy;
+  background-color: #4b8378;
+  color: #0a4158;
   font-size: 1.25em;
-  border-bottom: 2px $scallop solid;
-  .navbar-brand {
-    background-color: $seafoam;
-    color: $font;
-    padding: 0.5em;
-    font-size: 2em;
-    border-radius: 15px;
-    border: $font 2px solid;
-  }
-  .navbar-brand:hover {
-    background-color: $navy;
-    color: $orange;
-  }
-  .navbar-toggler {
-    border: $scallop 2px solid;
-  }
-  .navbar-toggler:active {
-    border: $navy 2px solid;
-  }
-  .navbar-toggler:hover {
-    border: $orange 2px solid;
-  }
-  .navbar-toggler-icon {
-    background-image: url(./images/icons8-spa-flower-100.png);
-  }
-  a {
-    font-weight: 600;
-    border-radius: 10px;
-    color: $font;
-  }
-  a:hover {
-    background-color: $orange;
-    border-radius: 10px;
-    color: $navy;
-  }
-  a:visited {
-    color: $navy;
-  }
-  ul li {
-    padding-left: 1.5em;
-  }
+  border-bottom: 2px #e4d7d0 solid;
+  margin: auto;
 }
+
+.navbar .navbar-brand {
+  background-color: #93e9be;
+  color: #222;
+  padding: 0.5em;
+  font-size: 1.75em;
+  border-radius: 15px;
+  border: #222 2px solid;
+}
+
+.navbar .navbar-brand:hover {
+  background-color: #0a4158;
+  color: #ff9636;
+}
+
+.navbar .navbar-toggler {
+  border: #e4d7d0 2px solid;
+}
+
+.navbar .navbar-toggler:active {
+  border: #0a4158 2px solid;
+}
+
+.navbar .navbar-toggler:hover {
+  border: #ff9636 2px solid;
+}
+
+.navbar .navbar-toggler-icon {
+  background-image: url(./images/icons8-spa-flower-100.png);
+}
+
+.navbar a {
+  font-weight: 600;
+  border-radius: 10px;
+  color: #222;
+}
+
+.navbar a:hover {
+  background-color: #ff9636;
+  border-radius: 10px;
+  color: #0a4158;
+}
+
+.navbar a:visited {
+  color: #0a4158;
+}
+
+.navbar ul li {
+  padding-left: 1.5em;
+}
+
 .btn-focus {
+  -webkit-box-sizing: null;
   box-sizing: null;
 }
+
 .btn {
+  -webkit-transition: none !important;
   transition: none !important;
 }
+
 .btn-login {
-  color: $font;
+  color: #222;
   border-radius: 10px;
   background-color: transparent;
 }
+
 .btn-login:hover {
-  background-color: $orange;
+  background-color: #ff9636;
   border-radius: 10px;
-  color: $navy;
+  color: #0a4158;
 }
+
 .btn-login-form {
-  color: $scallop;
-  font-family: $Kiwi;
+  color: #e4d7d0;
+  font-family: "Kiwi Maru";
   font-weight: 700;
-  background-color: $navy;
+  background-color: #0a4158;
   padding-left: 1em;
   padding-right: 1em;
   padding-top: 0.5em;
@@ -92,98 +111,132 @@ html {
   text-align: center;
   padding: 5px;
 }
+
 .email-login {
   padding-left: 35px;
 }
+
 .left {
   position: relative;
   left: -15px;
 }
+
 .hero-image {
   background-image: url("./images/pexels-vasanth-babu-797793.jpg");
-  background-color: $navy;
+  background-color: #0a4158;
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .hero-text {
   text-align: center;
   position: absolute;
-  background-color: $navy;
+  background-color: #0a4158;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  color: $scallop;
+  color: #e4d7d0;
   border-radius: 15px;
   border: 2px solid;
   padding: 2em;
 }
+
 #hero-text-1 {
   font-size: 3em;
 }
+
 #hero-text-2 {
   font-size: 2em;
 }
+
 .plantList {
-  background-color: $scallop;
+  background-color: #e4d7d0;
   height: 750px;
 }
+
+.accordion {
+  margin-left: 2%;
+}
+
 .accordion-item {
-  background-color: $navy;
-  color: $navy;
+  background-color: #0a4158;
+  color: #0a4158;
   font-size: 1em;
   line-height: 10px;
-  font-family: $Kiwi;
+  font-family: "Kiwi Maru";
   text-align: center;
-  border-bottom: $scallop 1px solid;
-  .accordion-button {
-    background-color: $teal;
-    color: $font;
-    font-size: 0.65em;
-    border: 1px solid white;
-  }
-  .accordion-button:not(.collapse) {
-    background-color: $teal;
-    color: $font;
-  }
-  .accordion-collapse {
-    background-color: $navy;
-    color: $scallop;
-    font-family: $Kiwi;
-    border-bottom: $scallop 1px solid;
-  }
-  .deco {
-    line-height: 1.25em;
-    color: #e4d7d0;
-  }
-  .accordion-button:hover {
-    background-color: $orange;
-    color: $navy;
-  }
-  .water {
-    color: rgb(25, 212, 233);
-    padding: 2px;
-  }
-  .temp {
-    color: rgb(217, 22, 22);
-    padding: 2px;
-  }
-  .humidity {
-    color: white;
-    opacity: 0.8;
-    width: fit-content;
-  }
-  .light {
-    color: yellow;
-    padding: 1px;
-  }
-  .plant_button {
-    color: rgb(16, 166, 16);
-  }
+  border-bottom: #e4d7d0 1px solid;
 }
+
+.accordion-item .accordion-button {
+  background-color: #4b8378;
+  color: #222;
+  font-size: 0.65em;
+  border: 1px solid white;
+}
+
+.accordion-item .accordion-button:not(.collapse) {
+  background-color: #4b8378;
+  color: #222;
+}
+
+.accordion-item .accordion-collapse {
+  background-color: #0a4158;
+  color: #e4d7d0;
+  font-family: "Kiwi Maru";
+  border-bottom: #e4d7d0 1px solid;
+}
+
+.accordion-item .deco {
+  line-height: 1.25em;
+  color: #e4d7d0;
+}
+
+.accordion-item .accordion-button:hover {
+  background-color: #ff9636;
+  color: #0a4158;
+}
+
+.accordion-item .water {
+  color: #19d4e9;
+  padding: 2px;
+}
+
+.accordion-item .temp {
+  color: #d91616;
+  padding: 2px;
+}
+
+.accordion-item .humidity {
+  color: white;
+  opacity: 0.8;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.accordion-item .light {
+  color: yellow;
+  padding: 1px;
+}
+
+.accordion-item .plant_button {
+  color: #10a610;
+}
+
 .trellis {
-  background-color: $seafoam;
+  background-color: #93e9be;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(184, 184, 184, 0.5)),
+      to(rgba(186, 186, 186, 0.5))
+    ),
+    url("./images/pexels-gary-barnes-6231990.jpg");
   background-image: linear-gradient(
       rgba(184, 184, 184, 0.5),
       rgba(186, 186, 186, 0.5)
@@ -195,73 +248,197 @@ html {
   height: 750px;
   float: right;
 }
-.potting {
-  background-color: $navy;
-  color: $scallop;
-  a {
-    color: $scallop;
-    text-decoration: none;
-    padding: 5px;
-  }
+
+.trellis-posts {
+  margin-left: 2%;
 }
+
+.trellis-button {
+  background-color: #4b8378;
+  text-align: left;
+  width: 100%;
+  color: #222;
+  padding: 10px;
+  font-size: 0.75em;
+  border: 1px solid white;
+}
+
+.open-post,
+.read {
+  color: #60aa9b;
+}
+
+.trellis-button:hover {
+  background-color: #93e9be;
+}
+
+.create-post-btn:hover {
+  background-color: #ff9636;
+}
+
+.create-post-btn {
+  background-color: #60aa9b;
+  color: #0a4158;
+  border: 1px solid white;
+}
+
+#comment-field,
+.title-input,
+.body-input {
+  width: 80%;
+}
+
+.potting {
+  background-color: #0a4158;
+  color: #e4d7d0;
+}
+
+.potting a {
+  color: #e4d7d0;
+  text-decoration: none;
+  padding: 5px;
+}
+
 .bench {
   font-size: 1.75em;
 }
+
 .plant_profile {
   position: relative;
   left: 90px;
   top: 195px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   line-height: 1.25em;
-  .modal-title {
-    background-color: $navy;
-  }
-  .modal-header {
-    background-color: $navy;
-  }
-  .modal-body {
-    color: $navy;
-    background-color: $scallop;
-    border-bottom: $navy 1px solid;
-  }
 }
+
+.modal-title {
+  background-color: #0a4158;
+  color: #e4d7d0;
+}
+
+.modal-header {
+  background-color: #0a4158;
+}
+
+.modal-body {
+  color: #0a4158;
+  background-color: #e4d7d0;
+  border-bottom: #0a4158 1px solid;
+}
+
 .edit_plant_profile {
   position: relative;
   left: 90px;
   top: 195px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   line-height: 2em;
-  .plant_edit_1 .plant_edit_2 .plant_edit_3 {
-    font-size: 1.35em;
-  }
-  .plant_edit_3 {
-    text-align: start;
-  }
+}
+
+.edit_plant_profile .plant_edit_1 .plant_edit_2 .plant_edit_3 {
+  font-size: 1.35em;
+}
+
+.edit_plant_profile .plant_edit_3 {
+  text-align: start;
 }
 
 .plantPhoto {
   width: 250px;
   height: auto;
-  border: $navy 2px solid;
+  border: #0a4158 2px solid;
 }
+
 #plantID {
   visibility: hidden;
 }
+
 #userID {
   visibility: hidden;
 }
+
 .newPlant {
-  color: $navy;
+  color: #0a4158;
 }
+
 .deletePlant {
-  color: $navy;
+  color: #0a4158;
 }
+
 .footer {
-  position: fixed;
+  background-color: #4b83789d;
+  color: #0a4158;
+  font-size: small;
   left: 0;
   bottom: 0;
+
   width: 100%;
   text-align: center;
+  padding-bottom: 3px;
+}
+
+.thanksBody {
+  background-image: linear-gradient(
+      rgba(17, 47, 32, 0.5),
+      rgba(17, 47, 32, 0.5)
+    ),
+    url("./images/pexels-huy-phan-3076899.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 1000px;
+}
+.placeholder {
+  height: fit-content;
+}
+.Alex {
+  height: auto;
+  width: 100%;
+  background-color: $teal;
+  color: $scallop;
+  font-size: 1.5em;
+  border: $scallop 1px solid;
+  border-radius: 10px;
+}
+.Ryan {
+  height: auto;
+  width: 100%;
+  background-color: $teal;
+  color: $scallop;
+  font-size: 1.5em;
+  border: $scallop 1px solid;
+  border-radius: 10px;
+}
+.Zac {
+  height: auto;
+  width: 100%;
+  background-color: $teal;
+  color: $scallop;
+  font-size: 1.5em;
+  border: $scallop 1px solid;
+  border-radius: 10px;
+}
+.Text {
+  height: fit-content;
+  background-color: $teal;
+  color: $scallop;
+  font-size: 1.5em;
+  border: $scallop 1px solid;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .accordion {
+    margin: auto;
+  }
 }

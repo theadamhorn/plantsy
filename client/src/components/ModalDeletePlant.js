@@ -14,7 +14,18 @@ function DeletePlantModal(props) {
   }
   return (
     <>
-    <Button style={{transition: "none"}} variant="link" size="md" onClick={()=>setModal(true)}>Delete A Plant</Button>
+    <Button size="md" onClick={()=>setModal(true)} style={{
+           color: "#e4d7d0",
+           fontFamily: "Kiwi Maru",
+           fontSize: "1em",
+           backgroundColor: "#0a4158",
+           paddingLeft: "1em",
+           paddingRight: "1em",
+           paddingTop: "0.5em",
+           paddingBottom: "0.5em",
+           borderRadius: "10px",
+           borderWidth: "0px"
+          }}>Delete A Plant</Button>
     <Modal aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
