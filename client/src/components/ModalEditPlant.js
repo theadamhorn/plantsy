@@ -15,15 +15,16 @@ function EditPlantModal(props) {
     const [species, setSpecies] = useState();
     const [variety, setVariety] = useState();
     const [commonName, setCommonName] = useState();
-    const [water, setWater] = useState();
-    const [waterChecked , setWaterChecked]= useState();
-    const [temperature, setTemperature] = useState();
-    const [humidity, setHumidity] = useState();
-    const [light, setLight] = useState();
+    const [water, setWater] = useState(props.water);
+    const [temperature, setTemperature] = useState(props.temperature);
+    const [humidity, setHumidity] = useState(props.humidity);
+    const [light, setLight] = useState(props.light);
     const [description, setDescription] = useState();
     const [care, setCare] = useState();
 
-    const addPlant = async (event)=> {
+
+    const editPlant = async (event)=> {
+        
         event.preventDefault();
 
    const body = {
@@ -40,7 +41,8 @@ function EditPlantModal(props) {
     }
     API.updateOwnedPlants(user.id , body)
     .then(res =>{
-      //history.push("/profile");
+        setModal(false);
+        props.getOwnedPlants();
     })
     .catch(err => { console.error(err) })
   }
@@ -90,57 +92,57 @@ function EditPlantModal(props) {
                     <section className="row plant_edit_2">
                         <article className="col"> Water Needed:
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="waterNeeded" id="flexRadioDefault1" value="low" />
+                                <input className="form-check-input" type="radio" name="waterNeeded" id="flexRadioDefault1" value="low"checked ={water === 'low'} onChange={event => {setWater('low')}} />
                                 <label className="form-check-label" for="low">Low</label>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="waterNeeded" id="flexRadioDefault1" value="medium" checked />
+                                <input className="form-check-input" type="radio" name="waterNeeded" id="flexRadioDefault1" value="medium" checked ={water === 'medium'} onChange={event => {setWater('medium')}} />
                                 <label className="form-check-label" for="medium">Medium</label>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="waterNeeded" id="flexRadioDefault1" value="High" />
+                                <input className="form-check-input" type="radio" name="waterNeeded" id="flexRadioDefault1" value="high" checked ={water === 'high'} onChange={event => {setWater('high')}}/>
                                 <label className="form-check-label" for="high">High</label>
                             </div>
                         </article>
                         <article className="col"> Temperature Needed:
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="tempNeeded" id="flexRadioDefault2" value="low" />
+                                <input className="form-check-input" type="radio" name="tempNeeded" id="flexRadioDefault2" value="low" checked={temperature === 1} onChange={event => {setTemperature(1)}} />
                                 <label className="form-check-label" for="flexRadioDefault2">Low</label>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="tempNeeded" id="flexRadioDefault2" value="medium" checked />
+                                <input className="form-check-input" type="radio" name="tempNeeded" id="flexRadioDefault2" value="medium" checked={temperature === 2} onChange={event => {setTemperature(2)}} />
                                 <label className="form-check-label" for="flexRadioDefault2">Medium</label>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="tempNeeded" id="flexRadioDefault2" value="high" />
+                                <input className="form-check-input" type="radio" name="tempNeeded" id="flexRadioDefault2" value="high" checked={temperature === 3} onChange={event => {setTemperature(3)}}/>
                                 <label className="form-check-label" for="flexRadioDefault2">High</label>
                             </div>
                         </article>
                         <article className="col"> Humidity Needed:
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="humidNeeded" id="flexRadioDefault3" value="low" />
+                                <input className="form-check-input" type="radio" name="humidNeeded" id="flexRadioDefault3" value="low" checked={humidity === 1} onChange={event => {setHumidity(1)}} />
                                 <label className="form-check-label" for="flexRadioDefault3">Low</label>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="humidNeeded" id="flexRadioDefault3" value="medium" checked />
+                                <input className="form-check-input" type="radio" name="humidNeeded" id="flexRadioDefault3" value="medium" checked={humidity === 2} onChange={event => {setHumidity(2)}} />
                                 <label className="form-check-label" for="flexRadioDefault3">Medium</label>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="humidNeeded" id="flexRadioDefault3" value="high" />
+                                <input className="form-check-input" type="radio" name="humidNeeded" id="flexRadioDefault3" value="high" checked={humidity === 3} onChange={event => {setHumidity(3)}} />
                                 <label className="form-check-label" for="flexRadioDefault3">High</label>
                             </div>
                         </article>
                         <article className="col"> Light Needed:
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="lightNeeded" id="flexRadioDefault4" value="low" />
+                                <input className="form-check-input" type="radio" name="lightNeeded" id="flexRadioDefault4" value="low" checked={light === 1} onChange={event =>{setLight(1)}}/>
                                 <label className="form-check-label" for="flexRadioDefault4">Low</label>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="lightNeeded" id="flexRadioDefault4" value="medium" checked />
+                                <input className="form-check-input" type="radio" name="lightNeeded" id="flexRadioDefault4" value="medium" checked={light === 2} onChange={event =>{setLight(2)}} />
                                 <label className="form-check-label" for="flexRadioDefault4">Medium</label>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="lightNeeded" id="flexRadioDefault4" value="high" />
+                                <input className="form-check-input" type="radio" name="lightNeeded" id="flexRadioDefault4" value="high" checked={light === 3} onChange={event =>{setLight(3)}}/>
                                 <label className="form-check-label" for="flexRadioDefault4">High</label>
                             </div>
                         </article>
@@ -148,15 +150,15 @@ function EditPlantModal(props) {
                     <section className="row plant_edit_3">
                         <div className="col-12">
                             <label for="description">Description:</label>
-                            <textarea name="description" id="description" row="5" cols="40" onChange={event => setDescription(event.target.value.trim())}>{props.description}</textarea>
+                            <textarea name="description" id="description" row="5" cols="40" defaultValue={props.description} onChange={event => setDescription(event.target.value.trim())}></textarea>
                         </div>
                         <div className="col-12">
                             <label for="care">Care:</label>
-                            <textarea name="care" id="care" row="5" cols="40">{props.care}</textarea>
+                            <textarea name="care" id="care" row="5" cols="40" defaultValue={props.care} onChange={event => setCare(event.target.value.trim())}></textarea>
                         </div>
                     </section>
                     <Modal.Footer>
-                        <button type="submit" id="saveEdit" value="submit" className="btn btn-danger">Save</button>
+                        <button type="submit" id="saveEdit" value="submit" className="btn btn-danger"onClick={()=>editPlant}>Save</button>
                         <Button style={{ 
                             color: "#e4d7d0",
                             fontFamily: "Kiwi Maru",

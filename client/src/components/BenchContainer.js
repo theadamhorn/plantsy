@@ -3,7 +3,7 @@ import Accordion from './Accordion';
 import { Row, Col } from "react-bootstrap";
 
 function BenchContainer(props) {
-
+    
     return (
         <>
             <main className="container-fluid px-0">
@@ -20,8 +20,7 @@ function BenchContainer(props) {
                             plants={props.plants}
                             gardeners={props.gardeners}
                             OwnedPlants={props.OwnedPlants}
-
-
+                            getOwnedPlants= {props.getOwnedPlants}
                         />
                     </Col>
                     <Col xs={12} md={8} className="trellis">
