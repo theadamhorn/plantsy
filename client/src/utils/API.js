@@ -40,8 +40,8 @@ export default {
     createOwnedPlants: function (id, body) {
         return axios.post('/api/owned-plants/' + id, body);
     },
-    updateOwnedPlants: function (id , body) {
-        return axios.put('/api/owned-plants/' + id , body);
+    updateOwnedPlants: function (id, body) {
+        return axios.put('/api/owned-plants/' + id, body);
     },
     deleteOwnedPlants: function (plantID) {
         return axios.delete('/api/owned-plants/' + plantID);
@@ -65,8 +65,8 @@ export default {
     getTrellisComments: function () {
         return axios.get('/api/comments/');
     },
-    createTrellisComment: function (id) {
-        return axios.post('/api/comments/' + id);
+    createTrellisComment: function (id, data) {
+        return axios.post('/api/comments/' + id, data);
     },
     updateTrellisComment: function (id) {
         return axios.put('/api/comments/' + id);

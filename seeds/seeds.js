@@ -22,7 +22,7 @@ const seedAll = async () => {
 
         await Trellis_Posts.bulkCreate(TrellisPostsData);
 
-        // await Trellis_Comments.bulkCreate(TrellisCommentsData);
+        await Trellis_Comments.bulkCreate(TrellisCommentsData);
 
 
     } catch (error) {

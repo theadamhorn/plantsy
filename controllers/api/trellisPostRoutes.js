@@ -10,7 +10,11 @@ router.get('/', withAuth, async (req, res) => {
 
             include: [
                 {
-                    model: Trellis_Comments
+                    model: Trellis_Comments,
+                    include: [{
+                        model: Users,
+                        attributes: { exclude: ['password'] }
+                    }]
                 },
                 {
                     model: Users,
