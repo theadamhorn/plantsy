@@ -12,8 +12,7 @@ function Profile() {
 
     const { user } = useContext(UserContext);
 
-
-    useEffect(() => {
+    const getOwnedPlants = () => {
 
         if (!OwnedPlants) {
             return;
@@ -25,17 +24,20 @@ function Profile() {
 
                 .catch(err => console.log(err));
         }
-    }, []);
+    }
 
+    useEffect(getOwnedPlants, []);
 
+    
 
     return (
         <>
             <BenchContainer
                 OwnedPlants={OwnedPlants}
                 title={user.name + "'s Potting Bench"}
-                addPlant = {<ModalAddPlant/>}
-                deletePlant = {<ModalDeletePlant Owned_Plants = {OwnedPlants}/>}
+                addPlant = {<ModalAddPlant getOwnedPlants= {getOwnedPlants} />}
+                deletePlant = {<ModalDeletePlant Owned_Plants= {OwnedPlants} getOwnedPlants= {getOwnedPlants}/>}
+                getOwnedPlants= {getOwnedPlants}
             />
             <Footer />
         </>

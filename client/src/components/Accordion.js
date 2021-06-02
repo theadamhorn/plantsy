@@ -39,6 +39,7 @@ export default function Accordion(props) {
             <>
                 <AccordionPlants
                     plants={plants} />
+
             </>)
     }
 
@@ -48,6 +49,7 @@ export default function Accordion(props) {
             <>
                 <AccordionUser
                     ownedPlants={ownedPlants}
+                    getOwnedPlants= {props.getOwnedPlants}
                 />
             </>)
     }

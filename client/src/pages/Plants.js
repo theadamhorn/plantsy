@@ -6,8 +6,7 @@ import API from "../utils/API";
 
 function Plants() {
     const [plantData, setPlantData] = useState([]);
-    
-    useEffect(() => {
+    useEffect( () => {
         if (!plantData) {
             return;
         }
@@ -19,12 +18,13 @@ function Plants() {
                 .catch(err => console.log(err));
         }
     }, []);
-
+    
     return (
         <>
             <BenchContainer
                 plants={plantData}
                 title={"The Nursery"} />
+                
             <Footer />
         </>
     )
