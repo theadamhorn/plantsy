@@ -270,6 +270,10 @@ html {
   width: 80%;
 }
 
+.comment-border {
+  border-top: 1px dotted #222;
+}
+
 .potting {
   background-color: #0a4158;
   color: #e4d7d0;
