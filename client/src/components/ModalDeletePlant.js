@@ -10,7 +10,10 @@ function DeletePlantModal(props) {
   const deletePlant = (event) =>{
     event.preventDefault();
 
-    API.deleteOwnedPlants(event.target.value).catch(err => { console.error(err) })
+    API.deleteOwnedPlants(event.target.value).then(res =>{
+      setModal(false);
+      props.getOwnedPlants();
+    }).catch(err => { console.error(err) })
   }
   return (
     <>

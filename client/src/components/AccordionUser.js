@@ -11,6 +11,7 @@ function AccordionUser(props) {
         <div className="accordion">
             {ownedPlants && ownedPlants.map(plant => {
                 return (
+                    
                     <div className="accordion-item" key={plant.id}>
                         <h2 className="accordion-header" id={"heading" + plant.id}>
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + plant.id} aria-expanded="true" aria-controls={"collapse" + plant.id}>
@@ -34,6 +35,7 @@ function AccordionUser(props) {
                                         light={plant.light}
                                         description={plant.description}
                                         care={plant.care}
+                                        getOwnedPlants= {props.getOwnedPlants}
                                         />
                                     <PlantBadge
                                         watering={plant.watering}

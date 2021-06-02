@@ -10,14 +10,14 @@ function PlantModal(props) {
     const [variety, setVariety] = useState(props.variety);
     const [commonName, setCommonName] = useState(props.common_name);
     const [photo , setPhoto]= useState(props.photo);
-    const [water, setWater] = useState(props.water);   
+    const [water, setWater] = useState(props.watering);   
     const [temperature, setTemperature] = useState(props.temperature);
     const [humidity, setHumidity] = useState(props.humidity);
     const [light, setLight] = useState(props.light);
     const [description, setDescription] = useState(props.description);
     const [care, setCare] = useState(props.care);
-    const addPlantToGarden = async (event)=> {
 
+    const addPlantToGarden = async (event)=> {
         event.preventDefault();
     
 
@@ -34,12 +34,11 @@ function PlantModal(props) {
         care: care ,
         photo: photo
         }
-        API.createOwnedPlants(user.id , body).then( res=>{
-            alert('Plant Added!');
-        })
+        API.createOwnedPlants(user.id , body)
         .catch(err => { console.error(err) })
       }
     return (
+        <>
         <div className="modal fade" id={"plantModal" + props.id} data-bs-backdrop="false"
             data-bs-keyboard="false" tabIndex="-1" aria-labelledby="modalLabel"
             aria-hidden="true">
@@ -91,13 +90,14 @@ function PlantModal(props) {
                     </div>
                     <div className="modal-footer">
                     { document.location.pathname === "/plants" ? <button className="btn add-plant-button" type="button" value={props.id} onClick={event => addPlantToGarden(event)}>Add Plant</button>  : ""}
-                       { document.location.pathname === "/profile" ? <EditPlantModal/>  : ""}
+                       { document.location.pathname === "/profile" ? <EditPlantModal genus ={props.genus} species ={props.species} variety={props.variety} common_name={props.common_name} water={props.watering} temperature={props.temperature} humidity={props.humidity} light={props.light} description={props.description} care={props.care} getOwnedPlants= {props.getOwnedPlants}/>  : ""}
                         <button type="button" className="btn btn-secondary"
                             data-bs-dismiss="modal">Close</button>                         
                     </div>
                 </div>
             </div>
         </div>
+        </>
     );
 }
 
