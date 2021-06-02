@@ -3,24 +3,48 @@ import API from '../utils/API';
 
 export default function TrellisModal(props) {
     console.log(props);
+
     var comments = props.comments;
 
-    const [trellisComments, setTrellisComments] = useState([]);
+    const [newComment, setNewComment] = useState([]);
+    const [CommentInfo, setCommentInfo] = useState();
 
-    useEffect(() => {
-        // if (!comments) {
-        //     return;
-        // }
-        // else {
+    // useEffect(() => {
+    //     // if (!comments) {
+    //     //     return;
+    //     // }
+    //     // else {
 
-        API.createTrellisComment()
-            .then(res => {
-                console.log(res)
-                setTrellisComments(res.data)
+    //     API.createTrellisComment()
+    //         .then(res => {
+    //             console.log(res)
+    //             setNewComment(res.data)
+    //         })
+
+    // }, []);
+
+    // const updateComments = () => {
+    //     API.getTrellisPosts()
+    //         .then((res) => {
+    //             setCommentInfo(res.data);
+    //         })
+    //         .catch((err) => console.log(err));
+
+    // }
+
+    const createComment = async (e) => {
+        e.preventDefault();
+        console.log(CommentInfo)
+
+        if (CommentInfo) {
+            await API.createTrellisComment(props.id, {
+                comment: CommentInfo,
+
             })
-            .catch(err => console.log(err));
-
-    }, []);
+            props.updatePosts()
+            setCommentInfo("")
+        }
+    }
 
     return (
         <div className="modal" id={"trellisModal" + props.id} data-bs-backdrop="false"
@@ -29,8 +53,7 @@ export default function TrellisModal(props) {
             <div className="modal-dialog modal-lg">
                 <div className="modal-content trellis-post">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="modalLabel">
-                            {props.title}</h5>
+                        <h5 className="modal-title" id="modalLabel">{props.title}</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
@@ -46,20 +69,28 @@ export default function TrellisModal(props) {
                             <form className="form comment-form">
                                 <div className="form-group justify-content-around">
                                     <label htmlFor="comment-field" className="fs-5">Leave a comment:</label><br />
-                                    <textarea className="body-input m-1 rounded fs-5" rows="1" id="comment-field"></textarea>
+                                    <textarea className="body-input m-1 rounded fs-5" value={CommentInfo} rows="1" id="comment-field" onChange={(e) => setCommentInfo(e.target.value)}></textarea>
                                 </div>
                                 <div className="form-group">
-                                    <button className="btn btn-secondary m-1" type="submit">Comment</button>
+                                    <button className="btn btn-secondary m-1" type="submit" onClick={(e) => { createComment(e) }}>Comment</button>
                                 </div>
                             </form>
                         </div>
+                        <br />
                         <div className="row">
                             {comments.map(comment => {
                                 return (
-                                    <div className="col-auto comment-column text-start">
-                                        {comment.User.username}: {comment.comment}
-                                        <hr />
-                                    </div>
+                                    <>
+                                        <br />
+                                        <div className="row comment-row">
+                                            <div className="col-1 py-2" />
+                                            <div className="col-2 py-2 comment-border">{comment.User.name} :</div>
+                                            <div className="col-8 py-2 comment-border">{comment.comment}</div>
+                                            <div className="col-1 py-2" />
+
+                                        </div>
+
+                                    </>
 
                                 )
                             })}

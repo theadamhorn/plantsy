@@ -4,7 +4,6 @@ import CreatePost from "./CreatePost";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 import API from '../utils/API';
-// import { report } from '../../../controllers/api';
 
 export default function TrellisPosts() {
     console.log()
@@ -12,7 +11,6 @@ export default function TrellisPosts() {
     const [showCreate, setShowCreate] = useState(false);
     const [posts, setPosts] = useState([]);
     const [PostInfo, setPostInfo] = useState();
-    // const [trellisComments, setTrellisComments] = useState([]);
 
     console.log(posts);
 
@@ -22,11 +20,9 @@ export default function TrellisPosts() {
         }
         else {
             API.getTrellisPosts()
-                // API.getTrellisComments()
                 .then(res => {
                     console.log(res)
                     setPosts(res.data)
-                    // setTrellisComments(res.data)
                 })
                 .catch(err => console.log(err));
         }
@@ -58,8 +54,6 @@ export default function TrellisPosts() {
             updatePosts()
         }
     }
-    // var posts = props.posts;
-    // var comments = props.comments;
 
     return (
         <div>
@@ -88,11 +82,14 @@ export default function TrellisPosts() {
                             </button>
                             <TrellisModal
                                 id={post.id}
+                                userId={post.user_id}
                                 name={post.User.name}
                                 title={post.title}
                                 body={post.body}
                                 createdAt={post.createdAt}
                                 comments={post.Trellis_Comments}
+                                updatePosts={updatePosts}
+
                             />
 
                         </>
