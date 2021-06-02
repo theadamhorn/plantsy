@@ -368,49 +368,60 @@ html {
 }
 
 .thanksBody {
-  background: black;
-  height: 1000px;
-  color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 47, 32, 0.5)), to(rgba(17, 47, 32, 0.5))), url("./images/pexels-huy-phan-3076899.jpg");
+  background-image: linear-gradient(rgba(17, 47, 32, 0.5), rgba(17, 47, 32, 0.5)), url("./images/pexels-huy-phan-3076899.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 1000px;
 }
 
 .placeholder {
-  height: 100px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .Alex {
   height: auto;
   width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #4b8378;
+  color: #e4d7d0;
+  font-size: 1.5em;
   border: #e4d7d0 1px solid;
+  border-radius: 10px;
 }
 
 .Ryan {
   height: auto;
   width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #4b8378;
+  color: #e4d7d0;
+  font-size: 1.5em;
   border: #e4d7d0 1px solid;
+  border-radius: 10px;
 }
 
 .Zac {
   height: auto;
   width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #4b8378;
+  color: #e4d7d0;
+  font-size: 1.5em;
   border: #e4d7d0 1px solid;
+  border-radius: 10px;
 }
 
-.offering {
-  background-image: url("./images/fire.gif");
-  height: 150px;
-  width: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.Text {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #4b8378;
+  color: #e4d7d0;
+  font-size: 1.5em;
+  border: #e4d7d0 1px solid;
+  border-radius: 10px;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 767px) {
