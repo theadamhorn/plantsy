@@ -10,6 +10,7 @@ import './App.css';
 import UserContext from './utils/UserContext';
 import NavBar from './components/NavBar';
 import Private from "./components/Private"
+import EasterEgg from "./pages/EasterEgg";
 
 function App() {
   const [user, setUser] = useState({
@@ -57,6 +58,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Landing} />
             <Route exact path='/plants' component={Plants} />
+            <Route exact path='/thanks' component={EasterEgg} />
             <Private exact path='/gardeners' component={Gardeners} />
             <Private exact path='/profile' component={Profile} />
             <Private exact path='/trellis' component={Trellis} />
