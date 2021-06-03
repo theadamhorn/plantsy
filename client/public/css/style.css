@@ -154,6 +154,10 @@ html {
   height: 750px;
 }
 
+.accordionHolder {
+  background-color: #e4d7d0;
+}
+
 .accordion-item {
   background-color: #0a4158;
   color: #0a4158;
@@ -235,10 +239,6 @@ html {
   height: 750px;
   margin: 0;
   padding: 0;
-}
-
-.trellis-posts {
-  margin-left: 2%;
 }
 
 .trellis-posts-holder {

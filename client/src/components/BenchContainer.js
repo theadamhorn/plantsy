@@ -19,7 +19,7 @@ function BenchContainer(props) {
                     </span>
                 </div>
                 <Row className="gx-0">
-                    <Col xs={12} md={4} lg={4} className="gx-0">
+                    <Col xs={12} md={4} lg={4} className="accordionHolder">
                         <Accordion
                             plants={props.plants}
                             gardeners={props.gardeners}
