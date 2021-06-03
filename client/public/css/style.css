@@ -246,9 +246,9 @@ html {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .trellis-button {
@@ -284,6 +284,10 @@ html {
 .title-input,
 .body-input {
   width: 80%;
+}
+
+.comment-border {
+  border-bottom: dotted 1px #222;
 }
 
 .potting {
