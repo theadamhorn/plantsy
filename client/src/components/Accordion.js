@@ -49,7 +49,7 @@ export default function Accordion(props) {
             <>
                 <AccordionUser
                     ownedPlants={ownedPlants}
-                    getOwnedPlants= {props.getOwnedPlants}
+                    getOwnedPlants={props.getOwnedPlants}
                 />
             </>)
     }
@@ -66,7 +66,6 @@ export default function Accordion(props) {
     }
 
     else if (Trellis === true) {
-        //var comments = props.comments;
         return (
             <>
                 <TrellisPosts />
