@@ -46,7 +46,7 @@ function EditPlantModal(props) {
     })
     .catch(err => { console.error(err) })
   }
-    
+    console.log(props.genus)
     return (
         <>
         <Button style={{ 
@@ -74,19 +74,19 @@ function EditPlantModal(props) {
                         </div>
                         <div className="col">
                             <label htmlFor="genusLabel">Genus:</label>
-                            <input className="form-input" type="text" id="genus" value={genus} onChange={event => setGenus(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="genus" placeholder={props.genus} onChange={event => setGenus(event.target.value.trim())} />
                         </div>
                         <div className="col">
                             <label htmlFor="speciesLabel">Species:</label>
-                            <input className="form-input" type="text" id="species" value={species} onChange={event => setSpecies(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="species" placeholder={props.species} onChange={event => setSpecies(event.target.value.trim())} />
                         </div>
                         <div className="col">
                             <label htmlFor="varietyLabel">Variety:</label>
-                            <input className="form-input" type="text" id="variety" value={variety} onChange={event => setVariety(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="variety" placeholder={props.variety} onChange={event => setVariety(event.target.value.trim())} />
                         </div>
                         <div className="col">
                             <label htmlFor="commonNameLabel">Common Name:</label>
-                            <input className="form-input" type="text" id="common_name" value={commonName} onChange={event => setCommonName(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="common_name" placeholder={props.commonName} onChange={event => setCommonName(event.target.value.trim())} />
                         </div>
                     </section>
                     <section className="row plant_edit_2">
