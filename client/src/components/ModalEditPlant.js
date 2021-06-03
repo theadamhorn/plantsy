@@ -1,6 +1,5 @@
-import React, { useState, useContext} from "react";
+import React, {useState} from "react";
 import API from "../utils/API";
-import UserContext from "../utils/UserContext";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,7 +8,7 @@ import { faPencilAlt} from '@fortawesome/free-solid-svg-icons'
 function EditPlantModal(props) {
     const [modal, setModal] = useState(false);
 
-    const {user, login} = useContext(UserContext);
+
 
     const [genus, setGenus] = useState(props.genus);
     const [species, setSpecies] = useState(props.species);
@@ -74,19 +73,19 @@ function EditPlantModal(props) {
                         </div>
                         <div className="col">
                             <label htmlFor="genusLabel">Genus:</label>
-                            <input className="form-input" type="text" id="genus" value={genus} onChange={event => setGenus(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="genus" defaultValue={genus} onChange={event => setGenus(event.target.value.trim())} />
                         </div>
                         <div className="col">
                             <label htmlFor="speciesLabel">Species:</label>
-                            <input className="form-input" type="text" id="species" value={species} onChange={event => setSpecies(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="species" defaultValue={species} onChange={event => setSpecies(event.target.value.trim())} />
                         </div>
                         <div className="col">
                             <label htmlFor="varietyLabel">Variety:</label>
-                            <input className="form-input" type="text" id="variety" value={variety} onChange={event => setVariety(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="variety" defaultValue={variety} onChange={event => setVariety(event.target.value.trim())} />
                         </div>
                         <div className="col">
                             <label htmlFor="commonNameLabel">Common Name:</label>
-                            <input className="form-input" type="text" id="common_name" value={commonName} onChange={event => setCommonName(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="common_name" defaultValue={commonName} onChange={event => setCommonName(event.target.value.trim())} />
                         </div>
                     </section>
                     <section className="row plant_edit_2">
@@ -158,7 +157,7 @@ function EditPlantModal(props) {
                         </div>
                     </section>
                     <Modal.Footer>
-                        <button type="submit" id="saveEdit" value="submit" className="btn btn-danger"onClick={()=>editPlant}>Save</button>
+                        <button type="submit" id="saveEdit" value="submit" className="btn btn-danger"onClick={editPlant}>Save</button>
                         <Button style={{ 
                             color: "#e4d7d0",
                             fontFamily: "Kiwi Maru",

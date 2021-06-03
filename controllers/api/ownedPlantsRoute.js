@@ -26,9 +26,9 @@ router.get('/:id', async (req, res , ) => {
             user_id: req.params.id
             }
         });
-        res.status(200).json(ownedPlantsData);
+        return res.status(200).json(ownedPlantsData);
     } catch (err) {
-        res.status(500).json(err);
+        return res.status(500).json(err);
     }
 
 });
@@ -51,24 +51,21 @@ router.get('/:id', async (req, res) => {
 });
 */
 
-// update given plant in user's owned plants list
-router.put('/:id', withAuth, async (req, res) => {
-    console.log("Edit Plant Route Hit!")
+// update given plant in user's owned plants list //withAuth,
+router.put('/:id',  async (req, res) => {
     try {
-        console.log(req.body);
         const ownedPlantData = await Owned_Plants.update(
             {
-                ...req.body
-                // genus: req.body.genus,
-                // species: req.body.species,
-                // variety: req.body.variety,
-                // common_name: req.body.common_name,
-                // watering: req.body.watering,
-                // temperature: req.body.temperature,
-                // humidity: req.body.humidity,
-                // light: req.body.light,
-                // description: req.body.description,
-                // care: req.body.care,
+                genus: req.body.genus,
+                species: req.body.species,
+                variety: req.body.variety,
+                common_name: req.body.common_name,
+                watering: req.body.watering,
+                temperature: req.body.temperature,
+                humidity: req.body.humidity,
+                light: req.body.light,
+                description: req.body.description,
+                care: req.body.care,
             },
             {
                 where: {
@@ -80,6 +77,7 @@ router.put('/:id', withAuth, async (req, res) => {
             res.status(404).json({ message: 'No plant found.' });
             return;
         }
+        res.status(200).json(ownedPlantData);  
     } catch (err) {
         res.status(500).json(err);
     }
