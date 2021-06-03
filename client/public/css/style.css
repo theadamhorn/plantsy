@@ -218,6 +218,11 @@ html {
 
 .accordion-item .plant_button {
   color: #10a610;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #e4d7d0;
+  -webkit-appearance: none;
 }
 
 .trellis {
@@ -435,11 +440,5 @@ html {
   border: #e4d7d0 1px solid;
   border-radius: 10px;
   margin-top: 5px;
-}
-
-@media screen and (max-width: 767px) {
-  .accordion {
-    margin: auto;
-  }
 }
 /*# sourceMappingURL=style.css.map */
