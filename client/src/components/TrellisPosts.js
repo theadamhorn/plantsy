@@ -70,10 +70,9 @@ export default function TrellisPosts() {
                 <div className="trellis-posts-holder">
                 {posts && posts.map(post => {
                     return (
-                        // <div className="trellis-item" key={post.id}>
-                        // <h2 className="trellis-header" id={"heading" + post.id}>
-                        <>
-                            <button className="trellis-button rounded" type="button" data-bs-toggle="modal" key={post.id} data-bs-target={"#trellisModal" + post.id}>
+                 
+                        <div key={post.id + post.user_id + 53023}>
+                            <button className="trellis-button rounded" type="button" data-bs-toggle="modal" data-bs-target={"#trellisModal" + post.id}>
                                 <ul className="nav justify-content-start">
                                     <li className="nav-item fs-5">{post.title}</li>
                                 </ul>
@@ -93,7 +92,7 @@ export default function TrellisPosts() {
 
                             />
 
-                        </>
+                        </div>
                         // </div>
                     )
                 })}

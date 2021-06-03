@@ -80,7 +80,7 @@ export default function TrellisModal(props) {
                         <div className="row">
                             {comments.map(comment => {
                                 return (
-                                    <>
+                                    <div key={comment.id + comment.User.name}>
                                         <br />
                                         <div className="row comment-row">
                                             <div className="col-1 py-2" />
@@ -90,7 +90,7 @@ export default function TrellisModal(props) {
 
                                         </div>
 
-                                    </>
+                                    </div>
 
                                 )
                             })}
@@ -101,4 +101,3 @@ export default function TrellisModal(props) {
         </div>
     );
 }
-
