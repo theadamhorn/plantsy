@@ -11,6 +11,9 @@ body,
 html {
   height: 100%;
 }
+body {
+  background-color: $scallop !important;
+}
 #root {
   font-family: "Kiwi Maru";
 }
@@ -81,6 +84,9 @@ html {
 .btn {
   -webkit-transition: none !important;
   transition: none !important;
+}
+.btn-primary {
+  border-color: transparent !important;
 }
 
 .btn-login {
@@ -156,11 +162,9 @@ html {
   background-color: #e4d7d0;
   height: 750px;
 }
-
-.accordion {
-  margin-left: 2%;
+.accordionHolder {
+  background-color: $scallop;
 }
-
 .accordion-item {
   background-color: #0a4158;
   color: #0a4158;
@@ -175,7 +179,7 @@ html {
   background-color: #4b8378;
   color: #222;
   font-size: 0.65em;
-  border: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .accordion-item .accordion-button:not(.collapse) {
@@ -225,6 +229,9 @@ html {
 
 .accordion-item .plant_button {
   color: #10a610;
+  width: fit-content;
+  background-color: $scallop;
+  -webkit-appearance: none;
 }
 
 .trellis {
@@ -246,12 +253,10 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   height: 750px;
-  float: right;
+  margin: 0;
+  padding: 0;
 }
 
-.trellis-posts {
-  margin-left: 2%;
-}
 .trellis-posts-holder {
   overflow: auto;
   height: 715px;
@@ -440,10 +445,4 @@ html {
   border: $scallop 1px solid;
   border-radius: 10px;
   margin-top: 5px;
-}
-
-@media screen and (max-width: 767px) {
-  .accordion {
-    margin: auto;
-  }
 }

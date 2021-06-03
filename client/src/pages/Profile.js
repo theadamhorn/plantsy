@@ -28,7 +28,7 @@ function Profile() {
 
     useEffect(getOwnedPlants, []);
 
-    
+    console.log(OwnedPlants)
 
     return (
         <>

@@ -8,14 +8,18 @@ function BenchContainer(props) {
         <>
             <main className="container-fluid px-0">
                 <div className="potting navbar justify-content-around">
-                    <span> </span>
-                    <span className="bench ">
+                    <span style={{visibility: "hidden"}}>
+                    { document.location.pathname === "/profile" ?<>{props.addPlant}{props.deletePlant}</> :''}
+                    </span>
+                    <span className="bench">
                         {props.title}
                     </span>
-                    { document.location.pathname === "/profile" ?<span>{props.addPlant}{props.deletePlant}</span> :''}
+                    <span>
+                    { document.location.pathname === "/profile" ?<>{props.addPlant}{props.deletePlant}</> :''}
+                    </span>
                 </div>
-                <Row>
-                    <Col xs={12} md={4} className="p-0">
+                <Row className="gx-0">
+                    <Col xs={12} md={4} lg={4} className="accordionHolder">
                         <Accordion
                             plants={props.plants}
                             gardeners={props.gardeners}
@@ -23,7 +27,7 @@ function BenchContainer(props) {
                             getOwnedPlants= {props.getOwnedPlants}
                         />
                     </Col>
-                    <Col xs={12} md={8} className="trellis">
+                    <Col className="trellis">
 
                     </Col>
                 </Row>
