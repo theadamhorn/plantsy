@@ -38,7 +38,7 @@ if(Gardener === true){
                                     <div className="modal-body" style={{lineHeight: "1em"}}>
                                     <div className="row">
                                         <div className="col">
-                                            <img className="plantPhoto" src={plant.photo} />
+                                            <img className="plantPhoto" src={plant.photo} alt={plant.common_name} />
                                         </div>
                                     </div>
                                    <br/>
