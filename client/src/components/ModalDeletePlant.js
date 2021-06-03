@@ -37,7 +37,7 @@ function DeletePlantModal(props) {
       </Modal.Header>
       <Modal.Body>
         {props.Owned_Plants.map(plant => {
-         return( <div className="row">
+         return( <div className="row" key={plant.id}>
             <h5>{plant.common_name ? plant.common_name : plant.genus +" " + plant.species}<button type="button" className="btn-close deletePlantBtn" id="deletePlantBtn" value={plant.id} aria-label="Close" onClick={event =>deletePlant(event)}></button></h5>
           </div>
          )
