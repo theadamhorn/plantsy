@@ -3,7 +3,7 @@ const { Owned_Plants, Users } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // create plant in user's owned plants list
-router.post('/:id', withAuth, async (req, res) => {
+router.post('/:id', withAuth , async (req, res) => {
     try {
         const newOwnedPlants = await Owned_Plants.create({
             ...req.body,
@@ -53,19 +53,22 @@ router.get('/:id', async (req, res) => {
 
 // update given plant in user's owned plants list
 router.put('/:id', withAuth, async (req, res) => {
+    console.log("Edit Plant Route Hit!")
     try {
+        console.log(req.body);
         const ownedPlantData = await Owned_Plants.update(
             {
-                genus: req.body.genus,
-                species: req.body.species,
-                variety: req.body.variety,
-                common_name: req.body.common_name,
-                watering: req.body.watering,
-                temperature: req.body.temperature,
-                humidity: req.body.humidity,
-                light: req.body.light,
-                description: req.body.description,
-                care: req.body.care,
+                ...req.body
+                // genus: req.body.genus,
+                // species: req.body.species,
+                // variety: req.body.variety,
+                // common_name: req.body.common_name,
+                // watering: req.body.watering,
+                // temperature: req.body.temperature,
+                // humidity: req.body.humidity,
+                // light: req.body.light,
+                // description: req.body.description,
+                // care: req.body.care,
             },
             {
                 where: {
