@@ -51,24 +51,21 @@ router.get('/:id', async (req, res) => {
 });
 */
 
-// update given plant in user's owned plants list
-router.put('/:id', withAuth, async (req, res) => {
-    console.log("Edit Plant Route Hit!")
+// update given plant in user's owned plants list //withAuth,
+router.put('/:id',  async (req, res) => {
     try {
-        console.log(req.body);
         const ownedPlantData = await Owned_Plants.update(
             {
-                ...req.body
-                // genus: req.body.genus,
-                // species: req.body.species,
-                // variety: req.body.variety,
-                // common_name: req.body.common_name,
-                // watering: req.body.watering,
-                // temperature: req.body.temperature,
-                // humidity: req.body.humidity,
-                // light: req.body.light,
-                // description: req.body.description,
-                // care: req.body.care,
+                genus: req.body.genus,
+                species: req.body.species,
+                variety: req.body.variety,
+                common_name: req.body.common_name,
+                watering: req.body.watering,
+                temperature: req.body.temperature,
+                humidity: req.body.humidity,
+                light: req.body.light,
+                description: req.body.description,
+                care: req.body.care,
             },
             {
                 where: {
