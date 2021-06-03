@@ -11,7 +11,6 @@ export default function NavBar() {
 
     const { user, logout } = useContext(UserContext);
     const history = useHistory();
-    console.log(user)
 
     // const logout = async () => {
     //     // Make a POST request to destroy the session on the back end

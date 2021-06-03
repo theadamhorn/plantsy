@@ -36,7 +36,6 @@ function App() {
   useEffect(() => {
     const getUser = async () => {
       const currentUser = await API.getUser()
-      console.log(currentUser.data)
       if (currentUser.data.id) {
         setUser({
           id: currentUser.data.id,

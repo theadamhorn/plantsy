@@ -90,7 +90,7 @@ function PlantModal(props) {
                     </div>
                     <div className="modal-footer">
                     { document.location.pathname === "/plants" ? <button className="btn add-plant-button" type="button" value={props.id} onClick={event => addPlantToGarden(event)}>Add Plant</button>  : ""}
-                       { document.location.pathname === "/profile" ? <EditPlantModal genus ={props.genus} species ={props.species} variety={props.variety} common_name={props.common_name} water={props.watering} temperature={props.temperature} humidity={props.humidity} light={props.light} description={props.description} care={props.care} getOwnedPlants= {props.getOwnedPlants}/>  : ""}
+                       { document.location.pathname === "/profile" ? <EditPlantModal plantID={props.id} genus ={props.genus} species ={props.species} variety={props.variety} common_name={props.common_name} water={props.watering} temperature={props.temperature} humidity={props.humidity} light={props.light} description={props.description} care={props.care} getOwnedPlants= {props.getOwnedPlants}/>  : ""}
                         <button type="button" className="btn btn-secondary"
                             data-bs-dismiss="modal">Close</button>                         
                     </div>
