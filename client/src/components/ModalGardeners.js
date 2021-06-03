@@ -9,7 +9,7 @@ function GardenersModal(props) {
     const [modal, setModal] = useState(false);
     return (
         <>
-        <Button variant="primary" onClick={()=>setModal(true)} style={{
+        <Button onClick={()=>setModal(true)} style={{
             color: "#e4d7d0",
             fontFamily: "Kiwi Maru",
             fontWeight: 700,

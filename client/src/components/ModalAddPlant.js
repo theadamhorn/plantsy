@@ -60,7 +60,8 @@ function AddPlantModal(props) {
             paddingTop: "0.5em",
             paddingBottom: "0.5em",
             borderRadius: "10px",
-            borderWidth: "0px"
+            borderWidth: "0px",
+           borderColor: "transparent"
           }}>Add Plant</Button>
 
     <Modal aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>

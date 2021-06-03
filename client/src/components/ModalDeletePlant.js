@@ -27,7 +27,8 @@ function DeletePlantModal(props) {
            paddingTop: "0.5em",
            paddingBottom: "0.5em",
            borderRadius: "10px",
-           borderWidth: "0px"
+           borderWidth: "0px",
+           borderColor: "transparent"
           }}>Delete A Plant</Button>
     <Modal aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>
       <Modal.Header closeButton>
@@ -38,7 +39,7 @@ function DeletePlantModal(props) {
       <Modal.Body>
         {props.Owned_Plants.map(plant => {
 
-         return( <div className="row">
+         return( <div className="row" key={plant.id}>
             <h5>{plant.common_name ? plant.common_name : plant.genus +" " + plant.species}<button type="button" className="btn-close deletePlantBtn" id="deletePlantBtn{plant.id}" value={plant.id} aria-label="Close" onClick={event =>deletePlant(event)}></button></h5>
 
           </div>
