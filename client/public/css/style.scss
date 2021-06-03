@@ -11,6 +11,9 @@ body,
 html {
   height: 100%;
 }
+body {
+  background-color: $scallop !important;
+}
 #root {
   font-family: "Kiwi Maru";
 }
