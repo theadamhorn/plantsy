@@ -76,6 +76,10 @@ html {
   transition: none !important;
 }
 
+.btn-primary {
+  border-color: transparent !important;
+}
+
 .btn-login {
   color: #222;
   border-radius: 10px;
