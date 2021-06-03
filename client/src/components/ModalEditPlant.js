@@ -73,35 +73,19 @@ function EditPlantModal(props) {
                         </div>
                         <div className="col">
                             <label htmlFor="genusLabel">Genus:</label>
-<<<<<<< HEAD
-                            <input className="form-input" type="text" id="genus" placeholder={props.genus} onChange={event => setGenus(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="genus" defaultValue={props.genus} value={genus} onChange={event => setGenus(event.target.value.trim())} />
                         </div>
                         <div className="col">
                             <label htmlFor="speciesLabel">Species:</label>
-                            <input className="form-input" type="text" id="species" placeholder={props.species} onChange={event => setSpecies(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="species" defaultValue={props.species} onChange={event => setSpecies(event.target.value.trim())} />
                         </div>
                         <div className="col">
                             <label htmlFor="varietyLabel">Variety:</label>
-                            <input className="form-input" type="text" id="variety" placeholder={props.variety} onChange={event => setVariety(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="variety" defaultValue={props.variety} onChange={event => setVariety(event.target.value.trim())} />
                         </div>
                         <div className="col">
                             <label htmlFor="commonNameLabel">Common Name:</label>
-                            <input className="form-input" type="text" id="common_name" placeholder={props.commonName} onChange={event => setCommonName(event.target.value.trim())} />
-=======
-                            <input className="form-input" type="text" id="genus" defaultValue={genus} onChange={event => setGenus(event.target.value.trim())} />
-                        </div>
-                        <div className="col">
-                            <label htmlFor="speciesLabel">Species:</label>
-                            <input className="form-input" type="text" id="species" defaultValue={species} onChange={event => setSpecies(event.target.value.trim())} />
-                        </div>
-                        <div className="col">
-                            <label htmlFor="varietyLabel">Variety:</label>
-                            <input className="form-input" type="text" id="variety" defaultValue={variety} onChange={event => setVariety(event.target.value.trim())} />
-                        </div>
-                        <div className="col">
-                            <label htmlFor="commonNameLabel">Common Name:</label>
-                            <input className="form-input" type="text" id="common_name" defaultValue={commonName} onChange={event => setCommonName(event.target.value.trim())} />
->>>>>>> edfee84944fd41d4d3b0193c79d5ff936714c472
+                            <input className="form-input" type="text" id="common_name" defaultValue={props.common_name} onChange={event => setCommonName(event.target.value.trim())} />
                         </div>
                     </section>
                     <section className="row plant_edit_2">

@@ -73,7 +73,7 @@ export default function TrellisPosts() {
                         // <div className="trellis-item" key={post.id}>
                         // <h2 className="trellis-header" id={"heading" + post.id}>
                         <>
-                            <button className="trellis-button rounded" type="button" data-bs-toggle="modal" data-bs-target={"#trellisModal" + post.id}>
+                            <button className="trellis-button rounded" type="button" data-bs-toggle="modal" key={post.id} data-bs-target={"#trellisModal" + post.id}>
                                 <ul className="nav justify-content-start">
                                     <li className="nav-item fs-5">{post.title}</li>
                                 </ul>
