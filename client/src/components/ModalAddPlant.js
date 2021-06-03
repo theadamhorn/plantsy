@@ -50,6 +50,7 @@ function AddPlantModal(props) {
   }
   return (
     <>
+    {console.log(props.water)}
     <Button size="lg" onClick={()=>setModal(true)} style={{
             color: "#e4d7d0",
             fontFamily: "Kiwi Maru",
