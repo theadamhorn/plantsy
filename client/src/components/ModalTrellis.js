@@ -82,7 +82,7 @@ export default function TrellisModal(props) {
                                 return (
                                     <>
                                         <br />
-                                        <div className="row comment-row">
+                                        <div key={comment.User.name + comment.id} className="row comment-row">
                                             <div className="col-1 py-2" />
                                             <div className="col-2 py-2 comment-border">{comment.User.name} :</div>
                                             <div className="col-8 py-2 comment-border">{comment.comment}</div>

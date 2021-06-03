@@ -19,11 +19,11 @@ export default function CreatePost(props) {
                         <div className="row mt-4">
                             <form className="form comment-form" >
                                 <div className="form-group justify-content-around">
-                                    <label for="post-title" className="fs-6">Title:</label><br />
+                                    <label htmlFor="post-title" className="fs-6">Title:</label><br />
                                     <input className="title-input m-1 rounded" rows="3" id="post-title" onChange={(e) => props.setPostInfo({ ...props.PostInfo, title: e.target.value })} />
                                 </div>
                                 <div className="form-group">
-                                    <label for="post-body">Body:</label><br />
+                                    <label htmlFor="post-body">Body:</label><br />
                                     <textarea className="body-input m-1 rounded" rows="7" id="post-body" onChange={(e) => props.setPostInfo({ ...props.PostInfo, body: e.target.value })}></textarea>
                                 </div>
                                 <div className="form-group">
