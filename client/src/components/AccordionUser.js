@@ -19,7 +19,7 @@ function AccordionUser(props) {
 
 if(Gardener === true){
     return (
-        <div>
+        
         <div className="accordion">
             {ownedPlants && ownedPlants.map(plant => {
                 return (
@@ -84,12 +84,12 @@ if(Gardener === true){
                 )
             })}
         </div>
-    </div>
+    
     )
         }
     else if (Gardener === false){
         return (
-            <div>
+            
             <div className="accordion">
                 {ownedPlants && ownedPlants.map(plant => {
                     return (
@@ -129,7 +129,7 @@ if(Gardener === true){
                                         />
                                         </>
                                         
-                                        <div className="col-auto plant">
+                                        
                                           
                                             <button type="button" className="plant_button" data-bs-toggle="modal" data-bs-target={"#plantModal" + plant.id}>
                                             <p><FontAwesomeIcon icon={faSeedling} className="fa-2x" /></p>
@@ -137,7 +137,7 @@ if(Gardener === true){
                                                 <p>Profile</p>
                                             </button>
                                                 
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,6 @@ if(Gardener === true){
                     )
                 })}
             </div>
-        </div>
         )
 
     }

@@ -76,6 +76,10 @@ html {
   transition: none !important;
 }
 
+.btn-primary {
+  border-color: transparent !important;
+}
+
 .btn-login {
   color: #222;
   border-radius: 10px;
@@ -150,10 +154,6 @@ html {
   height: 750px;
 }
 
-.accordion {
-  margin-left: 2%;
-}
-
 .accordion-item {
   background-color: #0a4158;
   color: #0a4158;
@@ -168,7 +168,7 @@ html {
   background-color: #4b8378;
   color: #222;
   font-size: 0.65em;
-  border: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .accordion-item .accordion-button:not(.collapse) {
@@ -218,6 +218,11 @@ html {
 
 .accordion-item .plant_button {
   color: #10a610;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #e4d7d0;
+  -webkit-appearance: none;
 }
 
 .trellis {
@@ -228,7 +233,8 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   height: 750px;
-  float: right;
+  margin: 0;
+  padding: 0;
 }
 
 .trellis-posts {
@@ -242,9 +248,9 @@ html {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .trellis-button {
@@ -280,10 +286,6 @@ html {
 .title-input,
 .body-input {
   width: 80%;
-}
-
-.comment-border {
-  border-bottom: dotted 1px #222;
 }
 
 .potting {
@@ -438,11 +440,5 @@ html {
   border: #e4d7d0 1px solid;
   border-radius: 10px;
   margin-top: 5px;
-}
-
-@media screen and (max-width: 767px) {
-  .accordion {
-    margin: auto;
-  }
 }
 /*# sourceMappingURL=style.css.map */
