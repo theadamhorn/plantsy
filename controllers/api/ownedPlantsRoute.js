@@ -26,9 +26,9 @@ router.get('/:id', async (req, res , ) => {
             user_id: req.params.id
             }
         });
-        res.status(200).json(ownedPlantsData);
+        return res.status(200).json(ownedPlantsData);
     } catch (err) {
-        res.status(500).json(err);
+        return res.status(500).json(err);
     }
 
 });
@@ -77,6 +77,7 @@ router.put('/:id',  async (req, res) => {
             res.status(404).json({ message: 'No plant found.' });
             return;
         }
+        res.status(200).json(ownedPlantData);  
     } catch (err) {
         res.status(500).json(err);
     }
