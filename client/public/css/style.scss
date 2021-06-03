@@ -252,7 +252,12 @@ html {
 .trellis-posts {
   margin-left: 2%;
 }
-
+.trellis-posts-holder {
+  overflow: auto;
+  height: 715px;
+  display: flex;
+  flex-direction: column-reverse;
+}
 .trellis-button {
   background-color: #4b8378;
   text-align: left;
