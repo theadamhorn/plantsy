@@ -67,6 +67,7 @@ export default function TrellisPosts() {
                         creatingPost={creatingPost}
                     />
                 </div>
+                <div className="trellis-posts-holder">
                 {posts && posts.map(post => {
                     return (
                         // <div className="trellis-item" key={post.id}>
@@ -96,6 +97,7 @@ export default function TrellisPosts() {
                         // </div>
                     )
                 })}
+                </div>
             </div>
         </div>)
 }

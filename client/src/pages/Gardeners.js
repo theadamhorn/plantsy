@@ -9,9 +9,6 @@ function Gardeners() {
 
     const { user } = useContext(UserContext);
 
-    if(!user.isAuthenticated){
-        document.location.replace('/')
-      }
     useEffect(() => {
         if (!gardeners) {
             return;
