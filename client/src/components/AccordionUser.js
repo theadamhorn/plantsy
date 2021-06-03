@@ -19,7 +19,7 @@ function AccordionUser(props) {
 
 if(Gardener === true){
     return (
-        <div>
+        
         <div className="accordion">
             {ownedPlants && ownedPlants.map(plant => {
                 return (
@@ -84,12 +84,12 @@ if(Gardener === true){
                 )
             })}
         </div>
-    </div>
+    
     )
         }
     else if (Gardener === false){
         return (
-            <div>
+            
             <div className="accordion">
                 {ownedPlants && ownedPlants.map(plant => {
                     return (
@@ -145,7 +145,6 @@ if(Gardener === true){
                     )
                 })}
             </div>
-        </div>
         )
 
     }

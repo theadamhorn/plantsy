@@ -18,8 +18,8 @@ function BenchContainer(props) {
                     { document.location.pathname === "/profile" ?<>{props.addPlant}{props.deletePlant}</> :''}
                     </span>
                 </div>
-                <Row>
-                    <Col xs={12} md={4} className="p-0">
+                <Row className="gx-0">
+                    <Col xs={12} md={4} lg={4} className="gx-0">
                         <Accordion
                             plants={props.plants}
                             gardeners={props.gardeners}
@@ -27,7 +27,7 @@ function BenchContainer(props) {
                             getOwnedPlants= {props.getOwnedPlants}
                         />
                     </Col>
-                    <Col xs={12} md={8} className="trellis">
+                    <Col className="trellis">
 
                     </Col>
                 </Row>
