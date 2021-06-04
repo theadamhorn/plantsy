@@ -47,10 +47,10 @@ export default function TrellisModal(props) {
     }
 
     return (
-        <div className="modal" id={"trellisModal" + props.id} data-bs-backdrop="false"
+        <div className="modal fade" id={"trellisModal" + props.id} data-bs-backdrop="true"
             data-bs-keyboard="false" tabIndex="-1" aria-labelledby="modalLabel"
             aria-hidden="true">
-            <div className="modal-dialog modal-lg">
+            <div className="modal-dialog modal-dialog-centered modal-lg ">
                 <div className="modal-content trellis-post">
                     <div className="modal-header">
                         <h5 className="modal-title" id="modalLabel">{props.title}</h5>
@@ -77,16 +77,16 @@ export default function TrellisModal(props) {
                             </form>
                         </div>
                         <br />
-                        <div className="row">
+                        <div className="row pb-2">
                             {comments.map(comment => {
                                 return (
                                     <div key={comment.id + comment.User.name}>
                                         <br />
                                         <div className="row comment-row">
-                                            <div className="col-1 py-2" />
-                                            <div className="col-2 py-2 comment-border">{comment.User.name} :</div>
-                                            <div className="col-8 py-2 comment-border">{comment.comment}</div>
-                                            <div className="col-1 py-2" />
+                                            <div className="col-1 pb-1" />
+                                            <div className="col-2 pb-1 comment-border">{comment.User.name} :</div>
+                                            <div className="col-8 pb-1 comment-border">{comment.comment}</div>
+                                            <div className="col-1 pb-1" />
 
                                         </div>
 

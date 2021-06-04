@@ -292,6 +292,10 @@ body {
   width: 80%;
 }
 
+.comment-border {
+  border-top: dotted 1px #222;
+}
+
 .potting {
   background-color: #0a4158;
   color: #e4d7d0;
