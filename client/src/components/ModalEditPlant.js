@@ -39,7 +39,7 @@ function EditPlantModal(props) {
     care: care
     }
     API.updateOwnedPlants(props.plantID , body)
-    .then(res =>{
+    .then(() =>{
         setModal(false);
         props.getOwnedPlants();
     })
