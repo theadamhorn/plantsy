@@ -1,8 +1,7 @@
 import React from 'react'
 import PlantModal from "./ModalPlant";
 import PlantBadge from "./PlantBadge";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSeedling } from '@fortawesome/free-solid-svg-icons'
+
 
 function AccordionPlants(props) {
     var plants = props.plants;
@@ -21,6 +20,13 @@ function AccordionPlants(props) {
                             <div id={"collapse" + plant.id} className="accordion-collapse collapse" aria-labelledby={"heading" + plant.id} data-bs-parent={"#heading" + plant.id}>
                                 <div className="accordion-body">
                                     <div className="row justify-content-evenly">
+                                        <PlantBadge
+                                            watering={plant.watering}
+                                            temperature={plant.temperature}
+                                            humidity={plant.humidity}
+                                            light={plant.light}
+                                        />
+                                        <div className="col-auto plant">
                                         <PlantModal
                                             id={plant.id}
                                             genus={plant.genus}
@@ -34,18 +40,6 @@ function AccordionPlants(props) {
                                             light={plant.light}
                                             description={plant.description}
                                         />
-                                        <PlantBadge
-                                            watering={plant.watering}
-                                            temperature={plant.temperature}
-                                            humidity={plant.humidity}
-                                            light={plant.light}
-                                        />
-                                        <div className="col-auto plant">
-                                            <button type="button" className="plant_button" data-bs-toggle="modal" data-bs-target={"#plantModal" + plant.id}>
-                                                <p><FontAwesomeIcon icon={faSeedling} className="fa-2x" /></p>
-                                                <p>Plant</p>
-                                                <p>Profile</p>
-                                            </button>
                                         </div>
                                     </div>
                                 </div>

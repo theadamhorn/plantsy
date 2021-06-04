@@ -45,7 +45,7 @@ function EditPlantModal(props) {
     })
     .catch(err => { console.error(err) })
   }
-    console.log(props.genus)
+
     return (
         <>
         <Button style={{ 
@@ -150,8 +150,8 @@ function EditPlantModal(props) {
                     </section>
                     <section className="row plant_edit_3">
                         <div className="col-12">
-                            <label htmlFor="description">Description:</label>
-                            <textarea className="form-control" name="description" id="description" rows={5} cols={40} value={description} onChange={event => setDescription(event.target.value.trim())}/>
+                            <label htmlFor="description">Description:</label> 
+                             <textarea className="form-control" name="description" id="description" rows={5} cols={40} value={description}  onChange={event => setDescription(event.target.value.trim())}/> 
                         </div>
                         <div className="col-12">
                             <label htmlFor="care">Care:</label>
