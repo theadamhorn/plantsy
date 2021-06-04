@@ -3,8 +3,8 @@ import API from "../utils/API";
 import UserContext from "../utils/UserContext";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import axios from "axios";
+// import Form from 'react-bootstrap/Form';
+// import axios from "axios";
 
 function AddPlantModal(props) {
   const [modal, setModal] = useState(false);
@@ -25,13 +25,13 @@ function AddPlantModal(props) {
 
 
 
-  const fileHandler = (event) => {
-  setPhoto({ selectedFile: event.target.files[0] })
-  }
+  // const fileHandler = (event) => {
+  // setPhoto({ selectedFile: event.target.files[0] })
+  // }
 
-  const uploadHandler = () => {
-  axios.post('my-domain.com/file-upload', photo)
-  }
+  // const uploadHandler = () => {
+  // axios.post('my-domain.com/file-upload', photo)
+  // }
 
   const addPlant = async (event)=> {
     // Stop the browser from submitting the form so we can do so with JavaScript
@@ -168,12 +168,12 @@ function AddPlantModal(props) {
                 </div>
               </div>
               <div className="row">
-              <Form>
+              {/* <Form>
                 <Form.Group>
                   <Form.File id="formControlFile1" label="Upload a Photo" onChange={fileHandler}/>
                   <Button onClick={uploadHandler}></Button>
                 </Form.Group>
-              </Form>
+              </Form> */}
               </div>
               <div className="modal-footer">
                 <Button style={{ 

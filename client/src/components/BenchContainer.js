@@ -1,7 +1,7 @@
 import React from 'react';
 import Accordion from './Accordion';
 import { Row, Col } from "react-bootstrap";
-import getWeather from "../utils/weather";
+import WeatherSearch from './weatherSearch';
 function BenchContainer(props) {
     
     return (
@@ -9,7 +9,7 @@ function BenchContainer(props) {
             <main className="container-fluid px-0">
                 <div className="potting navbar justify-content-around">
                     <span>
-                    { document.location.pathname === "/profile" ? getWeather():''}
+                    { document.location.pathname === "/profile" ? <WeatherSearch/> :''}
                     </span>
                     <span className="bench">
                         {props.title}
