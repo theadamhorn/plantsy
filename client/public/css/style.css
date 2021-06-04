@@ -467,6 +467,7 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   width: fit-content;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
 
 .Adam {

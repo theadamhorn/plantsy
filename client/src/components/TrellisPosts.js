@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TrellisModal from "./ModalTrellis";
 import CreatePost from "./CreatePost";
+import InfiniteScroll from 'react-infinite-scroll-component';
 import { useSpring, animated } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
@@ -66,7 +67,7 @@ export default function TrellisPosts() {
 
     return (
         <div>
-            <div className="trellis-posts">
+            <animated.div className="trellis-posts" style={styles}>
                 <div className="text-center">
                     <button onClick={() => setShowCreate(!showCreate)} className="create-post-btn m-1 rounded" type="button" data-bs-toggle="modal" data-bs-target="#createPost"><FontAwesomeIcon icon={faPlusSquare} className="fa-md" /> Create Post</button>
                     <CreatePost
@@ -76,7 +77,20 @@ export default function TrellisPosts() {
                         creatingPost={creatingPost}
                     />
                 </div>
-                <animated.div className="trellis-posts-holder" style={styles}>
+                <div className="trellis-posts-holder" id="trellis-posts-holder">
+                    <InfiniteScroll
+                        dataLength={posts.length}
+                        next={useEffect}
+                        inverse={false} //
+                        hasMore={false}
+                        loader={<h4>Loading...</h4>}
+                        scrollableTarget="trellis-posts-holder"
+                          endMessage={
+                            <p style={{ textAlign: 'center' }}>
+                            <b>Yay! You have seen it all</b>
+                            </p>
+                        }
+                    >
                 {posts && posts.map(post => {
                     return (
                  
@@ -105,8 +119,9 @@ export default function TrellisPosts() {
                         // </div>
                     )
                 })}
-                </animated.div>
-            </div>
+                </InfiniteScroll>
+                </div>
+            </animated.div>
         </div>)
 }
 

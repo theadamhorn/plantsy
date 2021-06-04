@@ -159,7 +159,16 @@ function EditPlantModal(props) {
                         </div>
                     </section>
                     <Modal.Footer>
-                        <button type="submit" id="saveEdit" value="submit" className="btn btn-danger"onClick={editPlant}>Save</button>
+                        <button 
+                        style={{ 
+                            color: "#e4d7d0",
+                            fontFamily: "Kiwi Maru",
+                            fontWeight: 700,
+                            paddingLeft: "1em",
+                            paddingRight: "1em",
+                            paddingTop: "0.5em",
+                            paddingBottom: "0.5em",
+                            borderRadius: "10px"}}type="submit" id="saveEdit" value="submit" className="btn btn-danger"onClick={editPlant}>Save</button>
                         <Button style={{ 
                             color: "#e4d7d0",
                             fontFamily: "Kiwi Maru",
