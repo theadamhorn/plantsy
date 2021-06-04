@@ -49,15 +49,18 @@ function PlantModal(props) {
         
         <>
         <Button style={{ 
-                        color: "#e4d7d0",
+                        color: "#10a610",
                         fontFamily: "Kiwi Maru",
                         fontWeight: 700,
-                        backgroundColor: "#0a4158",
-                        paddingLeft: "1em",
-                        paddingRight: "1em",
-                        paddingTop: "0.5em",
+                        backgroundColor: "#e4d7d0",
+                        paddingLeft: "0.30em",
+                        paddingRight: "0.30em",
+                        paddingTop: "0.20em",
+                        paddingBottom: "0.10em",
+                        lineHeight: "0.5em",
+                        width: "fit-content",
                         paddingBottom: "0.5em",
-                        borderRadius: "10px"}} className="plant_button" onClick={()=>setModal(true)}><p><FontAwesomeIcon icon={faSeedling} className="fa-2x" /></p>
+                        borderRadius: "5px"}} className="plant_button" onClick={()=>setModal(true)}><p><FontAwesomeIcon icon={faSeedling} className="fa-2x" /></p>
                                                 <p>Plant</p>
                                                 <p>Profile</p></Button>
         <Modal aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>

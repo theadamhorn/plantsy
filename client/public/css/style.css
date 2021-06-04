@@ -235,8 +235,19 @@ body {
 
 .trellis {
   background-color: #93e9be;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(184, 184, 184, 0.5)), to(rgba(186, 186, 186, 0.5))), url("./images/pexels-gary-barnes-6231990.jpg");
-  background-image: linear-gradient(rgba(184, 184, 184, 0.5), rgba(186, 186, 186, 0.5)), url("./images/pexels-gary-barnes-6231990.jpg");
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(184, 184, 184, 0.5)),
+      to(rgba(186, 186, 186, 0.5))
+    ),
+    url("./images/pexels-gary-barnes-6231990.jpg");
+  background-image: linear-gradient(
+      rgba(184, 184, 184, 0.5),
+      rgba(186, 186, 186, 0.5)
+    ),
+    url("./images/pexels-gary-barnes-6231990.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -394,8 +405,19 @@ body {
 }
 
 .thanksBody {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 47, 32, 0.5)), to(rgba(17, 47, 32, 0.5))), url("./images/pexels-huy-phan-3076899.jpg");
-  background-image: linear-gradient(rgba(17, 47, 32, 0.5), rgba(17, 47, 32, 0.5)), url("./images/pexels-huy-phan-3076899.jpg");
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(17, 47, 32, 0.5)),
+      to(rgba(17, 47, 32, 0.5))
+    ),
+    url("./images/pexels-huy-phan-3076899.jpg");
+  background-image: linear-gradient(
+      rgba(17, 47, 32, 0.5),
+      rgba(17, 47, 32, 0.5)
+    ),
+    url("./images/pexels-huy-phan-3076899.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -411,7 +433,7 @@ body {
 .Alex {
   height: auto;
   width: 100%;
-  background-color: #4b8378;
+  background-color: #0a4158;
   color: #e4d7d0;
   font-size: 1.5em;
   border: #e4d7d0 1px solid;
@@ -421,7 +443,7 @@ body {
 .Ryan {
   height: auto;
   width: 100%;
-  background-color: #4b8378;
+  background-color: #0a4158;
   color: #e4d7d0;
   font-size: 1.5em;
   border: #e4d7d0 1px solid;
@@ -431,7 +453,7 @@ body {
 .Zac {
   height: auto;
   width: 100%;
-  background-color: #4b8378;
+  background-color: #0a4158;
   color: #e4d7d0;
   font-size: 1.5em;
   border: #e4d7d0 1px solid;
