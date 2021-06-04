@@ -2,8 +2,14 @@ import React, { useState, useContext} from 'react'
 import EditPlantModal from '../components/ModalEditPlant';
 import UserContext from "../utils/UserContext";
 import API from "../utils/API";
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSeedling } from '@fortawesome/free-solid-svg-icons'
 function PlantModal(props) {
     const {user, login} = useContext(UserContext);
+
+    const [modal, setModal] = useState(false);
     
     const [genus, setGenus] = useState(props.genus);
     const [species, setSpecies] = useState(props.species);
@@ -38,19 +44,28 @@ function PlantModal(props) {
         .catch(err => { console.error(err) })
       }
     return (
+        
         <>
-        <div className="modal fade" id={"plantModal" + props.id} data-bs-backdrop="false"
-            data-bs-keyboard="false" tabIndex="-1" aria-labelledby="modalLabel"
-            aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content plant_profile">
-                    <div className="modal-header">
+        <Button style={{ 
+                        color: "#e4d7d0",
+                        fontFamily: "Kiwi Maru",
+                        fontWeight: 700,
+                        backgroundColor: "#0a4158",
+                        paddingLeft: "1em",
+                        paddingRight: "1em",
+                        paddingTop: "0.5em",
+                        paddingBottom: "0.5em",
+                        borderRadius: "10px"}} className="plant_button" onClick={()=>setModal(true)}><p><FontAwesomeIcon icon={faSeedling} className="fa-2x" /></p>
+                                                <p>Plant</p>
+                                                <p>Profile</p></Button>
+        <Modal aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
                         <h5 className="modal-title" id="modalLabel">
                             {props.genus} {props.species} {props.variety} | {props.common_name}</h5>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
+                </Modal.Title>          
+            </Modal.Header>
+                <Modal.Body>
                         <div className="row">
                             <div className="col">
                                 <img className="plantPhoto" src={props.photo} />
@@ -87,16 +102,22 @@ function PlantModal(props) {
                             </div> : ""
                             }
                         </div>
-                    </div>
-                    <div className="modal-footer">
+                </Modal.Body>
+                <Modal.Footer>
                     { document.location.pathname === "/plants" ? <button className="btn add-plant-button" type="button" value={props.id} onClick={event => addPlantToGarden(event)}>Add Plant</button>  : ""}
-                       { document.location.pathname === "/profile" ? <EditPlantModal plantID={props.id} genus ={props.genus} species ={props.species} variety={props.variety} common_name={props.common_name} water={props.watering} temperature={props.temperature} humidity={props.humidity} light={props.light} description={props.description} care={props.care} getOwnedPlants= {props.getOwnedPlants}/>  : ""}
-                        <button type="button" className="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>                         
-                    </div>
-                </div>
-            </div>
-        </div>
+                    { document.location.pathname === "/profile" ? <EditPlantModal plantID={props.id} genus ={props.genus} species ={props.species} variety={props.variety} common_name={props.common_name} water={props.watering} temperature={props.temperature} humidity={props.humidity} light={props.light} description={props.description} care={props.care} getOwnedPlants= {props.getOwnedPlants}/>  : ""}
+                        <Button style={{ 
+                        color: "#e4d7d0",
+                        fontFamily: "Kiwi Maru",
+                        fontWeight: 700,
+                        backgroundColor: "#0a4158",
+                        paddingLeft: "1em",
+                        paddingRight: "1em",
+                        paddingTop: "0.5em",
+                        paddingBottom: "0.5em",
+                        borderRadius: "10px"}} onClick={()=>setModal(false)}>Close</Button>                       
+                </Modal.Footer>
+        </Modal>
         </>
     );
 }

@@ -106,6 +106,14 @@ if(Gardener === true){
                                     <div className="row justify-content-evenly">
                                         
                                             <>
+                                        <PlantBadge
+                                            watering={plant.watering}
+                                            temperature={plant.temperature}
+                                            humidity={plant.humidity}
+                                            light={plant.light}
+                                        />
+                                        </>
+                                        <>
                                         <PlantModal
                                             id={plant.id}
                                             genus={plant.genus}
@@ -121,22 +129,7 @@ if(Gardener === true){
                                             care={plant.care}
                                             getOwnedPlants= {props.getOwnedPlants}
                                             />
-                                        <PlantBadge
-                                            watering={plant.watering}
-                                            temperature={plant.temperature}
-                                            humidity={plant.humidity}
-                                            light={plant.light}
-                                        />
-                                        </>
-                                        
-                                        
-                                          
-                                            <button type="button" className="plant_button" data-bs-toggle="modal" data-bs-target={"#plantModal" + plant.id}>
-                                            <p><FontAwesomeIcon icon={faSeedling} className="fa-2x" /></p>
-                                                <p>Plant</p>
-                                                <p>Profile</p>
-                                            </button>
-                                                
+                                        </>    
                                         
                                     </div>
                                 </div>

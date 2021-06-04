@@ -71,7 +71,7 @@ function LoginModal(props) {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          {/* <!-- Toogle to second dialog --> */}
+          
           <ModalSignUp />
           <Button style={{
             color: "#e4d7d0",
