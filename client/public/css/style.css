@@ -272,6 +272,11 @@ body {
   color: #60aa9b;
 }
 
+.open-post:hover,
+.read:hover {
+  color: #ff9636;
+}
+
 .trellis-button:hover {
   background-color: #93e9be;
 }
