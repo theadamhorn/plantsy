@@ -13,7 +13,7 @@ return(
     <>
 <Form >
         <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={event =>setSearch(event.target.value.trim())}/>
-        <Button variant="outline-success" onClick={getWeather(search)}>Search</Button>
+        <Button variant="outline-success" onClick={()=>getWeather(search)}>Search</Button>
 </Form>
 </>
 )
