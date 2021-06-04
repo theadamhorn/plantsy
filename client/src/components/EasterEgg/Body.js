@@ -58,6 +58,7 @@ function Body() {
 
     return (
         <main className="thanksBody container-fluid text-center">
+            
              <animated.div style={Text} className="row justify-content-around"><div className="col-sm-7 col-md-7 col-lg-7 Text">We give so much thanks to our instructional staff</div></animated.div>
              <div className="row align-items-center">
                  <div className="col-sm-2 col-md-2 col-lg-2 "></div><animated.div style={Alex} className="col-sm-8 col-md-8 col-lg-8"><img className="Alex" alt="Alex" src="./css/images/alex.png"/></animated.div><div className="col-sm-2 col-md-2 col-lg-2 "></div>
@@ -110,6 +111,7 @@ function Body() {
                     </div>
                 </div>
              </animated.div>
+             
         </main>
     )
 }
