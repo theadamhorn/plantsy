@@ -157,7 +157,11 @@ body {
   background-color: #e4d7d0;
   height: 750px;
 }
-
+.weatherSearch {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
 .accordionHolder {
   background-color: #e4d7d0;
 }

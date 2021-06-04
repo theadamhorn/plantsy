@@ -7,20 +7,32 @@ function Body() {
         delay: 500,
         to: async (next, cancel) => {
             await next({ opacity: 1,  transform: "scale(1) translateY(0px)" })
+            await next({ transform: "scale(0.75) translateY(5px)", backgroundColor: "#9F44D3" })
+            await next({ transform: "scale(1) translateY(0px)" })
+            await next({ transform: "scale(0.75) translateY(5px)" })
+            await next({ transform: "scale(1) translateY(0px)" })
+
           },
           from: { opacity: 0, transform: "scale(0.75) translateY(5px)" },
     });
     const AlexText = useSpring({
-        delay: 1000,
+        delay: 2000,
         to: async (next, cancel) => {
             await next({ opacity: 1,  transform: "scale(1) translateY(0px)" })
           },
           from: { opacity: 0, transform: "scale(0.75) translateY(5px)" },
     });
     const Ryan = useSpring({
-        delay: 600,
+        delay: 700,
         to: async (next, cancel) => {
             await next({ opacity: 1, transform: "scale(1) translateY(0px)" })
+            await next({ opacity: 1, transform: "scale(1) translateY(0px)" })
+            await next({ opacity: 1, transform: "scale(1) translateY(0px)" })
+            await next({ opacity: 1, transform: "scale(1) translateY(0px)" })
+            await next({ transform: "scale(0.75) translateY(5px)" })
+            await next({ transform: "scale(1) translateY(0px)" })
+            await next({ transform: "scale(0.75) translateY(5px)" })
+            await next({ transform: "scale(1) translateY(0px)" })
           },
           from: { opacity: 0, transform: "scale(0.75) translateY(5px)" },
     });
@@ -32,9 +44,16 @@ function Body() {
           from: { opacity: 0, transform: "scale(0.75) translateY(5px)" },
     });
     const Zac = useSpring({
-        delay: 600,
+        delay: 700,
         to: async (next, cancel) => {
             await next({ opacity: 1, transform: "scale(1) translateY(0px)" })
+            await next({ opacity: 1, transform: "scale(1) translateY(0px)" })
+            await next({ opacity: 1, transform: "scale(1) translateY(0px)" })
+            await next({ opacity: 1, transform: "scale(1) translateY(0px)" })
+            await next({ transform: "scale(0.75) translateY(5px)" })
+            await next({ transform: "scale(1) translateY(0px)" })
+            await next({ transform: "scale(0.75) translateY(5px)" })
+            await next({ transform: "scale(1) translateY(0px)" })
           },
           from: { opacity: 0, transform: "scale(0.75) translateY(5px)" },
     })
