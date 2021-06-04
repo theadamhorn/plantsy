@@ -157,7 +157,11 @@ body {
   background-color: #e4d7d0;
   height: 750px;
 }
-
+.weatherSearch {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
 .accordionHolder {
   background-color: #e4d7d0;
 }
@@ -235,8 +239,19 @@ body {
 
 .trellis {
   background-color: #93e9be;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(184, 184, 184, 0.5)), to(rgba(186, 186, 186, 0.5))), url("./images/pexels-gary-barnes-6231990.jpg");
-  background-image: linear-gradient(rgba(184, 184, 184, 0.5), rgba(186, 186, 186, 0.5)), url("./images/pexels-gary-barnes-6231990.jpg");
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(184, 184, 184, 0.5)),
+      to(rgba(186, 186, 186, 0.5))
+    ),
+    url("./images/pexels-gary-barnes-6231990.jpg");
+  background-image: linear-gradient(
+      rgba(184, 184, 184, 0.5),
+      rgba(186, 186, 186, 0.5)
+    ),
+    url("./images/pexels-gary-barnes-6231990.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -399,12 +414,11 @@ body {
 }
 
 .thanksBody {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 47, 32, 0.5)), to(rgba(17, 47, 32, 0.5))), url("./images/pexels-huy-phan-3076899.jpg");
-  background-image: linear-gradient(rgba(17, 47, 32, 0.5), rgba(17, 47, 32, 0.5)), url("./images/pexels-huy-phan-3076899.jpg");
+  background-image: url("./images/pexels-simon-berger-1266810.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 1000px;
+  width: 100%;
 }
 
 .placeholder {
@@ -416,42 +430,112 @@ body {
 .Alex {
   height: auto;
   width: 100%;
-  background-color: #4b8378;
+  background: rgba(255, 255, 255, 0.35);
   color: #e4d7d0;
   font-size: 1.5em;
-  border: #e4d7d0 1px solid;
-  border-radius: 10px;
+  /* border: #e4d7d0 1px solid; */
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .Ryan {
   height: auto;
   width: 100%;
-  background-color: #4b8378;
+  background: rgba(255, 255, 255, 0.35);
   color: #e4d7d0;
   font-size: 1.5em;
-  border: #e4d7d0 1px solid;
-  border-radius: 10px;
+  /* border: #e4d7d0 1px solid; */
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .Zac {
   height: auto;
   width: 100%;
-  background-color: #4b8378;
+  background: rgba(255, 255, 255, 0.35);
   color: #e4d7d0;
   font-size: 1.5em;
-  border: #e4d7d0 1px solid;
-  border-radius: 10px;
+  /* border: #e4d7d0 1px solid; */
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .Text {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: #4b8378;
-  color: #e4d7d0;
+  background: rgba(72, 172, 140, 0.736);
+  color: #222;
   font-size: 1.5em;
-  border: #e4d7d0 1px solid;
-  border-radius: 10px;
+  /* border: #e4d7d0 1px solid; */
+  border-radius: 5px;
   margin-top: 5px;
+  margin-bottom: 5px;
+  width: fit-content;
+}
+
+.Adam {
+  background: rgba(255, 255, 255, 0.523);
+  color: #222;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: fit-content;
+}
+.AdamPhoto {
+  border-radius: 5px;
+  width: 75%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+.Skyler {
+  background: rgba(255, 255, 255, 0.523);
+  color: #222;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: fit-content;
+}
+.SkylerPhoto {
+  border-radius: 5px;
+  width: 75%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+.Leslie {
+  background: rgba(255, 255, 255, 0.674);
+  color: #222;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: fit-content;
+}
+.LesliePhoto {
+  border-radius: 5px;
+  width: 75%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+.Kiel {
+  background: rgba(255, 255, 255, 0.674);
+  color: #222;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: fit-content;
+}
+.KielPhoto {
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=style.css.map */

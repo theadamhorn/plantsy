@@ -1,13 +1,24 @@
 import React from 'react'
 import PlantModal from "./ModalPlant";
 import PlantBadge from "./PlantBadge";
+import { useSpring, animated } from 'react-spring';
 
 
 function AccordionPlants(props) {
+
+    const styles = useSpring({
+        delay: 200,
+        to: async (next, cancel) => {
+          await next({ opacity: 1 })
+          
+        },
+        from: { opacity: 0 },
+      })
+
     var plants = props.plants;
     return (
         <div>
-            <div className="accordion">
+            <animated.div className="accordion" style={styles}>
                 {plants.map(plant => {
                     return (
                         <div className="accordion-item" key={plant.id}>
@@ -47,7 +58,7 @@ function AccordionPlants(props) {
                         </div>
                     )
                 })}
-            </div>
+            </animated.div>
             {/* end of AccordionPlants */}
         </div>)
 

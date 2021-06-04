@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TrellisModal from "./ModalTrellis";
 import CreatePost from "./CreatePost";
+import { useSpring, animated } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 import API from '../utils/API';
@@ -54,6 +55,14 @@ export default function TrellisPosts() {
             updatePosts()
         }
     }
+    const styles = useSpring({
+        delay: 200,
+        to: async (next, cancel) => {
+          await next({ opacity: 1 })
+          
+        },
+        from: { opacity: 0 },
+      })
 
     return (
         <div>
@@ -67,7 +76,7 @@ export default function TrellisPosts() {
                         creatingPost={creatingPost}
                     />
                 </div>
-                <div className="trellis-posts-holder">
+                <animated.div className="trellis-posts-holder" style={styles}>
                 {posts && posts.map(post => {
                     return (
                  
@@ -96,7 +105,7 @@ export default function TrellisPosts() {
                         // </div>
                     )
                 })}
-                </div>
+                </animated.div>
             </div>
         </div>)
 }

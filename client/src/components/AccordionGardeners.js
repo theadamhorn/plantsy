@@ -1,12 +1,22 @@
 import React from 'react';
 import GardenersModal from './ModalGardeners';
-
+import { useSpring, animated } from 'react-spring';
 
 function AccordionGardeners(props) {
+
+    const styles = useSpring({
+        delay: 200,
+        to: async (next, cancel) => {
+          await next({ opacity: 1 })
+          
+        },
+        from: { opacity: 0 },
+      })
+
     var gardeners = props.gardeners;
     return (
         <div>
-            <div className="accordion">
+            <animated.div className="accordion" style={styles}>
                     {gardeners.data && gardeners.data.map(gardener => {
                         return (
                             <div className="accordion-item" key={gardener.id + gardener.name}>
@@ -25,7 +35,7 @@ function AccordionGardeners(props) {
                             </div>
                         )
                     })}
-                </div>
+                </animated.div>
         </div>
     )
 }
