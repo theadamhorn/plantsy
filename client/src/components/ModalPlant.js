@@ -40,7 +40,9 @@ function PlantModal(props) {
         care: care ,
         photo: photo
         }
-        API.createOwnedPlants(user.id , body)
+        API.createOwnedPlants(user.id , body).then(()=>{
+            setModal(false);
+        })
         .catch(err => { console.error(err) })
       }
     return (
