@@ -1,15 +1,15 @@
 import React from 'react';
 import Accordion from './Accordion';
 import { Row, Col } from "react-bootstrap";
-
+import getWeather from "../utils/weather";
 function BenchContainer(props) {
     
     return (
         <>
             <main className="container-fluid px-0">
                 <div className="potting navbar justify-content-around">
-                    <span style={{visibility: "hidden"}}>
-                    { document.location.pathname === "/profile" ?<>{props.addPlant}{props.deletePlant}</> :''}
+                    <span>
+                    { document.location.pathname === "/profile" ? getWeather():''}
                     </span>
                     <span className="bench">
                         {props.title}

@@ -3,6 +3,8 @@ import API from "../utils/API";
 import UserContext from "../utils/UserContext";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import axios from "axios";
 
 function AddPlantModal(props) {
   const [modal, setModal] = useState(false);
@@ -19,11 +21,17 @@ function AddPlantModal(props) {
   const [light, setLight] = useState(2);
   const [description, setDescription] = useState();
   const [care, setCare] = useState();
+  const [photo , setPhoto] = useState();
 
 
 
-// const OwnedPlants = props.state.OwnedPlants;
-// const setOwnedPlants = props.state.setOwnedPlants;
+  const fileHandler = (event) => {
+  setPhoto({ selectedFile: event.target.files[0] })
+  }
+
+  const uploadHandler = () => {
+  axios.post('my-domain.com/file-upload', photo)
+  }
 
   const addPlant = async (event)=> {
     // Stop the browser from submitting the form so we can do so with JavaScript
@@ -39,10 +47,11 @@ function AddPlantModal(props) {
     humidity: humidity , 
     light: light , 
     description: description ,
-    care: care
+    care: care,
+    photo: photo
     }
     API.createOwnedPlants(user.id , body)
-    .then(res =>{
+    .then(() =>{
       setModal(false);
       props.getOwnedPlants();
     })
@@ -72,7 +81,7 @@ function AddPlantModal(props) {
       </Modal.Header>
       <Modal.Body>
             <form>
-              <div className="row new_plant_1">
+              <div className="row">
                 <div className="col">
                   <label htmlFor="genusLabel">Genus:</label>
                   <input className="form-input" type="text" id="newgenus" placeholder="Genus" onChange={event => setGenus(event.target.value.trim())} />
@@ -90,7 +99,7 @@ function AddPlantModal(props) {
                   <input className="form-input" type="text" id="newcommon_name" placeholder="Common Name" onChange={event => setCommonName(event.target.value.trim())}/>
                 </div>
               </div>
-              <div className="row plant_edit_2">
+              <div className="row">
                 <div className="col"> Water Needed:
                       <div className="form-check">
                     <input className="form-check-input" type="radio" name="newwaterNeeded" id="flexRadioDefault1" value="1" checked ={water === 1} onChange={event => {setWater(1)}} />
@@ -148,7 +157,7 @@ function AddPlantModal(props) {
                   </div>
                 </div>
               </div>
-              <div className="row plant_edit_3">
+              <div className="row">
                 <div className="col-12">
                   <label htmlFor="description">Description:</label>
                   <textarea className="form-control" name="description" id="newdescription" row="5" cols="40" defaultValue="Describe the plant here" onChange={event => setDescription(event.target.value.trim())}></textarea>
@@ -157,6 +166,14 @@ function AddPlantModal(props) {
                   <label htmlFor="care">Care:</label>
                   <textarea className="form-control" name="care" id="newcare" row="5" cols="40" defaultValue="Place your notes on proper care here" onChange={event => setCare(event.target.value.trim())}></textarea>
                 </div>
+              </div>
+              <div className="row">
+              <Form>
+                <Form.Group>
+                  <Form.File id="formControlFile1" label="Upload a Photo" onChange={fileHandler}/>
+                  <Button onClick={uploadHandler}></Button>
+                </Form.Group>
+              </Form>
               </div>
               <div className="modal-footer">
                 <Button style={{ 

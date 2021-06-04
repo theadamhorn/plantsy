@@ -4,6 +4,8 @@ const Owned_Plants = require('./Owned_Plants');
 const Trellis_Posts = require('./Trellis_Posts');
 const Trellis_Comments = require('./Trellis_Comments');
 
+const FileTest = require('./FileTest');
+
 Users.hasMany(Owned_Plants, {
     foreignKey: 'user_id',
 });
@@ -35,6 +37,12 @@ Users.hasMany(Trellis_Comments, {
 Trellis_Comments.belongsTo(Users, {
     foreignKey: 'user_id',
 });
+FileTest.hasMany(Users, {
+    foreignKey: 'user_id',
+});
 
+Users.belongsTo(FileTest, {
+    foreignKey: 'user_id',
+})
 module.exports = { Users, Plants, Owned_Plants, Trellis_Posts, Trellis_Comments };
 
