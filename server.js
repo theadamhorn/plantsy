@@ -11,15 +11,15 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static('client/build'));
-// }
+app.use(routes);
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
 
-// app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-// });
-
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    });
+}
 
 const sess = {
     secret: 'Super secret secret',
@@ -39,7 +39,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(compression());
 
-app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
