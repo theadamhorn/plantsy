@@ -17,7 +17,7 @@ function AccordionPlants(props) {
 
     var plants = props.plants;
     return (
-        <div>
+        <div className="trellis-posts-holder-user">
             <animated.div className="accordion" style={styles}>
                 {plants.map(plant => {
                     return (

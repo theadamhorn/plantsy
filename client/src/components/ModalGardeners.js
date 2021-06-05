@@ -11,7 +11,6 @@ function GardenersModal(props) {
     return (
         <>
             <Button onClick={() => setModal(true)} style={{
-                color: "#e4d7d0",
                 fontFamily: "Kiwi Maru",
                 fontWeight: 700,
                 backgroundColor: "#93e9be",
