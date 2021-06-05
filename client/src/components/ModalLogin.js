@@ -24,7 +24,7 @@ function LoginModal(props) {
     if (email && password) {
       // Send the e-mail and password to the server
 
-      const body = { email, password };
+      const body = JSON.stringify({ email, password });
       // const header = { 'Content-Type': 'application/json' };
       API.logInUser(body)
         .then(res => {
