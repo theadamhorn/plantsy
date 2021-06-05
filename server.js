@@ -21,8 +21,6 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-
-
 const sess = {
     secret: 'Super secret secret',
     cookie: {},
