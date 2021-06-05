@@ -72,8 +72,8 @@ function PlantModal(props) {
             </Modal.Header>
                 <Modal.Body>
                         <div className="row">
-                            <div className="col">
-                                <img className="plantPhoto" src={props.photo} />
+                            <div className="col d-flex justify-content-center">
+                                <img className="plantPhoto" src={props.photo} alt={props.common_name}/>
                             </div>
                         </div>
                        <br/>
