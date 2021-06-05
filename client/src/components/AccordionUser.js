@@ -28,7 +28,7 @@ function AccordionUser(props) {
 
 if(Gardener === true){
     return (
-        
+        <div className="trellis-posts-holder-gardener">
         <div className="accordion">
             {ownedPlants && ownedPlants.map(plant => {
                 return (
@@ -93,12 +93,12 @@ if(Gardener === true){
                 )
             })}
         </div>
-    
+        </div>
     )
         }
     else if (Gardener === false){
         return (
-            
+            <div className="trellis-posts-holder-user">
             <animated.div className="accordion" style={styles}>
                 {ownedPlants && ownedPlants.map(plant => {
                     return (
@@ -147,6 +147,7 @@ if(Gardener === true){
                     )
                 })}
             </animated.div>
+            </div>
         )
 
     }
