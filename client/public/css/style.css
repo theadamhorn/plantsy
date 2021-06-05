@@ -590,4 +590,22 @@ body {
   -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
           box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
+
+.Links {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+}
+
+.Links:hover {
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  color: #ff9636;
+  background-color: #0a4158;
+}
 /*# sourceMappingURL=style.css.map */
