@@ -1,9 +1,9 @@
 import React from 'react';
 import Accordion from './Accordion';
 import { Row, Col } from "react-bootstrap";
-import WeatherSearch from './weatherSearch';
+import WeatherSearch from './WeatherSearch';
 function BenchContainer(props) {
-    
+
     return (
         <>
             <main className="container-fluid px-0">
