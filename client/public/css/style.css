@@ -133,9 +133,12 @@ body {
 
 .hero-text {
   text-align: center;
-  position: absolute;
+  position: relative;
   background-color: #0a4158;
-  top: 50%;
+  top: 75%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
