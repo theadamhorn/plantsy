@@ -47,8 +47,8 @@ function WeatherSearch (props) {
 
     return(
         <>
-        <FontAwesomeIcon icon={variable} className="fa-lg" />
-        <p>{props.search} {props.data.main.temp}deg F {props.data.main.humidity}% humidity</p>
+        <p><FontAwesomeIcon icon={variable} className="fa-lg" />  {props.search}</p>
+        <p>{props.data.main.temp}&#176; F {props.data.main.humidity}% humidity</p>
         </>
     );
 }
