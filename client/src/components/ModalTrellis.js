@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import API from '../utils/API';
 
 export default function TrellisModal(props) {
-    console.log(props);
+
 
     var comments = props.comments;
 

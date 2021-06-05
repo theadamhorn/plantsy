@@ -133,9 +133,12 @@ body {
 
 .hero-text {
   text-align: center;
-  position: absolute;
+  position: relative;
   background-color: #0a4158;
-  top: 50%;
+  top: 75%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -157,11 +160,20 @@ body {
   background-color: #e4d7d0;
   height: 750px;
 }
+
 .weatherSearch {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .accordionHolder {
   background-color: #e4d7d0;
 }
@@ -239,19 +251,8 @@ body {
 
 .trellis {
   background-color: #93e9be;
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(184, 184, 184, 0.5)),
-      to(rgba(186, 186, 186, 0.5))
-    ),
-    url("./images/pexels-gary-barnes-6231990.jpg");
-  background-image: linear-gradient(
-      rgba(184, 184, 184, 0.5),
-      rgba(186, 186, 186, 0.5)
-    ),
-    url("./images/pexels-gary-barnes-6231990.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(184, 184, 184, 0.5)), to(rgba(186, 186, 186, 0.5))), url("./images/pexels-gary-barnes-6231990.jpg");
+  background-image: linear-gradient(rgba(184, 184, 184, 0.5), rgba(186, 186, 186, 0.5)), url("./images/pexels-gary-barnes-6231990.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -263,6 +264,30 @@ body {
 .trellis-posts-holder {
   overflow: auto;
   height: 715px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.trellis-posts-holder-gardener {
+  overflow: auto;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.trellis-posts-holder-user {
+  overflow: auto;
+  height: 750px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -435,7 +460,8 @@ body {
   font-size: 1.5em;
   /* border: #e4d7d0 1px solid; */
   border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .Ryan {
@@ -446,7 +472,8 @@ body {
   font-size: 1.5em;
   /* border: #e4d7d0 1px solid; */
   border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .Zac {
@@ -457,7 +484,8 @@ body {
   font-size: 1.5em;
   /* border: #e4d7d0 1px solid; */
   border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .Text {
@@ -471,72 +499,116 @@ body {
   border-radius: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
 
 .Adam {
   background: rgba(255, 255, 255, 0.523);
   color: #222;
   border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
   padding-left: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
+
 .AdamPhoto {
   border-radius: 5px;
   width: 75%;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
+
 .Skyler {
   background: rgba(255, 255, 255, 0.523);
   color: #222;
   border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
   padding-left: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
+
 .SkylerPhoto {
   border-radius: 5px;
   width: 75%;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
+
 .Leslie {
   background: rgba(255, 255, 255, 0.674);
   color: #222;
   border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
   padding-left: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
+
 .LesliePhoto {
   border-radius: 5px;
   width: 75%;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
+
 .Kiel {
   background: rgba(255, 255, 255, 0.674);
   color: #222;
   border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
   padding-left: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
+
 .KielPhoto {
   border-radius: 5px;
   width: 100%;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.Links {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+}
+
+.Links:hover {
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  color: #ff9636;
+  background-color: #0a4158;
 }
 /*# sourceMappingURL=style.css.map */

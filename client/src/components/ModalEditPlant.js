@@ -62,7 +62,7 @@ function EditPlantModal(props) {
         <Modal aria-labelledby="contained-modal-title-vcenter" centered show={modal} onHide={() => setModal(false)}>
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    <h5 className="modal-title" id="modal2{props.id}Label">Editor <FontAwesomeIcon icon={faPencilAlt} className="fa-md" />... {props.genus} {props.species} {props.variety}</h5>
+                    <h5 className="modal-title" id={"modal2"+props.id+"Label"}>Editor <FontAwesomeIcon icon={faPencilAlt} className="fa-md" />... {props.genus} {props.species} {props.variety}</h5>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -74,19 +74,19 @@ function EditPlantModal(props) {
                         <div className="col">
                             <label htmlFor="genusLabel">Genus:</label>
 
-                            <input className="form-input" type="text" id="genus" value={genus} onChange={event => setGenus(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="genus" value={genus} onChange={event => setGenus(event.target.value)} />
                         </div>
                         <div className="col">
                             <label htmlFor="speciesLabel">Species:</label>
-                            <input className="form-input" type="text" id="species" value={species} onChange={event => setSpecies(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="species" value={species} onChange={event => setSpecies(event.target.value)} />
                         </div>
                         <div className="col">
                             <label htmlFor="varietyLabel">Variety:</label>
-                            <input className="form-input" type="text" id="variety" value={variety} onChange={event => setVariety(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="variety" value={variety} onChange={event => setVariety(event.target.value)} />
                         </div>
                         <div className="col">
                             <label htmlFor="commonNameLabel">Common Name:</label>
-                            <input className="form-input" type="text" id="common_name" value={commonName} onChange={event => setCommonName(event.target.value.trim())} />
+                            <input className="form-input" type="text" id="common_name" value={commonName} onChange={event => setCommonName(event.target.value)} />
 
                         </div>
                     </section>
@@ -151,11 +151,11 @@ function EditPlantModal(props) {
                     <section className="row plant_edit_3">
                         <div className="col-12">
                             <label htmlFor="description">Description:</label> 
-                             <textarea className="form-control" name="description" id="description" rows={5} cols={40} value={description}  onChange={event => setDescription(event.target.value.trim())}/> 
+                             <textarea className="form-control" name="description" id="description" rows={5} cols={40} value={description}  onChange={event => setDescription(event.target.value)}/> 
                         </div>
                         <div className="col-12">
                             <label htmlFor="care">Care:</label>
-                            <textarea className="form-control" name="care" id="care" rows={5} cols={40} value={care} onChange={event => setCare(event.target.value.trim())}/>
+                            <textarea className="form-control" name="care" id="care" rows={5} cols={40} value={care} onChange={event => setCare(event.target.value)}/>
                         </div>
                     </section>
                     <Modal.Footer>

@@ -42,6 +42,8 @@ function Body() {
                 <div className="col-sm-3 col-md-3 col-lg-3 Adam"><img className="AdamPhoto" src="./css/images/adam-portrait.jpg" alt="Adam"/></div>
                 <div className="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center Adam"><div className="col-sm-10 col-md-10 col-lg-10 Text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <p><a  className="Links" target="_blank" href="http://adamhorn.github.io/">Adam's Profile Page</a></p>
+                        <p><a className="Links" target="_blank" href="https://github.com/theadamhorn">Adam's Repository</a></p>
                     </div>
                 </div>
              </animated.div>
@@ -49,20 +51,32 @@ function Body() {
                 <div className="col-sm-3 col-md-3 col-lg-3 Skyler"><img className="SkylerPhoto" src="./css/images/skyler-selfie.jpg" alt="Skyler"/></div>
                 <div className="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center Skyler"><div className="col-sm-10 col-md-10 col-lg-10 Text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <p><a  className="Links" target="_blank" href="https://skyler-blakeslee.github.io/">Skyler's Profile Page</a></p>
+                        <p><a className="Links" target="_blank" href="https://github.com/skyler-blakeslee">Skyler's Repository</a></p>
+
                     </div>
                 </div>
              </animated.div>
              <animated.div style={Text} className="row justify-content-evenly m-1">
                  <div className="col-sm-3 col-md-3 col-lg-3 Leslie"><img className="LesliePhoto" src="./css/images/Ses-selfie.jpg" alt="Leslie"/></div>
                 <div className="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center Leslie"><div className="col-sm-10 col-md-10 col-lg-10 Text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p>Hi, I'm Leslie! I'm a musician. I play flute, some piano and I sing! I can now also call myself a coder/web developer! This has been an amazing ride. Thank you for the journey and all the experience, learning and hand holding. Thanks to team Plantsy for being amazing humans. I found unexpected camaraderie with ya'll. I wish all of you amazing futures and would love to work with you all again in the future. This has been a big project I'm really proud of all our blood sweat and tears. We've learned a lot together by breaking lots of things. Lots of love to all of you.</p>
+                        <p>~Leslie</p>   
+                        <p><a  className="Links" target="_blank" href="https://sesdesoir.github.io/portfolio/">Leslie's Profile Page</a></p>
+                        <p><a className="Links" target="_blank" href="https://github.com/Sesdesoir">Leslie's Repository</a></p>
                     </div>
                 </div>
              </animated.div>
              <animated.div style={Text} className="row justify-content-evenly m-1">
                 <div className="col-sm-3 col-md-3 col-lg-3 Kiel"><img className="KielPhoto" src="./css/images/kiel-selfie.JPG" alt="Kiel"/></div>
                 <div className="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center Kiel"><div className="col-sm-10 col-md-10 col-lg-10 Text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p> Kiel Sprague here. Said like Kyle but spelled funny. Thanks Mom, I love you. Ehm, anyways, about Plantsy, honesty it has been one
+                        heck of a journey. I've loved and banged my head on the desk with this project. I think that means I did a lot of learning. I couldn't
+                        have done it with out my team. It has been a pleasure working with this team of highly talented individuals and watching them grow with 
+                        me. I don't know what the future hold but I am grateful for all the knowledge, support and humor I've had along the way.</p>
+                        <p>-Kiel</p>
+                        <p><a  className="Links" target="_blank" href="https://aereisdin.github.io">Kiel's Profile Page</a></p>
+                        <p><a className="Links " target="_blank" href="https://github.com/Aereisdin">Kiel's Repository</a></p>
                     </div>
                 </div>
              </animated.div>

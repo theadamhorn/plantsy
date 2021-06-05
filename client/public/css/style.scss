@@ -11,9 +11,11 @@ body,
 html {
   height: 100%;
 }
+
 body {
-  background-color: $scallop !important;
+  background-color: #e4d7d0 !important;
 }
+
 #root {
   font-family: "Kiwi Maru";
 }
@@ -85,6 +87,7 @@ body {
   -webkit-transition: none !important;
   transition: none !important;
 }
+
 .btn-primary {
   border-color: transparent !important;
 }
@@ -138,9 +141,10 @@ body {
 
 .hero-text {
   text-align: center;
-  position: absolute;
+  position: relative;
   background-color: #0a4158;
-  top: 50%;
+  top: 75%;
+  width: fit-content;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -162,9 +166,15 @@ body {
   background-color: #e4d7d0;
   height: 750px;
 }
-.accordionHolder {
-  background-color: $scallop;
+.weatherSearch {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
+.accordionHolder {
+  background-color: #e4d7d0;
+}
+
 .accordion-item {
   background-color: #0a4158;
   color: #0a4158;
@@ -229,8 +239,10 @@ body {
 
 .accordion-item .plant_button {
   color: #10a610;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  background-color: $scallop;
+  background-color: #e4d7d0;
   -webkit-appearance: none;
 }
 
@@ -260,6 +272,28 @@ body {
 .trellis-posts-holder {
   overflow: auto;
   height: 715px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.trellis-posts-holder-gardener {
+  overflow: auto;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.trellis-posts-holder-user {
+  overflow: auto;
+  height: 750px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,6 +340,10 @@ body {
 .title-input,
 .body-input {
   width: 80%;
+}
+
+.comment-border {
+  border-top: dotted 1px #222;
 }
 
 .potting {
@@ -400,63 +438,151 @@ body {
   font-size: small;
   left: 0;
   bottom: 0;
-
   width: 100%;
   text-align: center;
   padding-bottom: 3px;
 }
 
 .thanksBody {
-  background-image: linear-gradient(
-      rgba(17, 47, 32, 0.5),
-      rgba(17, 47, 32, 0.5)
-    ),
-    url("./images/pexels-huy-phan-3076899.jpg");
+  background-image: url("./images/pexels-simon-berger-1266810.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 1000px;
+  width: 100%;
 }
+
 .placeholder {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
+
 .Alex {
   height: auto;
   width: 100%;
-  background-color: $teal;
-  color: $scallop;
+  background: rgba(255, 255, 255, 0.35);
+  color: #e4d7d0;
   font-size: 1.5em;
-  border: $scallop 1px solid;
-  border-radius: 10px;
+  /* border: #e4d7d0 1px solid; */
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
+
 .Ryan {
   height: auto;
   width: 100%;
-  background-color: $teal;
-  color: $scallop;
+  background: rgba(255, 255, 255, 0.35);
+  color: #e4d7d0;
   font-size: 1.5em;
-  border: $scallop 1px solid;
-  border-radius: 10px;
+  /* border: #e4d7d0 1px solid; */
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
+
 .Zac {
   height: auto;
   width: 100%;
-  background-color: $teal;
-  color: $scallop;
+  background: rgba(255, 255, 255, 0.35);
+  color: #e4d7d0;
   font-size: 1.5em;
-  border: $scallop 1px solid;
-  border-radius: 10px;
-}
-.Text {
-  height: fit-content;
-  background-color: $teal;
-  color: $scallop;
-  font-size: 1.5em;
-  border: $scallop 1px solid;
-  border-radius: 10px;
-  margin-top: 5px;
+  /* border: #e4d7d0 1px solid; */
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
-.comment-border {
-  border-top: dotted 1px #222;
+.Text {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: rgba(72, 172, 140, 0.736);
+  color: #222;
+  font-size: 1.5em;
+  /* border: #e4d7d0 1px solid; */
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: fit-content;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.Adam {
+  background: rgba(255, 255, 255, 0.523);
+  color: #222;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: fit-content;
+}
+.AdamPhoto {
+  border-radius: 5px;
+  width: 75%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+.Skyler {
+  background: rgba(255, 255, 255, 0.523);
+  color: #222;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: fit-content;
+}
+.SkylerPhoto {
+  border-radius: 5px;
+  width: 75%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+.Leslie {
+  background: rgba(255, 255, 255, 0.674);
+  color: #222;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: fit-content;
+}
+.LesliePhoto {
+  border-radius: 5px;
+  width: 75%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+.Kiel {
+  background: rgba(255, 255, 255, 0.674);
+  color: #222;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: fit-content;
+}
+.KielPhoto {
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+.Links {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    color: $orange;
+    background-color: $navy;
+  }
 }
