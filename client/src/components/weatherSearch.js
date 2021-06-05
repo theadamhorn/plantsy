@@ -33,7 +33,7 @@ return(
 <Form onSubmit={(e)=>getWeather(e,search)}>
     <Form.Row className="align-items-center weatherSearch">
         <Col sm={8} md={8} lg={8}>
-            <FormControl type="text" style={{marginLeft: "-5px"}} placeholder="Search" className="mr-sm-2" onChange={event =>setSearch(event.target.value.trim())}/>
+            <FormControl type="text" style={{marginLeft: "-5px"}} placeholder="City for weather" className="mr-sm-2" onChange={event =>setSearch(event.target.value.trim())}/>
         </Col>
             <Button type="submit" variant="outline-success" >Search</Button>
     </Form.Row>
