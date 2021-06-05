@@ -7,7 +7,6 @@ router.get('/', withAuth, async (req, res) => {
     // find all posts
     try {
         const postsData = await Trellis_Posts.findAll({
-
             include: [
                 {
                     model: Trellis_Comments,
