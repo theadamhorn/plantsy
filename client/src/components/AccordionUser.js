@@ -1,8 +1,8 @@
 import React,{ useState, useEffect } from 'react'
 import PlantModal from "./ModalPlant";
 import PlantBadge from "./PlantBadge";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSeedling } from '@fortawesome/free-solid-svg-icons'
+import { useSpring, animated } from 'react-spring';
+
 
 function AccordionUser(props) {
     var [Gardener, setGardener] = useState(false);
@@ -17,9 +17,18 @@ function AccordionUser(props) {
 
     var ownedPlants = props.ownedPlants;
 
+    const styles = useSpring({
+        delay: 200,
+        to: async (next, cancel) => {
+          await next({ opacity: 1 })
+          
+        },
+        from: { opacity: 0 },
+      })
+
 if(Gardener === true){
     return (
-        
+        <div className="trellis-posts-holder-gardener">
         <div className="accordion">
             {ownedPlants && ownedPlants.map(plant => {
                 return (
@@ -84,13 +93,13 @@ if(Gardener === true){
                 )
             })}
         </div>
-    
+        </div>
     )
         }
     else if (Gardener === false){
         return (
-            
-            <div className="accordion">
+            <div className="trellis-posts-holder-user">
+            <animated.div className="accordion" style={styles}>
                 {ownedPlants && ownedPlants.map(plant => {
                     return (
                         
@@ -137,6 +146,7 @@ if(Gardener === true){
                         </div>
                     )
                 })}
+            </animated.div>
             </div>
         )
 

@@ -3,6 +3,8 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import WeatherComponents from './WeatherComponents';
+import { Col, Row } from 'react-bootstrap';
+
 function WeatherSearch (props) {
 
     const [search, setSearch] = useState();
@@ -29,8 +31,12 @@ function WeatherSearch (props) {
 return(
     <>
 <Form onSubmit={(e)=>getWeather(e,search)}>
-        <FormControl type="text" placeholder="City" className="mr-sm-2" onChange={event =>setSearch(event.target.value.trim())}/>
-        <Button type="submit" variant="outline-success">Search</Button>
+    <Form.Row className="align-items-center weatherSearch">
+        <Col sm={8} md={8} lg={8}>
+            <FormControl type="text" style={{marginLeft: "-5px"}} placeholder="Search" className="mr-sm-2" onChange={event =>setSearch(event.target.value.trim())}/>
+        </Col>
+            <Button type="submit" variant="outline-success" >Search</Button>
+    </Form.Row>
 </Form>
      {weatherData !== null ? <WeatherComponents data={weatherData} search={search}/> : ''} 
 </>
