@@ -8,13 +8,13 @@ import { faAngleDoubleRight, faPlusSquare } from '@fortawesome/free-solid-svg-ic
 import API from '../utils/API';
 
 export default function TrellisPosts() {
-    console.log()
+
 
     const [showCreate, setShowCreate] = useState(false);
     const [posts, setPosts] = useState([]);
     const [PostInfo, setPostInfo] = useState();
 
-    console.log(posts);
+    
 
     useEffect(() => {
         if (!posts) {
@@ -23,7 +23,6 @@ export default function TrellisPosts() {
         else {
             API.getTrellisPosts()
                 .then(res => {
-                    console.log(res)
                     setPosts(res.data)
                 })
                 .catch(err => console.log(err));
@@ -94,7 +93,7 @@ export default function TrellisPosts() {
                 {posts && posts.map(post => {
                     return (
                  
-                        <div key={post.id + post.user_id + 53023}>
+                        <div key={post.id + post.user_id + post.title + 53023}>
                             <button className="trellis-button rounded" type="button" data-bs-toggle="modal" data-bs-target={"#trellisModal" + post.id}>
                                 <ul className="nav justify-content-start">
                                     <li className="nav-item fs-5">{post.title}</li>

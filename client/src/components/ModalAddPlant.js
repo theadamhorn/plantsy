@@ -3,8 +3,6 @@ import API from "../utils/API";
 import UserContext from "../utils/UserContext";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import axios from "axios";
 
 function AddPlantModal(props) {
   const [modal, setModal] = useState(false);
