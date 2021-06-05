@@ -25,8 +25,8 @@ function LoginModal(props) {
       // Send the e-mail and password to the server
 
       const body = { email, password };
-      const header = { 'Content-Type': 'application/json' };
-      API.logInUser(body, header)
+      // const header = { 'Content-Type': 'application/json' };
+      API.logInUser(body)
         .then(res => {
           login({
             id: res.data.user.id,
@@ -71,7 +71,7 @@ function LoginModal(props) {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          
+
           <ModalSignUp />
           <Button style={{
             color: "#e4d7d0",
