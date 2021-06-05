@@ -3,6 +3,8 @@ import Accordion from './Accordion';
 import { Row, Col } from "react-bootstrap";
 import { useSpring, animated } from 'react-spring';
 import WeatherSearch from './weatherSearch';
+
+
 function BenchContainer(props) {
 
     const styles = useSpring({

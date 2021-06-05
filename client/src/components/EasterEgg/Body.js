@@ -60,8 +60,9 @@ function Body() {
              <animated.div style={Text} className="row justify-content-evenly m-1">
                  <div className="col-sm-3 col-md-3 col-lg-3 Leslie"><img className="LesliePhoto" src="./css/images/Ses-selfie.jpg" alt="Leslie"/></div>
                 <div className="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center Leslie"><div className="col-sm-10 col-md-10 col-lg-10 Text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <p><a  className="Links" target="_blank" href="https://sesdesoir.github.io/">Leslie's Profile Page</a></p>
+                <p>Hi, I'm Leslie! I'm a musician. I play flute, some piano and I sing! I can now also call myself a coder/web developer! This has been an amazing ride. Thank you for the journey and all the experience, learning and hand holding. Thanks to team Plantsy for being amazing humans. I found unexpected camaraderie with ya'll. I wish all of you amazing futures and would love to work with you all again in the future. This has been a big project I'm really proud of all our blood sweat and tears. We've learned a lot together by breaking lots of things. Lots of love to all of you.</p>
+                        <p>~Leslie</p>   
+                        <p><a  className="Links" target="_blank" href="https://sesdesoir.github.io/portfolio/">Leslie's Profile Page</a></p>
                         <p><a className="Links" target="_blank" href="https://github.com/Sesdesoir">Leslie's Repository</a></p>
                     </div>
                 </div>
