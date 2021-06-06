@@ -36,10 +36,12 @@ router.post('/signup', async (req, res) => {
 
 router.post('/', async (req, res) => {
     console.log(`hit login route!!!! ~~~~~~~ wooohooo!`)
-    console.log(req.body.email)
-    console.log(req.body.password)
+    console.log(req.body)
+    // console.log(req.body.password)
     try {
         const userData = await Users.findOne({ where: { email: req.body.email } });
+
+        console.log(userData)
 
         if (!userData) {
             res
@@ -59,6 +61,7 @@ router.post('/', async (req, res) => {
             return;
         }
 
+
         req.session.save(() => {
             req.session.user_id = userData.id;
             // req.session.username = 
@@ -67,6 +70,8 @@ router.post('/', async (req, res) => {
             res.json({ user: userData, message: 'You are now logged in!' });
             console.log("**************** \n Login Success \n ***************")
         });
+
+
 
     } catch (err) {
         res.status(400).json(err);

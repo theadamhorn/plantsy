@@ -15,7 +15,7 @@ function LoginModal(props) {
   const { user, login } = useContext(UserContext);
   const history = useHistory();
 
-  const loginFormHandler = async (event) => {
+  const loginFormHandler = (event) => {
     //   // Stop the browser from submitting the form so we can do so with JavaScript
     event.preventDefault();
 
@@ -24,9 +24,10 @@ function LoginModal(props) {
     if (email && password) {
       // Send the e-mail and password to the server
 
-      const body = { email, password };
-      const header = { 'Content-Type': 'application/json' };
-      API.logInUser(body, header)
+      const body = JSON.stringify({ email, password });
+      const config = { headers: { "Content-Type": "application/json" } };
+      // const header = { 'Content-Type': 'application/json' };
+      API.logInUser(body, config)
         .then(res => {
           login({
             id: res.data.user.id,
@@ -66,12 +67,12 @@ function LoginModal(props) {
               <input className="form-input" type="password" id="password-login" onChange={event => setpassword(event.target.value.trim())} />
             </div>
             <div className="form-group">
-              <button className="btn-login-form" type="submit" onClick={loginFormHandler}>Login</button>
+              <button className="btn-login-form" type="submit" onClick={event => loginFormHandler(event)}>Login</button>
             </div>
           </form>
         </Modal.Body>
         <Modal.Footer>
-          
+
           <ModalSignUp />
           <Button style={{
             color: "#e4d7d0",
